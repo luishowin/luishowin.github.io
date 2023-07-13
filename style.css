@@ -14,15 +14,17 @@
 .intro_container h2{
     margin-top: 0;
     margin-bottom: 0;
-    letter-spacing: 4px;
 }
 .links h2, a {
-    font-size: 1.1em;
+    font-size: 1em;
     font-family:'Inter', sans-serif;
     font-weight: 400;
 }
+.links h2{
+    padding-right: 10px;
+}
 .links a{
-    color: rgb(231, 243, 249);
+    color: rgb(147, 155, 159);
     text-decoration: none;
     position: relative;
 }
@@ -34,11 +36,40 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: rgb(85, 216, 122);
+  background-color: rgb(247, 255, 249);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
 .links a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.pars p{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em; 
+    color: rgb(237, 241, 244); 
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.otr_wk{
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.otr_wk a{
+    color: rgb(123, 163, 163);
+    display: block;
+    width: 100px;
+    margin-right: auto;
+}
+.otr_wk a:hover{
+    color: rgb(177, 242, 242);
+    translate: 2px -2px;
+}
+.left_ln img:hover{
+    translate: 3px -3px;
+    animation-duration: 900ms;
 }
