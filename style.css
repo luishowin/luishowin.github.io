@@ -53,23 +53,3 @@
     font-weight: 300;
     text-align: justify;
 }
-
-.otr_wk{
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-.otr_wk a{
-    color: rgb(123, 163, 163);
-    display: block;
-    width: 100px;
-    margin-right: auto;
-}
-.otr_wk a:hover{
-    color: rgb(177, 242, 242);
-    translate: 2px -2px;
-}
-.left_ln img:hover{
-    translate: 3px -3px;
-    animation-duration: 900ms;
-}
