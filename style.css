@@ -7,14 +7,11 @@
     margin-right: auto;
     margin-left: auto;
     padding-top: 100px;
-    font-family: 'Inter', sans-serif;
-}
-.intro_container h1{
-    font-weight: 400;
 }
 .intro_container h2{
     margin-top: 0;
     margin-bottom: 0;
+    font-family:'Albert Sans', sans-serif;
 }
 .links h2, a {
     font-size: 1em;
@@ -25,7 +22,7 @@
     padding-right: 10px;
 }
 .links a{
-    color: rgb(147, 155, 159);
+    color: rgb(204, 229, 246);
     text-decoration: none;
     position: relative;
 }
