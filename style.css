@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Albert+Sans:wght@500&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;500&display=swap);
 
 .intro_container {
     display: block;
@@ -13,16 +13,18 @@
     margin-bottom: 0;
     font-family:'Albert Sans', sans-serif;
 }
+
+/* links to GH,Li and x*/
 .links h2, a {
-    font-size: 1em;
-    font-family:'Albert Sans', sans-serif;
-    font-weight: 400;
+    font-size: 0.9em;
+    font-family:'Inter', sans-serif;
+    font-weight: 200;
 }
 .links h2{
     padding-right: 10px;
 }
 .links a{
-    color: rgb(204, 229, 246);
+    color: rgb(187, 202, 211);
     text-decoration: none;
     position: relative;
 }
@@ -42,16 +44,22 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
 .pars p{
     font-family: 'Inter', sans-serif;
-    font-size: 1.1em; 
-    color: rgb(217, 221, 224); 
-    letter-spacing: 1px;
-    font-weight: 200;
+    font-size: 1em; 
+    color: rgb(184, 189, 192); 
+    letter-spacing: 0.7px;
+    font-weight: 300;
     text-align: justify;
 }
 
 a.leftt:hover{
     color: rgb(233, 242, 242);
+}
+
+.par_2 ,a{
+    color: rgb(237, 234, 229);
+}
+.par_2 a:hover{
+    color: rgb(195, 189, 28);
 }
