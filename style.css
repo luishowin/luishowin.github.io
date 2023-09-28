@@ -61,3 +61,11 @@
 }
 
 /* other works */
+
+/*
+@media only screen and (max-width: 680px) {
+    .otr_wk > .left_link{
+      margin-right: 10vmin;
+    }
+  }
+*/
