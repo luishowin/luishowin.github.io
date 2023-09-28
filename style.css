@@ -73,7 +73,23 @@
     color: rgb(105, 203, 181);
 }
 .otr_wk a:hover{
-    color:rgb(47, 231, 216);
+    color:rgb(116, 255, 162);
+}
+
+/* otr wk2*/
+.otr_wk2{
+    padding-bottom: 40px;
+}
+.otr_wk2 a{
+    flex: 1; display:inline-block; 
+    flex-wrap: nowrap; 
+    padding-right: 20px; 
+    text-decoration: none; 
+    font-size: 0.9em; 
+    color: rgb(105, 203, 181);
+}
+.otr_wk2 a:hover{
+    color:rgb(116, 255, 162);
 }
 /*
 @media only screen and (max-width: 680px) {
