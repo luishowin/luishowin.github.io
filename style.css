@@ -52,14 +52,12 @@
     font-weight: 300;
     text-align: justify;
 }
-
-a.leftt:hover{
-    color: rgb(233, 242, 242);
-}
-
+/* ALX link hover effect*/
 .par_2 ,a{
     color: rgb(237, 234, 229);
 }
 .par_2 a:hover{
-    color: rgb(195, 189, 28);
+    color: rgb(235, 200, 60);
 }
+
+/* other works */
