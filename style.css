@@ -61,7 +61,20 @@
 }
 
 /* other works */
-
+.otr_wk{
+    padding-bottom: 40px;
+}
+.otr_wk a{
+    flex: 1; display:inline-block; 
+    flex-wrap: nowrap; 
+    padding-right: 20px; 
+    text-decoration: none; 
+    font-size: 0.9em; 
+    color: rgb(105, 203, 181);
+}
+.otr_wk a:hover{
+    color:rgb(47, 231, 216);
+}
 /*
 @media only screen and (max-width: 680px) {
     .otr_wk > .left_link{
