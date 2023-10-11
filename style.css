@@ -13,6 +13,10 @@
     margin-bottom: 0;
     font-family:'Albert Sans', sans-serif;
 }
+.intro a:hover{
+    transition: 0.1s;
+    color: aliceblue;            
+}
 
 /* links to GH,Li and x*/
 .links h2, a {
@@ -46,7 +50,7 @@
 }
 .pars p{
     font-family: 'Inter', sans-serif;
-    font-size: 1em; 
+    font-size: 1.05em; 
     color: rgb(184, 189, 192); 
     letter-spacing: 0.7px;
     font-weight: 300;
@@ -54,7 +58,7 @@
 }
 /* ALX link hover effect*/
 .par_2 ,a{
-    color: rgb(237, 234, 229);
+    color: rgb(241, 246, 246);
 }
 .par_2 a:hover{
     color: rgb(235, 200, 60);
