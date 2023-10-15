@@ -26,10 +26,14 @@
     text-decoration: none;
     color: rgb(15, 15, 15);
 }
-@media only screen and (max-width: 580px) {
-    .l_col p{
-        width: 80%;
-    }
+.r_col a:hover{
+    color: rgb(55, 202, 175);
+}
+
+@media only screen and (max-width: 600px) {
+  .l_col{
+    padding-right: 0;
+  }
    }
 
 /* footer content*/
