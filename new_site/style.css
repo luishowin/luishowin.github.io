@@ -24,10 +24,9 @@
 
 .r_col a{
     text-decoration: none;
-    color: rgb(15, 15, 15);
 }
-.r_col a:hover{
-    color: rgb(55, 202, 175);
+.r_col .ul a:hover{
+    color: aquamarine;
 }
 
 @media only screen and (max-width: 600px) {
