@@ -25,9 +25,6 @@
 .r_col a{
     text-decoration: none;
 }
-.r_col .ul a:hover{
-    color: aquamarine;
-}
 
 @media only screen and (max-width: 600px) {
   .l_col{
