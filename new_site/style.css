@@ -12,14 +12,11 @@
     text-decoration: none;
     color: rgb(13, 13, 13);
 }
-.split_col{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-}
+
 
 .l_col p{
     text-align: justify;
+    font-size: 0.9em;
 }
 .r_col ul{
     list-style-type: none;
@@ -29,9 +26,11 @@
     text-decoration: none;
     color: rgb(15, 15, 15);
 }
-@media only screen and (max-width: 680px) {
- .split_col { grid-template-columns: repeat(2, 1fr);}
-}
+@media only screen and (max-width: 580px) {
+    .l_col p{
+        width: 80%;
+    }
+   }
 
 /* footer content*/
 .footer{
