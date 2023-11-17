@@ -61,7 +61,7 @@ body{
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #21f33d;
 }
 
 input:checked + .slider:before {
@@ -70,7 +70,7 @@ input:checked + .slider:before {
 
 body.dark-mode {
     background-color: #333;
-    color: #fff;
+    color: rgb(101, 100, 111)5, 255, 255, 0.252)464;
 }
 
 body.dark-mode .toggle-cont p {
