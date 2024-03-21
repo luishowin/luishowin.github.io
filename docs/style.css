@@ -4,6 +4,11 @@ body{
     transition: background-color 0.5s;
 }
 
+::selection{
+    color: rgb(39, 56, 66);
+    background: rgb(135, 203, 218);
+}
+
 *{
     font-family: 'Inter', sans-serif;
 }
