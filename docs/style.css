@@ -34,6 +34,7 @@ body{
     font-size: 1em;
     font-weight: 300;
 }
+
 .r_col ul{
     list-style-type: none;
 }
@@ -46,13 +47,12 @@ body{
     color: rgb(255, 79, 70);
 }
 
-@media only screen and (max-width: 600px) {
-  .l_col{
-    padding-right: 0;
-  }
-}
 
 .footer{
     width: 100%;
     background-color: rgb(242, 245, 249);
 }
+
+@media only screen and (max-width: 750px) {
+   
+  }
