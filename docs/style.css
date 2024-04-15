@@ -81,4 +81,7 @@
     .header p{
         font-size: 2em;
     }
+    .l_col{
+        width: 80%;
+    }
   }
