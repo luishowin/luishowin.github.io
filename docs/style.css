@@ -1,8 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap);
 
-body{
-    transition: background-color 0.5s;
-}
 
 ::selection{
     color: rgb(33, 42, 48);
@@ -14,18 +11,30 @@ body{
 }
 .header{
     padding-top: 9em;
+    width: 60%; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+.header h4{
+    margin-bottom: 0.5em;
 }
 .header a {
     font-weight: 300;
     font-size: 1.3em;
     text-decoration: none;
-    color: rgb(124, 130, 140);
+    color: rgb(110, 115, 123);
 }
-.header p {
+.header h5 {
     font-weight: 300;
     font-size: 1.3em;
     text-decoration: none;
     color: rgb(124, 130, 140);
+    margin-top: 0px;
+}
+.header p{
+    color: rgb(20, 20, 21); 
+    font-size: 3em;  
+    font-weight: 500;
 }
 
 
@@ -58,11 +67,11 @@ body{
     background-color: rgb(242, 245, 249);
 }
 
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 768px) {
     .header{
-        width: 85%;
+        width: 80%;
     }
-   .split_col{
-    width: 85%;
-   }
+    .header p{
+        font-size: 2em;
+    }
   }
