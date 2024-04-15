@@ -36,6 +36,7 @@
     color: rgb(20, 20, 21); 
     font-size: 3em;  
     font-weight: 500;
+    margin-top: 0.3em;
 }
 
 /*    l_col     */
@@ -49,7 +50,7 @@
     margin-right: auto;
 }
 .l_col p{
-    text-align: justify;
+    text-align: left;
     font-size: 1.3em;
     font-weight: 300;
 }
