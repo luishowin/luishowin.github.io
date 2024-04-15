@@ -1,14 +1,15 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap);
 
-
+/*    globals   */
 ::selection{
     color: rgb(33, 42, 48);
     background: rgb(205, 232, 238);
 }
-
 *{
     font-family: 'Inter', sans-serif;
 }
+
+/*  header section  */
 .header{
     padding-top: 9em;
     width: 60%; 
@@ -37,7 +38,11 @@
     font-weight: 500;
 }
 
-
+/*    l_col     */
+.l_col h5{
+    font-weight: 300;
+    font-size: 1.3em;
+}
 .l_col {
     width: 60%;
     margin-left: auto;
@@ -49,6 +54,8 @@
     font-weight: 300;
 }
 
+
+/*     r_col     */
 .r_col ul{
     list-style-type: none;
 }
