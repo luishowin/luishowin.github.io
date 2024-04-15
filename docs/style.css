@@ -13,7 +13,7 @@ body{
     font-family: 'Inter', sans-serif;
 }
 .header{
-    padding-top: 190px;
+    padding-top: 9em;
 }
 .header a {
     font-weight: 300;
@@ -23,15 +23,20 @@ body{
 }
 .header p {
     font-weight: 300;
-    font-size: 1em;
+    font-size: 1.3em;
     text-decoration: none;
     color: rgb(124, 130, 140);
 }
 
 
+.l_col {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .l_col p{
     text-align: justify;
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: 300;
 }
 
