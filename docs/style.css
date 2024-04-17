@@ -33,7 +33,7 @@
     margin-top: 0px;
 }
 .header p{
-    color: rgb(20, 20, 21); 
+    color: rgb(237, 237, 241); 
     font-size: 3em;  
     font-weight: 500;
     margin-top: 0.3em;
@@ -43,6 +43,7 @@
 .t_col h5{
     font-weight: 300;
     font-size: 1.3em;
+    color: white;
 }
 .t_col {
     width: 60%;
@@ -53,11 +54,13 @@
     text-align: left;
     font-size: 1.3em;
     font-weight: 300;
+    color: white;
 }
 
 
 /*     b_col     */
 .b_col {
+    padding-top: 1.5em;
     width: 60%;
     margin-right: auto;
     margin-left: auto;
@@ -69,12 +72,21 @@
 
 .b_col a{
     text-decoration: none;
+    color: azure;
 }
 
-.b_col li a :hover {
-    color: rgb(255, 79, 70);
+/*   work section */
+.work{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2em;
 }
-
+.work h1{
+    color: white;
+    font-weight: 600;
+    font-size: 1.5em;
+}
 /*    flex container*/
 .m_col {
     display: flex;
@@ -85,26 +97,40 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 2.4em;
+    padding-bottom: 1.5em;
   }
   
   .flex-items {
-    display: block;
+    display: flex;
     flex-grow: 1 1 1;
     flex-shrink: 1;
     flex-basis: auto;
     order: 0;
     height: 350px;
     margin: 5px;
-    width: 18vw;
-    background-color: rgb(230, 235, 236);
+    max-width: 18vw;
+    background-color: rgb(27, 28, 28);
     border-radius: 5px;
+    overflow: hidden;
+    transition: 200ms;
+  }
+  .flex-items:hover{
+    scale: 1.05;
+  }
+  .flex-items p{
+    padding: 0.5em;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2em;
   }
 
   
 
 .footer{
+    padding-top: 2em;
     width: 100%;
-    background-color: rgb(242, 245, 249);
+    background-color: rgb(28, 29, 29);
 }
 
 @media only screen and (max-width: 768px) {
@@ -116,5 +142,15 @@
     }
     .t_col{
         width: 80%;
+    }
+    .m_col{
+        justify-content: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .flex-items{
+        min-width: 80vw;
+        margin: 10px;
     }
   }
