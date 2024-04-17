@@ -57,15 +57,21 @@
 
 
 /*     b_col     */
+.b_col {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
 .b_col ul{
     list-style-type: none;
+    padding: 0;
 }
 
 .b_col a{
     text-decoration: none;
 }
 
-.b_col a:hover {
+.b_col li a :hover {
     color: rgb(255, 79, 70);
 }
 
@@ -76,7 +82,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 70%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -89,9 +95,11 @@
     order: 0;
     height: 350px;
     margin: 5px;
-    width: 20vw;
-    background-color: aquamarine;
+    width: 18vw;
+    background-color: rgb(230, 235, 236);
+    border-radius: 5px;
   }
+
   
 
 .footer{
