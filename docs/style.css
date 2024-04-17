@@ -111,7 +111,7 @@
     height: 350px;
     margin: 0;
     max-width: 19vw;
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(17, 18, 18);
     border-radius: 5px;
     overflow: hidden;
     transition: 200ms;
@@ -129,7 +129,7 @@
     margin-top: 0;
   }
   .fl_ct p{
-    color: white;
+    color: rgb(141, 146, 148);
     font-size: 1.1em;
     font-weight: 500;
   }
