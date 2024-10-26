@@ -68,12 +68,15 @@
 .b_col ul{
     list-style-type: none;
     padding: 0;
-}
+    }
 
 .b_col a{
     text-decoration: none;
-    color: azure;
 }
+.b_col:hover a {
+    color: aliceblue;
+}
+
 
 /*   work section */
 .work{
