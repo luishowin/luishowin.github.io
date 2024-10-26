@@ -136,7 +136,7 @@
   
 /*  cta   */
 .cta{
-    padding-bottom: 3em;
+    padding-bottom: 4em;
     padding-top: 5em;
 }
 .cta h2{
@@ -164,7 +164,7 @@
 .footer{
     padding-top: 2em;
     width: 100%;
-    background-color: rgb(28, 29, 29);
+    background-color: rgb(10, 10, 10);
 }
 
 @media only screen and (max-width: 768px) {
