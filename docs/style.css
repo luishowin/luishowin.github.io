@@ -72,8 +72,9 @@
 
 .b_col a{
     text-decoration: none;
+    color: rgb(90,98,109)
 }
-.b_col:hover a {
+.b_col a:hover {
     color: aliceblue;
 }
 
@@ -124,7 +125,9 @@
   }
   .fl_ct{
     padding: 1em;
+    background-image: green_glass.png;
   }
+
   .fl_ct h2{
     color: white;
     font-size: 1.3em;
