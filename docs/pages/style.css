@@ -123,9 +123,9 @@
   .flex-items:hover{
     scale: 1.05;
   }
+  
   .fl_ct{
     padding: 1em;
-    background-image: green_glass.png;
   }
 
   .fl_ct h2{
