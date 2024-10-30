@@ -127,7 +127,8 @@
             to right,
             rgb(000 / 0.5),
             rgb(000 / 0)
-        )
+        ),
+        url(../images/green_glass.png);
     ;
   }
   .flex-items:hover{
