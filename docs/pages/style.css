@@ -40,16 +40,17 @@
 }
 
 /*    t_col     */
-.t_col h5{
-    font-weight: 300;
-    font-size: 1.2em;
-    color: white;
-}
 .t_col {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
+.t_col h5{
+    font-weight: 300;
+    font-size: 1.2em;
+    color: white;
+}
+
 .t_col p{
     text-align: left;
     font-size: 1.2em;
@@ -72,7 +73,9 @@
 
 .b_col a{
     text-decoration: none;
-    color: rgb(90,98,109)
+    color: rgb(90,98,109);
+    font-size: 1.7em;
+    
 }
 .b_col a:hover {
     color: aliceblue;
@@ -81,16 +84,17 @@
 
 /*   work section */
 .work{
-    padding-top: 8em;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    height: 2em;
 }
-.work h1{
+.work h5{
+    padding-top: 8em;
+    text-align: left;
     color: white;
     font-weight: 600;
     font-size: 1.5em;
+    margin: 0;
 }
 /*    flex container*/
 .m_col {
@@ -122,17 +126,10 @@
     transition: 200ms;
     background-repeat: no-repeat;
     background-size: 100%;
-    background: 
-        linear-gradient(
-            to right,
-            rgb(000 / 0.5),
-            rgb(000 / 0)
-        ),
-        url(../images/green_glass.png);
     ;
   }
   .flex-items:hover{
-    scale: 1.04;
+    scale: 1.03;
   }
   
   .fl_ct{
