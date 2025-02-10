@@ -20,10 +20,10 @@
     margin-bottom: 0.5em;
 }
 .header a {
-    font-weight: 300;
-    font-size: 1.3em;
+    font-weight: 400;
+    font-size: 2em;
     text-decoration: none;
-    color: rgb(110, 115, 123);
+    color: rgb(194, 201, 216);
 }
 .header h5 {
     font-weight: 300;
@@ -47,8 +47,8 @@
 }
 .t_col h5{
     font-weight: 300;
-    font-size: 1.2em;
-    color: white;
+    font-size: 1.6em;
+    color: rgb(232, 234, 235);
 }
 
 .t_col p{
@@ -147,6 +147,7 @@
     font-size: 1.1em;
     font-weight: 500;
   }
+  
   
 /*  cta   */
 .cta{
