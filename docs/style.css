@@ -3,7 +3,7 @@
 /*    globals   */
 ::selection{
     color: rgb(17, 21, 23);
-    background: rgb(120, 136, 140);
+    background: rgb(159, 211, 209);
 }
 *{
     font-family: 'Inter', sans-serif;
@@ -85,17 +85,20 @@
 /*   work section */
 .work{
     width: 60%;
+    min-width: 397px;
     margin-left: auto;
     margin-right: auto;
+    
 }
 .work h5{
     padding-top: 8em;
-    text-align: left;
-    color: white;
+    color: rgb(247, 247, 247);
     font-weight: 600;
     font-size: 1.5em;
-    margin: 0;
+    margin-bottom: 0vh;
+    min-width: 14vw;
 }
+
 /*    flex container*/
 .m_col {
     display: flex;
@@ -153,23 +156,30 @@
 .cta{
     padding-bottom: 8em;
     padding-top: 5em;
+    width: 60%;
+    margin-right:auto;
+    margin-left: auto;
 }
 .cta h2{
+    padding-top: 1vh;
+    padding-bottom: 8vh;
     color: white;
-    font-size: 2.6em;
+    font-size: 3.3em;
     font-weight: 700;
     margin: 0; 
     text-align: center; 
 }
 .cta p{
     color: rgb(167, 167, 167);
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 500;
     text-align: center;
+    padding-bottom: 4vh;
 }
 .cta h1{
+    font-family: 'Times New Roman', Times, serif;
     color: white;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 500; 
     text-align: center;
 }
