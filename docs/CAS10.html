@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest-like Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .gallery-container {
+            width: 90%;
+            max-width: 1200px;
+            column-count: 3;
+            column-gap: 15px;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .gallery-item .description {
+            padding: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-container {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container" id="gallery">
+        <!-- Example gallery items -->
+        <div class="gallery-item">
+            <img src="./images/awatch.jpg" alt="Sample Image">
+            <div class="description">Sample description for image 1</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/ogl.jpg" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/ogl.jpg" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/green_glass.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/ogl.jpg" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/green_glass.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
+            <div class="description">Sample description for image 2</div>
+        </div>
+    </div>
+
+   
+</body>
+</html>
