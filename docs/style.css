@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap);
 
+
+
 /*    globals   */
 ::selection{
     color: rgb(17, 21, 23);
@@ -16,28 +18,14 @@
     margin-left: auto; 
     margin-right: auto;    
 }
-.header h4{
-    margin-bottom: 0.5em;
-}
-.header a {
-    font-weight: 400;
-    font-size: 1.6em;
-    text-decoration: none;
-    color: rgb(194, 201, 216);
-}
-.header h5 {
-    font-weight: 300;
-    font-size: 1.2em;
-    text-decoration: none;
-    color: rgb(124, 130, 140);
-    margin-top: 0px;
-}
+
 .header p{
     color: rgb(237, 237, 241); 
     font-size: 3em;  
     font-weight: 500;
     margin-top: 0.3em;
 }
+
 
 /*    t_col     */
 .t_col {
