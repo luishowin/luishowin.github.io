@@ -20,9 +20,10 @@
             box-sizing: border-box;
         }
 
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #101112;
             display: flex;
             justify-content: center;
             margin: 20px;
@@ -31,17 +32,24 @@
         .gallery-container {
             width: 90%;
             max-width: 1200px;
-            column-count: 3;
+            column-count: 5;
             column-gap: 15px;
         }
 
         .gallery-item {
             break-inside: avoid;
             margin-bottom: 15px;
-            background-color: #fff;
+            background-color: #3c3f40;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: 300ms;
+            background-repeat: no-repeat;
+
+        }
+        .gallery-item:hover{
+            scale: 1.02;
         }
 
         .gallery-item img {
@@ -52,7 +60,7 @@
         .gallery-item .description {
             padding: 10px;
             font-size: 14px;
-            color: #555;
+            color: #ffffff;
         }
 
         @media (max-width: 768px) {
@@ -72,6 +80,7 @@
     <div class="nav">
         <a href="index.html">Home</a>
     </div>
+
     <div class="gallery-container" id="gallery">
         <!-- Example gallery items -->
         <div class="gallery-item">
@@ -84,7 +93,27 @@
         </div>
         <div class="gallery-item">
             <img src="./images/ogl.jpg" alt="Sample Image">
+            <div class="description">Sample description for image 3</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/green_glass.png" alt="Sample Image">
+            <div class="description">Sample description for image 4</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/ogl.jpg" alt="Sample Image">
+            <div class="description">Sample description for image 3</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/awatch.jpg" alt="Sample Image">
+            <div class="description">Sample description for image 1</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/hazy_flower_light.png" alt="Sample Image">
             <div class="description">Sample description for image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/awatch.jpg" alt="Sample Image">
+            <div class="description">Sample description for image 1</div>
         </div>
         <div class="gallery-item">
             <img src="./images/hazy_flower_light.png" alt="Sample Image">
@@ -92,19 +121,19 @@
         </div>
         <div class="gallery-item">
             <img src="./images/ogl.jpg" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
-        </div>
-        <div class="gallery-item">
-            <img src="./images/hazy_flower_light.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
+            <div class="description">Sample description for image 3</div>
         </div>
         <div class="gallery-item">
             <img src="./images/green_glass.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
+            <div class="description">Sample description for image 4</div>
         </div>
         <div class="gallery-item">
             <img src="./images/ogl.jpg" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
+            <div class="description">Sample description for image 3</div>
+        </div>
+        <div class="gallery-item">
+            <img src="./images/awatch.jpg" alt="Sample Image">
+            <div class="description">Sample description for image 1</div>
         </div>
         <div class="gallery-item">
             <img src="./images/hazy_flower_light.png" alt="Sample Image">
@@ -112,36 +141,9 @@
         </div>
         <div class="gallery-item">
             <img src="./images/green_glass.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
+            <div class="description">Sample description for image 4</div>
         </div>
-        <div class="gallery-item">
-            <img src="./images/hazy_flower_light.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
-        </div>
-        <div class="gallery-item">
-            <img src="./images/hazy_flower_light.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
-        </div>
-        <div class="gallery-item">
-            <img src="./images/hazy_flower_light.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
-        </div>
-        <div class="gallery-item">
-            <img src="./images/hazy_flower_light.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
-        </div>
-        <div class="gallery-item">
-            <img src="./images/hazy_flower_light.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
-        </div>
-        <div class="gallery-item">
-            <img src="./images/hazy_flower_light.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
-        </div>
-        <div class="gallery-item">
-            <img src="./images/hazy_flower_light.png" alt="Sample Image">
-            <div class="description">Sample description for image 2</div>
-        </div>
+
     </div>
 
    
