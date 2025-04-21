@@ -15,6 +15,80 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <p>HABIT
+        Home Automation Bridge for Intelligent Tasks
+        A local-first, LLM-native protocol and hardware ecosystem for controlling, understanding, and reasoning about smart devices.
+        
+        What is HABIT?
+        HABIT is a lightweight system that connects physical devices to an offline AI brain (LLM), allowing users to control appliances, monitor environments, and receive intelligent feedback — all via natural language and JSON-based device schemas.
+        
+        It’s not just a smart home system. It’s a context-aware, privacy-first automation platform with reasoning at its core.
+        
+        What Can HABIT Do?
+        Turn devices on/off or set modes using plain English
+        Understand device capabilities from JSON schemas
+        Monitor real-time sensor data and report insights
+        Forecast impact of user actions on energy usage
+        Generate natural-language monthly reports
+        Operate fully offline, with optional cloud backup
+        Example Use Cases
+        “Turn on the fan and set it to low.”
+        “Is the heater running?”
+        “What’s the cost of running the AC every night this month?”
+        “Summarize my power usage this week.”
+        “Don’t allow the oven to run longer than 2 hours.”
+        System Components
+        Component	Description
+        Device Nodes	ESP32-based modules attached to appliances
+        HABIT Hub	Raspberry Pi or edge device hosting LLM + control logic
+        Protocol	JSON schema for describing devices, capabilities, and states
+        LLM Core	Local model (Mistral, Phi2, etc.) using schema for decision making
+        Security	Offline auth, role-based access, device pairing
+        Logging	Local logs + optional cloud backup via API/cron
+        🚀 Getting Started
+        Set up your HABIT Hub
+        Install dependencies (Python 3.10+, Llama.cpp/Ollama, Node-RED optional)
+        
+        Flash a device node
+        Upload firmware to ESP32 + connect relays/sensors
+        
+        Create a device schema
+        Define device capabilities in JSON (schemas/fan_001.json)
+        
+        Run the local server
+        python hub/main.py
+        
+        Ask your LLM:
+        
+        “Is the fan on?”
+        “Turn off the heater after 10 minutes.”
+        
+        🔐 Security & Auth
+        Role-based access (admin, guest, etc.)
+        Token or pin-based local auth
+        Optional fingerprint/NFC reader for identity
+        📡 Connectivity
+        Offline-first, local-only operations
+        Wi-Fi or Zigbee/BLE device discovery
+        Optional cloud sync for logs or OTA updates
+        🧪 Roadmap
+         HABIT Protocol v1.0 spec
+         Plug-and-play schema autodiscovery
+         Energy cost forecasting model
+         Home rules engine (e.g., “never turn on oven when nobody’s home”)
+         Mobile app / Dashboard UI
+         Encrypted cloud backup module
+        📜 License
+        MIT — open-source and free for all tinkerers, researchers, and rebels.
+        
+        🤝 Contributing
+        Pull requests welcome. Open an issue, fork the repo, and help shape the next evolution of intelligent environments.
+        
+        🔗 Links
+        Project Wiki (soon)
+        Community Discord (soon)
+        Device schema examples
+        HABIT Protocol Docs</p>
     
 </body>
 </html>

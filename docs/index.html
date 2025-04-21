@@ -51,6 +51,14 @@
                 <p>A watch face inspired by the famous Casio F-91W, a tried and accepted classic watch. Apart from the looks there's more under the hood.</p>
             </div>   
         </div>
+
+        <div class="flex-items clickable-item">
+            <div class="bg_image"></div>
+            <div class="fl_ct">
+                <h2>HABIT</h2>
+                <p>A local-first, LLM-native protocol and hardware ecosystem for controlling, understanding, and reasoning about smart devices.</p>
+            </div>   
+        </div>
     </div>
 
     
@@ -83,4 +91,16 @@
         </div>
     </div>
 </body>
+
+<script>
+    const clickableItem = document.querySelector('.clickable-item');
+    if (clickableItem) {
+      clickableItem.addEventListener('click', function() {
+        window.location.href = 'habit';
+      });
+  
+      // Optional: Add a cursor style to indicate it's clickable
+      clickableItem.style.cursor = 'pointer';
+    }
+  </script>
 </html>

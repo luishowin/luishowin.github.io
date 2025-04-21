@@ -110,6 +110,8 @@
     height: 350px;
     margin: 0;
     max-width: 19vw;
+    padding-top: 1em;
+    margin-top: 1em;
     min-width: 14vw;
     background-color: rgb(17, 18, 18);
     border-radius: 5px;
