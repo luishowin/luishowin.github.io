@@ -107,29 +107,28 @@
     flex-shrink: 1;
     flex-basis: auto;
     order: 0;
-    height: 350px;
+    height: 300px;
     margin: 0;
-    max-width: 19vw;
+    max-width: 60vw;
     padding-top: 1em;
     margin-top: 1em;
-    min-width: 14vw;
-    background-color: rgb(17, 18, 18);
-    border-radius: 5px;
+    min-width: 17vw;
+    border-radius: 6px;
     overflow: hidden;
     transition: 300ms;
     background-repeat: no-repeat;
     background-size: 100%;
     ;
   }
+
   .flex-items:hover{
     scale: 1.03;
   }
 
 
-  
-  
   .fl_ct{
     padding: 1em;
+    overflow: hidden;
   }
 
   .fl_ct h2{
@@ -139,9 +138,39 @@
     margin-top: 0;
   }
   .fl_ct p{
-    color: rgb(141, 146, 148);
-    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
     font-weight: 500;
+}
+.m_col .flex-items:nth-child(1) {
+    background-image: url('./images/os b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    background-blend-mode: darken;
+
+}
+
+.m_col .flex-items:nth-child(2) {
+    background-image: url('./images/banda bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
+
+.m_col .flex-items:nth-child(3) {
+    background-image: url('/path/to/ca510.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.m_col .flex-items:nth-child(4) {
+    background-image: url('./images/habit bg.png');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
 }
   
 
@@ -152,6 +181,7 @@
     width: 60%;
     margin-right:auto;
     margin-left: auto;
+    background-color: black;
 }
 .cta h2{
     padding-top: 1vh;
