@@ -44,14 +44,14 @@
           </svg>
         </div>
     </nav>
-  </header>
-
-  <script>
+    <script>
     function toggleMenu() {
       document.getElementById('navMenu').classList.toggle('show');
     }
   </script>
-  <div class="hero-bg"></div>
+  </header>
+
+  
 
 <!--  main section  -->
   <main>
@@ -88,7 +88,6 @@
       </div>
 
       <div class="flex-items">
-            <div class="bg_image"></div>
             <div class="fl_ct">
                 <h2>003     F-91W.X</h2>
                 <p>A watch face inspired by the famous Casio F-91W, a tried and accepted classic watch. 
@@ -97,7 +96,6 @@
       </div>
 
       <div class="flex-items clickable-item">
-            <div class="bg_image"></div>
             <div class="fl_ct">
                 <h2>004 HABIT</h2>
                 <p>A local-first, LLM-native protocol and hardware ecosystem. 
@@ -111,20 +109,6 @@
         <h2>00X Let's work together</h2>
         <p>Like what you see? 
           <br>send a 'Hey' at </p>
-          
-          <p class="copy-text" onclick="copyToClipboard(this)">Click me to copy this text!</p>
-
-          <script>
-            function copyToClipboard(element) {
-              const text = element.innerText;
-              navigator.clipboard.writeText(text).then(() => {
-                alert('Copied to clipboard!');
-              }).catch(err => {
-                console.error('Failed to copy: ', err);
-              });
-            }
-          </script>
-
         </p>
 
     
