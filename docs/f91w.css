@@ -59,7 +59,23 @@ nav a{
 
 .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
+    }
+.nav-links.active {
+      width: 100%;
+      max-height: 500px; /* Adjust based on content height */
+      display: flex;
+      opacity: 1;
+      align-items: center;
+      align-content: center;
+      flex-direction: column;
+      position: absolute;
+      top: 48.8px; /* Adjust based on navbar height */
+      right: 0;
+      background: rgba(0, 0, 0, 0.142);
+      backdrop-filter: blur(13px);
+      padding: 1rem;
+      
     }
 
     .nav-links a {
@@ -70,7 +86,7 @@ nav a{
     }
 
     .nav-links a:hover {
-      color: #c7c7c7;
+      color: #ffbd2e;
     }
 
     .hamburger {
@@ -80,10 +96,10 @@ nav a{
     }
 
     .hamburger span {
-      height: 3px;
-      width: 23px;
-      background: #dcdcdc;
-      margin-bottom: 5px;
+      height: 2px;
+      width: 20px;
+      background: #ffffffca;
+      margin-bottom: 3px;
       border-radius: 3px;
       transition: 0.3s;
     }
