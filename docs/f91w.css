@@ -11,12 +11,24 @@
       padding: 0;
 }
 
-    
+/*    reveal animation section   */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ /*    body section   */   
 body {
       font-family: 'Inconsolata', monospace;
       background-color: black;
       color: rgb(255, 255, 255);
-    }
+}
 
 /* Navbar  */
 nav {
@@ -320,7 +332,7 @@ nav a{
         }
       
         .flex-items {
-            height: 200px;
+            height: 250px;
             margin: 0;
             padding-top: 1em;
             padding-bottom: 1em;
