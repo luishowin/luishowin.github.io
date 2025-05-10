@@ -40,7 +40,7 @@ nav {
 nav a{
       text-decoration: none;
       color: #ffffff;
-      font-size: 13px;
+      font-size: 1rem;
       font-weight: 400;
 }
 
@@ -104,13 +104,13 @@ nav a{
   display: block;
   font-weight: 400;
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.925);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .hero-intro {
   font-size: 1rem;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.5);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -118,11 +118,13 @@ nav a{
 /*    mywork items   */
 .mywork {
     width: 100%;
-    padding-bottom:5rem;
+    padding-bottom:1em;
+    overflow: hidden;
   }
-  
+
+
   .flex-items {
-    height: 300px;
+    height: 310px;
     margin: 0;
     width: 100%;
     padding-top: 1em;
@@ -131,27 +133,28 @@ nav a{
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: 100%;
-    background-color: rgba(0, 0, 0, 0.92);
+    background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
     backdrop-filter: blur(10px);
+    transition: 300ms;
     ;
   }
 
+.flex-items:hover{
+    scale: 1.01;
+    cursor: pointer;
+  }
+   
 
 
   .fl_ct{
     padding: 2.3em;
-    overflow: hidden;
-    transition: 300ms;
   }
-  .fl_ct:hover{
-    scale: 1.01;
-    cursor: pointer;
-  }
+  
 
 .fl_ct h2{
     color: #ffbf36;
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 600;
     margin-top: 0;
   }
@@ -160,20 +163,41 @@ nav a{
     font-size: 1em;
     font-weight: 400;
 }
+
+/* Connect section */
+.flex-items .connect{
+    padding: 2.3em;
+    overflow: hidden;
+}
+.flex-items .connect ul{
+    list-style: none;
+    padding: 2rem 0rem;
+    margin: 0;
+}
+.flex-items .connect a{
+    text-decoration: none;
+    color: #ffbf36;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+.flex-items .connect a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
 .mywork .flex-items:nth-child(1) {
-    background-image: url('./images/os b.jpg');
+    background-image: url('./images/plce.jpg');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.92);
+    background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
     backdrop-filter: blur(10px);
 }
 
 .mywork .flex-items:nth-child(2) {
-    background-image: url('./images/banda bg.jpg');
+    background-image: url('./images/shpyrd.jpg');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.92);
+    background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
     backdrop-filter: blur(10px);
 }
@@ -182,59 +206,78 @@ nav a{
     background-image: url('./images/HABIT.jpg');
     background-size: cover;
     background-position: center;
-     background-color: rgba(0, 0, 0, 0.92);
+     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
     backdrop-filter: blur(10px);
 }
 
 .mywork .flex-items:nth-child(4) {
-    background-image: url('./images/habit bg.png');
+    background-image: url('./images/spce.jpg');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.92);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    backdrop-filter: blur(10px);
+}
+.mywork .flex-items:nth-child(5) {
+    background-image: url('./images/clff.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    backdrop-filter: blur(10px);
+}
+.mywork .flex-items:nth-child(6) {
+    background-image: url('./images/plne.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: darken;
     backdrop-filter: blur(10px);
 }
 
 
-/* CTA */
-.cta {
-  padding: 2.3em;
-  padding-bottom: 5rem;
-  padding-top: 5rem;
-}
-.cta h2 {
-  color: #ffbf36;
-  font-size: 2em;
-  font-weight: 600;
-  margin-top: 0;
-}
-.cta a{
-  text-decoration: none;
-  color: #fff;
-}
-.cta a:hover{
-  color: #ff993f;
-  text-decoration: underline;
-}
-
-
 /*     footer section    */
-.footer{
-    padding-top: 5rem;
-    padding-bottom: 4rem;
-    background: #00000014; 
-    backdrop-filter: blur(10px);
-    text-align: center; 
-    margin:0;
-    font-size: 12px;
-    font-weight: 400;
-    color: fff;
-    }
-    .footer a{
+.footer {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('./images/syrd.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.footer:hover::before {
+  transform: scale(1.01);
+}
+
+.footer a{ 
     text-decoration: none;
     color: #a9acae;
+    line-height: 1.5;
+    margin: 0em 0.5em;
     }
+
     .footer a:hover{
         color: #fff;
 }
@@ -268,7 +311,7 @@ nav a{
         padding: 1rem 0rem;
         font-weight: 400;
         font-size: 1rem;
-        color: rgba(255, 255, 255, 0.925);
+        color: rgba(255, 255, 255, 0.55);
       }
     
         .hero-intro {
@@ -285,8 +328,14 @@ nav a{
             overflow: hidden;
             background-repeat: no-repeat;
             background-size: cover;
-            background-color: rgba(0, 0, 0, 0.92);
+            background-color: rgba(0, 0, 0, 0.5);
             background-blend-mode: darken;
             backdrop-filter: blur(10px);
+        }
+        .flex-items .connect a{
+            text-decoration: none;
+            color: #ffbf36;
+            font-size: 0.9rem;
+            font-weight: 400;
         }
 }
