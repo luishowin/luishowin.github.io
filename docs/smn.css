@@ -1,14 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
- 
-html, body {
-     height: 100%;
-     margin: 0;
-   }
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+/*    globals   */
+::selection{
+    color: rgb(17, 21, 23);
+    background: rgb(159, 211, 209);
+}
+
 
  body {
+     height: 100%;
+     margin: 0;
+
      display: flex;
+     background-color: #000000;
      flex-direction: column;
-     font-family: 'Inter', sans-serif;
+     font-family: 'Inconsolata', monospace;
      color: rgb(255, 255, 255);
      background-image: url('./images/jgf35.jpg');
      background-repeat: no-repeat;
@@ -87,15 +93,149 @@ html, body {
         min-height: calc(100vh - 60px); /* Adjust for navbar height */
         padding: 1rem;
         }
+
+  .hero {
+   max-width: 800px;
+   margin: 5rem auto;
+   padding: 0 2rem;
+   text-align: center;
+  }
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.hero-title .highlight {
+  display: block;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-intro {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/*   work section    */
+.work{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.work h5{
+    padding-top: 8em;
+    color: rgb(247, 247, 247);
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 0vh;
+    min-width: 14vw;
+}
+
+
+/*    mywork items   */
+.mywork {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2.4em;
+    padding-bottom: 1.5em;
+  }
+  
+  .flex-items {
+    display: flex;
+    flex-grow: 1 1 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    order: 0;
+    height: 300px;
+    margin: 0;
+    width: 100%;
+    max-width: 95vw;
+    padding-top: 1em;
+    margin-top: 1em;
+    min-width: 17vw;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: 300ms;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    ;
+  }
+
+  .flex-items:hover{
+    scale: 1.03;
+  }
+
+
+  .fl_ct{
+    padding: 1em;
+    overflow: hidden;
+    
+  }
+
+  .fl_ct h2{
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 0;
+  }
+  .fl_ct p{
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    font-weight: 400;
+}
+.mywork .flex-items:nth-child(1) {
+    background-image: url('./images/os b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    background-blend-mode: darken;
+
+}
+
+.mywork .flex-items:nth-child(2) {
+    background-image: url('./images/banda bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
+
+.mywork .flex-items:nth-child(3) {
+    background-image: url('/path/to/ca510.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.mywork .flex-items:nth-child(4) {
+    background-image: url('./images/habit bg.png');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
     
     .footer{
         background: #00000014; 
         backdrop-filter: blur(10px);
         padding: 1rem; 
         text-align: center; 
-        margin: auto;
-        bottom: 0; 
-        width: 100%;
+        margin:0;
+   
         font-size: 12px;
         font-weight: 400;
         color: fff;
@@ -109,12 +249,6 @@ html, body {
     }
 
 
-
-
-
-
-
-
     @media (max-width: 768px) {
       .nav-links {
       flex-direction: column;
@@ -124,6 +258,7 @@ html, body {
       top: 60px;
       left: 0;
       right: 0;
+      height: auto;
       padding: 0.5rem 1rem;
       transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
       max-height: 0;
