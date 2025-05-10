@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
- html, body {
-    height: 100%;
-    margin: 0;
- }
+ 
+html, body {
+     height: 100%;
+     margin: 0;
+   }
 
  body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Inter', sans-serif;
-    color: rgb(255, 255, 255);
-    background-image: url('./images/jgf35.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.418);
-    background-blend-mode: darken;
+     display: flex;
+     flex-direction: column;
+     font-family: 'Inter', sans-serif;
+     color: rgb(255, 255, 255);
+     background-image: url('./images/jgf35.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     background-color: rgba(0, 0, 0, 0.418);
+     background-blend-mode: darken;
     }
 
     .navbar {
@@ -22,6 +23,7 @@
       top: 0;
       z-index: 999;
       background: rgba(0, 0, 0, 0.134);
+      backdrop-filter: blur(13px);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -35,8 +37,8 @@
     }
 
     .nav-links {
+      height: 60px;
       display: flex;
-      backdrop-filter: blur(0px);
       gap: 1rem;
       font-size: 12px;
       align-items: center;
@@ -78,11 +80,14 @@
     }
 
     .main {
-    height: 2000px;
-    padding: 1rem;
-    margin-top: 60px; /* Adjust for navbar height */
-    }
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 60px); /* Adjust for navbar height */
+        padding: 1rem;
+        }
+    
     .footer{
         background: #00000014; 
         backdrop-filter: blur(10px);
@@ -99,6 +104,9 @@
         text-decoration: none;
         color: #a9acae;
     }
+    .footer a:hover{
+        color: #fff;
+    }
 
 
 
@@ -111,7 +119,7 @@
       .nav-links {
       flex-direction: column;
       background: #00000034;
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(13px);
       position: absolute;
       top: 60px;
       left: 0;

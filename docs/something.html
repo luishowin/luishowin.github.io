@@ -14,12 +14,13 @@
     <meta property="og:image" content="./images/smn.jpg" />
     <meta property="og:locale" content="en_GB" />
 
-    
+
 </head>
 
 <body>
   <header class="navbar">
     <div class="logo">Luis Howin</div>
+
     <button class="menu-toggle" onclick="toggleMenu()">
      <svg viewBox="0 0 20 12" xmlns="http://www.w3.org/2000/svg" stroke="#999" stroke-width="2" stroke-linecap="round">
       <line x1="0" y1="2" x2="20" y2="2" />
@@ -53,7 +54,101 @@
   </script>
 
   <main style="padding: 2rem;">
-    <p>Scroll down to test the sticky navbar.</p>
+    <h1>HABIT</h1>
+    <P>Home Automation Bridge for Intelligent Tasks <br> A local-first, LLM-native protocol and hardware ecosystem for controlling, understanding, and reasoning about smart devices.</P>
+    <br>
+    <h2>What is HABIT?</h2>
+    <p>HABIT is a lightweight system that connects physical devices to an offline AI brain (LLM), allowing users to control appliances, monitor environments, and receive intelligent feedback — all via natural language and JSON-based device schemas.
+        It's not just a smart home system. It's a context-aware, privacy-first automation platform with reasoning at its core.</p>
+    <br>
+    <h2>What Can HABIT Do?</h2>
+    <ol>
+        <li>Turn devices on/off or set modes using plain English</li>
+        <li>Understand device capabilities from JSON schemas</li>
+        <li>Monitor real-time sensor data and report insights</li>
+        <li>Forecast impact of user actions on energy usage</li>
+        <li> Generate natural-language monthly reports</li>
+        <li>Operate fully offline, with optional cloud backup</li>
+    </ol>
+
+    <br>
+    <h2>Example Use Cases</h2>
+    <ol>
+        <li> “Turn on the fan and set it to low.”</li>
+        <li> “Is the heater running?”</li>
+        <li>“What's the cost of running the AC every night this month?”</li>
+        <li>“Summarize my power usage this week.”</li>
+        <li>“Don't allow the oven to run longer than 2 hours.”</li>
+    </ol>
+    <br>
+    <h2> System Components</h2>
+    <p>Component	Description
+        Device Nodes	ESP32-based modules attached to appliances
+        HABIT Hub	Raspberry Pi or edge device hosting LLM + control logic
+        Protocol	JSON schema for describing devices, capabilities, and states
+        LLM Core	Local model (Mistral, Phi2, etc.) using schema for decision making
+        Security	Offline auth, role-based access, device pairing
+        Logging	Local logs + optional cloud backup via API/cron</p>
+    <br>
+    <h2>Getting Started</h2>
+    <p> Set up your HABIT Hub
+        Install dependencies (Python 3.10+, Llama.cpp/Ollama, Node-RED optional)<br>
+
+        
+        Flash a device node
+        Upload firmware to ESP32 + connect relays/sensors
+        
+        Create a device schema
+        Define device capabilities in JSON (schemas/fan_001.json)
+        
+        Run the local server
+        python hub/main.py
+        
+        Ask your LLM:
+        
+        “Is the fan on?”
+        “Turn off the heater after 10 minutes.”</p>
+    <p>HABIT
+
+    <h2>Security & Auth</h2>
+    <p>Role-based access (admin, guest, etc.)
+        Token or pin-based local auth
+        Optional fingerprint/NFC reader for identity</p>
+    <br>
+
+    <h2>Connectivity</h2>
+    <p>  Offline-first, local-only operations
+        Wi-Fi or Zigbee/BLE device discovery
+        Optional cloud sync for logs or OTA updates</p>
+    <br>
+
+    <h2>Roadmap</h2>
+    <ul>
+        <li>HABIT Protocol v1.0 spec</li>
+        <li>Plug-and-play schema autodiscovery</li>
+        <li>Energy cost forecasting model</li>
+        <li>Home rules engine (e.g., “never turn on oven when nobody’s home”)</li>
+        <li>Mobile app / Dashboard UI</li>
+        <li>Encrypted cloud backup module</li>
+    </ul>
+    <br>
+
+    <h2>License</h2>
+    <p>MIT — open-source and free for all tinkerers, researchers, and rebels.</p>
+    <br>
+
+    <h2>Contributing</h2>
+    <p>Pull requests welcome. Open an issue, fork the repo, and help shape the next evolution of intelligent environments.</p>
+    <br>
+
+    <h2>Links(Not populated yet)</h2>
+    <ul>
+        <li><a href="#">Project Wiki (soon)</a></li>
+        <li><a href="#">Community Discord (soon)</a></li>
+        <li><a href="#">Device schema examples</a></li>
+        <li><a href="#">HABIT Protocol Docs</a></li>
+    </ul>
+    <br>
   </main>
 
 
