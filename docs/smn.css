@@ -1,12 +1,14 @@
  body {
-      margin: 0;
-      font-family: sans-serif;
-       background-image: url('./images/jgf35.jpg');
-       background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.75);
-    background-blend-mode: darken;
+     height: 1000px;
+     margin: 0;
+     font-family: 'Inter', sans-serif;
+     color: rgb(255, 255, 255);
+     background-image: url('./images/jgf35.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     background-color: rgba(0, 0, 0, 0.418);
+     background-blend-mode: darken;
     }
 
     .navbar {
@@ -14,17 +16,16 @@
       top: 0;
       z-index: 999;
       backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(0, 0, 0, 0.134);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 1rem;
       height: 60px;
-      border-bottom: 1px solid #ddd;
     }
 
     .logo {
-      font-weight: bold;
+      font-weight: 600px;
       font-size: 13px;
     }
 
@@ -40,13 +41,13 @@
     
 
     .nav-links.show {
-    max-height: 500px; /* Adjust based on content height */
-    opacity: 1;
-  }
+     max-height: 500px; /* Adjust based on content height */
+     opacity: 1;
+    }
 
     .nav-links a {
       text-decoration: none;
-      color: #333;
+      color: #ffffff;
     }
 
     .search {
@@ -74,6 +75,16 @@
     height: 2000px;
     padding: 1rem;
     margin-top: 60px; /* Adjust for navbar height */
+    }
+
+    .footer{
+        background: #00000014; 
+        backdrop-filter: blur(10px);
+        padding: 1rem; 
+        text-align: center; 
+        margin: auto;
+        bottom: 0; 
+        width: 100%;
     }
 
     @media (max-width: 768px) {

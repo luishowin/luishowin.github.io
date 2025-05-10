@@ -27,7 +27,7 @@
       <a href="#">Contact</a>
     
       <div class="search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
            <circle cx="11" cy="11" r="8"></circle>
            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
@@ -47,11 +47,17 @@
   </main>
 
 
-    <footer style="background: #f8f8f8; padding: 1rem; text-align: center; position: fixed; bottom: 0; width: 100%;"></footer>
-        <p>&copy; <span id="currentYear"></span> Luis Howin. All rights reserved.</p>
-        <script>
-          document.getElementById('currentYear').textContent = new Date().getFullYear();
-        </script>
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+            <p>&copy;<span id="currentYear"></span> Luis Howin Maina. All rights reserved.</p>
+            <script>
+              document.getElementById('currentYear').textContent = new Date().getFullYear();
+            </script>
+        </div>
     </footer>
+        
 </body>
 </html>
