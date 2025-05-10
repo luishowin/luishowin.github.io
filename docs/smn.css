@@ -141,6 +141,7 @@ body {
     margin: 0;
     width: 100%;
     padding-top: 1em;
+    padding-bottom: 1em;
     margin-top: 1em;
     overflow: hidden;
     transition: 300ms;
@@ -160,13 +161,13 @@ body {
     overflow: hidden;
   }
 
-  .fl_ct h2{
-    color: white;
-    font-size: 1em;
+.fl_ct h2{
+    color: rgb(255, 119, 46);
+    font-size: 1.5em;
     font-weight: 600;
     margin-top: 0;
   }
-  .fl_ct p{
+.fl_ct p{
     color: rgb(255, 255, 255);
     font-size: 1em;
     font-weight: 400;
@@ -175,34 +176,40 @@ body {
     background-image: url('./images/os b.jpg');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.8);
     background-blend-mode: darken;
-
+    backdrop-filter: blur(10px);
 }
 
 .mywork .flex-items:nth-child(2) {
     background-image: url('./images/banda bg.jpg');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     background-blend-mode: darken;
+    backdrop-filter: blur(10px);
 }
 
 .mywork .flex-items:nth-child(3) {
-    background-image: url('/path/to/ca510.jpg');
+    background-image: url('./images/HABIT.jpg');
     background-size: cover;
     background-position: center;
+     background-color: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+    backdrop-filter: blur(10px);
 }
 
 .mywork .flex-items:nth-child(4) {
     background-image: url('./images/habit bg.png');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     background-blend-mode: darken;
+    backdrop-filter: blur(10px);
 }
-    
-    .footer{
+
+
+.footer{
         background: #00000014; 
         backdrop-filter: blur(10px);
         padding: 1rem; 
@@ -221,10 +228,12 @@ body {
         color: #fff;
     }
 
+    
+/*   media queries   */
+@media (max-width: 768px) {
 
-    @media (max-width: 768px) {
       .body {
-             background-size: auto;
+             background-size: cover;
       }
       .nav-links {
       flex-direction: column;
