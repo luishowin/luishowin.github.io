@@ -122,7 +122,7 @@ body {
 
 .hero-intro {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1;
   color: rgba(255, 255, 255, 0.92);
   max-width: 700px;
   margin: 0 auto;
@@ -239,7 +239,6 @@ body {
         padding: 1rem; 
         text-align: center; 
         margin:0;
-   
         font-size: 12px;
         font-weight: 400;
         color: fff;
