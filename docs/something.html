@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom SVG Navbar</title>
+  <link rel="stylesheet" href="smn.css">
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Luis Howin</div>
+    <button class="menu-toggle" onclick="toggleMenu()">
+     <svg viewBox="0 0 20 12" xmlns="http://www.w3.org/2000/svg" stroke="#333" stroke-width="2" stroke-linecap="round">
+      <line x1="0" y1="2" x2="20" y2="2" />
+      <line x1="0" y1="10" x2="20" y2="10" />
+     </svg>
+    </button>
+
+    <nav class="nav-links" id="navMenu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Blog</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+           <circle cx="11" cy="11" r="8"></circle>
+           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+    </nav>
+
+  </header>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+  </script>
+
+  <main style="padding: 2rem;">
+    <p>Scroll down to test the sticky navbar.</p>
+  </main>
+
+
+    <footer style="background: #f8f8f8; padding: 1rem; text-align: center; position: fixed; bottom: 0; width: 100%;"></footer>
+        <p>&copy; <span id="currentYear"></span> Luis Howin. All rights reserved.</p>
+        <script>
+          document.getElementById('currentYear').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+</html>

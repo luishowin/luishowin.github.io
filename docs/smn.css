@@ -1,0 +1,106 @@
+ body {
+      margin: 0;
+      font-family: sans-serif;
+       background-image: url('./images/jgf35.jpg');
+       background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    background-blend-mode: darken;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      height: 60px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 12px;
+      align-items: center;
+      opacity: 1; /* Ensure visible by default */
+      max-height: none; /* Ensure no height restriction by default */
+      overflow: visible;
+    }
+    
+
+    .nav-links.show {
+    max-height: 500px; /* Adjust based on content height */
+    opacity: 1;
+  }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .search {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+    }
+
+    .menu-toggle svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .main {
+    height: 2000px;
+    padding: 1rem;
+    margin-top: 60px; /* Adjust for navbar height */
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.95);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid #ccc;
+      padding: 0.5rem 1rem;
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .search {
+        display: none;
+      }
+    }

@@ -16,7 +16,12 @@
     padding-top: 9em;
     width: 60%; 
     margin-left: auto; 
-    margin-right: auto;    
+    margin-right: auto;
+    background-image: url('./images/jgf35.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: darken;    
 }
 
 .header p{
@@ -139,14 +144,14 @@
   }
   .fl_ct p{
     color: rgb(255, 255, 255);
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 500;
 }
 .m_col .flex-items:nth-child(1) {
     background-image: url('./images/os b.jpg');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.75);
     background-blend-mode: darken;
 
 }
