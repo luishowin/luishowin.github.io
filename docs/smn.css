@@ -117,13 +117,13 @@ body {
   display: block;
   font-weight: 400;
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.925);
 }
 
 .hero-intro {
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.92);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -147,6 +147,9 @@ body {
     transition: 300ms;
     background-repeat: no-repeat;
     background-size: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    background-blend-mode: darken;
+    backdrop-filter: blur(10px);
     ;
   }
 
@@ -157,13 +160,13 @@ body {
 
 
   .fl_ct{
-    padding: 1em;
+    padding: 2.3em;
     overflow: hidden;
   }
 
 .fl_ct h2{
     color: rgb(255, 119, 46);
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 600;
     margin-top: 0;
   }
@@ -176,7 +179,7 @@ body {
     background-image: url('./images/os b.jpg');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.92);
     background-blend-mode: darken;
     backdrop-filter: blur(10px);
 }
@@ -185,7 +188,7 @@ body {
     background-image: url('./images/banda bg.jpg');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.92);
     background-blend-mode: darken;
     backdrop-filter: blur(10px);
 }
@@ -194,7 +197,7 @@ body {
     background-image: url('./images/HABIT.jpg');
     background-size: cover;
     background-position: center;
-     background-color: rgba(0, 0, 0, 0.8);
+     background-color: rgba(0, 0, 0, 0.92);
     background-blend-mode: darken;
     backdrop-filter: blur(10px);
 }
@@ -203,12 +206,33 @@ body {
     background-image: url('./images/habit bg.png');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.92);
     background-blend-mode: darken;
     backdrop-filter: blur(10px);
 }
 
 
+/* CTA */
+.cta {
+  padding: 2.3em;
+}
+.cta h2 {
+  color: rgb(255, 119, 46);
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: 0;
+}
+.cta a{
+  text-decoration: none;
+  color: #fff;
+}
+.cta a:hover{
+  color: #ff7f2e;
+  text-decoration: underline;
+}
+
+
+/*     footer section    */
 .footer{
         background: #00000014; 
         backdrop-filter: blur(10px);
@@ -226,9 +250,9 @@ body {
     }
     .footer a:hover{
         color: #fff;
-    }
+}
 
-    
+
 /*   media queries   */
 @media (max-width: 768px) {
 

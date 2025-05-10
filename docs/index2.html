@@ -75,13 +75,15 @@
       <div class="flex-items">
             <div class="fl_ct">
                 <h2>001 Something OS</h2>
-                <p>Inspired by <a style="text-decoration: none; color: rgb(147, 147, 147);" href="https://intl.nothing.tech/" target="_blank">Nothing</a> OS, Something OS is a custom android ROM aims at minimalism and a brutal style to the UI.</p>
+                <p>Inspired by <a style="text-decoration: none; color: rgb(255, 255, 255);" href="https://intl.nothing.tech/" target="_blank">Nothing</a> OS, 
+                  <br>Something OS is a custom android ROM aims at minimalism and a brutal style to the UI.</p>
             </div>
       </div>
       <div class="flex-items">
             <div class="fl_ct">
                 <h2>002 Banda</h2>
-                <p>A linux theme kit. From app icons, docks,notification icons and animations. Assets that bring a feeling of home in the stormy sea of linux.</p>
+                <p>A linux theme kit. From app icons, docks,notification icons and animations. 
+                <br>Assets that bring a feeling of home in the stormy sea of linux.</p>
             </div>
       </div>
 
@@ -89,7 +91,8 @@
             <div class="bg_image"></div>
             <div class="fl_ct">
                 <h2>003     F-91W.X</h2>
-                <p>A watch face inspired by the famous Casio F-91W, a tried and accepted classic watch. Apart from the looks there's more under the hood.</p>
+                <p>A watch face inspired by the famous Casio F-91W, a tried and accepted classic watch. 
+                  <br>Apart from the looks there's more under the hood.</p>
             </div>   
       </div>
 
@@ -97,20 +100,38 @@
             <div class="bg_image"></div>
             <div class="fl_ct">
                 <h2>004 HABIT</h2>
-                <p>A local-first, LLM-native protocol and hardware ecosystem for controlling, understanding, and reasoning about smart devices.</p>
+                <p>A local-first, LLM-native protocol and hardware ecosystem. 
+                  <br>A new* Ai x Hardware interface system.</p>
             </div>   
       </div>
-    </div>
+</div>
 
+<!-- CTA -->
     <div class="cta">
-        <h2>Let's build something together</h2>
-        <p>If you like what you see <br> and would like to work together, <br> send a 'hey' at: </p>
-        <h1>howin329@gmail.com</h1>
+        <h2>00X Let's work together</h2>
+        <p>Like what you see? 
+          <br>send a 'Hey' at </p>
+          <p class="copy-text" onclick="copyToClipboard(this)">Click me to copy this text!</p>
+
+          <script>
+            function copyToClipboard(element) {
+              const text = element.innerText;
+              navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+              }).catch(err => {
+                console.error('Failed to copy: ', err);
+              });
+            }
+          </script>
+
+        </p>
+
+    
     </div>
-  </main>
+</main>
 
 <!--  footer  -->
-  <footer class="footer">
+<footer class="footer">
         <div class="footer-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
@@ -121,7 +142,7 @@
               document.getElementById('currentYear').textContent = new Date().getFullYear();
             </script>
         </div>
-  </footer>
+</footer>
         
 </body>
 </html>
