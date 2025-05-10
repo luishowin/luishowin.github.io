@@ -10,7 +10,6 @@
  body {
      height: 100%;
      margin: 0;
-
      display: flex;
      background-color: #000000;
      flex-direction: column;
@@ -18,12 +17,15 @@
      color: rgb(255, 255, 255);
      background-image: url('./images/jgf35.jpg');
      background-repeat: no-repeat;
-     background-size: cover;
-     background-position: center;
+     background-size: contain;
+     background-position: top center;
      background-color: rgba(0, 0, 0, 0.418);
      background-blend-mode: darken;
+    
     }
 
+
+ /*   navigation section    */
     .navbar {
       position: sticky;
       top: 0;
@@ -85,25 +87,26 @@
       height: 100%;
     }
 
+    /*   main section    */
     .main {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         min-height: calc(100vh - 60px); /* Adjust for navbar height */
-        padding: 1rem;
+        
         }
 
   .hero {
-   max-width: 800px;
+   max-width: 100vw;
    margin: 5rem auto;
    padding: 0 2rem;
-   text-align: center;
+   text-align: center;  
   }
 
 .hero-title {
   font-size: 3rem;
-  line-height: 1.2;
+  line-height: 2;
   font-weight: 700;
   color: white;
   margin-bottom: 2rem;
@@ -112,12 +115,12 @@
 .hero-title .highlight {
   display: block;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.85);
 }
 
 .hero-intro {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
   max-width: 700px;
@@ -178,6 +181,7 @@
 
   .flex-items:hover{
     scale: 1.03;
+    cursor: pointer;
   }
 
 
@@ -250,6 +254,9 @@
 
 
     @media (max-width: 768px) {
+      .body {
+             background-size: auto;
+      }
       .nav-links {
       flex-direction: column;
       background: #00000034;
