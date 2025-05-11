@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+/*    globals for highlighting text  */
+::selection{
+    color: rgb(17, 21, 23);
+    background: rgb(159, 211, 209);
+}
+ 
+* {
+        margin: 0;
+}
+
+body {
+        font-family: 'Inconsolata', monospace;
+        background-color: #f4f4f4;
+        color: #000000;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        overflow-x: hidden;
+}
+
+.hero {
+    width: 100vw;
+    height: 400px;
+    background-image: url('./images/plce.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  
+    
+}
+.hero h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 3rem 3rem;
+  
+}
+.hero p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: white;
+    padding: 0rem 3rem;
+}   
+.hero a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem 3rem;
+}
+.hero a:hover {
+    text-decoration: underline;
+}

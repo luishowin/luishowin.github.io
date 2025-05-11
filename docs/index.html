@@ -141,25 +141,26 @@
   <!-- scroll animation script -->
   <script>
     function revealOnScroll() {
-  const reveals = document.querySelectorAll('.reveal');
+     const reveals = document.querySelectorAll('.reveal');
 
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    const revealPoint = 100; // how early to trigger (px from bottom)
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const revealPoint = 100; // how early to trigger (px from bottom)
 
     if (elementTop < windowHeight - revealPoint) {
       el.classList.add('active');
     } else {
       el.classList.remove('active'); // optional: remove if you want it to reset
     }
-  });
+    });
 }
 
 window.addEventListener('scroll', revealOnScroll);
 
   </script>
 
+  <!-- clickable item script -->
   <script>
     const clickableItem = document.querySelector('.clickable-item');
     if (clickableItem) {
