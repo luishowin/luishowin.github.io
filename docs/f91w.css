@@ -60,9 +60,11 @@ nav a{
 .nav-links {
       display: flex;
       gap: 1rem;
+      backdrop-filter: blur(25px);
     }
 .nav-links.active {
       width: 100%;
+      backdrop-filter: blur(25px);
       max-height: 500px; /* Adjust based on content height */
       display: flex;
       opacity: 1;
@@ -70,11 +72,11 @@ nav a{
       align-content: center;
       flex-direction: column;
       position: absolute;
-      top: 48.8px; /* Adjust based on navbar height */
+      top: 50px; /* Adjust based on navbar height */
       right: 0;
-      background: rgba(0, 0, 0, 0.142);
-      backdrop-filter: blur(13px);
+      background-color: rgba(0, 0, 0, 0.132);
       padding: 1rem;
+      backdrop-filter: blur(25px);
       
     }
 
@@ -93,13 +95,14 @@ nav a{
       display: none;
       flex-direction: column;
       cursor: pointer;
+      height: fit-content;
     }
 
     .hamburger span {
-      height: 2px;
+      height: 3px;
       width: 20px;
       background: #ffffffca;
-      margin-bottom: 3px;
+      margin: 3px 0px;
       border-radius: 3px;
       transition: 0.3s;
     }
