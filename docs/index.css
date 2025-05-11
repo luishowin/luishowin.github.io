@@ -60,7 +60,6 @@ nav a{
 .nav-links {
       display: flex;
       gap: 1rem;
-      backdrop-filter: blur(25px);
     }
 .nav-links.active {
       width: 100%;
