@@ -1,116 +1,420 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HABIT</title>
-    <meta name="author" content="Luis Maina">
-    <meta property="og:title" content="HABIT" />
-    <meta property="og:description" content="Let's build something together."/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://luishowin.github.io/" />
-    <meta property="og:image" content="./HABIT.jpg" />
-    <meta property="og:locale" content="en_GB" />
-    <link rel="icon" href="./images/icon.png">
-    <link rel="stylesheet" href="habit.css">
-
     <style>
-    body {
-      font-family: monospace;
-      color: #1e1e1e;
-      margin: 0;
-      padding: 2rem 4rem;
-      line-height: 1.6;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .note {
+            background-color: #fffae6;
+            border-left: 6px solid #ffeb3b;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        h1, h2, h3 {
+      color: #1a202c;
     }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+
     h1 {
       font-size: 2rem;
-      margin: 0.5rem 0;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 1rem;
     }
-    section {
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 1.2rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    pre {
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      overflow-x: auto;
+      white-space: pre;
+      font-family: monospace;
+    }
+
+    .highlight {
+      background-color: #eef;
+      padding: 0.5rem;
+      border-left: 4px solid #00f;
+      margin: 1rem 0;
+    }
+
+    .section {
       margin-bottom: 2rem;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 1rem auto;
+
+    .code-block {
+      background: #f0f0f0;
+      padding: 1rem;
+      font-family: monospace;
+      white-space: pre;
+      overflow-x: auto;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
-    code {
-      background: #eee;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      display: inline-block;
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+    </style>
 </head>
+<!--
+  This HTML document serves as a technical overview of the HABIT protocol, 
+  detailing its core concept, key differentiators, and implementation steps.
+  It is structured with sections for clarity and includes code snippets 
+  and examples to illustrate the protocol's functionality. -->
+
 <body>
-  <header>
-    <h1>HABIT</h1>
-    <p>Home Automation Bridge for Intelligent Tasks</p>
-  </header>
+    <h1>HABIT: Habitat Automation Bridge for Intelligent Tasks</h1>
+
+    <section>
+        <h2>Core Concept</h2>
+        <p>A modular, LLM-driven software interface protocol designed to control and manage smart spaces. It acts as a bridge between human intent, AI reasoning (via LLMs), and physical actions in smart environments.</p>
+    </section>
+
+    <section>
+        <h2>Key Differentiators from Existing Protocols</h2>
+        <ul>
+            <li><strong>Human-Style Reasoning Priority:</strong> Designed for LLMs to understand and interact with devices in a way that aligns with natural human thought.</li>
+            <li><strong>LLM-Friendly Data Structures:</strong> Utilizes JSON with descriptive metadata, making it easier for LLMs to parse and reason about device capabilities and states.</li>
+            <li><strong>Advanced Capabilities:</strong> Supports contextual awareness, sensor feedback, predictive analytics, and natural language commands, going beyond basic on/off control.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>What HABIT Enables</h2>
+        <ul>
+            <li><strong>Direct LLM Device Control:</strong> Users can give natural language commands directly to the system (e.g., "Turn on the fan and set it to medium.").</li>
+            <li><strong>Context-Based Responses:</strong> The system can provide intelligent responses based on the current state and context of devices (e.g., "Is the fan running?" → "Yes, motion is detected.").</li>
+            <li><strong>Predictive Insights:</strong> LLMs can analyze data to provide forecasts and answer "what-if" questions (e.g., "How will running the AC for 3 hours each night affect my power bill?").</li>
+            <li><strong>Natural Language Reporting:</strong> The system can generate summaries and reports in plain language (e.g., "Summarize this month’s power usage.").</li>
+        </ul>
+    </section>
 
   <section>
-    <h2>What is HABIT?</h2>
-    <p>
-      HABIT is a lightweight, local-first smart home system that connects devices to an offline AI brain (LLM), allowing natural language control and automation. It uses structured JSON requests to interact with various modular services.
-    </p>
+      <h2>How to Build HABIT</h2>
+      <ol>
+          <li><strong>Define the Protocol Specification:</strong>
+              <ul>
+                  <li>JSON-based schema with core sections: <code>device_id</code>, <code>capabilities</code>, <code>state</code>, <code>actions</code>, <code>energy_profile</code>.</li>
+                  <li>Include <code>descriptions</code> and <code>friendly_names</code> for LLM parsing.</li>
+                  <li>Optional blocks: <code>forecast_models</code>, <code>auth</code>, etc.</li>
+              </ul>
+          </li>
+          <li><strong>Build Sample Devices or Simulators:</strong>
+              <ul>
+                  <li>Use ESP32/Arduino to simulate devices exposing the defined schema over BLE/Wi-Fi.</li>
+                  <li>Develop a reference application to discover devices and render controls.</li>
+              </ul>
+          </li>
+          <li><strong>Interface with an LLM:</strong>
+              <ul>
+                  <li>Feed the device schema to the LLM as context.</li>
+                  <li>Send user commands in natural language.</li>
+                  <li>Receive structured JSON as instructions from the LLM.</li>
+              </ul>
+          </li>
+          <li><strong>Start with Energy Feedback + Reporting:</strong>
+              <ul>
+                  <li>Record power usage per device.</li>
+                  <li>Implement cost forecasting logic accessible to the LLM.</li>
+              </ul>
+          </li>
+      </ol>
   </section>
 
-  <section>
-    <h2>What Can HABIT Do?</h2>
+    <section>
+        <h2>Initial Protocol Specification (v0.1)</h2>
+        <ul>
+            <li><strong>Overview:</strong> Lightweight, LLM-optimized JSON protocol for smart device interaction.</li>
+            <li><strong>Device Schema (Required Fields):</strong>
+                <ul>
+                    <li><code>device_id</code>: Unique string identifier.</li>
+                    <li><code>name</code>: Human-readable name.</li>
+                    <li><code>description</code>: Short device description.</li>
+                    <li><code>capabilities</code>: Map of controllable/sensor features (type, values/range, description, <code>friendly_names</code>).</li>
+                    <li><code>state</code>: Current device state.</li>
+                </ul>
+            </li>
+            <li><strong>Energy Profile (Optional):</strong> <code>unit</code>, <code>average_usage</code> (per capability level), <code>cost_per_kwh</code>.</li>
+            <li><strong>Intent Forecasting (Optional):</strong> <code>intent</code>, <code>device_id</code>, <code>params</code> (including duration, recurrence, timespan).</li>
+            <li><strong>Authentication (Optional):</strong> <code>required</code>, <code>methods</code>, <code>access_control</code> (roles and allowed capabilities).</li>
+            <li><strong>Monthly Reporting:</strong> <code>device_id</code>, <code>total_kwh</code>, <code>estimated_cost</code>, <code>breakdown</code> (usage per level), <code>peak_hours</code>.</li>
+            <li><strong>Example LLM Output:</strong> Demonstrates how the LLM responds to user input with structured JSON and natural language.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>System Breakdown for Offline, Secure, and LLM-Integrated HABIT</h2>
+        <ol>
+            <li><strong>Hardware Interface Layer (Device-Attached Nodes):</strong>
+                <ul>
+                    <li><strong>Function:</strong> Sense device state and control devices. Communicate with the central hub.</li>
+                    <li><strong>Ideal Board:</strong> ESP32 (Wi-Fi, BLE, compute, GPIO).</li>
+                    <li><strong>Communication:</strong> Exposes <code>schema.json</code> over local protocols (HTTP, MQTT, custom serial).</li>
+                </ul>
+            </li>
+            <li><strong>Central Hub / Edge Server (Brain):</strong>
+                <ul>
+                    <li><strong>Function:</strong> Gathers data, issues commands, runs the local LLM, handles authentication.</li>
+                    <li><strong>Suggested Hardware:</strong> Raspberry Pi 5 or equivalent mini-PC.</li>
+                    <li><strong>Suggested Stack:</strong>
+                        <ul>
+                            <li>Node-RED or custom Python service for device interface.</li>
+                            <li>Embedded vector DB (SQLite, Chroma) for memory/logs.</li>
+                            <li>LLM runtime (Llama.cpp or Ollama with Mistral/phi2-style models).</li>
+                            <li>Local dashboard UI (React + Tailwind frontend).</li>
+                            <li>ZeroTier or Tailscale for optional secure remote access.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Authentication & Security System:</strong>
+                <ul>
+                    <li><strong>Requirements:</strong> Offline operation, secure identities and roles.</li>
+                    <li><strong>Auth Core:</strong> JWT-based local tokens or file-based key store.</li>
+                    <li><strong>Access Control:</strong> List per device.</li>
+                    <li><strong>Device Pairing:</strong> Physical button press + token exchange.</li>
+                    <li><strong>Optional:</strong> Biometric modules (fingerprint, NFC).</li>
+                </ul>
+            </li>
+            <li><strong>Logging & Backup:</strong>
+                <ul>
+                    <li><strong>Local Storage:</strong> JSON log files or SQLite DB.</li>
+                    <li><strong>Optional Cloud Backup:</strong> Daily/weekly uploads via rsync or API push to Dropbox, S3, or a private server.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+<section>
+    <h2>How a Device Connects</h2>
     <ul>
-      <li>Turn devices on/off or set modes using plain English</li>
-      <li>Understand device capabilities from JSON schemas</li>
-      <li>Monitor real-time sensor data and report insights</li>
-      <li>Forecast energy usage impact</li>
-      <li>Generate monthly natural language reports</li>
-      <li>Operate fully offline with optional cloud sync</li>
-    </ul>
-  </section>
+        <li>On boot, the device advertises itself over local Wi-Fi.</li>
+        <li>The hub sends a <code>GET /device-schema</code> request to retrieve <code>schema.json</code>.</li>
 
-  <section>
-    <h2>Architecture Overview</h2>
-    <img src="A_flowchart_diagram_in_digital_vector_graphic_form.png" alt="HABIT Architecture Diagram" />
-    <p>
-      LLM processes natural language, emits structured JSON requests, and communicates with:
-      <ul>
-        <li><strong>Web Services:</strong> Search, weather APIs, etc.</li>
-        <li><strong>Device Manager:</strong> ESP32 modules, appliance control</li>
-        <li><strong>Local Tools:</strong> Storage, energy forecast, rule engine</li>
-        <li><strong>Cloud Sync:</strong> Logs, OTA updates (optional)</li>
-      </ul>
-    </p>
-  </section>
-
-  <section>
-    <h2>Security & Access</h2>
+ <div class="section">
+    <h2>How a Device Connects</h2>
     <ul>
-      <li>Role-based access (admin, guest)</li>
-      <li>Token/pin-based local auth</li>
-      <li>Optional NFC/fingerprint auth</li>
-      <li>HMAC signing, audit logs, tool sandboxing</li>
+      <li>On boot, the device advertises itself over local Wi-Fi.</li>
+      <li>The hub sends a <code>GET /device-schema</code> request to retrieve <code>schema.json</code>.</li>
+      <li>The hub adds the device to its internal list and updates its control map for the LLM.</li>
+      <li>Commands are sent via:
+        <ul>
+          <li><strong>HTTP:</strong> <code>POST /set</code> with JSON payload.</li>
+          <li><strong>MQTT:</strong> to a specific topic with a JSON payload.</li>
+        </ul>
+      </li>
     </ul>
-  </section>
+  </div>
 
-  <section>
-    <h2>Roadmap</h2>
+  <div class="section">
+    <h2>Prototype Kit: What to Build First</h2>
     <ul>
-      <li>Protocol v1.0 spec</li>
-      <li>Schema autodiscovery</li>
-      <li>Energy forecasting</li>
-      <li>Rules engine for automation</li>
-      <li>Mobile/web dashboard</li>
-      <li>Encrypted cloud sync</li>
+      <li><strong>Node Controller:</strong> ESP32, relay, current sensor, DHT22, IR blaster.</li>
+      <li><strong>Central Hub:</strong> Raspberry Pi 5, microSD, SSD, fan.</li>
+      <li><strong>Comms:</strong> Local Wi-Fi or Zigbee dongle.</li>
+      <li><strong>Software:</strong> Python service, local JSON schemas, LLM model.</li>
+      <li><strong>Auth:</strong> Local keypair, fingerprint scanner (optional).</li>
     </ul>
-  </section>
+  </div>
+
+  <div class="section">
+    <h2>Multi-Interface Strategy for HABIT</h2>
+    <ol>
+      <li><strong>Terminal Access via SSH:</strong> CLI commands and custom TUIs.</li>
+      <li><strong>Local Web Dashboard (Mini OS):</strong> React + Express/FastAPI + WebSocket served from hub.</li>
+      <li><strong>Mobile App:</strong> React Native over LAN IP, optional PWA.</li>
+      <li><strong>Future Cloud Sync Server:</strong> For backups and remote access.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>Next Steps Checklist (Tools)</h2>
+    <ul>
+      <li><strong>Backend:</strong> FastAPI or Node.js</li>
+      <li><strong>Frontend:</strong> React + Tailwind</li>
+      <li><strong>System metrics:</strong> psutil or node-os-utils</li>
+      <li><strong>Terminal UI:</strong> Textual or Blessed</li>
+      <li><strong>Mobile app:</strong> React Native or Flutter</li>
+      <li><strong>WebSocket:</strong> Socket.IO or FastAPI WebSockets</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>HABIT System Architecture Diagram</h2>
+    <pre class="code-block">
++-------------------+         +------------------+
+|    Mobile App     | <------> |    Web Server    |
+|   (React Native)  |         | (FastAPI/Express)|
++-------------------+         |     on Hub       |
+        ↑                   +------------------+
+        |                           ↑
+        |     WebSocket/API         |
+        v                           |
++-------------------+ <-------- +-------------+
+|   Web Dashboard   |           |             |
+|    (React PWA)    |           |  HABIT Hub  | <== SSH Terminal
++-------------------+           | (RPi/MiniPC)|
+                                |             |
+                                |  ┌────────┐ |
+                                |  │  LLM   │ |
+                                |  └────────┘ |
+                                |      ↑      |
+                                |      |      |
+                                |   Device    |
+                                |   Manager   | <== Local JSON Schemas
+                                |      ↑      |
+                                |      |      |
+                            +---+--+--+--+--+
+                            |   |  |  |  |
+                            |   |  |  |  +-----------------+
+                            |   |  |  +-------------------+ Device Node
+                            |   |  +---------------------+ (e.g., Fan/Heater)
+                            |   +-----------------------+ (ESP32)
+                            +-------------------------+
+
+Optional:
++----------------------+     Periodic backup     +------------------+
+|    Cloud Backup      | <---------------------> |   Sync Service   |
+| (S3, Dropbox, FTP)   |                         | (Push logs/files)|
++----------------------+                         +------------------+
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>Strengths of HABIT</h2>
+    <ul>
+      <li><strong>Offline-first:</strong> Enhances privacy and security.</li>
+      <li><strong>JSON-based schemas:</strong> Promotes scalability and transparency.</li>
+      <li><strong>Natural language interface:</strong> Reduces UI dependencies.</li>
+      <li><strong>Role-based security:</strong> Good for shared environments.</li>
+      <li><strong>Extensible hub model:</strong> Runs on various hardware.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Risks to Watch</h2>
+    <ul>
+      <li><strong>LLM footprint:</strong> May overload a Pi if not optimized.</li>
+      <li><strong>Schema standardization:</strong> Not trivial for wide adoption.</li>
+      <li><strong>Edge-case chaos:</strong> Ambiguous command handling is risky.</li>
+      <li><strong>Overpromising:</strong> "Reasoning" might backfire if trust breaks.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Additions Worth Exploring</h2>
+    <ul>
+      <li>CLI companion tool.</li>
+      <li>Simulated mode for dry runs.</li>
+      <li>"Skills" plugin system with LLM-readable descriptors.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>LLM Core and Tool Execution Layer</h2>
+    <ul>
+      <li><strong>LLM Core:</strong> Local natural language to structured JSON tool calls.</li>
+      <li><strong>Orchestrator:</strong> Routes requests to:
+        <ul>
+          <li>Web Services (search, news, etc.)</li>
+          <li>Device Manager (ESP32 nodes)</li>
+          <li>Local services (storage, forecasts, logs)</li>
+          <li>Cloud Sync (optional)</li>
+        </ul>
+      </li>
+      <li><strong>Unified JSON Protocol:</strong> Central source of truth for tools and states.</li>
+      <li><strong>Multi-platform UI:</strong> Web, mobile, CLI, voice, terminal.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Recommended Features</h2>
+    <ul>
+      <li>Schema registry and versioning.</li>
+      <li>Sandboxed execution for tools.</li>
+      <li>Retry logic and rate limiting.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Security Hardening Ideas</h2>
+    <ul>
+      <li>HMAC-signed tool requests.</li>
+      <li>Audit logs for all LLM actions.</li>
+      <li>LLM "Jail Mode" for restricted users.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Training Ideas</h2>
+    <ul>
+      <li>Fine-tuning or synthetic data for smart home tasks and debugging.</li>
+    </ul>
+  </div>
+</ul>
+</section>
 </body>
 </html>
