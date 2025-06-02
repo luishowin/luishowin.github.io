@@ -129,51 +129,46 @@
             </script>
         </div>
 </footer>
-  <!-- navbar automation script  -->
-  <script>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    // Navbar toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-
-
-  <!-- scroll animation script -->
-  <script>
-    function revealOnScroll() {
-     const reveals = document.querySelectorAll('.reveal');
-
-    reveals.forEach(el => {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
-      const revealPoint = 100; // how early to trigger (px from bottom)
-
-    if (elementTop < windowHeight - revealPoint) {
-      el.classList.add('active');
-    } else {
-      el.classList.remove('active'); // optional: remove if you want it to reset
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
     }
-    });
-}
 
-window.addEventListener('scroll', revealOnScroll);
+    // Reveal on scroll
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 100;
 
-  </script>
+        if (elementTop < windowHeight - revealPoint) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
 
-  <!-- clickable item script -->
-  <script>
+    // Clickable item for HABIT
     const clickableItem = document.querySelector('.clickable-item');
     if (clickableItem) {
-      clickableItem.addEventListener('click', function() {
+      clickableItem.addEventListener('click', function () {
         window.location.href = 'habit';
       });
-  
-      // Optional: Add a cursor style to indicate it's clickable
       clickableItem.style.cursor = 'pointer';
     }
-  </script>
+  });
+</script>
+
 
 </body>
 </html>
