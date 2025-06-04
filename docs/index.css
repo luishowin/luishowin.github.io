@@ -74,7 +74,7 @@ nav a{
       background-color: rgba(0, 0, 0, 0.132);
       padding: 1rem;
       backdrop-filter: blur(25px);
-    }
+}
 
     .nav-links a {
       text-decoration: none;
@@ -148,10 +148,10 @@ nav a{
     width: 100%;
     padding-bottom:1em;
     overflow: hidden;
-  }
+}
 
 
-  .flex-items {
+.flex-items {
     height: 310px;
     margin: 0;
     width: 100%;
@@ -166,7 +166,7 @@ nav a{
     backdrop-filter: blur(10px);
     transition: 300ms;
     ;
-  }
+}
 
 .flex-items:hover{
     scale: 1.01;
@@ -191,7 +191,9 @@ nav a{
     font-weight: 400;
 }
 
-/* Connect section */
+
+
+/*        Connect section       */
 .flex-items .connect{
     padding: 2.3em;
     overflow: hidden;
@@ -264,7 +266,7 @@ nav a{
 }
 
 
-/*     footer section    */
+/*        footer section        */
 .footer {
   position: relative;
   height: 300px;
@@ -303,13 +305,18 @@ nav a{
     color: #a9acae;
     line-height: 1.5;
     margin: 0em 0.5em;
-    }
-
-    .footer a:hover{
-        color: #fff;
 }
 
-/* Mobile Styles */
+.footer a:hover{
+        color: #fff;
+}
+.footer p {
+  margin: 0.5em 0;
+}
+
+
+
+/*       Mobile Styles        */
 @media (max-width: 768px) {
       .nav-links {
         display: none;
