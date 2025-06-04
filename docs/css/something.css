@@ -23,7 +23,7 @@ body {
 .hero {
     width: 100vw;
     height: 400px;
-    background-image: url('./images/plce.jpg');
+    background-image: url('../images/plce.webp');
     background-size: cover;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.5);
