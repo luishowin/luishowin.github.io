@@ -74,7 +74,6 @@ nav a{
       background-color: rgba(0, 0, 0, 0.132);
       padding: 1rem;
       backdrop-filter: blur(25px);
-      
     }
 
     .nav-links a {
@@ -114,7 +113,7 @@ nav a{
    text-align: center;  
 }
 .content .hero{
-     background-image: url('./images/jgf35.webp');
+     background-image: url('./images/bg.jpg');
      background-repeat: no-repeat;
      background-size: cover;
      background-position: center;
@@ -124,21 +123,22 @@ nav a{
   font-size: 2rem;
   line-height: 2;
   font-weight: 500;
-  color: white;
+  color: rgb(255, 255, 255);
   margin-bottom: 2rem;
 }
 
 .hero-title .highlight {
   display: block;
-  font-weight: 400;
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: rgb(255, 255, 255);
 }
 
 .hero-intro {
   font-size: 1rem;
+  font-weight: 700;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgb(255, 255, 255);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -172,8 +172,6 @@ nav a{
     scale: 1.01;
     cursor: pointer;
   }
-   
-
 
   .fl_ct{
     padding: 2.3em;
