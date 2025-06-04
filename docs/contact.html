@@ -3,26 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;700&display=swap" rel="stylesheet">
+    <title>Luis Howin Connect</title>
 </head>
 <style>
     body {
         background-color: rgb(2, 2, 2);
-        color: rgb(237, 237, 237);
-        font-family: 'Courier New', Courier, monospace;
+        color: rgb(255, 255, 255);
+        font-family: 'Inconsolata', monospace;
         margin: 0;
-        padding: 20px;
+        padding:0;
     }
-    p {
-        font-size: 14px;
-        line-height: 1.5;
+    .banner {
+        height: 14rem;
+        background-image: url('./images/contactsbg.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
+    .contact{
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 3em;
+    }
+
+
+    .contact-email {
+    color: #ffbd2e; /* example red */
+    }
+
+    .contact-linkedin {
+        color: #ffbd2e; /* LinkedIn blue */
+    }
+
+    .contact-github {
+        color: #ffbd2e; /* GitHub's dark gray */
+    }
+    .contact-twitter {
+        color: #ffbd2e; /* Twitter blue */
+    }
+
+
     </style>
 <body>
-    <h1>Get in Touch</h1>
-    <p>Whether you have a question, want to collaborate, or just want to say hi — I'm all ears.</p>
-    <p>Email: howin329@gmail.com</p>
-    <p>LinkedIn: linkedin.com/in/luismaina</p>
-    <p>GitHub: github.com/luishowin</p>
+    <div class="banner">
+    </div>
+    <div class="contact">
+        <h1>Lets connect</h1>
+        <p>I'm always open to discussing new projects, creative ideas, 
+        <br>or opportunities to be part of your vision.</p>
+        <p><span class="contact-twitter">Twitter: twitter.com/luishowin</span></p>
+        <p><span class="contact-email">Email: howin329@gmail.com</span></p>
+        <p><span class="contact-linkedin">LinkedIn: linkedin.com/in/luismaina</span></p>
+        <p><span class="contact-github">GitHub: github.com/luishowin</span></p>
+    </div>
 </body>
 </html>
