@@ -130,13 +130,13 @@ nav a{
 .hero-title .highlight {
   display: block;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: rgb(255, 255, 255);
 }
 
 .hero-intro {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
   color: rgb(255, 255, 255);
   max-width: 700px;
