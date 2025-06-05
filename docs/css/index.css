@@ -100,7 +100,10 @@ nav a{
       margin: 3px 0px;
       border-radius: 3px;
       transition: 0.3s;
-    }
+}
+
+
+
 /* content */
 
 
@@ -116,7 +119,7 @@ nav a{
      background-repeat: no-repeat;
      background-size: cover;
      background-position: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
     background-blend-mode: darken;
 }
 
