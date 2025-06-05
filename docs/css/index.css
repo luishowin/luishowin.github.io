@@ -1,3 +1,14 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Inconsolata', monospace;
+  background-color: black;
+  color: rgb(255, 255, 255);
+}
+
+
+
 /*    globals for highlighting text  */
 ::selection{
     color: rgb(255, 255, 255);
@@ -21,12 +32,7 @@
   transform: translateY(0);
 }
 
- /*    body section   */   
-body {
-      font-family: 'Inconsolata', monospace;
-      background-color: black;
-      color: rgb(255, 255, 255);
-}
+
 
 /* Navbar  */
 nav {
@@ -147,127 +153,107 @@ nav a{
   margin: 0 auto;
 }
 
-/*    mywork items   */
-.mywork {
-    width: 100%;
-    padding-bottom:1em;
-    overflow: hidden;
-}
-
-
-.flex-items {
-    height: 310px;
-    margin: 0;
-    width: 100%;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    margin-top: 1em;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    backdrop-filter: blur(10px);
-    transition: 300ms;
-    ;
-}
-
-.flex-items:hover{
-    scale: 1.01;
-    cursor: pointer;
+/*      my work carousel     */
+* {
+      box-sizing: border-box;
   }
+    .carousel-container {
+      width: 100%;
+      max-width: 1500px;
+      overflow: hidden;
+      position: relative;
+    }
 
-  .fl_ct{
-    padding: 2.3em;
-  }
-  
+    .blur-left,
+    .blur-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      pointer-events: none;
+      z-index: 2;
+    }
 
-.fl_ct h2{
-    color: #ffbf36;
-    font-size: 1.8em;
-    font-weight: 600;
-    margin-top: 0;
-  }
-.fl_ct p{
-  padding-top: 1em;
-    color: rgb(255, 255, 255);
-    font-size: 1em;
-    font-weight: 400;
-}
+    .blur-left {
+      left: 0;
+      background: linear-gradient(to right, rgb(0, 0, 0), rgba(255,255,255,0));
+    }
 
+    .blur-right {
+      right: 0;
+      background: linear-gradient(to left, rgb(0, 0, 0), rgba(255,255,255,0));
+    }
 
+    .carousel {
+      display: flex;
+      gap: 20px;
+      padding: 40px 60px;
+      animation: scroll 40s linear infinite;
+    }
 
-/*        Connect section       */
-.flex-items .connect{
-    padding: 2.3em;
-    overflow: hidden;
-}
-.flex-items .connect ul{
-    list-style: none;
-    padding: 2rem 0rem;
-    margin: 0;
-}
-.flex-items .connect a{
-    text-decoration: none;
-    color: #ffbf36;
-    font-size: 1.2em;
-    font-weight: 400;
-}
-.flex-items .connect a:hover{
-    color: #fff;
-    text-decoration: underline;
-}
-.mywork .flex-items:nth-child(1) {
-    background-image: url('../images/plce.webp');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    backdrop-filter: blur(10px);
-}
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-.mywork .flex-items:nth-child(2) {
-    background-image: url('../images/shpyrd.webp');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    backdrop-filter: blur(10px);
-}
+    .carousel:hover {
+      animation-play-state: paused;
+    }
 
-.mywork .flex-items:nth-child(3) {
-    background-image: url('../images/HABIT.webp');
-    background-size: cover;
-    background-position: center;
-     background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    backdrop-filter: blur(10px);
-}
+    .card {
+      flex: 0 0 auto;
+      width: 400px;
+      height: 210px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
 
-.mywork .flex-items:nth-child(4) {
-    background-image: url('../images/spce.webp');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    backdrop-filter: blur(10px);
-}
-.mywork .flex-items:nth-child(5) {
-    background-image: url('../images/clff.webp');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    backdrop-filter: blur(10px);
-}
-.mywork .flex-items:nth-child(6) {
-    background-image: url('../images/plne.webp');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    background-blend-mode: darken;
-    backdrop-filter: blur(10px);
-}
+    .card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.099);
+      backdrop-filter: blur(15px);
+      z-index: 1;
+    }
+
+    .card-title {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 4px 0;
+      color: #ffffff;
+    }
+
+    .card-description {
+      font-size: 1rem;
+      color: #ffffff;
+      font-family: 'Courier New', Courier, monospace;
+    }
 
 
 /*        footer section        */
@@ -322,7 +308,7 @@ nav a{
 
 /*       Mobile Styles        */
 @media (max-width: 768px) {
-      .nav-links {
+.nav-links {
         display: none;
         position: absolute;
         top: 100%;
@@ -332,48 +318,41 @@ nav a{
         width: 200px;
         box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         padding: 1rem;
-      }
+}
 
-      .nav-links.active {
+.nav-links.active {
         display: flex;
-      }
+}
 
-      .hamburger {
+.hamburger {
         display: flex;
-      }
-      .hero-title {
+}
+.hero-title {
          font-size: 1.5rem;
          line-height: 1.2;
-        }
-      .hero-title .highlight {
+}
+.hero-title .highlight {
         padding: 1rem 0rem;
         font-weight: 400;
         font-size: 1rem;
         color: rgba(255, 255, 255, 0.55);
-      }
+}
     
-        .hero-intro {
-            font-size: 0.9rem;
-            line-height: 1.2;
-        }
-      
-        .flex-items {
-            height: 250px;
-            margin: 0;
-            padding-top: 1em;
-            padding-bottom: 1em;
-            margin-top: 1em;
-            overflow: hidden;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-color: rgba(0, 0, 0, 0.5);
-            background-blend-mode: darken;
-            backdrop-filter: blur(10px);
-        }
-        .flex-items .connect a{
-            text-decoration: none;
-            color: #ffbf36;
-            font-size: 0.9rem;
-            font-weight: 400;
-        }
+.hero-intro {
+        font-size: 0.9rem;
+        line-height: 1.2;
+}
+.card {
+        width: 250px;
+        height: 250px;
+}
+
+.card-title {
+        font-size: 16px;
+}
+
+.card-description {
+        font-size: 13px;
+}
+    
 }
