@@ -6,10 +6,13 @@ html, body {
   background-color: black;
   color: rgb(255, 255, 255);
 }
+* {
+      box-sizing: border-box;
+  }
 
 
 
-/*    globals for highlighting text  */
+/*    global custom text highlight  */
 ::selection{
     color: rgb(255, 255, 255);
     background: rgb(148, 132, 94);
@@ -86,18 +89,18 @@ nav a{
       transition: color 0.2s;
 }
 
-    .nav-links a:hover {
+.nav-links a:hover {
       color: #ffbd2e;
-    }
+}
 
-    .hamburger {
+.hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
       height: fit-content;
-    }
+}
 
-    .hamburger span {
+.hamburger span {
       height: 3px;
       width: 20px;
       background: #ffffffca;
@@ -105,11 +108,6 @@ nav a{
       border-radius: 3px;
       transition: 0.3s;
 }
-
-
-
-/* content */
-
 
 /* hero */
 .hero {
@@ -151,37 +149,8 @@ nav a{
   margin: 0 auto;
 }
 
+
 /*      my work carousel     */
-* {
-      box-sizing: border-box;
-  }
-    .carousel-container {
-      width: 100%;
-      max-width: 1500px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .blur-left,
-    .blur-right {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 60px;
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .blur-left {
-      left: 0;
-      background: linear-gradient(to right, rgb(0, 0, 0), rgba(255,255,255,0));
-    }
-
-    .blur-right {
-      right: 0;
-      background: linear-gradient(to left, rgb(0, 0, 0), rgba(255,255,255,0));
-    }
-
 .carousel {
   display: flex;
   gap: 20px;
@@ -189,6 +158,53 @@ nav a{
   animation: scroll 40s linear infinite;
   will-change: transform; /* 👈 THIS is the addition */
 }
+
+.carousel-container {
+      width: 100%;
+      max-width: 1500px;
+      overflow: hidden;
+      position: relative;
+}
+
+.blur-left,
+.blur-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      pointer-events: none;
+      z-index: 2;
+}
+
+.blur-left {
+      left: 0;
+      background: linear-gradient(to right, rgb(0, 0, 0), rgba(255,255,255,0));
+}
+
+.blur-right {
+      right: 0;
+      background: linear-gradient(to left, rgb(0, 0, 0), rgba(255,255,255,0));
+}
+
+.carousel.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto !important;
+}
+
+.carousel, .carousel * {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+img.lazyload {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+img:not(.lazyload) {
+  opacity: 1;
+}
+
 
 
 
