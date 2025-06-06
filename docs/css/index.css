@@ -149,7 +149,12 @@ nav a{
   margin: 0 auto;
 }
 
-
+/*      content section     */
+.work-intro {
+  text-align: left;
+  margin: 3rem 2rem;
+  padding-top: 3rem;
+}
 /*      my work carousel     */
 .carousel {
   display: flex;
@@ -165,7 +170,6 @@ nav a{
 .carousel::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
 }
-
 
 .carousel-container {
       width: 100%;
