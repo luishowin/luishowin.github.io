@@ -184,19 +184,19 @@ nav a{
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 60px;
+      width: 90px;
       pointer-events: none;
       z-index: 2;
 }
 
 .blur-left {
       left: 0;
-      background: linear-gradient(to right, rgb(0, 0, 0), rgba(255,255,255,0));
+      background: linear-gradient(to right, rgb(0, 0, 0, 0.8), rgba(255,255,255,0));
 }
 
 .blur-right {
       right: 0;
-      background: linear-gradient(to left, rgb(0, 0, 0), rgba(255,255,255,0));
+      background: linear-gradient(to left, rgb(0, 0, 0, 0.8), rgba(255,255,255,0));
 }
 
 .carousel.dragging {
