@@ -155,9 +155,14 @@ nav a{
   display: flex;
   gap: 20px;
   padding: 40px 60px;
-  animation: scroll 40s linear infinite;
-  will-change: transform; /* 👈 THIS is the addition */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
 }
+
 
 .carousel-container {
       width: 100%;
@@ -203,18 +208,6 @@ img.lazyload {
 
 img:not(.lazyload) {
   opacity: 1;
-}
-
-
-
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.carousel:hover {
-      animation-play-state: paused;
 }
 
 .card {

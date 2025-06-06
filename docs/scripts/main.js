@@ -57,6 +57,11 @@ window.addEventListener("DOMContentLoaded", () => {
       carousel.scrollLeft = scrollLeft - walk;
     });
 
+    carousel.addEventListener('touchmove', (e) => {
+       if (isDragging) e.preventDefault(); // Stops the whole page from scrolling
+    }, { passive: false });
+
+
     // Touch support
     carousel.addEventListener('touchstart', (e) => {
       isDragging = true;
