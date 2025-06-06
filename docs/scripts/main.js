@@ -25,8 +25,73 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener('scroll', revealOnScroll);
 
+
+const carousel = document.querySelector('.carousel');
+let scrollSpeed = 1; // pixels per frame
+let isUserInteracting = false;
+
+// Autoscroll loop
+function autoScroll() {
+  if (!isUserInteracting) {
+    carousel.scrollLeft += scrollSpeed;
+
+    // Loop to start if at the end
+    if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+      carousel.scrollLeft = 0;
+    }
+  }
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// Drag overrides auto scroll
+let isDragging = false;
+let startX;
+let scrollLeft;
+
+carousel.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  isUserInteracting = true;
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+  carousel.classList.add('dragging');
+});
+carousel.addEventListener('mouseleave', () => {
+  isDragging = false;
+  isUserInteracting = false;
+  carousel.classList.remove('dragging');
+});
+carousel.addEventListener('mouseup', () => {
+  isDragging = false;
+  isUserInteracting = false;
+  carousel.classList.remove('dragging');
+});
+carousel.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 2; // Adjust scroll speed
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
+// Touch support
+carousel.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  isUserInteracting = true;
+  startX = e.touches[0].pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+carousel.addEventListener('touchend', () => {
+  isDragging = false;
+  isUserInteracting = false;
+});
+carousel.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+  const x = e.touches[0].pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 2;
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
   //Carousel drag/touch support
-  const carousel = document.querySelector('.carousel');
   if (carousel) {
     let isDragging = false;
     let startX;
