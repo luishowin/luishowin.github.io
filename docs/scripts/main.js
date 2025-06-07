@@ -40,63 +40,58 @@ function initRevealOnScroll() {
 }
 
 // Carousel autoscroll and drag
-function initCarousel() {
-  const carousel = document.querySelector('.carousel');
-  if (!carousel) return;
+const carousel = document.querySelector('.carousel');
+let isUserInteracting = false;
+let isDragging = false;
+let startX;
+let scrollLeft;
 
-  let isDragging = false;
-  let startX = 0;
-  let scrollLeft = 0;
-  let isUserInteracting = false;
-  const scrollSpeed = 1;
-
-  // Autoscroll loop
-  function autoScroll() {
-    if (!isUserInteracting) {
-      carousel.scrollLeft += scrollSpeed;
-      if (Math.ceil(carousel.scrollLeft + carousel.offsetWidth) >= carousel.scrollWidth) {
-        carousel.scrollLeft = 0;
-      }
+// Autoscroll
+function autoScroll() {
+  if (!isUserInteracting && carousel) {
+    carousel.scrollLeft += 1;
+    if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+      carousel.scrollLeft = 0;
     }
-    requestAnimationFrame(autoScroll);
   }
-  autoScroll();
-
-  // Drag support
-  function startDrag(x) {
-    isDragging = true;
-    isUserInteracting = true;
-    startX = x - carousel.offsetLeft;
-    scrollLeft = carousel.scrollLeft;
-    carousel.classList.add('dragging');
-  }
-
-  function moveDrag(x) {
-    if (!isDragging) return;
-    const walk = (x - startX) * 2;
-    carousel.scrollLeft = scrollLeft - walk;
-  }
-
-  function endDrag() {
-    isDragging = false;
-    isUserInteracting = false;
-    carousel.classList.remove('dragging');
-  }
-
-  // Mouse events
-  carousel.addEventListener('mousedown', e => startDrag(e.pageX));
-  carousel.addEventListener('mousemove', e => moveDrag(e.pageX));
-  carousel.addEventListener('mouseup', endDrag);
-  carousel.addEventListener('mouseleave', endDrag);
-
-  // Touch events
-  carousel.addEventListener('touchstart', e => startDrag(e.touches[0].pageX));
-  carousel.addEventListener('touchmove', e => {
-    if (isDragging) e.preventDefault(); // Prevent page scroll
-    moveDrag(e.touches[0].pageX);
-  }, { passive: false });
-  carousel.addEventListener('touchend', endDrag);
+  requestAnimationFrame(autoScroll);
 }
+autoScroll();
+
+// Mouse + Touch Scroll
+function startDrag(x) {
+  isDragging = true;
+  isUserInteracting = true;
+  startX = x - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+  carousel.classList.add('dragging');
+}
+
+function drag(x) {
+  if (!isDragging) return;
+  const delta = (x - carousel.offsetLeft - startX) * 2;
+  carousel.scrollLeft = scrollLeft - delta;
+}
+
+function stopDrag() {
+  isDragging = false;
+  isUserInteracting = false;
+  carousel.classList.remove('dragging');
+}
+
+// Mouse Events
+carousel.addEventListener('mousedown', (e) => startDrag(e.pageX));
+carousel.addEventListener('mousemove', (e) => drag(e.pageX));
+carousel.addEventListener('mouseup', stopDrag);
+carousel.addEventListener('mouseleave', stopDrag);
+
+// Touch Events
+carousel.addEventListener('touchstart', (e) => startDrag(e.touches[0].pageX), { passive: true });
+carousel.addEventListener('touchmove', (e) => {
+  drag(e.touches[0].pageX);
+}, { passive: false });
+carousel.addEventListener('touchend', stopDrag);
+
 
 // Lazy load images
 function initLazyLoading() {

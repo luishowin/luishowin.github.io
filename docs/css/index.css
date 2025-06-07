@@ -186,6 +186,16 @@ nav a{
 .carousel::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
 }
+.carousel.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+.carousel {
+  cursor: grab;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+}
+
 
 .carousel-container {
       width: 100%;
