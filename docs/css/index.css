@@ -60,22 +60,25 @@ nav a{
       display: flex;
       gap: 1rem;
 }
+
 .nav-links.active {
-      z-index: 10;
-      width: 100%;
-      backdrop-filter: blur(25px);
-      max-height: 500px; /* Adjust based on content height */
-      display: flex;
-      opacity: 1;
-      align-items: center;
-      align-content: center;
-      flex-direction: column;
-      position: absolute;
-      top: 50px; /* Adjust based on navbar height */
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.132);
-      padding: 1rem;
+  z-index: 10;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  max-height: 500px;
+  display: flex;
+  opacity: 1;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 0;
+ 
+  padding: 1rem;
 }
+
+
 .overlay {
   position: fixed;
   top: 0;
@@ -234,15 +237,6 @@ nav a{
   -webkit-user-drag: none;
 }
 
-img.lazyload {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-img:not(.lazyload) {
-  opacity: 1;
-}
-
 .card {
       flex: 0 0 auto;
       width: 400px;
@@ -338,25 +332,35 @@ img:not(.lazyload) {
 
 /*       Mobile Styles        */
 @media (max-width: 768px) {
-.nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: rgba(255, 255, 255, 0.95);
-        flex-direction: column;
-        width: 200px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        padding: 1rem;
-}
+ .nav-links {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: rgba(91, 91, 91, 0.4);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 1rem;
+    z-index: 9;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
 
-.nav-links.active {
-        display: flex;
-}
+  .nav-links.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-.hamburger {
-        display: flex;
-}
+  .hamburger {
+    display: flex;
+  }
+
 .hero-title {
          font-size: 1.5rem;
          line-height: 1.2;
@@ -387,4 +391,22 @@ img:not(.lazyload) {
 .card-description {
         font-size: 13px;
 } 
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important; /* force horizontal layout */
+    flex-direction: row;
+    position: static;
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+    opacity: 1;
+    gap: 1.5rem;
+  }
 }

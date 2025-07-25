@@ -2,7 +2,6 @@ window.addEventListener("DOMContentLoaded", () => {
   initNavbarToggle();
   initRevealOnScroll();
   initCarousel();
-  initLazyLoading();
 });
 
 // Toggle navbar on hamburger click
@@ -92,29 +91,3 @@ carousel.addEventListener('touchmove', (e) => {
 }, { passive: false });
 carousel.addEventListener('touchend', stopDrag);
 
-
-// Lazy load images
-function initLazyLoading() {
-  const lazyImages = document.querySelectorAll('img.lazyload');
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove('lazyload');
-          obs.unobserve(img);
-        }
-      });
-    });
-
-    lazyImages.forEach(img => observer.observe(img));
-  } else {
-    // Fallback: load all immediately
-    lazyImages.forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.remove('lazyload');
-    });
-  }
-}
