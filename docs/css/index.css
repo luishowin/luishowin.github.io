@@ -51,7 +51,7 @@ html, body {
 
 .hero-title {
   font-size: 2.5rem;
-  line-height: 1.2;
+  line-height: 1.2rem;
   font-weight: 200;
   color: rgb(255, 255, 255);
   margin-bottom: 1.5rem;
@@ -131,6 +131,8 @@ html, body {
         font-size: 0.8rem;
         line-height: 1.1rem;
         color: rgba(255, 255, 255, 0.792);
+        margin: 0 auto;
+        width: 60%;
 }
     
 .hero-intro {
