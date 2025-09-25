@@ -3,7 +3,7 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   font-family: 'Inconsolata', monospace;
-  background-color: rgb(19, 21, 26);
+  background-color: rgb(19, 23, 26);
   color: rgb(255, 255, 255);
 }
 
@@ -41,11 +41,11 @@ html, body {
    text-align: center;  
 }
 .content .hero{
-     background-image: url('../images/bg.jpg');
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('../images/roof-macro-resized.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: darken;
 }
 
@@ -60,8 +60,9 @@ html, body {
 
 .hero-title .highlight {
   display: block;
-  font-weight: 250;
+  font-weight: 300;
   font-size: 1.1rem;
+  line-height: 1.2rem;
   color: rgba(255, 255, 255, 0.951);
   padding-top: 1rem;
 }
@@ -73,7 +74,6 @@ html, body {
   color: rgb(255, 255, 255);
   max-width: 700px;
   margin: 0 auto;
-
 }
 
 /*      content section     */
@@ -122,18 +122,21 @@ html, body {
 @media (max-width: 768px) {
 
 .hero-title {
-         font-size: 1.5rem;
-         line-height: 1.2;
+         font-size: 1.6rem;
+         line-height: 1.2rem;
          font-weight: 600;
 }
 .hero-title .highlight {
         font-weight: 400;
-        font-size: 1rem;
+        font-size: 0.8rem;
+        line-height: 1.1rem;
         color: rgba(255, 255, 255, 0.792);
 }
     
 .hero-intro {
+        font-weight: 400;
         font-size: 1rem;
+        color: rgba(255, 255, 255, 0.792);
 }
 
 }
