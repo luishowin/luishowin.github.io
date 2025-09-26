@@ -41,7 +41,7 @@ html, body {
    text-align: center;  
 }
 .content .hero{
-    background-image: url('../images/roof-macro-resized.jpg');
+    background-image: url('../images/roof_macro_resized.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
