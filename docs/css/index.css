@@ -10,7 +10,7 @@ html, body {
 /*    global custom text highlight  */
 ::selection{
     color: rgb(255, 255, 255);
-    background: rgb(148, 132, 94);
+    background: rgb(215, 70, 97);
 }
 
 * {
@@ -31,14 +31,22 @@ html, body {
   transform: translateY(0);
 }
 
-
+.content {
+  font-family: 'IBM Plex Mono', monospace; 
+  background-color: #0a0d10;  
+  color: #f5f5f5; 
+  margin: 0; 
+  padding: 0; 
+  line-height: 1.8;
+}
 
 /* hero */
 .hero {
    max-width: 100vw;
-   margin: 0;
-   padding: 0 2rem;
-   text-align: center;  
+   margin: 0rem;
+   text-align: left;  
+   padding-top: 9rem; 
+   padding-bottom: 9rem;
 }
 .content .hero{
     background-image: url('../images/roof_macro_resized.jpg');
@@ -48,33 +56,12 @@ html, body {
     background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: darken;
 }
-
-.hero-title {
-  font-size: 2.5rem;
-  line-height: 2.2rem;
-  font-weight: 200;
-  color: rgb(255, 255, 255);
-  margin-bottom: 1.5rem;
-  word-spacing: 2px;
+.hero-content{
+    max-width: 850px;
+    margin: 6rem auto;
+    padding: 2rem;
 }
 
-.hero-title .highlight {
-  display: block;
-  font-weight: 300;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  color: rgba(255, 255, 255, 0.951);
-  padding-top: 1rem;
-}
-
-.hero-intro {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 0.9;
-  color: rgb(255, 255, 255);
-  max-width: 700px;
-  margin: 0 auto;
-}
 
 /*      content section     */
 .work-intro {
@@ -94,51 +81,25 @@ html, body {
   justify-content: center;
   margin: 0;
   text-align: center;
-  font-size: 0.7em;
-  font-weight: 500;
+  font-size: 1.05em;
   overflow: hidden;
   z-index: 0;
   background-size: cover;
   background-position: center;
-  background-color: rgba(12, 14, 17, 0.7);
+  background-color: rgba(15, 18, 22, 0.7);
 }
 
 .footer a{ 
-    text-decoration: none;
-    color: #ffbc2b;
-    line-height: 1.5;
-    margin: 0em 0.5em;
+  text-decoration: none;
+  color: #e1d71e;
+  line-height: 1.5;
+  margin: 0em 0.5em;
 }
 
 .footer a:hover{
-        color: #ff872b;
+  color: rgb(215, 70, 97);
 }
+
 .footer p {
   margin: 0.5em 0;
-}
-
-
-/*       Mobile Styles        */
-@media (max-width: 768px) {
-
-.hero-title {
-         font-size: 1.6rem;
-         line-height: 1.2rem;
-         font-weight: 600;
-}
-.hero-title .highlight {
-        font-weight: 400;
-        font-size: 0.8rem;
-        line-height: 1.1rem;
-        color: rgba(255, 255, 255, 0.792);
-        margin: 0 auto;
-        width: 60%;
-}
-    
-.hero-intro {
-        font-weight: 400;
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.792);
-}
-
 }
