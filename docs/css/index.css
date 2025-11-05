@@ -7,7 +7,7 @@ html, body {
   color: rgb(255, 255, 255);
 }
 
-/*    global custom text highlight  */
+/* global custom text highlight  */
 ::selection{
     color: rgb(255, 255, 255);
     background: rgb(215, 70, 97);
@@ -19,7 +19,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/*    reveal animation section   */
+/*  reveal animation section   */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -102,6 +102,78 @@ html, body {
       margin-bottom: 4rem;
     }
 
+/* project cards */
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  background: #000;
+}
+
+.card {
+  background: #222b34;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 480px;
+}
+
+.card-header {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-number {
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: 4px;
+  margin-bottom: 0.3rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.card-image {
+  height: 90px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+
+/* Temporary example images. Replace with your own */
+.img-1 { background-image: url('https://picsum.photos/400/150?1'); }
+.img-2 { background-image: url('https://picsum.photos/400/150?2'); }
+.img-3 { background-image: url('https://picsum.photos/400/150?3'); }
+
+/* Mobile responsiveness */
+@media (max-width: 800px) {
+  .project-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .card {
+    min-height: 420px;
+  }
+  .card-number {
+    font-size: 2.5rem;
+  }
+}
 
 
 /*        footer section        */
