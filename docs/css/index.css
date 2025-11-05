@@ -40,6 +40,7 @@ html, body {
   line-height: 1.8;
 }
 
+
 /* hero */
 .hero {
    max-width: 100vw;
@@ -63,13 +64,6 @@ html, body {
 }
 
 
-/*      content section     */
-.work-intro {
-  text-align: left;
-  margin: 3rem 4rem;
-  padding-top: 3rem;
-  padding-bottom: 10rem;
-}
 
 
 /*        footer section        */
@@ -102,4 +96,12 @@ html, body {
 
 .footer p {
   margin: 0.5em 0;
+}
+
+
+/* Mobile view: adjust breakpoint as needed */
+@media only screen and (max-width: 600px) {
+  #footer {
+    font-size: 0.8em; /* New font size for mobile */
+  }
 }
