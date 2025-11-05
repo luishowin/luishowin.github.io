@@ -67,6 +67,40 @@ html, body {
     padding: 2rem;
 }
 
+ .container {
+      max-width: 850px;
+      margin: 6rem auto;
+      padding: 0 2rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #ccc;
+    }
+
+    .highlight {
+      color: #e1d71e;
+      font-weight: bold;
+    }
+
+    blockquote {
+      border-left: 3px solid  #D51E6C;
+      padding-left: 1rem;
+      font-style: italic;
+      margin: 2rem 0;
+      color: #aaa;
+    }
+
+    a {
+      color: #00ff99;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
 
 
 
@@ -107,13 +141,13 @@ html, body {
 /* Mobile view: adjust breakpoint as needed */
 @media only screen and (max-width: 600px) {
   .hero h2 {
-    font-size: 12px;
+    font-size: 1rem;
   }
   .namer {
-    font-size:21px ;
+    font-size:2.05rem;
   }
   .footer a, p {
-    font-size: 11px; /* New font size for mobile */
+    font-size: 0.7rem; /* New font size for mobile */
   }
 
 }
