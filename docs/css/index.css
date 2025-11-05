@@ -164,6 +164,28 @@ html, body {
 .img-2 { background-image: url('https://picsum.photos/400/150?2'); }
 .img-3 { background-image: url('https://picsum.photos/400/150?3'); }
 
+.card {
+  transition: 
+    transform 0.5s ease,
+    background 0.2s ease;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: #1d242c;
+}
+
+.card-image {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%) contrast(1.1);
+  opacity: 0.75;
+}
+
+.card:hover .card-image {
+  opacity: 1;
+  filter: grayscale(0%) contrast(1.2);
+}
 
 
 
