@@ -114,7 +114,7 @@ html, body {
 }
 
 .card {
-  background: #12181E;
+  background: #0e1318;
   color: #ccc;
   padding: 0.9rem;
   display: flex;
@@ -141,11 +141,11 @@ html, body {
 
 .card-title {
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .card-text {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.4;
   font-weight: 300;
   margin-bottom: 1.5rem;
@@ -222,6 +222,7 @@ html, body {
   .project-cards {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    margin-bottom: 8rem;
   }
   .card {
     min-height: 420px;
@@ -229,5 +230,9 @@ html, body {
   }
   .card-number {
     font-size: 2.5rem;
+  }
+  .card-text {
+    font-size: 0.7rem;
+    font-weight: 400;
   }
 }
