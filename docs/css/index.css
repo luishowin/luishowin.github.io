@@ -2,7 +2,7 @@ html, body {
   width: 100%;
   overflow-x: hidden;
   margin: 0;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'IBM ', monospace;
   background-color: rgb(19, 23, 35);
   color: rgb(255, 255, 255);
 }
@@ -67,7 +67,7 @@ html, body {
     padding: 2rem;
 }
 
- .container {
+.container {
       max-width: 850px;
       margin: 6rem auto;
       padding: 0 2rem;
@@ -102,6 +102,7 @@ html, body {
       margin-bottom: 4rem;
     }
 
+
 /* project cards */
 .project-cards {
   display: grid;
@@ -109,13 +110,12 @@ html, body {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1rem;
-  background: #000;
+ 
 }
 
 .card {
-  background: #222b34;
-  color: #fff;
+  background: #13181d;
+  color: #ccc;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -124,16 +124,18 @@ html, body {
 }
 
 .card-header {
-  margin-bottom: 2rem;
+  margin-bottom: 9rem;
   display: flex;
   flex-direction: column;
 }
 
 .card-number {
-  font-size: 3rem;
-  font-weight: 200;
+  font-size: 5rem;
+  
+  font-weight: lighter;
   letter-spacing: 4px;
   margin-bottom: 0.3rem;
+  color: #e1d71e;
 }
 
 .card-title {
@@ -161,19 +163,7 @@ html, body {
 .img-2 { background-image: url('https://picsum.photos/400/150?2'); }
 .img-3 { background-image: url('https://picsum.photos/400/150?3'); }
 
-/* Mobile responsiveness */
-@media (max-width: 800px) {
-  .project-cards {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .card {
-    min-height: 420px;
-  }
-  .card-number {
-    font-size: 2.5rem;
-  }
-}
+
 
 
 /*        footer section        */
@@ -224,4 +214,18 @@ html, body {
     font-size: 0.7rem; /* New font size for mobile */
   }
 
+}
+
+/* Mobile responsiveness */
+@media (max-width: 800px) {
+  .project-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .card {
+    min-height: 420px;
+  }
+  .card-number {
+    font-size: 2.5rem;
+  }
 }
