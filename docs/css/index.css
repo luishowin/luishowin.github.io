@@ -67,6 +67,10 @@ html, body {
     padding: 2rem;
 }
 
+.hero-content h1 {
+  font-size: 1rem;
+}
+
 .container {
       max-width: 850px;
       margin: 6rem auto;
