@@ -72,13 +72,13 @@
   <div class="container">
     
     <div class="section" style="padding-bottom: 3rem;">
-      <h2>So what do I do?</h2>
-      <p>I'm <span class="highlight">Luis</span> a <span class="highlight">UX researcher</span> and <span class="highlight">UI designer</span> who believes design should make sense before it makes noise. My work sits at the intersection of how people think, feel, and move through digital systems — and how those systems can evolve without losing their humanity.</p>
+      <h2 class="reveal">So what do I do?</h2>
+      <p class="reveal">I'm <span class="highlight">Luis</span> a <span class="highlight">UX researcher</span> and <span class="highlight">UI designer</span> who believes design should make sense before it makes noise. My work sits at the intersection of how people think, feel, and move through digital systems — and how those systems can evolve without losing their humanity.</p>
     </div>
 
      <br>
     <div class="section">
-      <h2>Some of my work</h2>
+      <h2 class="reveal">Some of my work</h2>
       <p>User Experience (UX) research is about <span class="highlight">investigating human behavior</span>, what people actually do, not what they say they do. It involves observing patterns, identifying pain points, and uncovering opportunities for improvement. Through interviews, usability tests, analytics, and behavioral insights.</p>
     </div>
 
@@ -137,7 +137,7 @@
       <h2>What is UX Research</h2>
       <p>User Experience (UX) research is about <span class="highlight">investigating human behavior</span>, what people actually do, not what they say they do. It involves observing patterns, identifying pain points, and uncovering opportunities for improvement. Through interviews, usability tests, analytics, and behavioral insights, UX research ensures that products are not built on guesswork, but grounded in real human need.</p>
       <br>
-      <p><span class="highlight" style="font-size: 3rem; font-weight: 300;">In business terms</span>,<br>
+      <p><span id="emp">In business terms</span>,<br>
          UX research reduces waste — fewer redesigns, fewer failed features, and more confident decisions. It's how companies move from intuition to evidence, aligning what they offer with what people truly value.</p>
     </div>
 
@@ -199,6 +199,22 @@
       </script>
     </div>
   </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      // If you want it to animate only once:
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+  </script>
 
 </body>
 </html>
