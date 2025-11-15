@@ -255,7 +255,7 @@ html, body {
     font-size:2rem;
   }
   .content p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   #emp {
     font-size: 1rem;
@@ -290,11 +290,13 @@ html, body {
   }
    .card-title{
     font-weight: 400;
+    color: rgb(255, 255, 255);
   }
 
   .card-text {
-    font-size: 0.8rem;
-    font-weight: 300;
+    font-size: 0.9rem;
+    font-weight: 400;
+    
   }
  
 }
