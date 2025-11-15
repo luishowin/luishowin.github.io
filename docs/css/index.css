@@ -118,7 +118,7 @@ html, body {
 }
 
 .card {
-  background: #26323d;
+  background: #1D2229;
   color: #ccc;
   padding: 0.9rem;
   display: flex;
@@ -177,7 +177,7 @@ html, body {
 
 .card:hover {
   transform: translateY(-4px);
-  background: #2d3846;
+  background: #22272E;
 }
 
 .card-image {
