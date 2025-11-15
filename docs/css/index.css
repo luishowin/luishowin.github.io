@@ -214,8 +214,6 @@ html, body {
   font-weight: 300;
 }
 
-
-
 /*        footer section        */
 .footer {
   position: relative;
@@ -302,7 +300,6 @@ html, body {
   .card-text {
     font-size: 1rem;
     font-weight: 400;
-    
   }
  
 }
