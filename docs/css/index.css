@@ -4,6 +4,7 @@ html, body {
   margin: 0;
   font-family: 'Roboto Mono', monospace;
   color: rgb(255, 255, 255);
+  background-color: #0E1319;
 }
 
 /* Reveal animation  */
