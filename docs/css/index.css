@@ -126,8 +126,13 @@ html, body {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
- 
 }
+.card-link {
+  display: block;
+  text-decoration: none; /* remove ugly underline */
+  color: inherit;        /* keep your text color */
+}
+
 
 .card {
   background: #1D2229;
@@ -138,6 +143,7 @@ html, body {
   justify-content: space-between;
   min-height: 480px;
   margin-bottom: 5rem;
+  border-radius: 0.4rem;
 }
 
 .card-header {
