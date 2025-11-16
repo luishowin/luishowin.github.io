@@ -4,6 +4,7 @@ html, body {
   margin: 0;
   font-family: 'Roboto Mono', monospace;
   color: rgb(255, 255, 255);
+  background-color: #1D2229;
 }
 
 /* Reveal animation  */
@@ -87,6 +88,7 @@ html, body {
       max-width: 850px;
       margin: 6rem auto;
       padding: 0 1rem;
+      
     }
 
     p {
