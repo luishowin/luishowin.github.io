@@ -4,7 +4,6 @@ html, body {
   margin: 0;
   font-family: 'Roboto Mono', monospace;
   color: rgb(255, 255, 255);
-  background-color: #0E1319;
 }
 
 /* Reveal animation  */
@@ -259,6 +258,10 @@ html, body {
   .namer {
     font-size:2rem;
   }
+  .hero-content{
+     margin-bottom: 0rem;
+     margin-top: 9rem;
+  }
   .content p {
     font-size: 0.95rem;
   }
@@ -266,8 +269,12 @@ html, body {
     font-size: 1rem;
     color: #b937ff;
   }
-  .footer a, p {
+
+  .footer a {
     font-size: 0.7rem; /* New font size for mobile */
+  }
+  .footer p {
+    font-size: 0.7rem;
   }
 
 }

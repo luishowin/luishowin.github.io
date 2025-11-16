@@ -179,7 +179,7 @@
 
     <br>
     <div class="section">
-      <h class="reveal">With that said...</h2>
+      <h2 class="reveal">With that said...</h2>
       <p class="reveal">If you're building something that deserves to be understood before it's built... let's talk. Thoughtful design pays for itself.</p>
       <br>
       <p class="reveal"><a href="mailto:howin329@gmail.com">howin329@gmail.com</a></p>
@@ -195,7 +195,8 @@
       <a href="./tos.html"  target="_blank">Terms of Service</a>
       <a href="./contact.html"  target="_blank">Contacts</a>
       <a href="./attributes.html"  target="_blank">Attributes</a>
-      <p>&copy;<span id="currentYear"></span> Luis Howin Maina. All rights reserved.</p>
+      
+      <p style="padding-top: 2rem; padding-bottom: 2rem;">&copy;<span id="currentYear"></span> Luis Howin Maina. All rights reserved.</p>
 
       <!-- Script to update year automatically -->
       <script>
@@ -203,20 +204,22 @@
       </script>
     </div>
   </footer>
+
+  <!-- script to animate text -->
   <script>
     const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    entries.forEach(entry => {
+     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
       // If you want it to animate only once:
       observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.1
-});
+     }
+     });
+     }, {
+     threshold: 0.1
+     });
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+     document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
   </script>
 
