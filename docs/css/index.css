@@ -144,7 +144,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 480px;
+  min-height: 750px;
   margin-bottom: 5rem;
   border-radius: 0.4rem;
 }
