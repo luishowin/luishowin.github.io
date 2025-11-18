@@ -70,11 +70,11 @@ html, body {
   color: #fff41f;
 }
 .content .hero{
-    background-image: url('../images/roof_macro_resized.jpg');
+    background-image: url('../images/construction_resized.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
     background-blend-mode: darken;
 }
 .hero-content{
@@ -284,6 +284,10 @@ a {
 
 /* Mobile responsiveness */
 @media (max-width: 900px) {
+  .content .hero{
+    background-image: url('../images/bwnet.png');
+     background-color: rgba(0, 0, 0, 0.4);
+  }
    .namer {
     font-size:2rem;
   }
