@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchOS Emulator - 128x64 Blue OLED</title>
+    
+    <!-- Google Font: Doto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #222;
+            --case-color: #4a4a4a; /* Grey Case */
+            --screen-off: #090909;
+            --oled-on: #44ddff; /* Monochrome Blue/Cyan */
+            --oled-dim: #6ebcd5;
+            --btn-active: #ff8800; /* Orange indicator */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #ccc;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        /* The physical device container */
+        #device {
+            position: relative;
+            padding: 10px; /* Even border around screen */
+            background: var(--case-color);
+            border-radius: 6px; /* Smoother corners */
+            
+            /* Soft drop shadow bottom right */
+            box-shadow: 12px 12px 24px rgba(0,0,0,0.5), 
+                        -2px -2px 6px rgba(255,255,255,0.05);
+
+            /* 1:1 Scale */
+            image-rendering: pixelated; 
+        }
+
+        /* The Screen Canvas */
+        canvas {
+            background-color: var(--screen-off);
+            border-radius: 3px;
+            border: 1px solid #5d5d5d;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+            cursor: none;
+            display: block; /* Removes baseline gap */
+        }
+
+        /* Physical Buttons - Now on Right */
+        .btn {
+            position: absolute;
+            right: -3px; /* Low profile - sticks out very little */
+            left: auto;
+            width: 3px; /* Thin profile */
+            height: 14px;
+            background: #989898;
+            border-radius: 0 1px 1px 0; /* Rounded on outer edge */
+            transition: transform 0.1s;
+        }
+
+        /* Digital Crown Style */
+        .btn-crown {
+            top: 50%;
+            transform: translateY(-50%);
+            height: 18px;
+            width: 8px; /* Distinct from buttons */
+            right: -8px; /* Sticks out more than buttons */
+            left: auto;
+            
+            /* Knurled Metal Texture */
+            background: repeating-linear-gradient(
+                180deg,
+                #777,
+                #777 1px,
+                #474747 2px,
+                #303030 3px
+            );
+            
+            border-radius: 2px 2px 2px 2px;
+            z-index: 2;
+        }
+
+        .btn-1 { top: 18px; }
+        .btn-2 { bottom: 18px; }
+
+        /* Indicators for key presses - moved to right */
+        .indicator {
+            position: absolute;
+            right: -35px;
+            left: auto;
+            color: var(--btn-active);
+            font-weight: bold;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.05s;
+            text-align: left;
+            width: 20px;
+        }
+        
+        .indicator.active { opacity: 1; }
+
+        #instructions {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            opacity: 0.7;
+        }
+
+        .key {
+            display: inline-block;
+            background: #333;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-family: monospace;
+            border-bottom: 2px solid #111;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="device">
+        <!-- Visual Buttons on the Right -->
+        <div class="btn btn-1" id="vis-btn1"></div>
+        <div class="indicator" style="top: 18px;" id="ind-btn1">&lt;</div>
+
+        <div class="btn btn-crown" id="vis-crown"></div>
+        <div class="indicator" style="top: 38px;" id="ind-crown-up">&and;</div>
+        <div class="indicator" style="top: 50px;" id="ind-crown-push">&lt;</div>
+        <div class="indicator" style="top: 62px;" id="ind-crown-down">&or;</div>
+
+        <div class="btn btn-2" id="vis-btn2"></div>
+        <div class="indicator" style="bottom: 18px;" id="ind-btn2">&lt;</div>
+
+        <!-- 1:1 Pixel Ratio Canvas -->
+        <canvas id="screen" width="128" height="64"></canvas>
+    </div>
+
+    <div id="instructions">
+        <h3>CONTROLS</h3>
+        <p><span class="key">Q</span> BTN 1 (Select/Start) &nbsp;&nbsp; <span class="key">A</span> BTN 2 (Back/Light)</p>
+        <p><span class="key">ENTER</span> Crown Press</p>
+        <p><span class="key">↑</span> / <span class="key">↓</span> Rotate Crown</p>
+        <button id="start-btn" style="margin-top:10px; padding: 5px 15px; cursor:pointer;">POWER ON (Enable Audio)</button>
+    </div>
+
+<script>
+/**
+ * WATCH OS EMULATOR
+ * Built for Luis.
+ * * Core Logic:
+ * - 128x64 buffer
+ * - Finite State Machine for Modes
+ * - Mock Sensors
+ */
+
+// --- CONFIG ---
+const CONFIG = {
+    FPS: 30,
+    SCREEN_W: 128,
+    SCREEN_H: 64,
+    COLORS: {
+        BG: '#000000',
+        FG: '#44ddff', // Blue OLED
+        DIM: '#114455',
+        WHITE: '#ffffff'
+    },
+    FONT: '10px "Doto"',
+    FONT_SMALL: '8px "Doto"'
+};
+
+// --- AUDIO ENGINE (8-bit style) ---
+class SoundEngine {
+    constructor() {
+        this.ctx = null;
+        this.enabled = false;
+    }
+
+    init() {
+        if (!this.ctx) {
+            this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+            this.enabled = true;
+        } else if (this.ctx.state === 'suspended') {
+            this.ctx.resume();
+        }
+    }
+
+    playTone(freq, type, duration, startTime) {
+        if (!this.enabled) return;
+        
+        const t = startTime || this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        
+        osc.type = type || 'square';
+        osc.frequency.setValueAtTime(freq, t);
+        
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        
+        osc.start(t);
+        
+        // Envelope: Attack (instant) -> Decay
+        gain.gain.setValueAtTime(0.1, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + duration);
+        
+        osc.stop(t + duration);
+    }
+
+    beep() { this.playTone(880, 'square', 0.05); } // Short, clicky beep
+    
+    // Boot sequence: Ascending arpeggio (Low -> Mid -> High) _--
+    bootSequence() {
+        if (!this.enabled) return;
+        const now = this.ctx.currentTime;
+        this.playTone(220, 'square', 0.1, now);       // A3
+        this.playTone(440, 'square', 0.1, now + 0.1); // A4
+        this.playTone(880, 'square', 0.4, now + 0.2); // A5
+    }
+
+    // Shutdown sequence: Descending arpeggio (High -> Mid -> Low) -__
+    shutdownSequence() {
+        if (!this.enabled) return;
+        const now = this.ctx.currentTime;
+        this.playTone(880, 'square', 0.1, now);       // A5
+        this.playTone(440, 'square', 0.1, now + 0.1); // A4
+        this.playTone(110, 'square', 0.4, now + 0.2); // A2 (Low rumble)
+    }
+
+    alarm() {
+        this.playTone(1500, 'sawtooth', 0.1);
+        setTimeout(() => this.playTone(1500, 'sawtooth', 0.1), 150);
+        setTimeout(() => this.playTone(1500, 'sawtooth', 0.1), 300);
+    }
+}
+
+// --- INPUT MANAGER ---
+class InputManager {
+    constructor(os) {
+        this.os = os;
+        this.keys = {
+            btn1: { code: 'KeyQ', active: false, ts: 0, el: document.getElementById('ind-btn1') },
+            btn2: { code: 'KeyA', active: false, ts: 0, el: document.getElementById('ind-btn2') },
+            crownPress: { code: 'Enter', active: false, ts: 0, el: document.getElementById('ind-crown-push') },
+            crownUp: { code: 'ArrowUp', active: false, el: document.getElementById('ind-crown-up') },
+            crownDown: { code: 'ArrowDown', active: false, el: document.getElementById('ind-crown-down') }
+        };
+
+        window.addEventListener('keydown', (e) => this.handleDown(e));
+        window.addEventListener('keyup', (e) => this.handleUp(e));
+    }
+
+    handleDown(e) {
+        // Prevent scrolling for arrows
+        if(["ArrowUp","ArrowDown"].indexOf(e.code) > -1) e.preventDefault();
+
+        // Map keys
+        if (e.code === this.keys.btn1.code) this.triggerBtn('btn1', true);
+        if (e.code === this.keys.btn2.code) this.triggerBtn('btn2', true);
+        if (e.code === this.keys.crownPress.code) this.triggerBtn('crownPress', true);
+        
+        // Rotary is immediate
+        if (e.code === this.keys.crownUp.code) {
+            this.activateVisual(this.keys.crownUp.el);
+            this.os.handleInput('ROTATE_CW');
+        }
+        if (e.code === this.keys.crownDown.code) {
+            this.activateVisual(this.keys.crownDown.el);
+            this.os.handleInput('ROTATE_CCW');
+        }
+    }
+
+    handleUp(e) {
+        if (e.code === this.keys.btn1.code) this.triggerBtn('btn1', false);
+        if (e.code === this.keys.btn2.code) this.triggerBtn('btn2', false);
+        if (e.code === this.keys.crownPress.code) this.triggerBtn('crownPress', false);
+        
+        if (e.code === this.keys.crownUp.code) this.deactivateVisual(this.keys.crownUp.el);
+        if (e.code === this.keys.crownDown.code) this.deactivateVisual(this.keys.crownDown.el);
+    }
+
+    triggerBtn(keyName, isDown) {
+        const k = this.keys[keyName];
+        if (isDown) {
+            if (!k.active) {
+                k.active = true;
+                k.ts = Date.now();
+                this.activateVisual(k.el);
+                this.os.handleInput(keyName.toUpperCase() + '_DOWN');
+            }
+        } else {
+            if (k.active) {
+                k.active = false;
+                const duration = Date.now() - k.ts;
+                this.deactivateVisual(k.el);
+                
+                // Logic: Click vs Long Press
+                if (duration > 800) {
+                    this.os.handleInput(keyName.toUpperCase() + '_LONG');
+                } else {
+                    this.os.handleInput(keyName.toUpperCase() + '_CLICK');
+                }
+            }
+        }
+    }
+
+    activateVisual(el) { if(el) el.classList.add('active'); }
+    deactivateVisual(el) { if(el) el.classList.remove('active'); }
+}
+
+// --- UTILS ---
+const Utils = {
+    drawText: (ctx, text, x, y, align = 'left', color = CONFIG.COLORS.FG, font = CONFIG.FONT) => {
+        ctx.fillStyle = color;
+        ctx.font = font;
+        ctx.textAlign = align;
+        ctx.textBaseline = 'top';
+        ctx.fillText(text, x, y);
+    },
+    
+    pad: (num) => num.toString().padStart(2, '0'),
+    
+    exportFile: (filename, content) => {
+        const blob = new Blob([content], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        a.click();
+    }
+};
+
+// --- BASE MODE CLASS ---
+class Mode {
+    constructor(os) { this.os = os; }
+    enter() {}
+    exit() {}
+    update(dt) {}
+    draw(ctx) {}
+    onInput(event) {}
+}
+
+// --- APP MODES ---
+
+// 1. HOME
+class HomeMode extends Mode {
+    draw(ctx) {
+        const d = this.os.systemTime;
+        
+        // Status Bar
+        Utils.drawText(ctx, this.os.battery.toFixed(0) + '%', 126, 2, 'right', CONFIG.COLORS.DIM, CONFIG.FONT_SMALL);
+        if (this.os.alarms[0].enabled) Utils.drawText(ctx, 'ALM', 2, 2, 'left', CONFIG.COLORS.DIM, CONFIG.FONT_SMALL);
+
+        // Time
+        const timeStr = `${Utils.pad(d.getHours())}:${Utils.pad(d.getMinutes())}:${Utils.pad(d.getSeconds())}`;
+        ctx.font = '20px "Doto"';
+        ctx.fillStyle = CONFIG.COLORS.FG;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(timeStr, 64, 32);
+
+        // Date
+        const dateStr = d.toDateString().substring(0, 10); // "Sun Nov 23"
+        Utils.drawText(ctx, dateStr.toUpperCase(), 64, 48, 'center', CONFIG.COLORS.DIM);
+    }
+
+    onInput(e) {
+        if (e === 'CROWNPRESS_CLICK') this.os.switchMode('MENU');
+        if (e === 'CROWNPRESS_LONG') this.os.switchMode('SETTINGS');
+        if (e === 'BTN1_LONG') this.os.toggleBacklight();
+    }
+}
+
+// 2. MENU
+class MenuMode extends Mode {
+    constructor(os) {
+        super(os);
+        this.items = ['STOPWATCH', 'ALARM', 'TIMER', 'WORKOUT', 'COMPASS', 'INFO'];
+        this.idx = 0;
+    }
+
+    draw(ctx) {
+        Utils.drawText(ctx, '> MENU <', 64, 2, 'center', CONFIG.COLORS.DIM);
+        
+        // List View
+        const startY = 16;
+        const h = 12;
+        
+        // Show 3 items centered around idx
+        for (let i = -1; i <= 1; i++) {
+            const targetIndex = this.idx + i;
+            if (targetIndex >= 0 && targetIndex < this.items.length) {
+                const isSelected = i === 0;
+                const color = isSelected ? CONFIG.COLORS.FG : CONFIG.COLORS.DIM;
+                const prefix = isSelected ? '> ' : '  ';
+                Utils.drawText(ctx, prefix + this.items[targetIndex], 5, startY + (i + 1) * h, 'left', color);
+            }
+        }
+        
+        // Scroll bar
+        const barH = 64 / this.items.length;
+        ctx.fillStyle = CONFIG.COLORS.DIM;
+        ctx.fillRect(124, this.idx * barH, 2, barH);
+    }
+
+    onInput(e) {
+        if (e === 'ROTATE_CW') {
+            if (this.idx > 0) { this.idx--; this.os.sound.beep(); }
+        }
+        if (e === 'ROTATE_CCW') {
+            if (this.idx < this.items.length - 1) { this.idx++; this.os.sound.beep(); }
+        }
+        if (e === 'CROWNPRESS_CLICK') {
+            this.os.switchMode(this.items[this.idx]);
+            this.os.sound.beep();
+        }
+        if (e === 'BTN1_CLICK' || e === 'BTN2_CLICK') this.os.goBack();
+    }
+}
+
+// 3. STOPWATCH
+class StopwatchMode extends Mode {
+    constructor(os) {
+        super(os);
+        this.running = false;
+        this.startTime = 0;
+        this.elapsed = 0;
+        this.laps = [];
+    }
+
+    update(dt) {
+        if (this.running) this.elapsed += dt;
+    }
+
+    fmt(ms) {
+        const s = Math.floor(ms / 1000);
+        const m = Math.floor(s / 60);
+        const cs = Math.floor((ms % 1000) / 10);
+        return `${Utils.pad(m)}:${Utils.pad(s % 60)}.${Utils.pad(cs)}`;
+    }
+
+    draw(ctx) {
+        Utils.drawText(ctx, 'STOPWATCH', 64, 2, 'center', CONFIG.COLORS.DIM);
+        
+        // Main Time
+        ctx.font = '16px "Doto"';
+        ctx.fillStyle = CONFIG.COLORS.FG;
+        ctx.textAlign = 'center';
+        ctx.fillText(this.fmt(this.elapsed), 64, 20);
+
+        // Last Lap
+        const lastLap = this.laps.length > 0 ? this.laps[this.laps.length - 1] : 0;
+        Utils.drawText(ctx, `L: ${this.fmt(lastLap)}`, 64, 40, 'center', CONFIG.COLORS.DIM);
+        
+        // Count
+        Utils.drawText(ctx, `#${this.laps.length}`, 120, 50, 'right', CONFIG.COLORS.DIM, CONFIG.FONT_SMALL);
+        
+        // Controls UI Hint
+        Utils.drawText(ctx, this.running ? '[Q]LAP [A]STOP' : '[Q]START [A]RST', 64, 54, 'center', CONFIG.COLORS.DIM, CONFIG.FONT_SMALL);
+    }
+
+    onInput(e) {
+        if (e === 'BTN1_CLICK') {
+            if (this.running) {
+                // Lap
+                this.laps.push(this.elapsed);
+            } else {
+                // Start
+                this.running = true;
+                this.os.sound.beep();
+            }
+        }
+        if (e === 'BTN2_CLICK') {
+            if (this.running) {
+                // Stop
+                this.running = false;
+            } else {
+                // Reset or Exit?
+                if (this.elapsed === 0) {
+                    this.os.goBack();
+                } else {
+                    // Export logic check
+                    if (confirm("Export laps?")) {
+                        Utils.exportFile('laps.txt', this.laps.map(l => this.fmt(l)).join('\n'));
+                    }
+                    this.elapsed = 0;
+                    this.laps = [];
+                }
+            }
+        }
+    }
+}
+
+// 3.5 WORKOUT MODE (Mock GPS)
+class WorkoutMode extends Mode {
+    constructor(os) {
+        super(os);
+        this.active = false;
+        this.paused = false;
+        this.time = 0;
+        this.dist = 0; // km
+        this.pace = 0; // min/km
+        this.hr = 70;
+        this.log = [];
+        this.gpsFound = false;
+        this.gpsTimer = 0;
+    }
+
+    update(dt) {
+        if (!this.active) {
+            this.gpsTimer += dt;
+            if (this.gpsTimer > 2000) this.gpsFound = true; // Fake lock
+            return;
+        }
+
+        if (this.active && !this.paused) {
+            this.time += dt;
+            
+            // Sim movement
+            const speedKmh = 10 + Math.sin(Date.now()/1000); // vary speed
+            const speedMs = speedKmh / 3.6;
+            this.dist += (speedMs * (dt/1000)) / 1000;
+            
+            // Sim HR
+            this.hr = 140 + Math.floor(Math.sin(Date.now()/500) * 10);
+
+            // Log every second
+            if (Math.floor(this.time/1000) > this.log.length) {
+                this.log.push(`${new Date().toISOString()},${this.dist.toFixed(3)},${this.hr}`);
+            }
+
+            // Auto pause logic
+            if (speedKmh < 1.2 && this.time > 10000) {
+                this.paused = true; // Logic present per specs
+            }
+        }
+    }
+
+    draw(ctx) {
+        Utils.drawText(ctx, 'RUN', 64, 0, 'center', CONFIG.COLORS.DIM);
+        
+        if (!this.gpsFound) {
+            Utils.drawText(ctx, 'SEARCHING GPS...', 64, 25, 'center', CONFIG.COLORS.FG);
+            return;
+        }
+
+        // Grid Layout
+        // DIST | TIME
+        // PACE | HR
+        
+        ctx.fillStyle = CONFIG.COLORS.FG;
+        
+        // Dist
+        Utils.drawText(ctx, this.dist.toFixed(2), 2, 12, 'left', CONFIG.COLORS.FG, '14px "Doto"');
+        Utils.drawText(ctx, 'km', 40, 16, 'left', CONFIG.COLORS.DIM, CONFIG.FONT_SMALL);
+
+        // Time
+        const s = Math.floor(this.time / 1000);
+        const m = Math.floor(s / 60);
+        const timeStr = `${m}:${Utils.pad(s%60)}`;
+        Utils.drawText(ctx, timeStr, 126, 12, 'right', CONFIG.COLORS.FG, '14px "Doto"');
+
+        // HR
+        Utils.drawText(ctx, `HR ${this.hr}`, 2, 35, 'left');
+        
+        // Pace
+        Utils.drawText(ctx, `5:30/km`, 126, 35, 'right');
+
+        // Status
+        const status = this.paused ? 'PAUSED' : (this.active ? 'REC' : 'READY');
+        Utils.drawText(ctx, status, 64, 54, 'center', this.active ? CONFIG.COLORS.FG : CONFIG.COLORS.DIM);
+    }
+
+    onInput(e) {
+        if (!this.gpsFound) {
+            if (e === 'BTN2_CLICK') this.os.goBack();
+            return;
+        }
+
+        if (e === 'BTN1_CLICK') {
+            if (!this.active) { this.active = true; this.os.sound.beep(); }
+            else if (this.paused) { this.paused = false; }
+            else { this.paused = true; }
+        }
+        
+        if (e === 'BTN2_LONG' && this.active) {
+            // Stop and Export
+            this.active = false;
+            Utils.exportFile('workout.csv', 'TIMESTAMP,DIST_KM,HR\n' + this.log.join('\n'));
+            this.os.goBack();
+        }
+        
+        if (e === 'BTN2_CLICK' && !this.active) this.os.goBack();
+    }
+}
+
+// 3.8 COMPASS + ALTI
+class CompassMode extends Mode {
+    constructor(os) {
+        super(os);
+        this.heading = 0;
+        this.alt = 1250;
+    }
+
+    update(dt) {
+        // Drunk walk for compass simulation
+        this.heading += (Math.random() - 0.3) * 3;
+        if (this.heading < 0) this.heading += 360;
+        if (this.heading > 359) this.heading -= 360;
+        
+        // Alt drift
+        if (Math.random() > 0.95) this.alt += (Math.random() - 0.5);
+    }
+
+    draw(ctx) {
+        Utils.drawText(ctx, 'COMPASS', 64, 0, 'center', CONFIG.COLORS.DIM);
+        
+        // Heading
+        const h = Math.floor(this.heading);
+        let dir = 'N';
+        if (h > 45 && h < 135) dir = 'E';
+        if (h >= 135 && h < 225) dir = 'S';
+        if (h >= 225 && h < 315) dir = 'W';
+
+        ctx.font = '20px "Doto"';
+        ctx.textAlign = 'center';
+        ctx.fillText(`${h}° ${dir}`, 64, 18);
+
+        // Data
+        Utils.drawText(ctx, `ALT: ${Math.floor(this.alt)}m`, 2, 45, 'left');
+        Utils.drawText(ctx, `BARO: 1013`, 126, 45, 'right');
+    }
+
+    onInput(e) {
+        if (e === 'BTN2_CLICK') this.os.goBack();
+    }
+}
+
+// 3.7 INFO
+class InfoMode extends Mode {
+    draw(ctx) {
+        Utils.drawText(ctx, 'SYSTEM INFO', 64, 0, 'center', CONFIG.COLORS.DIM);
+        Utils.drawText(ctx, `BAT: ${this.os.battery.toFixed(1)}%`, 2, 15);
+        Utils.drawText(ctx, `REM: ${(this.os.battery * 0.2).toFixed(1)} Days`, 2, 25);
+        Utils.drawText(ctx, `FW: v1.0.4-L`, 2, 35);
+        Utils.drawText(ctx, `ID: LUIS-OS`, 2, 45);
+    }
+    onInput(e) { if(e === 'BTN2_CLICK') this.os.goBack(); }
+}
+
+// 3.3 ALARMS (Simplified)
+class AlarmMode extends Mode {
+    constructor(os) {
+        super(os);
+        this.sel = 0;
+    }
+    draw(ctx) {
+        Utils.drawText(ctx, 'ALARMS', 64, 0, 'center', CONFIG.COLORS.DIM);
+        this.os.alarms.forEach((alm, i) => {
+            const y = 15 + (i * 15);
+            const prefix = (i === this.sel) ? '> ' : '  ';
+            const state = alm.enabled ? 'ON ' : 'OFF';
+            Utils.drawText(ctx, `${prefix}ALM${i+1} ${alm.h}:${Utils.pad(alm.m)} ${state}`, 2, y, 'left', i === this.sel ? CONFIG.COLORS.FG : CONFIG.COLORS.DIM);
+        });
+        Utils.drawText(ctx, '[ENT] TOGGLE', 64, 55, 'center', CONFIG.COLORS.DIM, CONFIG.FONT_SMALL);
+    }
+    onInput(e) {
+        if (e === 'ROTATE_CW' && this.sel > 0) this.sel--;
+        if (e === 'ROTATE_CCW' && this.sel < 2) this.sel++;
+        if (e === 'CROWNPRESS_CLICK') {
+            this.os.alarms[this.sel].enabled = !this.os.alarms[this.sel].enabled;
+            this.os.sound.beep();
+        }
+        if (e === 'BTN2_CLICK') this.os.goBack();
+    }
+}
+
+// --- CORE SYSTEM ---
+class OS {
+    constructor() {
+        this.canvas = document.getElementById('screen');
+        this.ctx = this.canvas.getContext('2d', { alpha: false }); // Opt for speed
+        this.ctx.imageSmoothingEnabled = false;
+
+        this.input = new InputManager(this);
+        this.sound = new SoundEngine();
+        
+        // System State
+        this.systemTime = new Date();
+        this.timeOffset = 0; // ms offset for manual adjustment
+        this.battery = 84.5;
+        this.backlight = false;
+        
+        // Persisted Data (Mock)
+        this.alarms = [
+            { h: 7, m: 0, enabled: false },
+            { h: 8, m: 30, enabled: false },
+            { h: 18, m: 0, enabled: false }
+        ];
+
+        // Mode Stack
+        this.modeStack = [new HomeMode(this)];
+
+        // Loop
+        this.lastTime = 0;
+        requestAnimationFrame((t) => this.loop(t));
+    }
+
+    loop(ts) {
+        const dt = ts - this.lastTime;
+        this.lastTime = ts;
+
+        // System Updates
+        this.systemTime = new Date(Date.now() + this.timeOffset);
+        this.battery -= 0.0001; // Slow drain
+        
+        // Backlight flicker/dim check
+        // ...
+
+        // Mode Update
+        const activeMode = this.modeStack[this.modeStack.length - 1];
+        if (activeMode) activeMode.update(dt);
+
+        // Render
+        this.render();
+
+        requestAnimationFrame((t) => this.loop(t));
+    }
+
+    render() {
+        // Clear
+        this.ctx.fillStyle = CONFIG.COLORS.BG;
+        this.ctx.fillRect(0, 0, CONFIG.SCREEN_W, CONFIG.SCREEN_H);
+
+        // Draw Mode
+        const activeMode = this.modeStack[this.modeStack.length - 1];
+        if (activeMode) activeMode.draw(this.ctx);
+
+        // Backlight Overlay
+        if (this.backlight) {
+            this.ctx.fillStyle = 'rgba(68, 221, 255, 0.1)';
+            this.ctx.fillRect(0,0,128,64);
+        }
+
+        // Scanlines (Retro effect)
+        this.ctx.fillStyle = 'rgba(0,0,0,0.3)';
+        for(let i=0; i<64; i+=2) {
+            this.ctx.fillRect(0, i, 128, 1);
+        }
+    }
+
+    handleInput(type) {
+        // Global Shortcuts
+        if (type === 'BTN2_LONG') {
+            // Usually Backlight, but handled in Home. Let's make it global.
+            // this.toggleBacklight(); 
+        }
+
+        // Pass to Active Mode
+        const activeMode = this.modeStack[this.modeStack.length - 1];
+        if (activeMode) activeMode.onInput(type);
+    }
+
+    switchMode(name) {
+        let m = null;
+        switch(name) {
+            case 'MENU': m = new MenuMode(this); break;
+            case 'STOPWATCH': m = new StopwatchMode(this); break;
+            case 'WORKOUT': m = new WorkoutMode(this); break;
+            case 'COMPASS': m = new CompassMode(this); break;
+            case 'INFO': m = new InfoMode(this); break;
+            case 'ALARM': m = new AlarmMode(this); break;
+            // Add Timer, Settings etc.
+        }
+        if (m) this.modeStack.push(m);
+    }
+
+    goBack() {
+        if (this.modeStack.length > 1) {
+            this.modeStack.pop();
+        }
+    }
+
+    toggleBacklight() {
+        this.backlight = !this.backlight;
+        this.sound.beep();
+    }
+}
+
+// --- BOOTSTRAP ---
+window.onload = () => {
+    const os = new OS();
+    
+    document.getElementById('start-btn').addEventListener('click', () => {
+        os.sound.init();
+        os.sound.bootSequence();
+        document.getElementById('start-btn').style.display = 'none';
+        document.getElementById('instructions').querySelector('h3').innerText = "SYSTEM ACTIVE";
+    });
+};
+
+</script>
+</body>
+</html>
