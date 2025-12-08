@@ -219,8 +219,9 @@ a {
 
 /*        footer section        */
 .footer {
+  background-image: url('../images/baloonscrop.webp');
   position: relative;
-  height: 150px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,7 +231,7 @@ a {
   z-index: 0;
   background-size: cover;
   background-position: center;
-  background-color: #0E1319;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .footer a{ 
