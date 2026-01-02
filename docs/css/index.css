@@ -186,9 +186,9 @@ a {
 }
 
 /* Temporary example images. Replace with your own */
-.img-1 { background-image: url('https://picsum.photos/400/150?1'); }
-.img-2 { background-image: url('https://picsum.photos/400/150?2'); }
-.img-3 { background-image: url('https://picsum.photos/400/150?3'); }
+.img-1 { background-image: url('../images/watch.jpg'); }
+.img-2 { background-image: url('../images/clff.webp'); }
+.img-3 { background-image: url('../images/green_glass.webp'); }
 
 .card {
   transition: 
