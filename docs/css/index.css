@@ -64,6 +64,7 @@ html, body {
    text-align: left;  
    padding-top: 4rem; 
    padding-bottom: 2rem;
+   filter: grayscale(100%);
 }
 .namer{
   font-size: 3rem; 
@@ -93,7 +94,7 @@ html, body {
       padding: 0 1rem;
     }
 p {
-      font-size: 1.05rem;
+      font-size: 0.9rem;
       color: #ccc;
     }
 
@@ -138,7 +139,7 @@ a {
 
 
 .card {
-  background: #1D2229;
+  background: #0c0e11;
   color: #ccc;
   padding: 0.9rem;
   display: flex;
@@ -164,13 +165,13 @@ a {
 }
 
 .card-title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   padding-left: 0.5rem;
 }
 
 .card-text {
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.4;
   font-weight: 300;
   margin-bottom: 1.5rem;
@@ -198,7 +199,7 @@ a {
 
 .card:hover {
   transform: translateY(-4px);
-  background: #22272E;
+  background: #101317;
 }
 
 .card-image {
