@@ -96,8 +96,8 @@
             z-index: 2;
         }
 
-        .btn-1 { top: 18px; }
-        .btn-2 { bottom: 18px; }
+        .btn-1 { top: 13px; }
+        .btn-2 { bottom: 13px; }
 
         /* Indicators for key presses - moved to right */
         .indicator {
@@ -120,7 +120,7 @@
             text-align: center;
             font-size: 0.8rem;
             line-height: 1.5;
-            opacity: 0.7;
+            opacity: 0.9;
         }
 
         .key {
@@ -153,11 +153,11 @@
     </div>
 
     <div id="instructions">
-        <h3>CONTROLS</h3>
+        <h3 style="color: #e923ff;">CONTROLS</h3>
         <p><span class="key">Q</span> BTN 1 (Select/Start) &nbsp;&nbsp; <span class="key">A</span> BTN 2 (Back/Light)</p>
         <p><span class="key">ENTER</span> Crown Press</p>
         <p><span class="key">↑</span> / <span class="key">↓</span> Rotate Crown</p>
-        <button id="start-btn" style="margin-top:10px; padding: 5px 15px; cursor:pointer;">POWER ON (Enable Audio)</button>
+        <button id="start-btn" style="font-family: 'Roboto Mono', monospace; margin-top:10px; padding: 5px 15px; cursor:pointer; background-color: #9d22e551; border: 1px solid #e923ff; color: #e923ff; border-radius: 5px;">Power On (Enable Audio)</button>
     </div>
 
 <script>
@@ -178,7 +178,7 @@ const CONFIG = {
     COLORS: {
         BG: '#000000',
         FG: '#44ddff', // Blue OLED
-        DIM: '#2F7B95',
+        DIM: '#6ebcd5',
         WHITE: '#ffffff'
     },
     FONT: '10.5px "Doto"',

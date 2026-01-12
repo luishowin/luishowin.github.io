@@ -142,12 +142,18 @@
     .demo .btn {
       display: inline-block;
       margin-top: 1rem;
-      padding: 0.9rem 1.6rem;
-      background: var(--accent);
-      color: var(--text);
+      padding: 0.7rem 2.5rem;
+      background: #a5a3b300;
+      border: 2px solid var(--accent);
+      color: var(--accent);
       text-decoration: none;
       border-radius: 6px;
       font-weight: 500;
+    }
+    .demo .btn:hover {
+      background: #9d22e551;
+      color: #b937ff;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
   </style>
@@ -271,7 +277,7 @@
   <section class="demo">
     <h2 class="reveal">Try the Demo</h2>
     <p class="reveal">Experience the TUI in your browser.</p>
-    <a class="btn" href="watchdemo.html">Open Demo</a>
+    <a class="btn" href="watchdemo.html">Open Demo >></a>
   </section>
 
   <footer>
