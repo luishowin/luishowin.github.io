@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trek Watch 91 / Interface</title>
+
+  <!-- Roboto Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0d14;          /* dark blue */
+      --text: #f4f1ec;        /* ivory */
+      --accent: #7c6cff;      /* purple */
+      --muted: #a5a3b3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      background-image: url('images/tui.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "— ";
+      color: var(--accent);
+    }
+
+    /* Flow Diagram */
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .flow-box {
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .flow-box span {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 4rem 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1 class="reveal">Trek Watch<br><span class="accent">Interface</span></h1>
+      <p class="reveal">
+        A simple, familiar <span class="accent">Text User Interface</span> designed to operate
+        without visual or cognitive overload.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTERFACE OVERVIEW -->
+  <section>
+    <h2 class="reveal">Interface Overview</h2>
+    <p class="reveal">
+      Trek uses a minimal TUI navigated using two push buttons and a crown that also functions
+      as a button. The system runs on minimal compute, consumes ultra-low power,
+      and remains fully user-customisable.
+    </p>
+
+    <ul class="reveal">
+      <li>without touch</li>
+      <li>without gestures</li>
+      <li>without looking at a screen full of icons</li>
+    </ul>
+  </section>
+
+  <!-- INPUT -->
+  <section>
+    <h2 class="reveal">Input</h2>
+
+    <h3 class="reveal">The Crown</h3>
+    <p class="reveal">
+      Positioned on the eastern edge at the equator of the case. Its diameter and groove profile
+      are optimised for bare fingers or thick gloves. Clockwise and anti-clockwise rotations map
+      to context-aware actions such as menu navigation or value adjustment.
+    </p>
+
+    <p class="reveal">
+      The crown protrudes just enough to be intentionally pressable, without becoming a structural
+      failure point under impact or shear forces.
+    </p>
+
+    <h3 class="reveal">Buttons</h3>
+    <p class="reveal">
+      Trek uses three physical inputs (including the crown). Each supports three press types,
+      enabling <span class="accent">nine instantly accessible actions</span>.
+    </p>
+
+    <ul class="reveal">
+      <li><strong>Single press</strong> — primary action</li>
+      <li><strong>Double press</strong> — secondary function (e.g. stopwatch)</li>
+      <li><strong>Press and hold</strong> — tertiary function (e.g. flashlight or geo-pin)</li>
+    </ul>
+  </section>
+
+  <!-- FLOW DIAGRAM -->
+  <section>
+    <h2 class="reveal">Input → Action → Output</h2>
+
+    <div class="flow reveal">
+      <div class="flow-box">
+        <strong>Input</strong>
+        <span>Crown / Button</span>
+      </div>
+      <div class="flow-box">
+        <strong>Action</strong>
+        <span>Rotate / Press</span>
+      </div>
+      <div class="flow-box">
+        <strong>System</strong>
+        <span>TUI Logic</span>
+      </div>
+      <div class="flow-box">
+        <strong>Output</strong>
+        <span>LCD / Buzzer / LED</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTPUT -->
+  <section>
+    <h2 class="reveal">Output</h2>
+
+    <ul class="reveal">
+      <li><strong>Monochrome LCD</strong> — high contrast, static-friendly</li>
+      <li><strong>Piezo buzzer</strong> — efficient audio feedback</li>
+      <li><strong>Single RGB LED</strong> — minimal, intentional signaling</li>
+    </ul>
+  </section>
+
+  <!-- UX PHILOSOPHY -->
+  <section>
+    <h2 class="reveal">UX Philosophy</h2>
+
+    <ul class="reveal">
+      <li>discoverable</li>
+      <li>reversible</li>
+      <li>usable under stress, motion, or poor conditions</li>
+    </ul>
+
+    <p class="reveal">
+      No gestures. No hidden states. No accidental inputs.
+      The interface disappears when not needed — and responds instantly when it is.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Trek Watch — Repairable by design
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(r => observer.observe(r));
+  </script>
+
+</body>
+</html>
+
