@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WatchOS Emulator; 128x64 Blue OLED</title>
     
-    <!-- Google Font: Doto -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="./images/twicon.png" type="image">
 
     <style>
         :root {
-            --bg-color: #222;
+            --bg-color: #1b212c;
             --case-color: #4a4a4a; /* Grey Case */
             --screen-off: #090909;
             --oled-on: #44ddff; /* Monochrome Blue/Cyan */
@@ -23,7 +26,7 @@
         body {
             background-color: var(--bg-color);
             color: #ccc;
-            font-family: 'Courier New', monospace;
+            font-family: 'Roboto Mono', monospace;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -175,11 +178,11 @@ const CONFIG = {
     COLORS: {
         BG: '#000000',
         FG: '#44ddff', // Blue OLED
-        DIM: '#114455',
+        DIM: '#2F7B95',
         WHITE: '#ffffff'
     },
-    FONT: '10px "Doto"',
-    FONT_SMALL: '8px "Doto"'
+    FONT: '10.5px "Doto"',
+    FONT_SMALL: '9px "Doto"'
 };
 
 // --- AUDIO ENGINE (8-bit style) ---

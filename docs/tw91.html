@@ -129,6 +129,27 @@
       font-size: 0.85rem;
       color: var(--muted);
     }
+    
+    /* Try Demo */
+    .demo {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: linear-gradient(0deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
+      border-top: 1px solid rgba(255,255,255,0.03);
+      margin-top: 2rem;
+    }
+
+    .demo .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.9rem 1.6rem;
+      background: var(--accent);
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
   </style>
 </head>
 
@@ -246,9 +267,17 @@
     </p>
   </section>
 
+  <!-- TRY DEMO -->
+  <section class="demo">
+    <h2 class="reveal">Try the Demo</h2>
+    <p class="reveal">Experience the TUI in your browser.</p>
+    <a class="btn" href="watchdemo.html">Open Demo</a>
+  </section>
+
   <footer>
     © 2026 Trek Watch — Repairable by design
   </footer>
+
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
