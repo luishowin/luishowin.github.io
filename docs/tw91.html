@@ -11,7 +11,7 @@
     :root {
       --bg: #0b0d14;          /* dark blue */
       --text: #f4f1ec;        /* ivory */
-      --accent: #7c6cff;      /* purple */
+      --accent: #b937ff;      /* purple */
       --muted: #a5a3b3;
     }
 
@@ -59,13 +59,14 @@
 
     /* Hero */
     .hero {
-      height: 100vh;
-      width: 100vw;
+      height:70vh;
+      max-width: 1920px;
       display: flex;
-      align-items: center;
-      margin: 0;
-      background-image: url('images/tui.jpg');
+      margin: 0 auto;
+      background-image: url('./images/header.jpg');
       background-size: cover;
+      background-blend-mode: darken;
+       background-color: rgba(0, 0, 0, 0.45);
       background-position: center;
       background-attachment: fixed;
     }
@@ -93,6 +94,7 @@
       border: 1px solid rgba(255,255,255,0.15);
       padding: 1.5rem;
       text-align: center;
+      cursor: pointer;
     }
 
     .flow-box span {
@@ -227,9 +229,14 @@
       <li>usable under stress, motion, or poor conditions</li>
     </ul>
 
+    <br>
     <p class="reveal">
       No gestures. No hidden states. No accidental inputs.
       The interface disappears when not needed — and responds instantly when it is.
+    </p>
+
+    <p class="reveal">
+      More updates to come...
     </p>
   </section>
 
