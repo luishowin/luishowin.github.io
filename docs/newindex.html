@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en" class="theme-light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Luis Howin — UX Researcher & UI Designer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Luis Howin is a UX researcher and UI designer who turns messy problems into simple, shippable product experiences—through research, prototyping, and tight design systems." />
+  <link rel="canonical" href="https://luishowin.space/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Luis Howin — UX Researcher & UI Designer" />
+  <meta property="og:description" content="Research-led UI design. Clear systems. Practical outcomes." />
+  <meta property="og:url" content="https://luishowin.space/" />
+  <!-- Optional: add your image at /og.png -->
+  <meta property="og:image" content="https://luishowin.space/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Luis Howin",
+    "url":"https://luishowin.space/",
+    "jobTitle":["UX Researcher","UI Designer"],
+    "sameAs":[],
+    "knowsAbout":["User Research","Usability Testing","Interaction Design","Design Systems","Prototyping","Information Architecture"],
+    "email":"mailto:howin329@gmail.com"
+  }
+  </script>
+
+  <style>
+    :root{
+      --accent: rgb(255,213,23);
+      --bg: #ffffff;
+      --text: #0b0b0b;
+      --muted: rgba(11,11,11,.72);
+      --border: rgba(11,11,11,.14);
+      --card: rgba(11,11,11,.03);
+      --shadow: 0 10px 30px rgba(0,0,0,.06);
+      --radius: 16px;
+      --maxw: 1100px;
+    }
+
+    html.theme-dark{
+      --bg: #0b0b0b;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,.72);
+      --border: rgba(255,255,255,.14);
+      --card: rgba(255,255,255,.05);
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:"Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+    }
+
+    /* Accessibility */
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:10px;
+      background: var(--accent);
+      color:#000;
+      padding:10px 12px;
+      border-radius: 10px;
+      z-index:9999;
+    }
+    .skip-link:focus{ left:10px; }
+
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ color: var(--accent); }
+    a:focus-visible, button:focus-visible{
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    /* Layout */
+    .container{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex;
+      align-items: baseline;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .brand .dot{
+      width:10px; height:10px;
+      background: var(--accent);
+      border-radius: 999px;
+      display:inline-block;
+      transform: translateY(-1px);
+    }
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .navlinks a{
+      padding: 8px 10px;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+    .navlinks a[data-active="true"]{
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor:pointer;
+      white-space: nowrap;
+    }
+    .toggle:hover{ color: var(--accent); }
+    .toggle .pill{
+      width: 38px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      position: relative;
+      background: var(--card);
+      flex: 0 0 auto;
+    }
+    .toggle .knob{
+      width: 18px; height: 18px;
+      border-radius: 999px;
+      background: var(--text);
+      position:absolute;
+      top: 1px; left: 1px;
+      transition: transform .2s ease;
+    }
+    html.theme-dark .toggle .knob{ transform: translateX(16px); background: var(--accent); }
+
+    /* Hero */
+    main{ padding-bottom: 80px; }
+    .hero{
+      padding: 70px 0 30px;
+    }
+    .kicker{
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    .headline{
+      font-size: clamp(28px, 4.6vw, 54px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      margin: 0 0 16px;
+      max-width: 18ch;
+    }
+    .subhead{
+      font-size: clamp(14px, 1.7vw, 18px);
+      color: var(--muted);
+      max-width: 70ch;
+      margin: 0 0 26px;
+    }
+    .cta-row{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      cursor:pointer;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .btn:hover{ color: var(--accent); border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); }
+    .btn.primary{
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #000;
+    }
+    .btn.primary:hover{ color:#000; opacity: .92; }
+
+    /* Sections */
+    section{
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+    .section-note{
+      color: var(--muted);
+      margin:0;
+      font-size: 13px;
+      max-width: 70ch;
+    }
+
+    /* Cards */
+    .grid{
+      display:grid;
+      gap: 14px;
+    }
+    .grid.cols-3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.cols-2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card{
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .meta{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+    }
+    .chip strong{ color: var(--text); font-weight: 500; }
+
+    /* Lists */
+    ul.clean{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .item{
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: transparent;
+    }
+    .item .t{ display:flex; justify-content:space-between; gap: 10px; flex-wrap: wrap; }
+    .item b{ font-weight: 600; }
+    .item small{ color: var(--muted); }
+
+    /* Scroll reveal */
+    .reveal{
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .reveal.in{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--border);
+      padding: 26px 0 50px;
+      color: var(--muted);
+    }
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .grid.cols-3{ grid-template-columns: 1fr; }
+      .grid.cols-2{ grid-template-columns: 1fr; }
+      .hero{ padding-top: 52px; }
+      .nav{ padding: 12px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="brand" aria-label="Site brand">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Luis Howin</span>
+          <span style="color:var(--muted); font-weight:400;">UX Research + UI Design</span>
+        </div>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#process">Process</a>
+          <a href="#skills">Skills</a>
+          <a href="#tools">Tools</a>
+          <a href="#contact">Contact</a>
+          <button class="toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+            <span id="themeLabel">Light</span>
+            <span class="pill" aria-hidden="true"><span class="knob"></span></span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="container">
+      <section class="hero" style="border-top:none;">
+        <p class="kicker reveal">
+          I build products that feel obvious to use—because the hard thinking happens before the UI.
+        </p>
+
+        <h1 class="headline reveal">
+          UX researcher & UI designer focused on clarity, speed, and real-world usability.
+        </h1>
+
+        <p class="subhead reveal">
+          I help teams move from assumptions to evidence, then translate that evidence into interfaces people can navigate
+          without needing a manual. I’m comfortable in messy problem spaces: discovery research, workflows, information architecture,
+          prototyping, and design systems that actually ship.
+        </p>
+
+        <div class="cta-row reveal">
+          <a class="btn primary" href="#contact">Let’s work together</a>
+          <a class="btn" href="#work">See selected work</a>
+          <a class="btn" href="mailto:howin329@gmail.com">howin329@gmail.com</a>
+        </div>
+
+        <div class="meta reveal" aria-label="Quick stats">
+          <span class="chip"><strong>Strength:</strong> Research → UI execution</span>
+          <span class="chip"><strong>Mode:</strong> Practical, systems-first</span>
+          <span class="chip"><strong>Outcome:</strong> Fewer clicks, fewer mistakes</span>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="section-head">
+          <h2>Selected work</h2>
+          <p class="section-note">A few representative projects. If you want the deep case studies, I’ll send a private deck.</p>
+        </div>
+
+        <div class="grid cols-3">
+          <article class="card reveal">
+            <h3>Trek 91 / Trek Watch UI</h3>
+            <p>
+              Minimal TUI interface for a rugged watch concept: navigation model, status hierarchy, and low-power interaction patterns.
+            </p>
+            <div class="meta">
+              <span class="chip"><strong>Role:</strong> UX + UI</span>
+              <span class="chip"><strong>Methods:</strong> IA, prototyping</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Design system cleanup</h3>
+            <p>
+              Reduced visual inconsistency by standardizing spacing, typography, states, and component behavior. Faster UI delivery, fewer bugs.
+            </p>
+            <div class="meta">
+              <span class="chip"><strong>Role:</strong> UI + systems</span>
+              <span class="chip"><strong>Output:</strong> Tokens + components</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Usability testing sprint</h3>
+            <p>
+              Moderated tests + quick analysis to find failure points in onboarding and key tasks. Prioritized fixes by impact and effort.
+            </p>
+            <div class="meta">
+              <span class="chip"><strong>Methods:</strong> moderated tests</span>
+              <span class="chip"><strong>Artifacts:</strong> findings + recommendations</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="section-head">
+          <h2>How I work</h2>
+          <p class="section-note">No theater. Just a tight loop from questions → evidence → decisions → UI.</p>
+        </div>
+
+        <ul class="clean">
+          <li class="item reveal">
+            <div class="t">
+              <b>1) Define the problem</b>
+              <small>What are we solving, for who, and how will we know it worked?</small>
+            </div>
+          </li>
+          <li class="item reveal">
+            <div class="t">
+              <b>2) Map the current reality</b>
+              <small>Workflows, constraints, edge cases, and why users struggle.</small>
+            </div>
+          </li>
+          <li class="item reveal">
+            <div class="t">
+              <b>3) Research fast, learn faster</b>
+              <small>Interviews, usability testing, surveys, competitive reviews—pick the method that answers the question.</small>
+            </div>
+          </li>
+          <li class="item reveal">
+            <div class="t">
+              <b>4) Prototype & validate</b>
+              <small>Low → high fidelity depending on risk. Test early, fix cheap.</small>
+            </div>
+          </li>
+          <li class="item reveal">
+            <div class="t">
+              <b>5) Ship with a system</b>
+              <small>Components, states, tokens, and documentation so the UI stays consistent after launch.</small>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="skills">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p class="section-note">I’m strongest where research and design overlap: turning findings into UI that behaves predictably.</p>
+        </div>
+
+        <div class="grid cols-2">
+          <div class="card reveal">
+            <h3>UX research</h3>
+            <p>
+              Interview planning • moderated usability testing • survey design • task analysis • journey mapping • synthesis
+              (themes, insights, opportunities) • prioritization and decision support.
+            </p>
+          </div>
+
+          <div class="card reveal">
+            <h3>UI / product design</h3>
+            <p>
+              Interaction design • information architecture • wireframes → hi-fi UI • component libraries • accessibility basics
+              • microcopy • responsive layouts • handoff that devs don’t hate.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tools">
+        <div class="section-head">
+          <h2>Tools</h2>
+          <p class="section-note">I use whatever gets signal, not noise.</p>
+        </div>
+
+        <div class="grid cols-3">
+          <div class="card reveal">
+            <h3>Design</h3>
+            <p>Figma • FigJam • design tokens • component libraries • prototyping</p>
+          </div>
+          <div class="card reveal">
+            <h3>Research</h3>
+            <p>Google Forms • spreadsheets • usability scripts • note synthesis • light analytics review</p>
+          </div>
+          <div class="card reveal">
+            <h3>Build / handoff</h3>
+            <p>HTML/CSS • basic JS • documentation • design QA • spec writing</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="section-note">If you have a product problem you can’t explain in one sentence, perfect. That’s my favorite kind.</p>
+        </div>
+
+        <div class="grid cols-2">
+          <div class="card reveal">
+            <h3>Email</h3>
+            <p><a href="mailto:howin329@gmail.com">howin329@gmail.com</a></p>
+            <div class="meta">
+              <span class="chip"><strong>Typical reply:</strong> within 24–48h</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>What to send</h3>
+            <p>
+              A short description of the product, who it’s for, what’s not working, and what “success” looks like.
+              Links/screenshots help.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-row">
+          <div>© <span id="year"></span> Luis Howin</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="#work">Work</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Theme toggle with persistence
+    const root = document.documentElement;
+    const toggle = document.getElementById("themeToggle");
+    const label = document.getElementById("themeLabel");
+
+    function setTheme(mode){
+      root.classList.toggle("theme-dark", mode === "dark");
+      root.classList.toggle("theme-light", mode !== "dark");
+
+      label.textContent = (mode === "dark") ? "Night" : "Light";
+      const themeColor = (mode === "dark") ? "#0b0b0b" : "#ffffff";
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      if (metaTheme) metaTheme.setAttribute("content", themeColor);
+
+      localStorage.setItem("theme", mode);
+    }
+
+    const saved = localStorage.getItem("theme");
+    if (saved) setTheme(saved);
+    else {
+      // Prefer system theme if no saved choice
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(prefersDark ? "dark" : "light");
+    }
+
+    toggle.addEventListener("click", () => {
+      const isDark = root.classList.contains("theme-dark");
+      setTheme(isDark ? "light" : "dark");
+    });
+
+    // Scroll reveal (IntersectionObserver)
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries){
+        if (e.isIntersecting){
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.12 });
+
+    els.forEach(el => io.observe(el));
+
+    // Active nav highlighting based on section in view
+    const links = document.querySelectorAll(".navlinks a[href^='#']");
+    const sections = Array.from(links).map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+
+    const activeIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute("id");
+        const link = document.querySelector(`.navlinks a[href="#${id}"]`);
+        if (!link) return;
+
+        if (entry.isIntersecting){
+          links.forEach(l => l.dataset.active = "false");
+          link.dataset.active = "true";
+        }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+    sections.forEach(s => activeIO.observe(s));
+  </script>
+</body>
+</html>
