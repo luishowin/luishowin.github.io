@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Beben Moto Digital Dash — UX/UI Case Study (Draft)" />
-  <title>Beben Moto Digital Dash — UX/UI Case Study</title>
+  <meta name="description" content="Beben Moto Digital Dash - UX/UI Case Study (Draft)" />
+  <title>Beben Moto Digital Dash - UX/UI Case Study</title>
   <style>
     :root{
       --bg:#0b1020;
@@ -242,7 +242,7 @@
 <body>
   <header>
     <div class="wrap">
-      <div class="kicker">UX/UI Case Study (Draft)</div>
+      <div class="kicker">UX/UI Case Study (Still in development)</div>
       <h1>Beben Moto Digital Dash</h1>
       <p class="sub">
         Designing a <span class="accent">glanceable</span>, safety-critical interface for a motorcycle dashboard on a
@@ -259,7 +259,6 @@
       <div class="heroFrame">
         <div class="placeholder">
           HERO IMAGE PLACEHOLDER<br/>
-          (Drop in a render of the dash UI here later)
         </div>
       </div>
 
@@ -306,14 +305,14 @@
               </div>
             </div>
             <div class="mini">
-Constraints (non-negotiable)
-- Circular 4" OLED
-- Outdoor visibility (sun + night)
-- Gloves on → no touch-first UX
-- Fragmented rider attention
-- ESP32-class compute
-- IP68 sealed enclosure
-- Works across different motorcycles
+                Constraints (non-negotiable)
+                - Circular 4" OLED
+                - Outdoor visibility (sun + night)
+                - Gloves on → no touch-first UX
+                - Fragmented rider attention
+                - ESP32-class compute
+                - IP68 sealed enclosure
+                - Works across different motorcycles
             </div>
           </div>
 
@@ -433,11 +432,11 @@ Constraints (non-negotiable)
               </ul>
             </div>
             <div class="mini">
-Example mapping (draft)
-Rotate: cycle info cards
-Press: confirm / toggle view
-Long press: settings
-Hold (ride): reset trip (with confirm)
+                Example mapping (draft)
+                Rotate: cycle info cards
+                Press: confirm / toggle view
+                Long press: settings
+                Hold (ride): reset trip (with confirm)
             </div>
           </div>
 
@@ -531,7 +530,7 @@ UI components (draft)
               </ul>
             </div>
             <div class="callout">
-              <strong>Why:</strong> Riders don’t read maps at speed — they glance for the next move.
+              <strong>Why:</strong> Riders don't read maps at speed - they glance for the next move.
             </div>
           </div>
         </section>
@@ -540,7 +539,7 @@ UI components (draft)
         <section id="edge" class="card">
           <h2>9) Edge cases & failure modes</h2>
           <p class="muted">
-            UX doesn’t stop when things go wrong. The interface prioritizes comprehension and clear recovery.
+            UX doesn't stop when things go wrong. The interface prioritizes comprehension and clear recovery.
           </p>
           <div class="grid two">
             <div>
@@ -579,7 +578,7 @@ Fail-safe behavior (draft)
             <div>
               <h3>Next steps</h3>
               <ul>
-                <li>Quick rider usability sessions (5–8 riders)</li>
+                <li>Quick rider usability sessions (5-8 riders)</li>
                 <li>Sunlight contrast checks + night dimming tests</li>
                 <li>Refine animations for peripheral vision</li>
                 <li>Validate layouts across riding modes</li>
@@ -588,7 +587,7 @@ Fail-safe behavior (draft)
           </div>
 
           <div class="footer">
-            <b>Note:</b> This page is a draft structure. Replace placeholders with renders, flows, and 2–3 final screens.
+            <b>Note:</b> To eplace placeholders with renders, flows, and 2-3 final screens.
           </div>
         </section>
 
@@ -597,13 +596,13 @@ Fail-safe behavior (draft)
         <!-- Screens placeholders -->
         <section id="screens" class="card">
           <h2>Screens (placeholders)</h2>
-          <p class="muted">Drop in your polished screens later. Keep it to 3–4 screens max and annotate them.</p>
+          <p class="muted"></p>
           <div class="grid three">
             <div class="heroFrame">
-              <div class="placeholder">Ride Mode — Minimal<br/>(Speed + RPM ring + indicators)</div>
+              <div class="placeholder">Ride Mode - Minimal<br/>(Speed + RPM ring + indicators)</div>
             </div>
             <div class="heroFrame">
-              <div class="placeholder">Ride Mode — Touring<br/>(Fuel + temp + trip + nav prompt)</div>
+              <div class="placeholder">Ride Mode - Touring<br/>(Fuel + temp + trip + nav prompt)</div>
             </div>
             <div class="heroFrame">
               <div class="placeholder">Settings / Customization<br/>(Presets + widgets + units)</div>
@@ -614,21 +613,21 @@ Fail-safe behavior (draft)
         <!-- Flows placeholders -->
         <section id="flows" class="card">
           <h2>Flows (placeholders)</h2>
-          <p class="muted">Add one interaction flow diagram and one system/data flow diagram.</p>
+          <p class="muted">interaction diagram</p>
           <div class="grid two">
             <div class="mini">
-Interaction flow (draft)
-Input (crown/buttons)
-→ Action (cycle cards / confirm / settings)
-→ Output (updated widgets / mode change)
+            Interaction flow (draft)
+            Input (crown/buttons)
+            → Action (cycle cards / confirm / settings)
+            → Output (updated widgets / mode change)
             </div>
             <div class="mini">
-System/data flow (draft)
-Bike sensors/CAN
-→ Data model normalization
-→ UI render engine
-→ Display + indicators
-(+ BLE: phone nav + config)
+            System/data flow (draft)
+            Bike sensors/CAN
+            → Data model normalization
+            → UI render engine
+            → Display + indicators
+            (+ BLE: phone nav + config)
             </div>
           </div>
         </section>
