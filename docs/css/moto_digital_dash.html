@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Beben Moto Digital Dash — UX/UI Case Study (Draft)" />
+  <title>Beben Moto Digital Dash — UX/UI Case Study</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#0f1733;
+      --text:#e9ecf5;
+      --muted:#aab2d6;
+      --line:rgba(233,236,245,.12);
+      --accent:#8b5cf6;
+      --accent2:#22c55e;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1080px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(139,92,246,.22), transparent 55%),
+        radial-gradient(900px 500px at 90% 10%, rgba(34,197,94,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg), #060814);
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration: none;}
+    a:hover{ text-decoration: underline; text-decoration-color: rgba(139,92,246,.6); }
+    header{
+      position:relative;
+      padding:84px 20px 30px;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+    }
+    .wrap{max-width:var(--max); margin:0 auto;}
+    .kicker{
+      font-family:var(--mono);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-size:12px;
+    }
+    h1{
+      margin:14px 0 14px;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height:1.05;
+    }
+    .sub{
+      max-width: 70ch;
+      color:var(--muted);
+      font-size: 16px;
+      margin: 0 0 22px;
+    }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(15,23,51,.6);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color: var(--muted);
+      backdrop-filter: blur(8px);
+    }
+    .pill b{color:var(--text); font-weight:600}
+    main{padding:34px 20px 90px;}
+    section{margin: 22px 0;}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+    }
+    @media (min-width: 900px){
+      .grid.two{grid-template-columns: 1fr 1fr;}
+      .grid.three{grid-template-columns: 1fr 1fr 1fr;}
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(15,23,51,.55);
+      border-radius: var(--radius);
+      padding: 18px 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    h2{
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: .2px;
+    }
+    h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--text);
+    }
+    p{margin: 0 0 12px;}
+    ul{margin: 0; padding-left: 18px; color: var(--muted);}
+    li{margin: 6px 0;}
+    .muted{color:var(--muted)}
+    .accent{color: var(--accent)}
+    .hr{
+      margin: 22px 0;
+      height:1px;
+      background: var(--line);
+      border:0;
+    }
+    .callout{
+      border-left: 3px solid var(--accent);
+      padding: 12px 14px;
+      background: rgba(139,92,246,.08);
+      border-radius: 12px;
+      color: var(--muted);
+    }
+    .callout strong{color:var(--text)}
+    .tagrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+    .tag{
+      font-family:var(--mono);
+      font-size:12px;
+      color: var(--text);
+      border:1px solid rgba(139,92,246,.35);
+      background: rgba(139,92,246,.10);
+      padding:6px 8px;
+      border-radius:999px;
+    }
+    .mini{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      border:1px dashed rgba(233,236,245,.18);
+      border-radius: 14px;
+      padding: 14px;
+      white-space: pre-wrap;
+    }
+    .footer{
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    .btnbar{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid rgba(233,236,245,.14);
+      background: rgba(15,23,51,.55);
+      color: var(--text);
+      font-size: 14px;
+      cursor:pointer;
+    }
+    .btn:hover{border-color: rgba(139,92,246,.5);}
+    .btn.primary{
+      border-color: rgba(139,92,246,.55);
+      background: rgba(139,92,246,.16);
+    }
+    /* simple “sticky” side TOC on desktop */
+    .layout{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 1100px){
+      .layout{
+        grid-template-columns: 260px 1fr;
+        align-items:start;
+      }
+      nav{
+        position: sticky;
+        top: 20px;
+      }
+    }
+    nav{
+      border:1px solid var(--line);
+      background: rgba(15,23,51,.45);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    nav .kicker{margin-bottom:10px}
+    nav a{
+      display:block;
+      padding:8px 10px;
+      border-radius: 10px;
+      color: var(--muted);
+      border:1px solid transparent;
+      margin: 4px 0;
+      font-size: 14px;
+    }
+    nav a:hover{
+      color: var(--text);
+      border-color: rgba(139,92,246,.3);
+      background: rgba(139,92,246,.08);
+      text-decoration:none;
+    }
+    .heroFrame{
+      margin-top: 18px;
+      border: 1px solid rgba(233,236,245,.14);
+      background: linear-gradient(180deg, rgba(15,23,51,.6), rgba(15,23,51,.3));
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+    .heroFrame .placeholder{
+      height: 240px;
+      border-radius: 14px;
+      border: 1px dashed rgba(233,236,245,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: var(--muted);
+      font-family: var(--mono);
+      text-align:center;
+      padding: 18px;
+    }
+    .cols{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 900px){
+      .cols{grid-template-columns: 1.2fr .8fr;}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="kicker">UX/UI Case Study (Draft)</div>
+      <h1>Beben Moto Digital Dash</h1>
+      <p class="sub">
+        Designing a <span class="accent">glanceable</span>, safety-critical interface for a motorcycle dashboard on a
+        4&quot; circular OLED, built to survive the real world (vibration, sunlight, gloves, rain, and chaos).
+      </p>
+
+      <div class="meta">
+        <div class="pill"><b>Role:</b> UX Research · UI Design · Interaction Design</div>
+        <div class="pill"><b>Platform:</b> Embedded (ESP32 + circular OLED)</div>
+        <div class="pill"><b>Hardware goals:</b> Titanium · Tempered glass · IP68</div>
+        <div class="pill"><b>Key promise:</b> Customisable + tweakable</div>
+      </div>
+
+      <div class="heroFrame">
+        <div class="placeholder">
+          HERO IMAGE PLACEHOLDER<br/>
+          (Drop in a render of the dash UI here later)
+        </div>
+      </div>
+
+      <div class="btnbar">
+        <button class="btn primary" onclick="document.querySelector('#problem').scrollIntoView({behavior:'smooth'})">Start: Problem</button>
+        <button class="btn" onclick="document.querySelector('#screens').scrollIntoView({behavior:'smooth'})">Jump: Screens</button>
+        <button class="btn" onclick="document.querySelector('#flows').scrollIntoView({behavior:'smooth'})">Jump: Flows</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap layout">
+      <nav aria-label="Table of contents">
+        <div class="kicker">Contents</div>
+        <a href="#problem">1. Problem & constraints</a>
+        <a href="#users">2. Users & insights</a>
+        <a href="#principles">3. UX principles</a>
+        <a href="#ia">4. Information architecture</a>
+        <a href="#interaction">5. Interaction model</a>
+        <a href="#ui">6. UI system</a>
+        <a href="#custom">7. Customization</a>
+        <a href="#navux">8. Navigation UX</a>
+        <a href="#edge">9. Edge cases</a>
+        <a href="#outcome">10. Outcome</a>
+        <a href="#screens">Screens (placeholders)</a>
+        <a href="#flows">Flows (placeholders)</a>
+      </nav>
+
+      <div>
+        <!-- 1 -->
+        <section id="problem" class="card">
+          <h2>1) Problem & constraints</h2>
+          <div class="cols">
+            <div>
+              <p>
+                Most motorcycle dashboards fail riders in one of three ways:
+                <span class="accent">information overload</span>, poor glanceability, or zero flexibility.
+                Riders need critical information instantly, without visual hunting, while moving at speed.
+              </p>
+              <div class="callout">
+                <strong>Design goal:</strong> A dashboard that communicates priority information in under ~0.5s per glance,
+                and stays usable across daylight, night riding, rain, vibration, and gloves.
+              </div>
+            </div>
+            <div class="mini">
+Constraints (non-negotiable)
+- Circular 4" OLED
+- Outdoor visibility (sun + night)
+- Gloves on → no touch-first UX
+- Fragmented rider attention
+- ESP32-class compute
+- IP68 sealed enclosure
+- Works across different motorcycles
+            </div>
+          </div>
+
+          <div class="tagrow">
+            <span class="tag">Safety-critical</span>
+            <span class="tag">Glanceability</span>
+            <span class="tag">Embedded constraints</span>
+            <span class="tag">Outdoor legibility</span>
+          </div>
+        </section>
+
+        <!-- 2 -->
+        <section id="users" class="card">
+          <h2>2) Users & insights</h2>
+          <div class="grid two">
+            <div>
+              <h3>Primary users</h3>
+              <ul>
+                <li>Daily commuters</li>
+                <li>Touring riders</li>
+                <li>Custom / cafe / ADV riders</li>
+                <li>Riders upgrading from analog clusters</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Key insights</h3>
+              <ul>
+                <li>Speed and warnings must be readable <b>without focus</b>.</li>
+                <li>RPM is pattern-based: ring + thresholds beat small digits.</li>
+                <li>Riders want control over what is shown (cognitive fit).</li>
+                <li>Navigation must be directional, not map-based.</li>
+                <li>Night riding punishes bright, busy UIs.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3 -->
+        <section id="principles" class="card">
+          <h2>3) UX principles</h2>
+          <div class="grid two">
+            <div class="callout">
+              <strong>1. Glanceable first</strong><br/>
+              Primary values are readable in under ~0.5 seconds.
+            </div>
+            <div class="callout">
+              <strong>2. Hierarchy over density</strong><br/>
+              Fewer elements, stronger prioritisation. No “data soup”.
+            </div>
+            <div class="callout">
+              <strong>3. Peripheral awareness</strong><br/>
+              Warnings live on the edge, not in the center.
+            </div>
+            <div class="callout">
+              <strong>4. Contextual flexibility</strong><br/>
+              Layout adapts to mode and preference without breaking hierarchy.
+            </div>
+            <div class="callout">
+              <strong>5. Fail gracefully</strong><br/>
+              Missing data never breaks comprehension.
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 -->
+        <section id="ia" class="card">
+          <h2>4) Information architecture</h2>
+          <p class="muted">
+            Prioritisation is everything. The interface is organised into tiers based on how often riders need the info and
+            how risky it is to hunt for it while moving.
+          </p>
+          <div class="grid three">
+            <div class="card" style="box-shadow:none;">
+              <h3>Tier 1 (always visible)</h3>
+              <ul>
+                <li>Speed</li>
+                <li>Critical warnings</li>
+                <li>Gear (optional/configurable)</li>
+              </ul>
+            </div>
+            <div class="card" style="box-shadow:none;">
+              <h3>Tier 2 (situational)</h3>
+              <ul>
+                <li>RPM (ring)</li>
+                <li>Fuel</li>
+                <li>Temp</li>
+                <li>Secondary battery voltage</li>
+              </ul>
+            </div>
+            <div class="card" style="box-shadow:none;">
+              <h3>Tier 3 (on-demand)</h3>
+              <ul>
+                <li>ODO</li>
+                <li>Trip A/B</li>
+                <li>Date/time</li>
+                <li>Navigation prompts</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5 -->
+        <section id="interaction" class="card">
+          <h2>5) Interaction model</h2>
+          <p class="muted">
+            No touch-first gimmicks. The system is designed for gloves and motion using a simple physical control scheme.
+          </p>
+
+          <div class="grid two">
+            <div>
+              <h3>Primary interactions</h3>
+              <ul>
+                <li>Physical buttons / crown</li>
+                <li>Short press vs long press</li>
+                <li>Context-aware control mapping</li>
+                <li>Auto-revert to ride mode after inactivity</li>
+              </ul>
+            </div>
+            <div class="mini">
+Example mapping (draft)
+Rotate: cycle info cards
+Press: confirm / toggle view
+Long press: settings
+Hold (ride): reset trip (with confirm)
+            </div>
+          </div>
+
+          <div class="callout" style="margin-top:14px;">
+            <strong>Interaction rule:</strong> nothing should require multiple steps while the bike is moving.
+          </div>
+        </section>
+
+        <!-- 6 -->
+        <section id="ui" class="card">
+          <h2>6) UI system</h2>
+          <div class="grid two">
+            <div>
+              <h3>Layout logic</h3>
+              <ul>
+                <li>Center: <b>speed</b> (largest text, highest contrast)</li>
+                <li>Radial ring: <b>RPM</b> with thresholds (pattern-based)</li>
+                <li>Edge ring: indicator icons (turn, high beam, neutral, warnings)</li>
+                <li>Modular widgets: fuel / temp / battery / odo / trip</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Typography + legibility</h3>
+              <ul>
+                <li>High x-height, bold numerals</li>
+                <li>No thin strokes</li>
+                <li>Numeric clarity &gt; style</li>
+                <li>Distance readability tested (helmet posture)</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Color & meaning</h3>
+              <ul>
+                <li><span style="color:var(--danger)">Red</span> = immediate danger only</li>
+                <li><span style="color:var(--warn)">Amber</span> = caution</li>
+                <li><span style="color:var(--accent2)">Green/Blue</span> = informational</li>
+                <li>OLED-safe palette, dark-first to reduce glare</li>
+              </ul>
+            </div>
+            <div class="mini">
+UI components (draft)
+- Speed readout
+- RPM ring
+- Gear badge
+- Indicator ring
+- Widget cards (fuel/temp/battery/odo/trip)
+- Alert banners (rare, high priority)
+            </div>
+          </div>
+        </section>
+
+        <!-- 7 -->
+        <section id="custom" class="card">
+          <h2>7) Customization (as UX, not gimmick)</h2>
+          <p class="muted">
+            Customisation is framed as <b>cognitive fit</b>: riders can tailor the interface to their riding style without
+            breaking the information hierarchy.
+          </p>
+          <div class="grid two">
+            <div>
+              <h3>What users can tweak</h3>
+              <ul>
+                <li>Layout presets (Minimal / Touring / Sport)</li>
+                <li>RPM redline and shift-light behavior</li>
+                <li>Widget assignments</li>
+                <li>Units (km/h, mph), contrast modes</li>
+                <li>Theme palettes (OLED-friendly)</li>
+              </ul>
+            </div>
+            <div class="callout">
+              <strong>Rule:</strong> Customisation never changes core hierarchy. Speed + warnings remain dominant.
+            </div>
+          </div>
+        </section>
+
+        <!-- 8 -->
+        <section id="navux" class="card">
+          <h2>8) Navigation UX (smart restraint)</h2>
+          <p class="muted">
+            The dash displays glanceable navigation prompts; the phone does the heavy lifting.
+            No maps, no scrolling, no clutter.
+          </p>
+          <div class="grid two">
+            <div>
+              <h3>Navigation elements</h3>
+              <ul>
+                <li>Direction arrow</li>
+                <li>Distance to next turn</li>
+                <li>Optional street name (truncated)</li>
+                <li>Optional ETA</li>
+              </ul>
+            </div>
+            <div class="callout">
+              <strong>Why:</strong> Riders don’t read maps at speed — they glance for the next move.
+            </div>
+          </div>
+        </section>
+
+        <!-- 9 -->
+        <section id="edge" class="card">
+          <h2>9) Edge cases & failure modes</h2>
+          <p class="muted">
+            UX doesn’t stop when things go wrong. The interface prioritizes comprehension and clear recovery.
+          </p>
+          <div class="grid two">
+            <div>
+              <h3>Examples</h3>
+              <ul>
+                <li>Lost CAN/sensor → placeholder + warning</li>
+                <li>Low voltage → dim UI + warning first</li>
+                <li>Overheat → simplified view + thermal alert</li>
+                <li>Night/day → auto-adjust with manual override</li>
+              </ul>
+            </div>
+            <div class="mini">
+Fail-safe behavior (draft)
+- Default to readable state
+- Avoid flashing unless critical
+- Keep speed + warnings available
+- Provide clear “data source lost” messaging
+            </div>
+          </div>
+        </section>
+
+        <!-- 10 -->
+        <section id="outcome" class="card">
+          <h2>10) Outcome & reflection</h2>
+          <div class="grid two">
+            <div>
+              <h3>What this project demonstrates</h3>
+              <ul>
+                <li>Designing under hardware constraints</li>
+                <li>Safety-critical hierarchy & glanceability</li>
+                <li>Non-touch interaction design</li>
+                <li>Customization without chaos</li>
+                <li>Embedded UI thinking (real constraints)</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Next steps</h3>
+              <ul>
+                <li>Quick rider usability sessions (5–8 riders)</li>
+                <li>Sunlight contrast checks + night dimming tests</li>
+                <li>Refine animations for peripheral vision</li>
+                <li>Validate layouts across riding modes</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer">
+            <b>Note:</b> This page is a draft structure. Replace placeholders with renders, flows, and 2–3 final screens.
+          </div>
+        </section>
+
+        <hr class="hr" />
+
+        <!-- Screens placeholders -->
+        <section id="screens" class="card">
+          <h2>Screens (placeholders)</h2>
+          <p class="muted">Drop in your polished screens later. Keep it to 3–4 screens max and annotate them.</p>
+          <div class="grid three">
+            <div class="heroFrame">
+              <div class="placeholder">Ride Mode — Minimal<br/>(Speed + RPM ring + indicators)</div>
+            </div>
+            <div class="heroFrame">
+              <div class="placeholder">Ride Mode — Touring<br/>(Fuel + temp + trip + nav prompt)</div>
+            </div>
+            <div class="heroFrame">
+              <div class="placeholder">Settings / Customization<br/>(Presets + widgets + units)</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Flows placeholders -->
+        <section id="flows" class="card">
+          <h2>Flows (placeholders)</h2>
+          <p class="muted">Add one interaction flow diagram and one system/data flow diagram.</p>
+          <div class="grid two">
+            <div class="mini">
+Interaction flow (draft)
+Input (crown/buttons)
+→ Action (cycle cards / confirm / settings)
+→ Output (updated widgets / mode change)
+            </div>
+            <div class="mini">
+System/data flow (draft)
+Bike sensors/CAN
+→ Data model normalization
+→ UI render engine
+→ Display + indicators
+(+ BLE: phone nav + config)
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Optional: highlight active section in TOC (simple + good enough)
+    const links = Array.from(document.querySelectorAll('nav a'));
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          links.forEach(l => l.style.opacity = '0.75');
+          const active = links.find(l => l.getAttribute('href') === '#' + entry.target.id);
+          if(active) active.style.opacity = '1';
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.01 });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
