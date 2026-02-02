@@ -41,7 +41,6 @@ html, body {
   transform: translateY(40px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
@@ -68,7 +67,7 @@ html, body {
 }
 .namer{
   font-size: 3rem; 
-  color: #fff41f;
+  color: #e1d71e;
 }
 .content .hero{
     background-image: url('../images/scrapbook.jpg');
@@ -87,12 +86,18 @@ html, body {
 .hero-content h1 {
   font-size: 1rem;
   color: #e0e0e0;
+  font-weight: 300;
 }
 
 .container {
       max-width: 850px;
       margin: 6rem auto;
       padding: 0 1rem;
+    }
+.container h2 {
+      font-weight: 300;
+      color: #1D2229;
+      padding-bottom: 1rem;
     }
 p {
       font-size: 0.9rem;
@@ -105,11 +110,11 @@ p {
     }
 
 blockquote {
-      border-left: 3px solid  #848484;
+      border-left: 3px solid  #d9d9d9;
       padding-left: 1rem;
       font-style: italic;
       margin: 2rem 0;
-      color: #aaa;
+      color: #626262;
     }
 
 a {
@@ -139,7 +144,7 @@ a {
 }
 .card {
   background: #f0f0f0;
-  color: #000000;
+  color: #1D2229;
   padding: 0.9rem;
   display: flex;
   flex-direction: column;
@@ -173,7 +178,7 @@ a {
   font-size: 0.8rem;
   line-height: 1.4;
   font-weight: 300;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .card-image {
@@ -198,7 +203,7 @@ a {
 
 .card:hover {
   transform: translateY(-4px);
-  background: #d4d4d4;
+  background: #e7e7e7;
 }
 
 .card-image {
@@ -219,9 +224,8 @@ a {
 
 /*        footer section        */
 .footer {
-  /* 
   background-image: url('../images/baloonscrop.webp');
-  */
+  background-repeat: no-repeat;
   position: relative;
   height: 250px;
   display: flex;
@@ -233,14 +237,14 @@ a {
   z-index: 0;
   background-size: cover;
   background-position: center;
-  background-color: rgb(230, 230, 230);
-  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.679);
+  background-blend-mode: overlay;
 }
 
 .footer a{ 
   font-weight: 400;
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   line-height: 1.5;
   margin: 0em 0.5em;
   font-size: 0.8rem;
@@ -251,7 +255,7 @@ a {
 }
 
 .footer p {
-  color: #000000;
+  color: #ffffff;
   margin: 0.5em 0;
   font-size: 0.7rem;
   font-weight: 200;
