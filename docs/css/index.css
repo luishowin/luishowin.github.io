@@ -96,7 +96,7 @@ html, body {
     }
 .container h2 {
       font-weight: 300;
-      color: #1D2229;
+      color: #262626;
       padding-bottom: 1rem;
     }
 p {
@@ -162,7 +162,7 @@ a {
 
 .card-number {
   font-size: 5rem;
-  font-weight: 200;
+  font-weight: 100;
   letter-spacing: 4px;
   margin-bottom: 0.3rem;
   color: #b937ff;
