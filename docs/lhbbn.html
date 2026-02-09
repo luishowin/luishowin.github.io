@@ -194,7 +194,7 @@
     const html = document.documentElement;
     
     // Check for saved preference
-    const savedTheme = localStorage.getItem('beben-theme') || 'dark';
+    const savedTheme = localStorage.getItem('beben-theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
 
     toggle.addEventListener('click', () => {
