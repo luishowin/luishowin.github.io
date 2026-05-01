@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Howin | Builder</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <meta name="description" content="UX Researcher, UI Designer & Builder. Beben Design.">
     <meta name="author" content="Luis Howin">
     <meta name="robots" content="index, follow">
@@ -53,20 +54,20 @@
         :root[data-theme="light"] {
             --primary: #000000;
             --bg: #ffffff;
-            --accent: #e6b514;
+            --accent: #e61449;
             --dot: #d8d8d8;
             --muted: #666666;
             --card-bg: #f5f5f5;
-            --border: #000000;
+         
         }
         :root[data-theme="dark"] {
             --primary: #ffffff;
             --bg: #000000;
-            --accent: #e6b514;
+            --accent: #e61449;
             --dot: #1a1a1a;
-            --muted: #888888;
+            --muted: #979797;
             --card-bg: #0a0a0a;
-            --border: #ffffff;
+         
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,11 +79,11 @@
             background-size: 24px 24px;
             color: var(--primary);
             line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.5s ease, color 0.3s ease;
         }
 
         .wrapper {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -93,18 +94,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 36px 0;
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 1px solid var(--muted);
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .nav-left {
             display: flex;
             flex-direction: column;
             gap: 2px;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .nav-logo {
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -129,6 +132,7 @@
             display: flex;
             align-items: center;
             gap: 16px;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .nav-cta {
@@ -152,7 +156,7 @@
 
         .theme-toggle {
             cursor: pointer;
-            border: 1px solid var(--border);
+            border: 1px solid var(--muted);
             padding: 4px 10px;
             font-size: 0.65rem;
             font-family: 'Roboto Mono', monospace;
@@ -171,31 +175,22 @@
         /* ── HERO ── */
         .hero {
             padding: 100px 0 80px;
-        }
-
-        .location-tag {
-            font-size: 0.7rem;
-            font-weight: 700;
-            background: var(--accent);
-            color: #0e0e0e;
-            padding: 4px 10px;
-            display: inline-block;
-            margin-bottom: 28px;
-            letter-spacing: 0.08em;
+            margin-bottom: 60px;
         }
 
         h1 {
             font-size: clamp(2.8rem, 9vw, 5rem);
             text-transform: uppercase;
-            line-height: 0.88;
+            line-height: 1.2;
             letter-spacing: -3px;
             margin-bottom: 28px;
             font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         h1 .highlight {
-            background: var(--accent);
-            color: #0e0e0e;
+            background: var(--primary);
+            color: var(--bg);
             line-height: initial;
         }
 
@@ -207,26 +202,16 @@
             margin-bottom: 36px;
         }
 
-        .hero-tagline {
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border-left: 4px solid var(--accent);
-            padding-left: 14px;
-            color: var(--primary);
-            margin-bottom: 40px;
-        }
-
         .hero-actions {
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
+            font-size: 3.5rem;
         }
 
         .btn-primary {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -253,7 +238,7 @@
             background: transparent;
             padding: 12px 22px;
             text-decoration: none;
-            border: 2px solid var(--border);
+            border: 2px solid var(--muted);
             transition: background 0.2s, color 0.2s;
         }
 
@@ -277,14 +262,14 @@
 
         /* ── PHILOSOPHY ── */
         .philosophy-text {
-            font-size: 1.15rem;
+            font-size: 1rem;
             line-height: 1.8;
             max-width: 680px;
         }
 
         .quote {
             font-style: italic;
-            border-left: 4px solid var(--accent);
+            border-left: 3px solid var(--accent);
             padding-left: 20px;
             margin: 40px 0 0;
             color: var(--muted);
@@ -296,13 +281,13 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 0;
-            border-top: 2px solid var(--border);
-            border-left: 2px solid var(--border);
+            border-top: 1px solid var(--muted);
+            border-left: 1px solid var(--muted);
         }
 
         .service-item {
-            border-right: 2px solid var(--border);
-            border-bottom: 2px solid var(--border);
+            border-right: 1px solid var(--muted);
+            border-bottom: 1px  solid var(--muted);
             padding: 24px 20px;
             transition: background 0.2s;
         }
@@ -316,6 +301,7 @@
 
         .service-icon {
             font-size: 0.65rem;
+            font-weight: 700;
             color: var(--accent);
             margin-bottom: 10px;
             display: block;
@@ -323,14 +309,14 @@
         }
 
         .service-item h4 {
-            font-size: 0.8rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             margin-bottom: 6px;
         }
 
         .service-item p {
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             color: var(--muted);
             line-height: 1.5;
             transition: color 0.2s;
@@ -346,7 +332,7 @@
         }
 
         .project-card {
-            border: 2px solid var(--border);
+            border: 1px solid var(--muted);
             background: var(--card-bg);
             padding: 32px;
             position: relative;
@@ -354,7 +340,7 @@
         }
 
         .project-card:hover {
-            box-shadow: 8px 8px 0px var(--accent);
+            box-shadow: 5px 5px 0px var(--accent);
         }
 
         .project-meta {
@@ -366,10 +352,11 @@
         }
 
         .project-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
             margin-bottom: 12px;
             letter-spacing: -0.5px;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .project-card p {
@@ -386,12 +373,13 @@
         }
 
         .tag {
-            border: 1px solid var(--border);
+            border: 1px solid var(--muted);
             padding: 3px 10px;
             font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--muted);
+            font-family: 'JetBrains Mono', monospace;
         }
 
         /* ── PROCESS ── */
@@ -399,7 +387,7 @@
             display: flex;
             flex-direction: column;
             gap: 0;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--muted);
         }
 
         .process-item {
@@ -407,7 +395,7 @@
             align-items: flex-start;
             gap: 24px;
             padding: 20px 0;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--muted);
         }
 
         .process-num {
@@ -419,7 +407,7 @@
         }
 
         .process-title {
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.06em;
@@ -441,7 +429,7 @@
 
         /* ── FOOTER / CTA ── */
         .cta-block {
-            border-top: 2px solid var(--border);
+            border-top: 1px solid var(--muted);
             padding: 80px 0 60px;
         }
 
@@ -479,7 +467,7 @@
         }
 
         footer {
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--muted);
             padding-top: 32px;
             padding-bottom: 40px;
             display: flex;
@@ -487,6 +475,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 12px;
+            font-weight: 700;
         }
 
         .footer-copy {
@@ -528,7 +517,6 @@
     <nav>
         <div class="nav-left">
             <span class="nav-logo">LUIS HOWIN // BUILDER</span>
-            <span class="nav-studio">Part of <a href="https://beben.design" target="_blank" rel="noopener">BEBEN DESIGN ↗</a></span>
         </div>
         <div class="nav-right">
             <a href="https://beben.design/contact/" class="nav-cta" target="_blank" rel="noopener">CONTACT ↗</a>
@@ -538,10 +526,9 @@
 
     <!-- HERO -->
     <header class="hero">
-        <span class="location-tag">NAIROBI, KE</span>
         <h1>DESIGN<br>LOGIC<br><span class="highlight">FIRST.</span></h1>
-        <p class="hero-tagline">Design logic before the first line of code.</p>
-        <p class="hero-sub">UX Researcher and UI Designer. I believe design should make sense before it makes noise — and that good systems outlast trends.</p>
+        <p class="hero-tagline"></p>
+        <p class="hero-sub">I'm Luis, a UX Researcher and UI Designer. I believe design should make sense before it makes noise, and that simple systems outlast trends.</p>
         <div class="hero-actions">
             <a href="https://beben.design/contact/" class="btn-primary" target="_blank" rel="noopener">START A CONVERSATION ↗</a>
             <a href="https://beben.design/work/" class="btn-secondary" target="_blank" rel="noopener">VIEW WORK</a>
@@ -551,7 +538,7 @@
     <!-- 01 PHILOSOPHY -->
     <section id="about">
         <span class="section-label">[ 01. PHILOSOPHY ]</span>
-        <p class="philosophy-text">My work sits at the intersection of how people think, feel, and move through digital systems — and how those systems can evolve without losing their humanity.</p>
+        <p class="philosophy-text">Design logic before the first line of code. My work sits at the intersection of how people think, feel, and move through digital systems, and how those systems can evolve without losing their humanity.</p>
         <div class="quote">
             "People ignore design that ignores people." — Frank Chimero
         </div>
