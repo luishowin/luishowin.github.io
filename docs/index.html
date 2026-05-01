@@ -1,65 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Howin | Builder</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-    <meta name="description" content="Beben moto supply">
-  <meta name="author" content="Luis Howin">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://luishowin.space/">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <meta name="description" content="UX Researcher, UI Designer & Builder. Beben Design.">
+    <meta name="author" content="Luis Howin">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luishowin.space/">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Luis Howin | UX Researcher, UI Designer & Builder" />
-  <meta property="og:description" content="Build it." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://luishowin.space/" />
-  <meta property="og:image" content="https://luishowin.space/ogl.jpg" />
-  <meta property="og:locale" content="en_GB" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Luis Howin | UX Researcher, UI Designer & Builder" />
+    <meta property="og:description" content="Design logic before the first line of code." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://luishowin.space/" />
+    <meta property="og:image" content="https://luishowin.space/ogl.jpg" />
+    <meta property="og:locale" content="en_GB" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Luis Howin | UX Researcher, UI Designer & Builder">
-  <meta name="twitter:description" content="Build it.">
-  <meta name="twitter:image" content="https://luishowin.space/ogl.jpg">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luis Howin | UX Researcher, UI Designer & Builder">
+    <meta name="twitter:description" content="Design logic before the first line of code.">
+    <meta name="twitter:image" content="https://luishowin.space/ogl.jpg">
 
-  <!-- Google Verification -->
-  <meta name="google-site-verification" content="zlq15C0Z_9chty5WE0kbzpEM21qfeAABklnAyqR00Bk" />
+    <!-- Google Verification -->
+    <meta name="google-site-verification" content="zlq15C0Z_9chty5WE0kbzpEM21qfeAABklnAyqR00Bk" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./images/icon.webp" type="image/webp">
 
-  <!-- Styles & Scripts -->
-  <link rel="icon" href="./images/icon.webp" type="image/webp">
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Luis Howin",
+      "url": "https://luishowin.space/",
+      "sameAs": [
+        "https://www.linkedin.com/in/luishowin",
+        "https://github.com/luishowin",
+        "https://beben.design"
+      ],
+      "jobTitle": "UX Researcher & UI Designer",
+      "description": "Designer and builder focused on practical, minimalist systems.",
+      "image": "https://luishowin.space/ogl.jpg"
+    }
+    </script>
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Luis Howin",
-    "url": "https://luishowin.space/",
-    "sameAs": [
-      "https://www.linkedin.com/in/luishowin",
-      "https://github.com/luishowin"
-    ],
-    "jobTitle": "UX Researcher & UI Designer",
-    "description": "Designer and builder focused on practical, minimalist systems.",
-    "image": "https://luishowin.space/ogl.jpg"
-  }
-  </script>
     <style>
         :root[data-theme="light"] {
-            --primary: #000000; --bg: #ffffff; --accent: #FFC917; --dot: #e0e0e0;
+            --primary: #000000;
+            --bg: #ffffff;
+            --accent: #e6b514;
+            --dot: #d8d8d8;
+            --muted: #666666;
+            --card-bg: #f5f5f5;
+            --border: #000000;
         }
         :root[data-theme="dark"] {
-            --primary: #ffffff; --bg: #000000; --accent: #FFC917; --dot: #222222;
+            --primary: #ffffff;
+            --bg: #000000;
+            --accent: #e6b514;
+            --dot: #1a1a1a;
+            --muted: #888888;
+            --card-bg: #0a0a0a;
+            --border: #ffffff;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
             font-family: 'Roboto Mono', monospace;
             background-color: var(--bg);
@@ -67,79 +78,527 @@
             background-size: 24px 24px;
             color: var(--primary);
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .wrapper { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-        /* Navigation */
-        nav { display: flex; justify-content: space-between; padding: 40px 0; border-bottom: 2px solid var(--primary); }
-        .nav-logo { font-weight: 700; text-transform: uppercase; }
-        .theme-toggle { cursor: pointer; border: 1px solid var(--primary); padding: 2px 8px; font-size: 0.7rem; }
+        /* ── NAV ── */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 36px 0;
+            border-bottom: 2px solid var(--primary);
+        }
 
-        /* Hero */
-        .hero { padding: 100px 0; }
-        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); text-transform: uppercase; line-height: 0.85; letter-spacing: -3px; margin-bottom: 20px; }
-        .hero p { max-width: 500px; font-size: 1.1rem; margin-bottom: 30px; }
-        .location-tag { font-size: 0.8rem; font-weight: 700; background: var(--accent); color: #000; padding: 4px 10px; display: inline-block; }
+        .nav-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
-        /* Sections */
-        section { margin-bottom: 120px; }
-        .section-label { font-size: 0.7rem; font-weight: 700; color: #888; margin-bottom: 20px; display: block; }
-        
-        /* Project Cards */
-        .project-list { display: flex; flex-direction: column; gap: 40px; }
-        .project-card { 
-            border: 2px solid var(--primary); 
-            background: var(--bg); 
-            padding: 30px; 
+        .nav-logo {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-studio {
+            font-size: 0.65rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-studio a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: opacity 0.2s;
+        }
+
+        .nav-studio a:hover { opacity: 0.7; }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-cta {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #000;
+            background: var(--accent);
+            padding: 6px 14px;
+            text-decoration: none;
+            border: 2px solid var(--accent);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            font-size: 0.65rem;
+            font-family: 'Roboto Mono', monospace;
+            text-transform: uppercase;
+            background: transparent;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary);
+            color: var(--bg);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 100px 0 80px;
+        }
+
+        .location-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            background: var(--accent);
+            color: #000;
+            padding: 4px 10px;
+            display: inline-block;
+            margin-bottom: 28px;
+            letter-spacing: 0.08em;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 9vw, 5rem);
+            text-transform: uppercase;
+            line-height: 0.88;
+            letter-spacing: -3px;
+            margin-bottom: 28px;
+            font-weight: 700;
+        }
+
+        h1 .highlight {
+            background: var(--accent);
+            color: #000;
+            line-height: initial;
+        }
+
+        .hero-sub {
+            max-width: 480px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--muted);
+            margin-bottom: 36px;
+        }
+
+        .hero-tagline {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-left: 4px solid var(--accent);
+            padding-left: 14px;
+            color: var(--primary);
+            margin-bottom: 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #000;
+            background: var(--accent);
+            padding: 12px 22px;
+            text-decoration: none;
+            border: 2px solid var(--accent);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .btn-secondary {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary);
+            background: transparent;
+            padding: 12px 22px;
+            text-decoration: none;
+            border: 2px solid var(--border);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--bg);
+        }
+
+        /* ── SECTIONS ── */
+        section { margin-bottom: 100px; }
+
+        .section-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: 28px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── PHILOSOPHY ── */
+        .philosophy-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 680px;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 40px 0 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* ── SERVICES GRID ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0;
+            border-top: 2px solid var(--border);
+            border-left: 2px solid var(--border);
+        }
+
+        .service-item {
+            border-right: 2px solid var(--border);
+            border-bottom: 2px solid var(--border);
+            padding: 24px 20px;
+            transition: background 0.2s;
+        }
+
+        .service-item:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .service-item:hover .service-icon { color: #000; }
+
+        .service-icon {
+            font-size: 0.65rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .service-item h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+
+        .service-item p {
+            font-size: 0.7rem;
+            color: var(--muted);
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+
+        .service-item:hover p { color: #000; }
+
+        /* ── PROJECT CARDS ── */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .project-card {
+            border: 2px solid var(--border);
+            background: var(--card-bg);
+            padding: 32px;
             position: relative;
+            transition: box-shadow 0.2s;
         }
-        .project-card:hover { box-shadow: 8px 8px 0px var(--accent); }
-        .project-meta { font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; opacity: 0.7; }
-        .project-card h3 { font-size: 1.5rem; text-transform: uppercase; margin-bottom: 15px; }
-        .tags { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-        .tag { border: 1px solid var(--primary); padding: 2px 8px; font-size: 0.7rem; }
 
-        /* Quote Block */
-        .quote { font-style: italic; border-left: 4px solid var(--accent); padding-left: 20px; margin: 60px 0; }
+        .project-card:hover {
+            box-shadow: 8px 8px 0px var(--accent);
+        }
 
-        /* Footer */
-        footer { border-top: 2px solid var(--primary); padding: 60px 0; }
-        .contact-link { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; border-bottom: 4px solid var(--accent); }
-        .contact-link:hover { background: var(--accent); color: #000; }
+        .project-meta {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+        }
 
+        .project-card h3 {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .project-card p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+        }
+
+        /* ── PROCESS ── */
+        .process-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .process-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .process-num {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 28px;
+            padding-top: 2px;
+        }
+
+        .process-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 4px;
+        }
+
+        .process-desc {
+            font-size: 0.75rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ── OFFLINE ── */
+        .offline-text {
+            font-size: 1rem;
+            color: var(--muted);
+            max-width: 500px;
+        }
+
+        /* ── FOOTER / CTA ── */
+        .cta-block {
+            border-top: 2px solid var(--border);
+            padding: 80px 0 60px;
+        }
+
+        .cta-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .cta-heading {
+            font-size: clamp(1.6rem, 5vw, 2.6rem);
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: -1px;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        .cta-sub {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 36px;
+            max-width: 460px;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+            padding-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-copy {
+            font-size: 0.65rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .footer-studio {
+            font-size: 0.65rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .footer-studio a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+        }
+
+        /* ── RESPONSIVE ── */
         @media (max-width: 600px) {
             h1 { letter-spacing: -1px; }
-            .hero { padding: 60px 0; }
+            .hero { padding: 60px 0 50px; }
+            nav { flex-wrap: wrap; gap: 14px; }
+            .nav-right { width: 100%; justify-content: flex-end; }
+            footer { flex-direction: column; align-items: flex-start; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
+
+    <!-- NAV -->
     <nav>
-        <span class="nav-logo">LUIS HOWIN // BUILDER</span>
-        <div id="theme-toggle" class="theme-toggle">TOGGLE_THEME</div>
+        <div class="nav-left">
+            <span class="nav-logo">LUIS HOWIN // BUILDER</span>
+            <span class="nav-studio">Part of <a href="https://beben.design" target="_blank" rel="noopener">BEBEN DESIGN ↗</a></span>
+        </div>
+        <div class="nav-right">
+            <a href="https://beben.design/contact/" class="nav-cta" target="_blank" rel="noopener">CONTACT ↗</a>
+            <button id="theme-toggle" class="theme-toggle">LIGHT / DARK</button>
+        </div>
     </nav>
 
+    <!-- HERO -->
     <header class="hero">
         <span class="location-tag">NAIROBI, KE</span>
-        <h1>I CRAFT <br>DIGITAL <br><span style="background: var(--accent); color: #000;">SYSTEMS.</span></h1>
-        <p>UX Researcher and UI Designer. I believe design should make sense before it makes noise.</p>
+        <h1>DESIGN<br>LOGIC<br><span class="highlight">FIRST.</span></h1>
+        <p class="hero-tagline">Design logic before the first line of code.</p>
+        <p class="hero-sub">UX Researcher and UI Designer. I believe design should make sense before it makes noise — and that good systems outlast trends.</p>
+        <div class="hero-actions">
+            <a href="https://beben.design/contact/" class="btn-primary" target="_blank" rel="noopener">START A CONVERSATION ↗</a>
+            <a href="https://beben.design/work/" class="btn-secondary" target="_blank" rel="noopener">VIEW WORK</a>
+        </div>
     </header>
 
+    <!-- 01 PHILOSOPHY -->
     <section id="about">
         <span class="section-label">[ 01. PHILOSOPHY ]</span>
-        <p style="font-size: 1.2rem;">My work sits at the intersection of how people think, feel, and move through digital systems — and how those systems can evolve without losing their humanity.</p>
+        <p class="philosophy-text">My work sits at the intersection of how people think, feel, and move through digital systems — and how those systems can evolve without losing their humanity.</p>
         <div class="quote">
-            “People ignore design that ignores people.” — Frank Chimero
+            "People ignore design that ignores people." — Frank Chimero
         </div>
     </section>
 
+    <!-- 02 SERVICES -->
+    <section id="services">
+        <span class="section-label">[ 02. CAPABILITIES ]</span>
+        <div class="services-grid">
+            <div class="service-item">
+                <span class="service-icon">// 01</span>
+                <h4>UX Research</h4>
+                <p>Understanding behavior to drive informed design decisions.</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">// 02</span>
+                <h4>Mobile UI</h4>
+                <p>iOS & Android interfaces respecting platform-specific patterns.</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">// 03</span>
+                <h4>HMI Design</h4>
+                <p>Bridging physical and digital for hardware-driven products.</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">// 04</span>
+                <h4>Design Systems</h4>
+                <p>Scalable, consistent frameworks built to last and evolve.</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">// 05</span>
+                <h4>Prototyping</h4>
+                <p>Validating interactions before committing to code.</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">// 06</span>
+                <h4>Front-End</h4>
+                <p>Clean, semantic builds that hold up from 320px to 4K.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 SELECTED WORK -->
     <section id="work">
-        <span class="section-label">[ 02. SELECTED_LOGS ]</span>
+        <span class="section-label">[ 03. SELECTED_LOGS ]</span>
         <div class="project-list">
-            
+
             <article class="project-card">
                 <div class="project-meta">Embedded UI // Concept</div>
                 <h3>Moto Digital Dash</h3>
@@ -154,7 +613,7 @@
             <article class="project-card">
                 <div class="project-meta">Wearable UI // 2025</div>
                 <h3>Trek Watch 91</h3>
-                <p>Prioritizing legibility and simplicity for outdoor activities. Access to essential data without distraction.</p>
+                <p>Prioritizing legibility and simplicity for outdoor activities. Essential data, zero distraction.</p>
                 <div class="tags">
                     <span class="tag">UI DESIGN</span>
                     <span class="tag">PROTOTYPING</span>
@@ -174,26 +633,83 @@
         </div>
     </section>
 
-    <section id="extra">
-        <span class="section-label">[ 03. OFFLINE ]</span>
-        <p>When I'm not at my desk, I'm outside running. Movement fuels the logic.</p>
+    <!-- 04 PROCESS -->
+    <section id="process">
+        <span class="section-label">[ 04. PROCESS ]</span>
+        <div class="process-list">
+            <div class="process-item">
+                <span class="process-num">01</span>
+                <div>
+                    <div class="process-title">Requirement Analysis</div>
+                    <p class="process-desc">Stripping the project to its core objectives.</p>
+                </div>
+            </div>
+            <div class="process-item">
+                <span class="process-num">02</span>
+                <div>
+                    <div class="process-title">Ideation</div>
+                    <p class="process-desc">Mapping user journeys and information architecture.</p>
+                </div>
+            </div>
+            <div class="process-item">
+                <span class="process-num">03</span>
+                <div>
+                    <div class="process-title">Prototyping</div>
+                    <p class="process-desc">Validating interactions before committing to code.</p>
+                </div>
+            </div>
+            <div class="process-item">
+                <span class="process-num">04</span>
+                <div>
+                    <div class="process-title">Responsive Analysis</div>
+                    <p class="process-desc">Ensuring logic holds from 320px to 4K.</p>
+                </div>
+            </div>
+            <div class="process-item">
+                <span class="process-num">05</span>
+                <div>
+                    <div class="process-title">Testing & QA</div>
+                    <p class="process-desc">Stress-testing against edge cases and bottlenecks.</p>
+                </div>
+            </div>
+            <div class="process-item">
+                <span class="process-num">06</span>
+                <div>
+                    <div class="process-title">Maintenance</div>
+                    <p class="process-desc">Monitoring real-world usage and adjusting accordingly.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p style="margin-bottom: 20px;">READY TO BUILD SOMETHING USEFUL?</p>
-        <a href="mailto:howin329@gmail.com" class="contact-link">howin329@gmail.com</a>
-        <div style="margin-top: 60px; font-size: 0.7rem; display: flex; justify-content: space-between; opacity: 0.6;">
-            <span>©2026 LUIS HOWIN MAINA</span>
-            <span>BUILT WITH BEBEN_CORE</span>
+    <!-- 05 OFFLINE -->
+    <section id="extra">
+        <span class="section-label">[ 05. OFFLINE ]</span>
+        <p class="offline-text">When I'm not at my desk, I'm outside running. Movement fuels the logic.</p>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-block">
+        <span class="cta-label">[ READY TO BUILD ]</span>
+        <h2 class="cta-heading">LET'S TALK ABOUT<br>YOUR PROJECT.</h2>
+        <p class="cta-sub">No aggressive sales pitch. Just a technical discussion about your goals. Visit beben.design to start a conversation.</p>
+        <div class="cta-actions">
+            <a href="https://beben.design/contact/" class="btn-primary" target="_blank" rel="noopener">START A CONVERSATION ↗</a>
+            <a href="https://beben.design" class="btn-secondary" target="_blank" rel="noopener">BEBEN.DESIGN</a>
         </div>
-    </footer>
+
+        <footer>
+            <span class="footer-copy">©2026 LUIS HOWIN MAINA</span>
+            <span class="footer-studio">PART OF <a href="https://beben.design" target="_blank" rel="noopener">BEBEN DESIGN ↗</a></span>
+        </footer>
+    </div>
+
 </div>
 
 <script>
     const toggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-    
-    // Check for saved preference
+
     const savedTheme = localStorage.getItem('beben-theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
 
