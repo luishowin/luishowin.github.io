@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Howin | Builder</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <meta name="description" content="UX Researcher, UI Designer & Builder. Beben Design.">
     <meta name="author" content="Luis Howin">
     <meta name="robots" content="index, follow">
@@ -28,8 +29,6 @@
     <!-- Google Verification -->
     <meta name="google-site-verification" content="zlq15C0Z_9chty5WE0kbzpEM21qfeAABklnAyqR00Bk" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="./images/icon.webp" type="image/webp">
 
     <!-- Schema -->
@@ -51,548 +50,585 @@
     </script>
 
     <style>
-        :root[data-theme="light"] {
-            --primary: #000000;
-            --bg: #ffffff;
-            --accent: #e61449;
-            --dot: #d8d8d8;
-            --muted: #666666;
-            --card-bg: #f5f5f5;
-         
-        }
-        :root[data-theme="dark"] {
-            --primary: #ffffff;
-            --bg: #000000;
-            --accent: #e61449;
-            --dot: #1a1a1a;
-            --muted: #979797;
-            --card-bg: #0a0a0a;
-         
+        :root {
+            --color-bg: #FFFFFF;
+            --color-bg-soft: #F5F5F5;
+            --color-headers: #18355A;
+            --color-highlight: #C43F36;
+            --color-text: #262D38;
+            --color-border: rgba(24, 53, 90, 0.16);
+            --color-border-strong: rgba(24, 53, 90, 0.32);
+            --color-text-muted: rgba(38, 45, 56, 0.64);
+            --color-on-dark: #F5F5F5;
+            --color-on-dark-muted: rgba(245, 245, 245, 0.6);
+            --color-highlight-on-dark: #D9827C;
+            --font-title: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+            --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --nav-height: 76px;
+            --container: 1140px;
+            --radius-sm: 3px;
+            --radius-md: 7px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Roboto Mono', monospace;
-            background-color: var(--bg);
-            background-image: radial-gradient(var(--dot) 1px, transparent 0);
-            background-size: 24px 24px;
-            color: var(--primary);
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            background-image:
+                linear-gradient(var(--color-border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+            background-size: 80px 80px;
+            color: var(--color-text);
             line-height: 1.6;
-            transition: background-color 0.5s ease, color 0.3s ease;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .wrapper {
-            max-width: 1100px;
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            max-width: var(--container);
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 40px;
         }
+
+        /* ── SKIP LINK ── */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            background: var(--color-highlight);
+            color: #fff;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            z-index: 999;
+            border-radius: var(--radius-sm);
+        }
+        .skip-link:focus { top: 12px; }
 
         /* ── NAV ── */
-        nav {
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+            transition: box-shadow 0.3s ease;
+        }
+        .nav--scrolled {
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+        }
+        .nav__inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 36px 0;
-            border-bottom: 1px solid var(--muted);
-            font-family: 'JetBrains Mono', monospace;
+            width: 100%;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
         }
-
-        .nav-left {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .nav-logo {
+        .nav__brand {
+            font-family: var(--font-mono);
             font-weight: 700;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .nav-studio {
-            font-size: 0.65rem;
-            color: var(--muted);
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
+            color: var(--color-headers);
         }
-
-        .nav-studio a {
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid var(--accent);
-            transition: opacity 0.2s;
-        }
-
-        .nav-studio a:hover { opacity: 0.7; }
-
-        .nav-right {
+        .nav__links {
             display: flex;
             align-items: center;
-            gap: 16px;
-            font-family: 'JetBrains Mono', monospace;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav__links a {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text);
+            transition: color 0.2s;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+        }
+        .nav__links a:hover,
+        .nav__links a.is-active {
+            color: var(--color-highlight);
+            border-bottom-color: var(--color-highlight);
+        }
+        .nav__cta {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-text);
+            padding: 10px 24px;
+            border: 1.5px solid var(--color-border-strong);
+            border-radius: var(--radius-sm);
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .nav__cta:hover {
+            background: var(--color-headers);
+            color: var(--color-on-dark);
+            border-color: var(--color-headers);
         }
 
-        .nav-cta {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.65rem;
+        /* ── SECTIONS ── */
+        .section {
+            padding: 120px 0;
+        }
+        .section--soft {
+            background: var(--color-bg-soft);
+        }
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .section-label .section-num {
+            color: var(--color-highlight);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #0e0e0e;
-            background: var(--accent);
-            padding: 6px 14px;
-            text-decoration: none;
-            border: 2px solid var(--accent);
-            transition: background 0.2s, color 0.2s;
+            margin-right: 6px;
         }
-
-        .nav-cta:hover {
-            background: transparent;
-            color: var(--accent);
+        .section-heading {
+            font-family: var(--font-title);
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 400;
+            color: var(--color-headers);
+            line-height: 1.2;
+            margin-bottom: 20px;
         }
-
-        .theme-toggle {
-            cursor: pointer;
-            border: 1px solid var(--muted);
-            padding: 4px 10px;
-            font-size: 0.65rem;
-            font-family: 'Roboto Mono', monospace;
-            text-transform: uppercase;
-            background: transparent;
-            color: var(--primary);
-            letter-spacing: 0.05em;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .theme-toggle:hover {
-            background: var(--primary);
-            color: var(--bg);
+        .section-sub {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            line-height: 1.7;
         }
 
         /* ── HERO ── */
         .hero {
-            padding: 100px 0 80px;
-            margin-bottom: 60px;
+            padding: 140px 0 120px;
         }
-
-        h1 {
-            font-size: clamp(2.8rem, 9vw, 5rem);
-            text-transform: uppercase;
-            line-height: 1.2;
-            letter-spacing: -3px;
-            margin-bottom: 28px;
-            font-weight: 700;
-            font-family: 'JetBrains Mono', monospace;
+        .hero__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
-
-        h1 .highlight {
-            background: var(--primary);
-            color: var(--bg);
-            line-height: initial;
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: clamp(2.6rem, 5.5vw, 4rem);
+            font-weight: 400;
+            color: var(--color-headers);
+            line-height: 1.15;
+            margin-bottom: 24px;
         }
-
-        .hero-sub {
-            max-width: 480px;
-            font-size: 1rem;
+        .hero__sub {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
             line-height: 1.7;
-            color: var(--muted);
-            margin-bottom: 36px;
+            max-width: 520px;
+            margin-bottom: 40px;
         }
-
-        .hero-actions {
+        .hero__actions {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             flex-wrap: wrap;
-            font-size: 3.5rem;
+        }
+        .hero__visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero__visual svg {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
         }
 
-        .btn-primary {
-            font-family: 'JetBrains Mono', monospace;
+        /* ── BUTTONS ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
             font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #000;
-            background: var(--accent);
-            padding: 12px 22px;
-            text-decoration: none;
-            border: 2px solid var(--accent);
-            transition: background 0.2s, color 0.2s;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
         }
-
-        .btn-primary:hover {
+        .btn--primary {
+            background: var(--color-highlight);
+            color: #fff;
+            border: 1.5px solid var(--color-highlight);
+        }
+        .btn--primary:hover {
+            background: #a8322c;
+            border-color: #a8322c;
+        }
+        .btn--outline {
             background: transparent;
-            color: var(--accent);
+            color: var(--color-text);
+            border: 1.5px solid var(--color-border-strong);
         }
-
-        .btn-secondary {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--primary);
-            background: transparent;
-            padding: 12px 22px;
-            text-decoration: none;
-            border: 2px solid var(--muted);
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--bg);
-        }
-
-        /* ── SECTIONS ── */
-        section { margin-bottom: 100px; }
-
-        .section-label {
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--muted);
-            margin-bottom: 28px;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .btn--outline:hover {
+            background: var(--color-headers);
+            color: var(--color-on-dark);
+            border-color: var(--color-headers);
         }
 
         /* ── PHILOSOPHY ── */
         .philosophy-text {
-            font-size: 1rem;
+            font-family: var(--font-title);
+            font-size: 1.35rem;
             line-height: 1.8;
-            max-width: 680px;
+            max-width: 720px;
+            color: var(--color-text);
         }
-
         .quote {
             font-style: italic;
-            border-left: 3px solid var(--accent);
+            border-left: 3px solid var(--color-highlight);
             padding-left: 20px;
             margin: 40px 0 0;
-            color: var(--muted);
-            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
         }
 
-        /* ── SERVICES GRID ── */
-        .services-grid {
+        /* ── CAPABILITIES GRID ── */
+        .capabilities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 0;
-            border-top: 1px solid var(--muted);
-            border-left: 1px solid var(--muted);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 48px;
         }
-
-        .service-item {
-            border-right: 1px solid var(--muted);
-            border-bottom: 1px  solid var(--muted);
-            padding: 24px 20px;
-            transition: background 0.2s;
+        .capability-card {
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 32px 28px;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
-
-        .service-item:hover {
-            background: var(--accent);
-            color: #0e0e0e;
+        .capability-card:hover {
+            border-color: var(--color-border-strong);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
         }
-
-        .service-item:hover .service-icon { color: #0e0e0e; }
-
-        .service-icon {
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 10px;
+        .capability-icon {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
             display: block;
-            transition: color 0.2s;
+            color: var(--color-headers);
         }
-
-        .service-item h4 {
-            font-size: 1rem;
+        .capability-card h4 {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.06em;
-            margin-bottom: 6px;
+            color: var(--color-headers);
+            margin-bottom: 10px;
         }
-
-        .service-item p {
+        .capability-card p {
             font-size: 0.9rem;
-            color: var(--muted);
-            line-height: 1.5;
-            transition: color 0.2s;
+            color: var(--color-text-muted);
+            line-height: 1.6;
         }
-
-        .service-item:hover p { color: #0e0e0e; }
 
         /* ── PROJECT CARDS ── */
         .project-list {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 28px;
+            margin-top: 48px;
         }
-
         .project-card {
-            border: 1px solid var(--muted);
-            background: var(--card-bg);
-            padding: 32px;
-            position: relative;
-            transition: box-shadow 0.2s;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: var(--color-bg);
+            padding: 36px 32px;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
-
         .project-card:hover {
-            box-shadow: 5px 5px 0px var(--accent);
+            border-color: var(--color-border-strong);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
         }
-
         .project-meta {
-            font-size: 0.65rem;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            color: var(--muted);
             letter-spacing: 0.08em;
+            margin-bottom: 10px;
+            color: var(--color-text-muted);
         }
-
         .project-card h3 {
-            font-size: 1.5rem;
-            text-transform: uppercase;
+            font-family: var(--font-title);
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--color-headers);
             margin-bottom: 12px;
-            letter-spacing: -0.5px;
-            font-family: 'JetBrains Mono', monospace;
         }
-
         .project-card p {
-            font-size: 0.85rem;
-            color: var(--muted);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
             line-height: 1.7;
+            max-width: 640px;
         }
-
         .tags {
             display: flex;
             gap: 8px;
             margin-top: 20px;
             flex-wrap: wrap;
         }
-
         .tag {
-            border: 1px solid var(--muted);
-            padding: 3px 10px;
+            border: 1px solid var(--color-border);
+            padding: 4px 12px;
+            font-family: var(--font-mono);
             font-size: 0.65rem;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.06em;
-            color: var(--muted);
-            font-family: 'JetBrains Mono', monospace;
+            color: var(--color-text-muted);
+            border-radius: var(--radius-sm);
         }
 
         /* ── PROCESS ── */
-        .process-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            border-top: 1px solid var(--muted);
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin-top: 48px;
         }
-
-        .process-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 24px;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--muted);
-        }
-
+        .process-step {}
         .process-num {
-            font-size: 0.65rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--accent);
-            min-width: 28px;
-            padding-top: 2px;
+            color: var(--color-highlight);
+            margin-bottom: 12px;
+            display: block;
         }
-
         .process-title {
-            font-size: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 4px;
+            letter-spacing: 0.04em;
+            color: var(--color-headers);
+            margin-bottom: 8px;
         }
-
         .process-desc {
-            font-size: 0.75rem;
-            color: var(--muted);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
             line-height: 1.6;
         }
 
         /* ── OFFLINE ── */
         .offline-text {
-            font-size: 1rem;
-            color: var(--muted);
+            font-family: var(--font-title);
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
             max-width: 500px;
+            line-height: 1.7;
         }
 
-        /* ── FOOTER / CTA ── */
-        .cta-block {
-            border-top: 1px solid var(--muted);
-            padding: 80px 0 60px;
+        /* ── CTA ── */
+        .cta {
+            padding: 120px 0;
+            text-align: center;
         }
-
-        .cta-label {
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            display: block;
-            margin-bottom: 20px;
+        .cta .section-heading {
+            max-width: 600px;
+            margin: 0 auto 16px;
         }
-
-        .cta-heading {
-            font-size: clamp(1.6rem, 5vw, 2.6rem);
-            text-transform: uppercase;
-            line-height: 1;
-            letter-spacing: -1px;
-            margin-bottom: 14px;
-            font-weight: 700;
+        .cta .section-sub {
+            max-width: 480px;
+            margin: 0 auto 40px;
         }
-
-        .cta-sub {
-            font-size: 0.8rem;
-            color: var(--muted);
-            margin-bottom: 36px;
-            max-width: 460px;
-        }
-
-        .cta-actions {
+        .cta__actions {
             display: flex;
-            gap: 14px;
+            gap: 16px;
+            justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 60px;
         }
 
+        /* ── FOOTER ── */
         footer {
-            border-top: 1px solid var(--muted);
-            padding-top: 32px;
-            padding-bottom: 40px;
+            border-top: 1px solid var(--color-border);
+            padding: 32px 0 40px;
+        }
+        .footer__inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 12px;
-            font-weight: 700;
         }
-
         .footer-copy {
-            font-size: 0.65rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.04em;
         }
-
         .footer-studio {
-            font-size: 0.65rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.04em;
         }
-
         .footer-studio a {
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid var(--accent);
+            color: var(--color-highlight);
+            border-bottom: 1px solid var(--color-highlight);
+            transition: opacity 0.2s;
         }
+        .footer-studio a:hover { opacity: 0.7; }
 
         /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .hero__inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero__visual { display: none; }
+            .capabilities-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .section { padding: 80px 0; }
+            .hero { padding: 100px 0 80px; }
+        }
         @media (max-width: 600px) {
-            h1 { letter-spacing: -1px; }
-            .hero { padding: 60px 0 50px; }
-            nav { flex-wrap: wrap; gap: 14px; }
-            .nav-right { width: 100%; justify-content: flex-end; }
-            footer { flex-direction: column; align-items: flex-start; }
-            .services-grid { grid-template-columns: 1fr 1fr; }
+            .container { padding: 0 20px; }
+            .nav__inner { padding: 0 20px; }
+            .nav__links { gap: 16px; }
+            .nav__links a { font-size: 0.8rem; }
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2.2rem; }
+            .footer__inner { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
+<a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- NAV -->
-    <nav>
-        <div class="nav-left">
-            <span class="nav-logo">LUIS HOWIN // BUILDER</span>
-        </div>
-        <div class="nav-right">
-            <a href="https://beben.design/contact/" class="nav-cta" target="_blank" rel="noopener">CONTACT ↗</a>
-            <button id="theme-toggle" class="theme-toggle">LIGHT / DARK</button>
-        </div>
-    </nav>
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav__inner">
+        <a href="#" class="nav__brand">Luis Howin</a>
+        <ul class="nav__links">
+            <li><a href="#about">Philosophy</a></li>
+            <li><a href="#services">Capabilities</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="https://beben.design/contact/" class="nav__cta" target="_blank" rel="noopener">Get in touch</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <!-- HERO -->
-    <header class="hero">
-        <h1>DESIGN<br>LOGIC<br><span class="highlight">FIRST.</span></h1>
-        <p class="hero-tagline"></p>
-        <p class="hero-sub">I'm Luis, a UX Researcher and UI Designer. I believe design should make sense before it makes noise, and that simple systems outlast trends.</p>
-        <div class="hero-actions">
-            <a href="https://beben.design/contact/" class="btn-primary" target="_blank" rel="noopener">START A CONVERSATION ↗</a>
-            <a href="https://beben.design/work/" class="btn-secondary" target="_blank" rel="noopener">VIEW WORK</a>
+<!-- HERO -->
+<main id="main">
+<section class="hero">
+    <div class="container">
+        <div class="hero__inner">
+            <div>
+                <h1>Design logic before the first line of code.</h1>
+                <p class="hero__sub">I'm Luis, a UX Researcher and UI Designer. I believe design should make sense before it makes noise, and that simple systems outlast trends.</p>
+                <div class="hero__actions">
+                    <a href="https://beben.design/contact/" class="btn btn--primary" target="_blank" rel="noopener">Start a conversation</a>
+                    <a href="#work" class="btn btn--outline">View work &#8595;</a>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <circle cx="220" cy="180" r="150" stroke="var(--color-border)" stroke-width="1"/>
+                    <polygon points="200,40 360,160 310,340 90,340 40,160" stroke="var(--color-headers)" stroke-width="1.5" fill="none"/>
+                    <circle cx="260" cy="150" r="50" stroke="var(--color-highlight)" stroke-width="1.5" fill="none"/>
+                </svg>
+            </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- 01 PHILOSOPHY -->
-    <section id="about">
-        <span class="section-label">[ 01. PHILOSOPHY ]</span>
-        <p class="philosophy-text">Design logic before the first line of code. My work sits at the intersection of how people think, feel, and move through digital systems, and how those systems can evolve without losing their humanity.</p>
+<!-- 01 PHILOSOPHY -->
+<section id="about" class="section">
+    <div class="container">
+        <span class="section-label"><span class="section-num">01</span> Philosophy</span>
+        <h2 class="section-heading">Thinking in systems, designing for people.</h2>
+        <p class="philosophy-text">My work sits at the intersection of how people think, feel, and move through digital systems &mdash; and how those systems can evolve without losing their humanity.</p>
         <div class="quote">
-            "People ignore design that ignores people." — Frank Chimero
+            "People ignore design that ignores people." &mdash; Frank Chimero
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 02 SERVICES -->
-    <section id="services">
-        <span class="section-label">[ 02. CAPABILITIES ]</span>
-        <div class="services-grid">
-            <div class="service-item">
-                <span class="service-icon">// 01</span>
+<!-- 02 CAPABILITIES -->
+<section id="services" class="section section--soft">
+    <div class="container">
+        <span class="section-label"><span class="section-num">02</span> Capabilities</span>
+        <h2 class="section-heading">What I build</h2>
+        <p class="section-sub">Six disciplines, one coherent practice.</p>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <span class="capability-icon">&#9881;</span>
                 <h4>UX Research</h4>
                 <p>Understanding behavior to drive informed design decisions.</p>
             </div>
-            <div class="service-item">
-                <span class="service-icon">// 02</span>
+            <div class="capability-card">
+                <span class="capability-icon">&#9743;</span>
                 <h4>Mobile UI</h4>
                 <p>iOS & Android interfaces respecting platform-specific patterns.</p>
             </div>
-            <div class="service-item">
-                <span class="service-icon">// 03</span>
+            <div class="capability-card">
+                <span class="capability-icon">&#9032;</span>
                 <h4>HMI Design</h4>
                 <p>Bridging physical and digital for hardware-driven products.</p>
             </div>
-            <div class="service-item">
-                <span class="service-icon">// 04</span>
+            <div class="capability-card">
+                <span class="capability-icon">&#9638;</span>
                 <h4>Design Systems</h4>
                 <p>Scalable, consistent frameworks built to last and evolve.</p>
             </div>
-            <div class="service-item">
-                <span class="service-icon">// 05</span>
+            <div class="capability-card">
+                <span class="capability-icon">&#9654;</span>
                 <h4>Prototyping</h4>
                 <p>Validating interactions before committing to code.</p>
             </div>
-            <div class="service-item">
-                <span class="service-icon">// 06</span>
+            <div class="capability-card">
+                <span class="capability-icon">&#60;/&#62;</span>
                 <h4>Front-End</h4>
                 <p>Clean, semantic builds that hold up from 320px to 4K.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 03 SELECTED WORK -->
-    <section id="work">
-        <span class="section-label">[ 03. SELECTED_LOGS ]</span>
+<!-- 03 SELECTED WORK -->
+<section id="work" class="section">
+    <div class="container">
+        <span class="section-label"><span class="section-num">03</span> Selected Work</span>
+        <h2 class="section-heading">Case studies in validation</h2>
+        <p class="section-sub">Every project is a case study in decisions, iterations, and user-centric logic.</p>
+
         <div class="project-list">
-
             <article class="project-card">
                 <div class="project-meta">Embedded UI // Concept</div>
                 <h3>Moto Digital Dash</h3>
                 <p>Designing a glanceable, safety-critical interface for motorcycles. Zero tolerance for distraction in high-vibration environments.</p>
                 <div class="tags">
                     <span class="tag">ESP32</span>
-                    <span class="tag">UX RESEARCH</span>
+                    <span class="tag">UX Research</span>
                     <span class="tag">HMI</span>
                 </div>
             </article>
@@ -602,110 +638,104 @@
                 <h3>Trek Watch 91</h3>
                 <p>Prioritizing legibility and simplicity for outdoor activities. Essential data, zero distraction.</p>
                 <div class="tags">
-                    <span class="tag">UI DESIGN</span>
-                    <span class="tag">PROTOTYPING</span>
+                    <span class="tag">UI Design</span>
+                    <span class="tag">Prototyping</span>
                 </div>
             </article>
 
             <article class="project-card">
-                <div class="project-meta">Infrastructure // Web</div>
-                <h3>System Migration</h3>
-                <p>Revamping and migrating legacy platforms to modern design systems while maintaining UX consistency.</p>
+                <div class="project-meta">AI // Site Navigation</div>
+                <h3>Sprite</h3>
+                <p>An AI-powered site guide designed to help visitors navigate and find information contextually. A small, helpful presence that surfaces the right content without getting in the way.</p>
                 <div class="tags">
-                    <span class="tag">DESIGN SYSTEMS</span>
-                    <span class="tag">FRONT-END</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">UX Design</span>
+                    <span class="tag">Conversational UI</span>
                 </div>
             </article>
-
         </div>
-    </section>
-
-    <!-- 04 PROCESS -->
-    <section id="process">
-        <span class="section-label">[ 04. PROCESS ]</span>
-        <div class="process-list">
-            <div class="process-item">
-                <span class="process-num">01</span>
-                <div>
-                    <div class="process-title">Requirement Analysis</div>
-                    <p class="process-desc">Stripping the project to its core objectives.</p>
-                </div>
-            </div>
-            <div class="process-item">
-                <span class="process-num">02</span>
-                <div>
-                    <div class="process-title">Ideation</div>
-                    <p class="process-desc">Mapping user journeys and information architecture.</p>
-                </div>
-            </div>
-            <div class="process-item">
-                <span class="process-num">03</span>
-                <div>
-                    <div class="process-title">Prototyping</div>
-                    <p class="process-desc">Validating interactions before committing to code.</p>
-                </div>
-            </div>
-            <div class="process-item">
-                <span class="process-num">04</span>
-                <div>
-                    <div class="process-title">Responsive Analysis</div>
-                    <p class="process-desc">Ensuring logic holds from 320px to 4K.</p>
-                </div>
-            </div>
-            <div class="process-item">
-                <span class="process-num">05</span>
-                <div>
-                    <div class="process-title">Testing & QA</div>
-                    <p class="process-desc">Stress-testing against edge cases and bottlenecks.</p>
-                </div>
-            </div>
-            <div class="process-item">
-                <span class="process-num">06</span>
-                <div>
-                    <div class="process-title">Maintenance</div>
-                    <p class="process-desc">Monitoring real-world usage and adjusting accordingly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 05 OFFLINE -->
-    <section id="extra">
-        <span class="section-label">[ 05. OFFLINE ]</span>
-        <p class="offline-text">When I'm not at my desk, I'm outside running. Movement fuels the logic.</p>
-    </section>
-
-    <!-- CTA -->
-    <div class="cta-block">
-        <span class="cta-label">[ READY TO BUILD ]</span>
-        <h2 class="cta-heading">LET'S TALK ABOUT<br>YOUR PROJECT.</h2>
-        <p class="cta-sub">No aggressive sales pitch. Just a technical discussion about your goals. Visit beben.design to start a conversation.</p>
-        <div class="cta-actions">
-            <a href="https://beben.design/contact/" class="btn-primary" target="_blank" rel="noopener">START A CONVERSATION ↗</a>
-            <a href="https://beben.design" class="btn-secondary" target="_blank" rel="noopener">BEBEN.DESIGN</a>
-        </div>
-
-        <footer>
-            <span class="footer-copy">©2026 LUIS HOWIN MAINA</span>
-            <span class="footer-studio">PART OF <a href="https://beben.design" target="_blank" rel="noopener">BEBEN DESIGN ↗</a></span>
-        </footer>
     </div>
+</section>
 
-</div>
+<!-- 04 PROCESS -->
+<section id="process" class="section section--soft">
+    <div class="container">
+        <span class="section-label"><span class="section-num">04</span> How It Works</span>
+        <h2 class="section-heading">Three moves, in order</h2>
+        <div class="process-grid">
+            <div class="process-step">
+                <span class="process-num">01</span>
+                <div class="process-title">Research</div>
+                <p class="process-desc">Stripping the project to its core objectives. Mapping user journeys and information architecture.</p>
+            </div>
+            <div class="process-step">
+                <span class="process-num">02</span>
+                <div class="process-title">Prototype</div>
+                <p class="process-desc">Validating interactions before committing to code. Ensuring logic holds from 320px to 4K.</p>
+            </div>
+            <div class="process-step">
+                <span class="process-num">03</span>
+                <div class="process-title">Ship & Maintain</div>
+                <p class="process-desc">Stress-testing against edge cases. Monitoring real-world usage and adjusting accordingly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 OFFLINE -->
+<section class="section">
+    <div class="container">
+        <span class="section-label"><span class="section-num">05</span> Offline</span>
+        <p class="offline-text">When I'm not at my desk, I'm outside running. Movement fuels the logic.</p>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <span class="section-label"><span class="section-num">06</span> Get In Touch</span>
+        <h2 class="section-heading">Let's talk about your project.</h2>
+        <p class="section-sub">No aggressive sales pitch. Just a technical discussion about your goals.</p>
+        <div class="cta__actions">
+            <a href="https://beben.design/contact/" class="btn btn--primary" target="_blank" rel="noopener">Start a conversation</a>
+            <a href="https://beben.design" class="btn btn--outline" target="_blank" rel="noopener">beben.design</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer__inner">
+            <span class="footer-copy">1&deg;17&prime;S 36&deg;49&prime;E &mdash; built in Nairobi &copy; 2026 Luis Howin Maina</span>
+            <span class="footer-studio">Part of <a href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></span>
+        </div>
+    </div>
+</footer>
 
 <script>
-    const toggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
+    // Sticky nav scroll effect
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('nav--scrolled', window.scrollY > 20);
+    }, { passive: true });
 
-    const savedTheme = localStorage.getItem('beben-theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-
-    toggle.addEventListener('click', () => {
-        const current = html.getAttribute('data-theme');
-        const target = current === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', target);
-        localStorage.setItem('beben-theme', target);
-    });
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav__links a[href^="#"]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('is-active',
+                        link.getAttribute('href') === '#' + entry.target.id);
+                });
+            }
+        });
+    }, { rootMargin: '-40% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
 </script>
 
 </body>
