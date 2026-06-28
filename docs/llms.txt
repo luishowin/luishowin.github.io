@@ -1,0 +1,36 @@
+# Luis Howin Maina
+
+> UX researcher, UI designer, and web developer based in Nairobi, Kenya. Building human-centered digital products with AI at Beben Design.
+
+## About
+
+Luis Howin Maina is a Nairobi-based UX researcher, UI designer, and front-end web developer. He designs and builds digital products that prioritize clarity, usability, and simplicity. His work spans UX research, mobile UI (iOS & Android), HMI design for hardware products, design systems, prototyping, and front-end development.
+
+He is the founder of Beben Design, a design studio focused on careful thinking and disciplined craft. He builds with AI as a creative partner — handling the design decisions, taste, and empathy while leveraging AI for technical execution.
+
+## Location
+
+Nairobi, Kenya (1°17′S 36°49′E)
+
+## Capabilities
+
+- UX Research: User interviews, usability testing, behavioral analysis
+- Mobile UI: iOS & Android native interface design
+- HMI Design: Physical-digital interfaces for hardware products
+- Design Systems: Component libraries, design tokens, scalable frameworks
+- Prototyping: Interactive prototypes for validation before code
+- Front-End Development: HTML, CSS, JavaScript, responsive builds
+
+## Selected Projects
+
+- **Moto Digital Dash**: Glanceable motorcycle dashboard UI for ESP32 hardware. Safety-critical, high-vibration HMI design.
+- **Trek Watch 91**: Wearable UI for hikers prioritizing legibility and essential outdoor data.
+- **Sprite**: AI-powered site navigation guide for beben.design. Conversational UI that helps visitors find information contextually.
+
+## Links
+
+- Website: https://luishowin.space
+- Studio: https://beben.design
+- GitHub: https://github.com/luishowin
+- LinkedIn: https://www.linkedin.com/in/luishowin
+- Contact: https://beben.design/contact/
