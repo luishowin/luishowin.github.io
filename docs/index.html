@@ -6,7 +6,7 @@
     <title>Luis Howin | Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <meta name="description" content="UX Researcher, UI Designer & Builder. Beben Design.">
     <meta name="author" content="Luis Howin">
     <meta name="robots" content="index, follow">
@@ -51,21 +51,19 @@
 
     <style>
         :root {
-            --color-bg: #FFFFFF;
-            --color-bg-soft: #F5F5F5;
-            --color-headers: #18355A;
+            --color-bg: #0B0E11;
+            --color-bg-soft: #12161B;
+            --color-headers: #E8ECF1;
             --color-highlight: #C43F36;
-            --color-text: #262D38;
-            --color-border: rgba(24, 53, 90, 0.16);
-            --color-border-strong: rgba(24, 53, 90, 0.32);
-            --color-text-muted: rgba(38, 45, 56, 0.64);
-            --color-on-dark: #F5F5F5;
-            --color-on-dark-muted: rgba(245, 245, 245, 0.6);
-            --color-highlight-on-dark: #D9827C;
+            --color-text: #BFC6D0;
+            --color-border: rgba(200, 210, 225, 0.10);
+            --color-border-strong: rgba(200, 210, 225, 0.20);
+            --color-text-muted: rgba(191, 198, 208, 0.60);
             --font-title: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+            --font-nav: 'JetBrains Mono', monospace;
             --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --nav-height: 76px;
+            --nav-height: 72px;
             --container: 1140px;
             --radius-sm: 3px;
             --radius-md: 7px;
@@ -115,14 +113,14 @@
             height: var(--nav-height);
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(11, 14, 17, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--color-border);
             transition: box-shadow 0.3s ease;
         }
         .nav--scrolled {
-            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 1px 12px rgba(0,0,0,0.3);
         }
         .nav__inner {
             display: flex;
@@ -134,9 +132,9 @@
             padding: 0 40px;
         }
         .nav__brand {
-            font-family: var(--font-mono);
+            font-family: var(--font-nav);
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--color-headers);
@@ -144,14 +142,16 @@
         .nav__links {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 24px;
             list-style: none;
         }
         .nav__links a {
-            font-family: var(--font-body);
-            font-size: 0.9rem;
+            font-family: var(--font-nav);
+            font-size: 0.65rem;
             font-weight: 500;
-            color: var(--color-text);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-text-muted);
             transition: color 0.2s;
             padding-bottom: 2px;
             border-bottom: 2px solid transparent;
@@ -160,21 +160,6 @@
         .nav__links a.is-active {
             color: var(--color-highlight);
             border-bottom-color: var(--color-highlight);
-        }
-        .nav__cta {
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--color-text);
-            padding: 10px 24px;
-            border: 1.5px solid var(--color-border-strong);
-            border-radius: var(--radius-sm);
-            transition: background 0.2s, color 0.2s, border-color 0.2s;
-        }
-        .nav__cta:hover {
-            background: var(--color-headers);
-            color: var(--color-on-dark);
-            border-color: var(--color-headers);
         }
 
         /* ── SECTIONS ── */
@@ -218,41 +203,26 @@
         .hero {
             padding: 140px 0 120px;
         }
-        .hero__inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
         .hero h1 {
             font-family: var(--font-title);
             font-size: clamp(2.6rem, 5.5vw, 4rem);
             font-weight: 400;
             color: var(--color-headers);
             line-height: 1.15;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
+            max-width: 700px;
         }
         .hero__sub {
             font-size: 1.05rem;
             color: var(--color-text-muted);
-            line-height: 1.7;
-            max-width: 520px;
+            line-height: 1.8;
+            max-width: 560px;
             margin-bottom: 40px;
         }
         .hero__actions {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
-        }
-        .hero__visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero__visual svg {
-            width: 100%;
-            max-width: 420px;
-            height: auto;
         }
 
         /* ── BUTTONS ── */
@@ -282,9 +252,8 @@
             border: 1.5px solid var(--color-border-strong);
         }
         .btn--outline:hover {
-            background: var(--color-headers);
-            color: var(--color-on-dark);
-            border-color: var(--color-headers);
+            background: var(--color-border-strong);
+            color: var(--color-headers);
         }
 
         /* ── PHILOSOPHY ── */
@@ -316,16 +285,17 @@
             border-radius: var(--radius-md);
             padding: 32px 28px;
             transition: border-color 0.2s, box-shadow 0.2s;
+            background: var(--color-bg);
         }
         .capability-card:hover {
             border-color: var(--color-border-strong);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
         }
         .capability-icon {
             font-size: 1.5rem;
             margin-bottom: 16px;
             display: block;
-            color: var(--color-headers);
+            color: var(--color-highlight);
         }
         .capability-card h4 {
             font-family: var(--font-mono);
@@ -352,13 +322,13 @@
         .project-card {
             border: 1px solid var(--color-border);
             border-radius: var(--radius-md);
-            background: var(--color-bg);
+            background: var(--color-bg-soft);
             padding: 36px 32px;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
         .project-card:hover {
             border-color: var(--color-border-strong);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
         }
         .project-meta {
             font-family: var(--font-mono);
@@ -406,7 +376,6 @@
             gap: 48px;
             margin-top: 48px;
         }
-        .process-step {}
         .process-num {
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -492,11 +461,6 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
-            .hero__inner {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .hero__visual { display: none; }
             .capabilities-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -506,12 +470,15 @@
             }
             .section { padding: 80px 0; }
             .hero { padding: 100px 0 80px; }
+            .nav__links { gap: 14px; }
+            .nav__links a { font-size: 0.6rem; }
         }
         @media (max-width: 600px) {
             .container { padding: 0 20px; }
-            .nav__inner { padding: 0 20px; }
-            .nav__links { gap: 16px; }
-            .nav__links a { font-size: 0.8rem; }
+            .nav__inner { padding: 0 16px; }
+            .nav__links { gap: 10px; }
+            .nav__links a { font-size: 0.55rem; letter-spacing: 0.03em; }
+            .nav__brand { font-size: 0.7rem; }
             .capabilities-grid {
                 grid-template-columns: 1fr;
             }
@@ -529,10 +496,12 @@
     <div class="nav__inner">
         <a href="#" class="nav__brand">Luis Howin</a>
         <ul class="nav__links">
-            <li><a href="#about">Philosophy</a></li>
-            <li><a href="#services">Capabilities</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="https://beben.design/contact/" class="nav__cta" target="_blank" rel="noopener">Get in touch</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#services">CAPABILITIES</a></li>
+            <li><a href="#work">WORK</a></li>
+            <li><a href="#process">PROCESS</a></li>
+            <li><a href="#offline">OFFLINE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul>
     </div>
 </nav>
@@ -541,32 +510,21 @@
 <main id="main">
 <section class="hero">
     <div class="container">
-        <div class="hero__inner">
-            <div>
-                <h1>Design logic before the first line of code.</h1>
-                <p class="hero__sub">I'm Luis, a UX Researcher and UI Designer. I believe design should make sense before it makes noise, and that simple systems outlast trends.</p>
-                <div class="hero__actions">
-                    <a href="https://beben.design/contact/" class="btn btn--primary" target="_blank" rel="noopener">Start a conversation</a>
-                    <a href="#work" class="btn btn--outline">View work &#8595;</a>
-                </div>
-            </div>
-            <div class="hero__visual">
-                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" fill="none">
-                    <circle cx="220" cy="180" r="150" stroke="var(--color-border)" stroke-width="1"/>
-                    <polygon points="200,40 360,160 310,340 90,340 40,160" stroke="var(--color-headers)" stroke-width="1.5" fill="none"/>
-                    <circle cx="260" cy="150" r="50" stroke="var(--color-highlight)" stroke-width="1.5" fill="none"/>
-                </svg>
-            </div>
+        <h1>I'm Luis &mdash; I design things that make sense.</h1>
+        <p class="hero__sub">UX researcher, UI designer, and someone who genuinely enjoys figuring out how stuff should work. I like simple systems, honest interfaces, and building things that feel obvious in hindsight.</p>
+        <div class="hero__actions">
+            <a href="https://beben.design/contact/" class="btn btn--primary" target="_blank" rel="noopener">Say hello</a>
+            <a href="#work" class="btn btn--outline">See what I've been up to &#8595;</a>
         </div>
     </div>
 </section>
 
-<!-- 01 PHILOSOPHY -->
+<!-- 01 ABOUT -->
 <section id="about" class="section">
     <div class="container">
-        <span class="section-label"><span class="section-num">01</span> Philosophy</span>
-        <h2 class="section-heading">Thinking in systems, designing for people.</h2>
-        <p class="philosophy-text">My work sits at the intersection of how people think, feel, and move through digital systems &mdash; and how those systems can evolve without losing their humanity.</p>
+        <span class="section-label"><span class="section-num">01</span> About</span>
+        <h2 class="section-heading">How I think about design</h2>
+        <p class="philosophy-text">I care about the space between how people actually behave and how systems expect them to. Most of my work is just trying to close that gap &mdash; making digital things feel a little more human without overcomplicating them.</p>
         <div class="quote">
             "People ignore design that ignores people." &mdash; Frank Chimero
         </div>
@@ -577,38 +535,38 @@
 <section id="services" class="section section--soft">
     <div class="container">
         <span class="section-label"><span class="section-num">02</span> Capabilities</span>
-        <h2 class="section-heading">What I build</h2>
-        <p class="section-sub">Six disciplines, one coherent practice.</p>
+        <h2 class="section-heading">Things I'm good at</h2>
+        <p class="section-sub">A mix of research, design, and code. I like wearing different hats.</p>
         <div class="capabilities-grid">
             <div class="capability-card">
                 <span class="capability-icon">&#9881;</span>
                 <h4>UX Research</h4>
-                <p>Understanding behavior to drive informed design decisions.</p>
+                <p>Talking to users, watching how they actually use things, and turning that into decisions.</p>
             </div>
             <div class="capability-card">
                 <span class="capability-icon">&#9743;</span>
                 <h4>Mobile UI</h4>
-                <p>iOS & Android interfaces respecting platform-specific patterns.</p>
+                <p>iOS & Android interfaces that feel native, not like a website crammed into a phone.</p>
             </div>
             <div class="capability-card">
                 <span class="capability-icon">&#9032;</span>
                 <h4>HMI Design</h4>
-                <p>Bridging physical and digital for hardware-driven products.</p>
+                <p>Bridging physical and digital for hardware products. Screens you interact with in the real world.</p>
             </div>
             <div class="capability-card">
                 <span class="capability-icon">&#9638;</span>
                 <h4>Design Systems</h4>
-                <p>Scalable, consistent frameworks built to last and evolve.</p>
+                <p>Building component libraries and guidelines that keep things consistent as products grow.</p>
             </div>
             <div class="capability-card">
                 <span class="capability-icon">&#9654;</span>
                 <h4>Prototyping</h4>
-                <p>Validating interactions before committing to code.</p>
+                <p>Testing ideas before writing real code. Breaking things early so they work later.</p>
             </div>
             <div class="capability-card">
-                <span class="capability-icon">&#60;/&#62;</span>
+                <span class="capability-icon">&lt;/&gt;</span>
                 <h4>Front-End</h4>
-                <p>Clean, semantic builds that hold up from 320px to 4K.</p>
+                <p>Clean HTML, CSS, and enough JS to ship it. Looks right from 320px to 4K.</p>
             </div>
         </div>
     </div>
@@ -617,15 +575,15 @@
 <!-- 03 SELECTED WORK -->
 <section id="work" class="section">
     <div class="container">
-        <span class="section-label"><span class="section-num">03</span> Selected Work</span>
-        <h2 class="section-heading">Case studies in validation</h2>
-        <p class="section-sub">Every project is a case study in decisions, iterations, and user-centric logic.</p>
+        <span class="section-label"><span class="section-num">03</span> Work</span>
+        <h2 class="section-heading">Some things I've been building</h2>
+        <p class="section-sub">Not a polished portfolio &mdash; more like a log of problems I found interesting.</p>
 
         <div class="project-list">
             <article class="project-card">
                 <div class="project-meta">Embedded UI // Concept</div>
                 <h3>Moto Digital Dash</h3>
-                <p>Designing a glanceable, safety-critical interface for motorcycles. Zero tolerance for distraction in high-vibration environments.</p>
+                <p>A glanceable motorcycle dashboard. The challenge was making something readable at speed, in sunlight, on a vibrating handlebar. Every pixel had to earn its place.</p>
                 <div class="tags">
                     <span class="tag">ESP32</span>
                     <span class="tag">UX Research</span>
@@ -636,7 +594,7 @@
             <article class="project-card">
                 <div class="project-meta">Wearable UI // 2025</div>
                 <h3>Trek Watch 91</h3>
-                <p>Prioritizing legibility and simplicity for outdoor activities. Essential data, zero distraction.</p>
+                <p>A watch face for hikers who don't want to fiddle with their wrist mid-trail. Show the essentials, hide everything else.</p>
                 <div class="tags">
                     <span class="tag">UI Design</span>
                     <span class="tag">Prototyping</span>
@@ -646,7 +604,7 @@
             <article class="project-card">
                 <div class="project-meta">AI // Site Navigation</div>
                 <h3>Sprite</h3>
-                <p>An AI-powered site guide designed to help visitors navigate and find information contextually. A small, helpful presence that surfaces the right content without getting in the way.</p>
+                <p>A tiny AI guide that lives on beben.design. Instead of making people dig through menus, Sprite helps them find what they're looking for conversationally. Small, helpful, stays out of the way.</p>
                 <div class="tags">
                     <span class="tag">AI</span>
                     <span class="tag">UX Design</span>
@@ -660,44 +618,45 @@
 <!-- 04 PROCESS -->
 <section id="process" class="section section--soft">
     <div class="container">
-        <span class="section-label"><span class="section-num">04</span> How It Works</span>
-        <h2 class="section-heading">Three moves, in order</h2>
+        <span class="section-label"><span class="section-num">04</span> Process</span>
+        <h2 class="section-heading">How I usually work</h2>
         <div class="process-grid">
             <div class="process-step">
                 <span class="process-num">01</span>
                 <div class="process-title">Research</div>
-                <p class="process-desc">Stripping the project to its core objectives. Mapping user journeys and information architecture.</p>
+                <p class="process-desc">Figure out what we're actually solving. Talk to people, map the problem, cut the noise.</p>
             </div>
             <div class="process-step">
                 <span class="process-num">02</span>
                 <div class="process-title">Prototype</div>
-                <p class="process-desc">Validating interactions before committing to code. Ensuring logic holds from 320px to 4K.</p>
+                <p class="process-desc">Build something clickable before writing real code. Break it, fix it, repeat until it feels right.</p>
             </div>
             <div class="process-step">
                 <span class="process-num">03</span>
-                <div class="process-title">Ship & Maintain</div>
-                <p class="process-desc">Stress-testing against edge cases. Monitoring real-world usage and adjusting accordingly.</p>
+                <div class="process-title">Ship & Learn</div>
+                <p class="process-desc">Get it out there, watch how people use it, and keep adjusting. The best version is always the next one.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- 05 OFFLINE -->
-<section class="section">
+<section id="offline" class="section">
     <div class="container">
         <span class="section-label"><span class="section-num">05</span> Offline</span>
-        <p class="offline-text">When I'm not at my desk, I'm outside running. Movement fuels the logic.</p>
+        <h2 class="section-heading">Away from the screen</h2>
+        <p class="offline-text">When I'm not designing, I'm usually running. Clears my head, helps me think. Most of my best ideas happen somewhere around kilometre five.</p>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
+<!-- 06 CONTACT -->
+<section id="contact" class="cta">
     <div class="container">
-        <span class="section-label"><span class="section-num">06</span> Get In Touch</span>
-        <h2 class="section-heading">Let's talk about your project.</h2>
-        <p class="section-sub">No aggressive sales pitch. Just a technical discussion about your goals.</p>
+        <span class="section-label"><span class="section-num">06</span> Contact</span>
+        <h2 class="section-heading">Want to work together?</h2>
+        <p class="section-sub">I'm always happy to chat about a project, an idea, or just what you're building. No pitch, just a conversation.</p>
         <div class="cta__actions">
-            <a href="https://beben.design/contact/" class="btn btn--primary" target="_blank" rel="noopener">Start a conversation</a>
+            <a href="https://beben.design/contact/" class="btn btn--primary" target="_blank" rel="noopener">Say hello</a>
             <a href="https://beben.design" class="btn btn--outline" target="_blank" rel="noopener">beben.design</a>
         </div>
     </div>
@@ -716,13 +675,11 @@
 </footer>
 
 <script>
-    // Sticky nav scroll effect
     const nav = document.querySelector('.nav');
     window.addEventListener('scroll', () => {
         nav.classList.toggle('nav--scrolled', window.scrollY > 20);
     }, { passive: true });
 
-    // Active nav link on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav__links a[href^="#"]');
     const observer = new IntersectionObserver((entries) => {
