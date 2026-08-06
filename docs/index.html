@@ -6,19 +6,24 @@
     <title>Luis Howin Maina | UX Designer & Web Developer in Nairobi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <meta name="description" content="Luis Howin Maina — UX researcher, UI designer, and web developer based in Nairobi, Kenya. Building human-centered digital products with AI at Beben Design.">
     <meta name="author" content="Luis Howin Maina">
     <meta name="keywords" content="Luis Howin Maina, Luis Howin, Nairobi web developer, UX designer Nairobi, UI designer Kenya, Beben Design, web developer Kenya, front-end developer Nairobi">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://luishowin.space/">
+    <link rel="canonical" href="https://luishowin.github.io/">
+    <meta name="theme-color" content="#0B0E11">
+    <meta name="color-scheme" content="dark">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Luis Howin Maina — UX Designer & Web Developer, Nairobi" />
     <meta property="og:description" content="UX researcher, UI designer, and web developer based in Nairobi. Building human-centered digital products with AI at Beben Design." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://luishowin.space/" />
-    <meta property="og:image" content="https://luishowin.space/ogl.jpg" />
+    <meta property="og:url" content="https://luishowin.github.io/" />
+    <meta property="og:image" content="https://luishowin.github.io/images/og-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Luis Howin Maina seated in a wire chair on a Persian rug, surrounded by plants, wooden blocks and vintage trunks against a bright studio backdrop." />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="Luis Howin Maina" />
 
@@ -26,7 +31,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Luis Howin Maina — UX Designer & Web Developer, Nairobi">
     <meta name="twitter:description" content="UX researcher, UI designer, and web developer based in Nairobi. Building human-centered digital products with AI.">
-    <meta name="twitter:image" content="https://luishowin.space/ogl.jpg">
+    <meta name="twitter:image" content="https://luishowin.github.io/images/og-cover.jpg">
 
     <!-- Google Verification -->
     <meta name="google-site-verification" content="zlq15C0Z_9chty5WE0kbzpEM21qfeAABklnAyqR00Bk" />
@@ -49,7 +54,7 @@
       "@type": "Person",
       "name": "Luis Howin Maina",
       "alternateName": "Luis Howin",
-      "url": "https://luishowin.space/",
+      "url": "https://luishowin.github.io/",
       "sameAs": [
         "https://www.linkedin.com/in/luishowin",
         "https://github.com/luishowin",
@@ -57,7 +62,7 @@
       ],
       "jobTitle": "UX Designer & Web Developer",
       "description": "Nairobi-based UX researcher, UI designer, and web developer building human-centered digital products with AI at Beben Design.",
-      "image": "https://luishowin.space/ogl.jpg",
+      "image": "https://luishowin.github.io/images/og-cover.jpg",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Nairobi",
@@ -77,25 +82,83 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Luis Howin Maina",
-      "url": "https://luishowin.space/",
+      "url": "https://luishowin.github.io/",
       "description": "Portfolio of Luis Howin Maina, UX designer and web developer based in Nairobi, Kenya."
     }
     </script>
 
     <style>
+        /* Shared chrome. tools/figma-deck/build.js copies everything between the
+           two sentinels below into the generated portfolio.html, so the pages
+           cannot drift. Edit it here, never in portfolio.html. If a THIRD page
+           needs this block, stop copying and extract docs/css/base.css — three
+           copies is where hand-syncing reliably fails.
+
+           The block spans the home page's component rules as well as the chrome
+           proper. portfolio.html only uses a subset (tokens, reset, container,
+           nav, section-label, footer, focus, reduced-motion); the rest matches
+           no element there and is inert. Copying the whole run is what keeps the
+           extraction a single contiguous slice rather than a list of fragments.
+
+           Keep each sentinel on its own line as a complete comment: the
+           extractor slices from the line after the marker, so a multi-line
+           sentinel would leave a dangling comment terminator at the head of
+           the slice, which swallows the next rule whole. */
+        /* ══ SHARED CHROME v1 ══ */
         :root {
+            /* ── Surfaces ── */
             --color-bg: #0B0E11;
             --color-bg-soft: #12161B;
             --color-headers: #E8ECF1;
-            --color-highlight: #A352FF;
             --color-text: #BFC6D0;
-            --color-border: rgba(200, 210, 225, 0.10);
-            --color-border-strong: rgba(200, 210, 225, 0.20);
             --color-text-muted: rgba(191, 198, 208, 0.60);
+            --color-border: rgba(200, 210, 225, 0.10);          /* decorative only */
+            --color-border-strong: rgba(200, 210, 225, 0.20);
+            --color-border-control: rgba(200, 210, 225, 0.34);  /* controls — 3.1:1 */
+
+            /* ── Accent. One value can't serve three contrast requirements, so it's
+                 split by role. Ratios measured against --color-bg / white label. ── */
+            --accent: #A352FF;             /* identity, large or decorative     */
+            --accent-text: #B47AFF;        /* labels, numbers, links   6.61:1   */
+            --accent-fill: #8A3DE0;        /* button bg, white label   5.49:1   */
+            --accent-fill-hover: #6D28D9;  /* button hover, white      7.10:1   */
+
+            /* ── Type ── */
             --font-title: 'Old Standard TT', Georgia, 'Times New Roman', serif;
-            --font-nav: 'JetBrains Mono', monospace;
             --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+            /* Fluid scale. Nothing on the page may go below --step--2 (≈11.5px
+               at 320px) — undersized mobile text is what reads as unfinished. */
+            --step--2: clamp(0.72rem, 0.695rem + 0.13vw, 0.78rem);
+            --step--1: clamp(0.84rem, 0.805rem + 0.18vw, 0.92rem);
+            --step-0:  clamp(1rem,    0.965rem + 0.18vw, 1.10rem);
+            --step-1:  clamp(1.20rem, 1.120rem + 0.40vw, 1.44rem);
+            --step-2:  clamp(1.50rem, 1.350rem + 0.75vw, 2.00rem);
+            --step-3:  clamp(1.95rem, 1.600rem + 1.75vw, 3.05rem);
+            --step-4:  clamp(2.45rem, 1.850rem + 3.00vw, 4.20rem);
+
+            /* ── Space ── */
+            --space-3xs: 4px;
+            --space-2xs: 8px;
+            --space-xs: 12px;
+            --space-s: 16px;
+            --space-m: 24px;
+            --space-l: 40px;
+            --space-xl: 64px;
+            --space-2xl: clamp(72px, 9vw, 128px);   /* section rhythm */
+
+            /* Measures in ch so they self-correct when the type scale changes. */
+            --measure: 62ch;
+            --measure-tight: 46ch;
+            --measure-head: 18ch;
+
+            /* ── Motion ── */
+            --ease-snap: cubic-bezier(0.22, 0.9, 0.32, 1);
+            --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+            --dur-fast: 180ms;
+            --dur-base: 420ms;
+
             --nav-height: 72px;
             --container: 1140px;
             --radius-sm: 3px;
@@ -106,11 +169,15 @@
 
         body {
             font-family: var(--font-body);
+            font-size: var(--step-0);
             background-color: var(--color-bg);
             background-image:
                 linear-gradient(var(--color-border) 1px, transparent 1px),
                 linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
             background-size: 80px 80px;
+            /* Start the grid at the nav's bottom edge so the first rule IS that
+               edge, rather than a stray line 8px below it. */
+            background-position: 0 var(--nav-height);
             color: var(--color-text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
@@ -118,25 +185,46 @@
 
         a { color: inherit; text-decoration: none; }
 
+        /* Anchored sections must clear the sticky nav. */
+        section[id] { scroll-margin-top: calc(var(--nav-height) + var(--space-s)); }
+
+        /* :where() keeps specificity at zero so component rules still win.
+           The colour is a token, so this stays correct inside the light hero. */
+        :where(a, button, summary, [tabindex]):focus-visible {
+            outline: 2px solid var(--accent-text);
+            outline-offset: 3px;
+            border-radius: var(--radius-sm);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 1ms !important;   /* not 0s — some transitionend
+                                                         handlers never fire at zero */
+                animation-iteration-count: 1 !important;
+                transition-duration: 1ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
         .container {
             max-width: var(--container);
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 var(--space-l);
         }
 
         /* ── SKIP LINK ── */
         .skip-link {
             position: absolute;
             top: -100%;
-            left: 16px;
-            background: var(--color-highlight);
+            left: var(--space-s);
+            background: var(--accent-fill);
             color: #fff;
-            padding: 8px 16px;
-            font-size: 0.85rem;
+            padding: var(--space-2xs) var(--space-s);
+            font-size: var(--step--1);
             z-index: 999;
             border-radius: var(--radius-sm);
         }
-        .skip-link:focus { top: 12px; }
+        .skip-link:focus { top: var(--space-xs); }
 
         /* ── NAV ── */
         .nav {
@@ -150,7 +238,7 @@
             backdrop-filter: blur(20px) saturate(1.2);
             -webkit-backdrop-filter: blur(20px) saturate(1.2);
             border-bottom: 1px solid var(--color-border);
-            transition: box-shadow 0.3s ease;
+            transition: box-shadow var(--dur-base) var(--ease-out);
         }
         .nav--scrolled {
             box-shadow: 0 1px 12px rgba(0,0,0,0.3);
@@ -159,130 +247,197 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: var(--space-m);
             width: 100%;
             max-width: var(--container);
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 var(--space-l);
         }
         .nav__brand {
-            font-family: var(--font-nav);
+            font-family: var(--font-mono);
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: var(--step--1);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--color-headers);
+            white-space: nowrap;
         }
         .nav__links {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: var(--space-m);
             list-style: none;
         }
         .nav__links a {
-            font-family: var(--font-nav);
-            font-size: 0.65rem;
+            font-family: var(--font-mono);
+            font-size: var(--step--2);
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--color-text-muted);
-            transition: color 0.2s;
+            transition: color var(--dur-fast) var(--ease-out);
             padding-bottom: 2px;
             border-bottom: 2px solid transparent;
+            white-space: nowrap;
         }
         .nav__links a:hover,
         .nav__links a.is-active {
-            color: var(--color-highlight);
-            border-bottom-color: var(--color-highlight);
+            color: var(--accent-text);
+            border-bottom-color: var(--accent-text);
         }
 
         /* ── SECTIONS ── */
+        /* Section numbers are generated, not hand-written: inserting a section
+           used to mean renumbering six spans by hand. Increment on the label
+           rather than .section so #contact (a .cta) is counted too. */
+        main { counter-reset: section; }
+
         .section {
-            padding: 120px 0;
+            padding: var(--space-2xl) 0;
         }
         .section--soft {
             background: var(--color-bg-soft);
         }
         .section-label {
             font-family: var(--font-mono);
-            font-size: 0.75rem;
+            font-size: var(--step--2);
             font-weight: 500;
             color: var(--color-text-muted);
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            margin-bottom: 16px;
+            margin-bottom: var(--space-s);
             display: block;
+            counter-increment: section;
         }
-        .section-label .section-num {
-            color: var(--color-highlight);
+        .section-label::before {
+            content: counter(section, decimal-leading-zero);
+            color: var(--accent-text);
             font-weight: 700;
-            margin-right: 6px;
+            margin-right: var(--space-2xs);
         }
         .section-heading {
             font-family: var(--font-title);
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-size: var(--step-3);
             font-weight: 400;
             color: var(--color-headers);
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: var(--space-m);
         }
         .section-sub {
-            font-size: 1rem;
+            font-size: var(--step-0);
             color: var(--color-text-muted);
-            max-width: 600px;
+            max-width: var(--measure-tight);
             line-height: 1.7;
         }
+        /* The one device worth borrowing verbatim from beben.design: an italic
+           accent word inside a serif headline. Old Standard TT has a real italic. */
+        .highlight-box {
+            color: var(--accent-text);
+            font-style: italic;
+        }
 
-        /* ── HERO ── */
+        /* ── HERO ──
+           The studio photograph is high-key: its top fifth is a near-white
+           backdrop measuring 12.8–16.9:1 for dark ink. So instead of scrimming
+           the photo dark to carry light text (which would spend the photograph
+           to produce a grey rectangle), this band re-points the colour tokens
+           locally and runs dark-on-light. Every inherited rule follows —
+           including the focus ring, which is why it stays legible here.
+           --color-bg is sampled from the backdrop itself, so the join between
+           flat colour and photograph is invisible at any viewport height. */
         .hero {
-            padding: 140px 0 120px;
+            /* Sampled from the photograph's own backdrop at the seam row, so the
+               join between flat colour and image is invisible. Do not "tidy"
+               this to a rounder value — it is measured, not chosen. */
+            --color-bg: #EBE7E4;
+            --color-bg-soft: #E2DEDA;
+            --color-headers: #101418;                    /* 15.05:1 */
+            --color-text: #39404A;                       /*  8.52:1 */
+            --color-text-muted: rgba(16, 20, 24, 0.64);
+            --color-border: rgba(16, 20, 24, 0.14);
+            --color-border-strong: rgba(16, 20, 24, 0.24);
+            --color-border-control: rgba(16, 20, 24, 0.42);
+            --accent-text: #6D28D9;                      /*  5.78:1 */
+            --accent-fill: #6D28D9;
+            --accent-fill-hover: #5B21B6;
+
+            background: var(--color-bg);
+            color: var(--color-text);
+            padding: clamp(88px, 11vw, 132px) 0 0;
+            overflow: hidden;
+        }
+        .hero__eyebrow {
+            font-family: var(--font-mono);
+            font-size: var(--step--2);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-s);
         }
         .hero h1 {
             font-family: var(--font-title);
-            font-size: clamp(2.6rem, 5.5vw, 4rem);
+            font-size: var(--step-4);
             font-weight: 400;
             color: var(--color-headers);
-            line-height: 1.15;
-            margin-bottom: 28px;
-            max-width: 700px;
+            line-height: 1.08;
+            margin-bottom: var(--space-m);
+            max-width: var(--measure-head);
         }
         .hero__sub {
-            font-size: 1.05rem;
+            font-size: var(--step-0);
             color: var(--color-text-muted);
-            line-height: 1.8;
-            max-width: 560px;
-            margin-bottom: 40px;
+            line-height: 1.75;
+            max-width: var(--measure-tight);
+            margin-bottom: var(--space-l);
         }
         .hero__actions {
             display: flex;
-            gap: 16px;
+            gap: var(--space-s);
             flex-wrap: wrap;
+        }
+        .hero__figure { margin-top: clamp(40px, 6vw, 72px); }
+        .hero__figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            /* When the container is wider than the photo's 16:9, the crop eats
+               the top — the band that is redundant with the flat colour above
+               it. Nothing that matters can be cropped away. */
+            max-height: min(58vh, 620px);
+            object-fit: cover;
+            object-position: 50% 88%;
         }
 
         /* ── BUTTONS ── */
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: var(--space-2xs);
             font-family: var(--font-body);
-            font-size: 0.9rem;
+            font-size: var(--step--1);
             font-weight: 600;
-            padding: 14px 28px;
+            padding: 14px var(--space-m);
             border-radius: var(--radius-sm);
-            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            transition: background var(--dur-fast) var(--ease-out),
+                        color var(--dur-fast) var(--ease-out),
+                        border-color var(--dur-fast) var(--ease-out);
         }
+        /* --accent-fill, not --accent: white on #A352FF measures 4.03:1 and
+           fails AA at this size. #8A3DE0 (the old hover colour) gives 5.49:1. */
         .btn--primary {
-            background: var(--color-highlight);
+            background: var(--accent-fill);
             color: #fff;
-            border: 1.5px solid var(--color-highlight);
+            border: 1.5px solid var(--accent-fill);
         }
         .btn--primary:hover {
-            background: #8a3de0;
-            border-color: #8a3de0;
+            background: var(--accent-fill-hover);
+            border-color: var(--accent-fill-hover);
         }
         .btn--outline {
             background: transparent;
             color: var(--color-text);
-            border: 1.5px solid var(--color-border-strong);
+            border: 1.5px solid var(--color-border-control);  /* 3:1 for controls */
         }
         .btn--outline:hover {
             background: var(--color-border-strong);
@@ -292,32 +447,35 @@
         /* ── PHILOSOPHY ── */
         .philosophy-text {
             font-family: var(--font-title);
-            font-size: 1.35rem;
+            font-size: var(--step-1);
             line-height: 1.8;
-            max-width: 720px;
+            max-width: var(--measure);
             color: var(--color-text);
         }
+        .philosophy-text + .philosophy-text { margin-top: var(--space-m); }
         .quote {
             font-style: italic;
-            border-left: 3px solid var(--color-highlight);
-            padding-left: 20px;
-            margin: 40px 0 0;
+            border-left: 3px solid var(--accent-text);
+            padding-left: var(--space-m);
+            margin: var(--space-l) 0 0;
             color: var(--color-text-muted);
-            font-size: 0.95rem;
+            font-size: var(--step--1);
+            max-width: var(--measure-tight);
         }
 
         /* ── CAPABILITIES GRID ── */
         .capabilities-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 48px;
+            gap: var(--space-m);
+            margin-top: var(--space-xl);
         }
         .capability-card {
             border: 1px solid var(--color-border);
             border-radius: var(--radius-md);
-            padding: 32px 28px;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            padding: var(--space-l) var(--space-m);
+            transition: border-color var(--dur-fast) var(--ease-out),
+                        box-shadow var(--dur-fast) var(--ease-out);
             background: var(--color-bg);
         }
         .capability-card:hover {
@@ -326,21 +484,21 @@
         }
         .capability-icon {
             font-size: 1.5rem;
-            margin-bottom: 16px;
+            margin-bottom: var(--space-s);
             display: block;
-            color: var(--color-highlight);
+            color: var(--accent-text);
         }
-        .capability-card h4 {
+        .capability-card h3 {
             font-family: var(--font-mono);
-            font-size: 0.8rem;
+            font-size: var(--step--1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--color-headers);
-            margin-bottom: 10px;
+            margin-bottom: var(--space-2xs);
         }
         .capability-card p {
-            font-size: 0.9rem;
+            font-size: var(--step--1);
             color: var(--color-text-muted);
             line-height: 1.6;
         }
@@ -349,52 +507,60 @@
         .project-list {
             display: flex;
             flex-direction: column;
-            gap: 28px;
-            margin-top: 48px;
+            gap: var(--space-l);
+            margin-top: var(--space-xl);
         }
         .project-card {
+            position: relative;   /* anchor for the stretched link */
             border: 1px solid var(--color-border);
             border-radius: var(--radius-md);
             background: var(--color-bg-soft);
-            padding: 36px 32px;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            padding: var(--space-l) var(--space-m);
+            transition: border-color var(--dur-fast) var(--ease-out),
+                        box-shadow var(--dur-fast) var(--ease-out);
         }
-        .project-card:hover {
+        .project-card:hover,
+        .project-card:focus-within {
             border-color: var(--color-border-strong);
             box-shadow: 0 4px 24px rgba(0,0,0,0.15);
         }
+        .project-card:focus-within { border-color: var(--accent-text); }
         .project-meta {
             font-family: var(--font-mono);
-            font-size: 0.7rem;
+            font-size: var(--step--2);
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 10px;
+            margin-bottom: var(--space-2xs);
             color: var(--color-text-muted);
         }
         .project-card h3 {
             font-family: var(--font-title);
-            font-size: 1.6rem;
+            font-size: var(--step-2);
             font-weight: 400;
             color: var(--color-headers);
-            margin-bottom: 12px;
+            margin-bottom: var(--space-xs);
         }
+        /* Whole card is the target, with exactly one accessible name. */
+        .project-card h3 a { color: inherit; }
+        .project-card h3 a::after { content: ""; position: absolute; inset: 0; }
+        .project-card:hover h3 a { color: var(--accent-text); }
         .project-card p {
-            font-size: 0.9rem;
+            font-size: var(--step--1);
             color: var(--color-text-muted);
             line-height: 1.7;
-            max-width: 640px;
+            max-width: var(--measure);
         }
         .tags {
             display: flex;
-            gap: 8px;
-            margin-top: 20px;
+            gap: var(--space-2xs);
+            margin-top: var(--space-m);
             flex-wrap: wrap;
         }
         .tag {
             border: 1px solid var(--color-border);
-            padding: 4px 12px;
+            padding: var(--space-3xs) var(--space-xs);
             font-family: var(--font-mono);
-            font-size: 0.65rem;
+            font-size: var(--step--2);
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.06em;
@@ -406,28 +572,28 @@
         .process-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
-            margin-top: 48px;
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
         }
         .process-num {
             font-family: var(--font-mono);
-            font-size: 0.75rem;
+            font-size: var(--step--2);
             font-weight: 700;
-            color: var(--color-highlight);
-            margin-bottom: 12px;
+            color: var(--accent-text);
+            margin-bottom: var(--space-xs);
             display: block;
         }
         .process-title {
             font-family: var(--font-mono);
-            font-size: 0.85rem;
+            font-size: var(--step--1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             color: var(--color-headers);
-            margin-bottom: 8px;
+            margin-bottom: var(--space-2xs);
         }
         .process-desc {
-            font-size: 0.9rem;
+            font-size: var(--step--1);
             color: var(--color-text-muted);
             line-height: 1.6;
         }
@@ -435,28 +601,28 @@
         /* ── OFFLINE ── */
         .offline-text {
             font-family: var(--font-title);
-            font-size: 1.15rem;
+            font-size: var(--step-1);
             color: var(--color-text-muted);
-            max-width: 500px;
+            max-width: var(--measure-tight);
             line-height: 1.7;
         }
 
         /* ── CTA ── */
         .cta {
-            padding: 120px 0;
+            padding: var(--space-2xl) 0;
             text-align: center;
         }
         .cta .section-heading {
-            max-width: 600px;
-            margin: 0 auto 16px;
+            max-width: var(--measure-tight);
+            margin: 0 auto var(--space-s);
         }
         .cta .section-sub {
-            max-width: 480px;
-            margin: 0 auto 40px;
+            max-width: var(--measure-tight);
+            margin: 0 auto var(--space-l);
         }
         .cta__actions {
             display: flex;
-            gap: 16px;
+            gap: var(--space-s);
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -464,59 +630,69 @@
         /* ── FOOTER ── */
         footer {
             border-top: 1px solid var(--color-border);
-            padding: 32px 0 40px;
+            padding: var(--space-l) 0;
         }
         .footer__inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: var(--space-xs);
         }
-        .footer-copy {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            color: var(--color-text-muted);
-            letter-spacing: 0.04em;
-        }
+        .footer-copy,
         .footer-studio {
             font-family: var(--font-mono);
-            font-size: 0.7rem;
+            font-size: var(--step--2);
             color: var(--color-text-muted);
             letter-spacing: 0.04em;
         }
         .footer-studio a {
-            color: var(--color-highlight);
-            border-bottom: 1px solid var(--color-highlight);
-            transition: opacity 0.2s;
+            color: var(--accent-text);
+            border-bottom: 1px solid var(--accent-text);
+            transition: opacity var(--dur-fast) var(--ease-out);
         }
         .footer-studio a:hover { opacity: 0.7; }
 
-        /* ── RESPONSIVE ── */
-        @media (max-width: 900px) {
-            .capabilities-grid {
-                grid-template-columns: 1fr 1fr;
+        /* ── CHROME RESPONSIVE ──
+           These belong to the chrome, so they must sit inside the sentinels:
+           left outside, portfolio.html gets a nav that overflows the page. */
+
+        /* Seven links won't fit below ~700px. Scroll them rather than shrinking
+           them to 8px: no JS, no focus trap, no aria-expanded — and the edge
+           fade matches the uppercase-mono label language. */
+        @media (max-width: 700px) {
+            .nav__links {
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                scroll-snap-type: x proximity;
+                gap: var(--space-s);
+                -webkit-mask-image: linear-gradient(to right,
+                    transparent 0, #000 12px, #000 calc(100% - 24px), transparent 100%);
+                mask-image: linear-gradient(to right,
+                    transparent 0, #000 12px, #000 calc(100% - 24px), transparent 100%);
             }
+            .nav__links::-webkit-scrollbar { display: none; }
+            .nav__links li { scroll-snap-align: start; flex: none; }
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 0 var(--space-m); }
+            .nav__inner { padding: 0 var(--space-m); gap: var(--space-s); }
+            .footer__inner { flex-direction: column; align-items: flex-start; }
+        }
+        /* ══ END SHARED CHROME ══ */
+
+        /* ── PAGE RESPONSIVE (home page only) ── */
+        @media (max-width: 900px) {
+            .capabilities-grid { grid-template-columns: 1fr 1fr; }
             .process-grid {
                 grid-template-columns: 1fr;
-                gap: 32px;
+                gap: var(--space-l);
             }
-            .section { padding: 80px 0; }
-            .hero { padding: 100px 0 80px; }
-            .nav__links { gap: 14px; }
-            .nav__links a { font-size: 0.6rem; }
         }
         @media (max-width: 600px) {
-            .container { padding: 0 20px; }
-            .nav__inner { padding: 0 16px; }
-            .nav__links { gap: 10px; }
-            .nav__links a { font-size: 0.55rem; letter-spacing: 0.03em; }
-            .nav__brand { font-size: 0.7rem; }
-            .capabilities-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 { font-size: 2.2rem; }
-            .footer__inner { flex-direction: column; align-items: flex-start; }
+            .capabilities-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -525,37 +701,51 @@
 <a href="#main" class="skip-link">Skip to content</a>
 
 <!-- NAV -->
-<nav class="nav">
+<!-- ══ SHARED NAV — tools/figma-deck/build.js copies this into portfolio.html ══ -->
+<nav class="nav" aria-label="Primary">
     <div class="nav__inner">
-        <a href="#" class="nav__brand">Luis Howin</a>
+        <a href="/" class="nav__brand">Luis Howin</a>
         <ul class="nav__links">
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#services">CAPABILITIES</a></li>
             <li><a href="#work">WORK</a></li>
+            <li><a href="./portfolio.html">GRAPHICS</a></li>
             <li><a href="#process">PROCESS</a></li>
             <li><a href="#offline">OFFLINE</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </div>
 </nav>
+<!-- ══ END SHARED NAV ══ -->
 
 <!-- HERO -->
 <main id="main">
 <section class="hero">
     <div class="container">
-        <h1>I'm Luis &mdash; I design things that make sense.</h1>
+        <p class="hero__eyebrow">Nairobi &mdash; UX research, UI design, front-end</p>
+        <h1>I'm Luis &mdash; I design things that <span class="highlight-box">make sense</span>.</h1>
         <p class="hero__sub">UX researcher, UI designer, and lately, an AI wrangler. I do the thinking, the exploring, and the design &mdash; then I let AI handle the heavy lifting on the technical side. It's an AI-eat-AI world out there, so you might as well have one on your team. I just make sure it builds something humans actually want to use.</p>
         <div class="hero__actions">
             <a href="https://beben.design/contact/" class="btn btn--primary" target="_blank" rel="noopener">Say hello</a>
             <a href="#work" class="btn btn--outline">See what I've been up to &#8595;</a>
         </div>
     </div>
+    <figure class="hero__figure">
+        <img src="./images/hero-studio-1200.webp"
+             srcset="./images/hero-studio-800.webp 800w,
+                     ./images/hero-studio-1200.webp 1200w,
+                     ./images/hero-studio-1672.webp 1672w"
+             sizes="100vw"
+             width="1672" height="942"
+             alt="Luis Howin Maina seated in a wire chair on a Persian rug, surrounded by potted plants, wooden blocks, vintage trunks and a tripod floor lamp, against a bright studio backdrop."
+             fetchpriority="high" decoding="async">
+    </figure>
 </section>
 
 <!-- 01 ABOUT -->
 <section id="about" class="section">
     <div class="container">
-        <span class="section-label"><span class="section-num">01</span> About</span>
+        <span class="section-label">About</span>
         <h2 class="section-heading">How I think about design</h2>
         <p class="philosophy-text">I care about the space between how people actually behave and how systems expect them to. Most of my work is just trying to close that gap &mdash; making digital things feel a little more human without overcomplicating them.</p>
         <p class="philosophy-text" style="margin-top: 24px;">These days I'm exploring, learning, and building with AI as a creative partner. The human effort goes into the design decisions &mdash; the taste, the empathy, the "why does this feel wrong" instinct. The technical execution? That's where AI earns its keep. Turns out the robots are pretty good at code if you give them good directions. Who knew.</p>
@@ -568,38 +758,38 @@
 <!-- 02 CAPABILITIES -->
 <section id="services" class="section section--soft">
     <div class="container">
-        <span class="section-label"><span class="section-num">02</span> Capabilities</span>
+        <span class="section-label">Capabilities</span>
         <h2 class="section-heading">Things I'm good at</h2>
         <p class="section-sub">A mix of research, design, and code. I like wearing different hats.</p>
         <div class="capabilities-grid">
             <div class="capability-card">
                 <span class="capability-icon">&#9881;</span>
-                <h4>UX Research</h4>
+                <h3>UX Research</h3>
                 <p>Talking to users, watching how they actually use things, and turning that into decisions.</p>
             </div>
             <div class="capability-card">
                 <span class="capability-icon">&#9743;</span>
-                <h4>Mobile UI</h4>
+                <h3>Mobile UI</h3>
                 <p>iOS & Android interfaces that feel native, not like a website crammed into a phone.</p>
             </div>
             <div class="capability-card">
                 <span class="capability-icon">&#9032;</span>
-                <h4>HMI Design</h4>
+                <h3>HMI Design</h3>
                 <p>Bridging physical and digital for hardware products. Screens you interact with in the real world.</p>
             </div>
             <div class="capability-card">
                 <span class="capability-icon">&#9638;</span>
-                <h4>Design Systems</h4>
+                <h3>Design Systems</h3>
                 <p>Building component libraries and guidelines that keep things consistent as products grow.</p>
             </div>
             <div class="capability-card">
                 <span class="capability-icon">&#9654;</span>
-                <h4>Prototyping</h4>
+                <h3>Prototyping</h3>
                 <p>Testing ideas before writing real code. Breaking things early so they work later.</p>
             </div>
             <div class="capability-card">
                 <span class="capability-icon">&lt;/&gt;</span>
-                <h4>Front-End</h4>
+                <h3>Front-End</h3>
                 <p>Clean HTML, CSS, and enough JS to ship it. Looks right from 320px to 4K.</p>
             </div>
         </div>
@@ -609,7 +799,7 @@
 <!-- 03 SELECTED WORK -->
 <section id="work" class="section">
     <div class="container">
-        <span class="section-label"><span class="section-num">03</span> Work</span>
+        <span class="section-label">Work</span>
         <h2 class="section-heading">Some things I've been building</h2>
         <p class="section-sub">Not a polished portfolio &mdash; more like a log of problems I found interesting.</p>
 
@@ -637,12 +827,23 @@
 
             <article class="project-card">
                 <div class="project-meta">AI // Site Navigation</div>
-                <h3>Sprite</h3>
+                <h3><a href="https://beben.design" target="_blank" rel="noopener">Sprite</a></h3>
                 <p>A tiny AI guide that lives on beben.design. Instead of making people dig through menus, Sprite helps them find what they're looking for conversationally. Small, helpful, stays out of the way.</p>
                 <div class="tags">
                     <span class="tag">AI</span>
                     <span class="tag">UX Design</span>
                     <span class="tag">Conversational UI</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-meta">Graphic Design // 2024 &ndash; 2026</div>
+                <h3><a href="./portfolio.html">Branding &amp; Print</a></h3>
+                <p>Seven client and personal identities &mdash; logo design, branding, packaging, print and web. Nanyuki Holiday Home, Jimmy Rosemond Book Launch, Carbon Slash, Raha Luxury Concierge, Neopolaris AI, Queens of the Dust and Munch Hub, collected in one deck.</p>
+                <div class="tags">
+                    <span class="tag">Branding</span>
+                    <span class="tag">Identity</span>
+                    <span class="tag">Print</span>
                 </div>
             </article>
         </div>
@@ -652,7 +853,7 @@
 <!-- 04 PROCESS -->
 <section id="process" class="section section--soft">
     <div class="container">
-        <span class="section-label"><span class="section-num">04</span> Process</span>
+        <span class="section-label">Process</span>
         <h2 class="section-heading">How I usually work</h2>
         <div class="process-grid">
             <div class="process-step">
@@ -677,7 +878,7 @@
 <!-- 05 OFFLINE -->
 <section id="offline" class="section">
     <div class="container">
-        <span class="section-label"><span class="section-num">05</span> Offline</span>
+        <span class="section-label">Offline</span>
         <h2 class="section-heading">Away from the screen</h2>
         <p class="offline-text">When I'm not designing, I'm usually running. Clears my head, helps me think. Most of my best ideas happen somewhere around kilometre five.</p>
     </div>
@@ -686,7 +887,7 @@
 <!-- 06 CONTACT -->
 <section id="contact" class="cta">
     <div class="container">
-        <span class="section-label"><span class="section-num">06</span> Contact</span>
+        <span class="section-label">Contact</span>
         <h2 class="section-heading">Want to work together?</h2>
         <p class="section-sub">I'm always happy to chat about a project, an idea, or just what you're building. No pitch, just a conversation.</p>
         <div class="cta__actions">
@@ -698,7 +899,7 @@
 
 </main>
 
-<!-- FOOTER -->
+<!-- ══ SHARED FOOTER — tools/figma-deck/build.js copies this into portfolio.html ══ -->
 <footer>
     <div class="container">
         <div class="footer__inner">
@@ -707,6 +908,7 @@
         </div>
     </div>
 </footer>
+<!-- ══ END SHARED FOOTER ══ -->
 
 <script>
     const nav = document.querySelector('.nav');
@@ -720,8 +922,10 @@
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 navLinks.forEach(link => {
-                    link.classList.toggle('is-active',
-                        link.getAttribute('href') === '#' + entry.target.id);
+                    const active = link.getAttribute('href') === '#' + entry.target.id;
+                    link.classList.toggle('is-active', active);
+                    if (active) link.setAttribute('aria-current', 'true');
+                    else link.removeAttribute('aria-current');
                 });
             }
         });

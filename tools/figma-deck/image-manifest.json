@@ -1,0 +1,871 @@
+[
+  {
+    "ref": "1045317ea5d7d56d50c74bda7ae84d83c45dc6a0",
+    "url": "https://s3-alpha-sig.figma.com/img/1045/317e/a5d7d56d50c74bda7ae84d83c45dc6a0?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Lyk6fXxDvI1Xb-0HmYM7hc5nP56wvLMH7rMDL8qPzkyF0P3~m9lEvs38UHipjbu2j2tNR8DNG4a3sbreql-nTHSkwivkLfZOJmrs9L2308Ol4ppLcCjgkeq3HWxmh1csUdHeHy5HBkwCFRkrTpeBj06~g6Ogg66vsGEQRVKpS4W37QemnvyuSXZ2oLjiHDJu0MaXTpzA6RetqPcU-hf04rLbrKTvhxUbguVOx18cxyGo-~~iEs-sAcLTq1e9~74eoba7h50fjH8nzpzvKvBolGqP7fRhPuhgvFW819wDFX5MyKo1SXJMk30NL531Ab1a9uRT9Wp1If1eziNFU463Kw__",
+    "nodes": [
+      "image 40"
+    ],
+    "maxW": 961,
+    "maxH": 345,
+    "scaleMode": "STRETCH",
+    "file": "1045317ea5d7.webp",
+    "bytes": 149548,
+    "ext": "png",
+    "natW": 1813,
+    "natH": 703,
+    "outW": 1779,
+    "outH": 690
+  },
+  {
+    "ref": "0a3dfd1ba6851797244a4f6e5c353c9ea03ae812",
+    "url": "https://s3-alpha-sig.figma.com/img/0a3d/fd1b/a6851797244a4f6e5c353c9ea03ae812?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B-x7mgusf-3kzW53RDKZRIBVq480LlN3XmBhcIju9vyDRCSZGtSSCidgtDi-2CW-X6~itMLzrlvwOSj9RKv4hnXT30OfoZamNBwbjZDO6L2PncJfi0YInJD1j48oIZmxreBOUtx7~fL4khjo7kNyu2VsOBj6sJzvCphHZOKnm~a8uVkJUeOSOTXEZoXnM4VpHlYNYhi3MIMMcAZ-~CNigMQge2jHJ4VHOanPDwnun-tKeO678CU2f-HAx44HXVfHxgr-pvuZlBMe6h7QTBPgYUB8G0iOjdu0OYrEKCW6B1JhDwO7stzoHcA2sgWKDyJXdccS~k2mwy3aXJ7JBBz6Gg__",
+    "nodes": [
+      "sat2 1"
+    ],
+    "maxW": 965,
+    "maxH": 543,
+    "scaleMode": "FILL",
+    "file": "0a3dfd1ba685.webp",
+    "bytes": 143572,
+    "ext": "png",
+    "natW": 1672,
+    "natH": 941,
+    "outW": 1672,
+    "outH": 941
+  },
+  {
+    "ref": "f9b2a32df986c54e88e82f6ad37d20348585cf6e",
+    "url": "https://s3-alpha-sig.figma.com/img/f9b2/a32d/f986c54e88e82f6ad37d20348585cf6e?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=BRSKsM~XUqhVN4L8vU0KqMb44Rs~qdQe5DvnGdUW9U8W1pT0MJzPDYa6rlsffIjXs9QDm~uFKkJC1wo1EhPgC15am2xF--72qciXdsnQ1MXU0lE3pAqmO6ff4uiXMRMRNPbt9yROHMk0hBAEK0MbZK89eW-WtlpCpbaZQq-BvBp2R-4gDWYqONmNU0E16XQNrRVvRF9LbzAJVIa8QXOD2MurOowanl67hdmLq3bMHwUPlspFWR3yGlbMfYugTrb5xYO3NUqbJ5UqaM2VhZGOERSvLKmvfL7nltsHodD2rLfeoExqoVPAeDDf2khg-jEaBql-qAftkKEwdNEAJFwqZw__",
+    "nodes": [
+      "image 1"
+    ],
+    "maxW": 941,
+    "maxH": 422,
+    "scaleMode": "FILL",
+    "file": "f9b2a32df986.webp",
+    "bytes": 116300,
+    "ext": "png",
+    "natW": 1882,
+    "natH": 844,
+    "outW": 1882,
+    "outH": 844
+  },
+  {
+    "ref": "c35d29dcfbbcf0daf5db61937b8d4498e07a39dd",
+    "url": "https://s3-alpha-sig.figma.com/img/c35d/29dc/fbbcf0daf5db61937b8d4498e07a39dd?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=gzg-9dmGauKChKKlv2UYt~OY4qBFR3JomdO2TFFfedcwBYbatq8vgu0WoMg8IrlmTKir6nvBqAwJiCxyxlsd5P9d7NYLgFodvm2EBMbCpMqOwelkHZtUWaAKhnLJYzCXvJ0RsTSJhzrS-fVQqKXbJKtXt~u7WJFb5LxA4esm3H5ZRfLyg-jiJNr-xuojuxYz4CchUigdNyKLPFR5Vv4a71zVyLzj-tcqqT~fGzpO3etNN2C5MhTyMxUb1WV~SEjtmyugkT2NmCOVkHGOE9EqmUffFabFvqd1d7d5anX-HItt8RgeSTPxFCUEi3zqhaT5jc~zffaA1KAA9nuZM9S~~w__",
+    "nodes": [
+      "mccup 1"
+    ],
+    "maxW": 630,
+    "maxH": 504,
+    "scaleMode": "FILL",
+    "file": "c35d29dcfbbc.webp",
+    "bytes": 111248,
+    "ext": "png",
+    "natW": 1402,
+    "natH": 1122,
+    "outW": 1260,
+    "outH": 1008
+  },
+  {
+    "ref": "bc4f9dcaf4ed292ce0095f02c3ec6a70d91dba07",
+    "url": "https://s3-alpha-sig.figma.com/img/bc4f/9dca/f4ed292ce0095f02c3ec6a70d91dba07?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=azrkwdZ~gknYqIK6jVaFUBV6cEpVViXZ8I8F31fYfT2WICokggrXW8zPyo6G8WRyv3ufH-Xgv3CGGoeh9GE4VR0WSXt2KMWwbSO73BVnqhFoSej5XGrf0Xszpa~iu1ltmC6UCNAWJmV4FHAs1NsugnCqohfYLVO2shiLWTWoAjOVQOMcg~RCQ1VtT~b7ieP~-QC~fK01cbCiXwvkolWDOQPvAfGq-QQh-xTJ5Nx89zHz2HQ3mF0v7~ItavG6LNuj2Qij9YshkXn-ijuq1lapfKNzfWk1uSyAH5DslaIYz8zIBCKMaXA8AqxbVwrLjH7woenxFIB3vitmQDPxHLtWmA__",
+    "nodes": [
+      "image 37"
+    ],
+    "maxW": 954,
+    "maxH": 587,
+    "scaleMode": "FILL",
+    "file": "bc4f9dcaf4ed.webp",
+    "bytes": 108156,
+    "ext": "png",
+    "natW": 1231,
+    "natH": 757,
+    "outW": 1231,
+    "outH": 757
+  },
+  {
+    "ref": "18ae5a2a7e5b5b0eda6b773a8dbbbdc7d6805f9c",
+    "url": "https://s3-alpha-sig.figma.com/img/18ae/5a2a/7e5b5b0eda6b773a8dbbbdc7d6805f9c?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=ge7e8AfWeCAJMQzObgivSlA3EIg9LaWwx9XeT0nfRo8rNsGby6UPZ5NsAsmG~I2w19XFyLG5evid16R39I4XfSdAlsv00KHnRR6XSFE15mEOhrqiIyUYJTd4z~2NX5sQHp86aNiyYILmmQDkwphJfWV5toD81uWePZ4YfMXGndA6xKYOp9h~hse9S4VlI7y7Lz8cLwqxoDl4LqrLRwM4r3a78lj7JPFZCq7Cl0KE8UmZNQg72R2pWZ2wkc5AoFU8wQsSEclqp3syK~TItfHVWRV~qbkLqTGvtgmBanaG0rr4TInPYguM8vEvOQ5BtjPLNm7FKgztUO~insHjm3jJjQ__",
+    "nodes": [
+      "image 43"
+    ],
+    "maxW": 452,
+    "maxH": 459,
+    "scaleMode": "FILL",
+    "file": "18ae5a2a7e5b.webp",
+    "bytes": 93358,
+    "ext": "png",
+    "natW": 702,
+    "natH": 712,
+    "outW": 702,
+    "outH": 712
+  },
+  {
+    "ref": "a871d82eceb15afbd164c16cb51023a34cdc7a6b",
+    "url": "https://s3-alpha-sig.figma.com/img/a871/d82e/ceb15afbd164c16cb51023a34cdc7a6b?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=RpKLr4VjB4~D~Z03jWeVsuYaWv4mktT8BieiX2iEZgRRCY1BKfA3QUNgYanCIf-tjlmRkF8PhsgE4JbOF3nHMmYo1l3Fl2F7KLNb1qTniNNelOeal2Rg332x5EKwH-NYVfwGyAaZn1xyUmKaZSFHLyuWzpyxeqqkaI5dar5~WElR~N~f3yKq0mzW5tPtQNaO2jcC4KnCRWLHnYgJM0CG2oy3Btu1abyj1H3SolGlaKV~nTACVWzdzWry362XnTthoX-sQBTcJlonwZLQBgSTiZozGNvXMB9Nrvz-yW--qhVUpYLDJNtgf0bJ6UsxWn1Gsoj~UynrBWGILLQRV2NsTw__",
+    "nodes": [
+      "mh glovo 1"
+    ],
+    "maxW": 335,
+    "maxH": 474,
+    "scaleMode": "FILL",
+    "file": "a871d82eceb1.webp",
+    "bytes": 91166,
+    "ext": "png",
+    "natW": 1054,
+    "natH": 1492,
+    "outW": 670,
+    "outH": 948
+  },
+  {
+    "ref": "e29f36359ad81697915cfc38259e4eff25e87fa4",
+    "url": "https://s3-alpha-sig.figma.com/img/e29f/3635/9ad81697915cfc38259e4eff25e87fa4?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=CW3PoayaOr5V32xKQwsHhkFtsrEF4Jzp3XqbSONU6VYHVvkM-WI-uhZMOtR3ouQScFMeY9Hg~1tD~v6pe2Rzn~Pwrqsj-Y7Chh-yLo-kiycuD5b2-Ui8yE1jnIg-Gydn6fNN4e-hHqCFWEh-2AH4FF5SN8Psoh6gqtdLuEfWanu2PSzfYQx5Hc~dbf3-7DWxFihqQzX1s4C4YDfDhY5NqfCPLWn9c3lOXod7G46OW5DKi5l4c~H9Uz2Yd9nFPEytwDR7r-Dh~HFc8AvcCgYKxDNtECnrSC2svAg6Giosa2sGGQGa~2qfuXryoiM84k4MN2FMXRK4oGtZ9pdd0oeOEw__",
+    "nodes": [
+      "image 10"
+    ],
+    "maxW": 938,
+    "maxH": 274,
+    "scaleMode": "FILL",
+    "file": "e29f36359ad8.webp",
+    "bytes": 85416,
+    "ext": "png",
+    "natW": 1888,
+    "natH": 552,
+    "outW": 1874,
+    "outH": 548
+  },
+  {
+    "ref": "415f08e0e0f0a2e04cf719e5d484bbd34257c74c",
+    "url": "https://s3-alpha-sig.figma.com/img/415f/08e0/e0f0a2e04cf719e5d484bbd34257c74c?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rFof1uAbaT9O-ITjRIRPhroURCwER2hCkIa43KP7J6neYy~tNT0K7P5PWvMPcaZICvjqQy~l6NFXt6-4-gTSZe1BQP6GhggV1Lf7i1ElY5cJWhUufsuax45O~wf9971lTXbl5jur199AQdR-g88C-z5yssJySgEVJTxwbF640gt9uoxSwSk6zJqViHpcTmOW8BdE51C5zHz37h6lOc71puNg1LaLGQWIQ-pIlxZEsx6dQlSkt0R5j0pKzHvA32HbRxDY10XJc9QwuDGHSyclZBiE2bcgHLkfjMiy3eSZQKUwsYDCpfSQzfnlvkpQJemR77TbhD~slZi~tlS81UbIww__",
+    "nodes": [
+      "image 14"
+    ],
+    "maxW": 966,
+    "maxH": 450,
+    "scaleMode": "STRETCH",
+    "file": "415f08e0e0f0.webp",
+    "bytes": 75410,
+    "ext": "png",
+    "natW": 1879,
+    "natH": 855,
+    "outW": 1879,
+    "outH": 855
+  },
+  {
+    "ref": "f8402cdc66e0cc987b0ed31558ed691bd5c1add2",
+    "url": "https://s3-alpha-sig.figma.com/img/f840/2cdc/66e0cc987b0ed31558ed691bd5c1add2?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=AZs08P7WienB8peyiGJ68mjEkf5wsyslbL1QBaIm7iIe57xoTdGTHs4m231L847-1aBI73R0JANtPKGtXkVMQFBzRC~llai1gxH2Mi250MjKlIm-PGVt8ZJkWU9MMey3dYgkPJ1k2tv2MZMpNISXOMHUxO4DGEXVfzCRqfGgu9vwYED5s9cPh2zCs5OQWb6FwekuzyblL3S4H1GCVWLDreZJ0oXxSBHU6E2MUaMQPo5NZaGOxV-A7KDBEDnvDpDPCvkaU9KjBZeXia3dW9BUVcwelt1pBpAJrG2WG9vGITO-ax6FGrwzaGtlX5vZyAVAbrQJI0JNW35LyKO3Vgj6SA__",
+    "nodes": [
+      "image 9"
+    ],
+    "maxW": 938,
+    "maxH": 391,
+    "scaleMode": "FILL",
+    "file": "f8402cdc66e0.webp",
+    "bytes": 70726,
+    "ext": "png",
+    "natW": 1875,
+    "natH": 781,
+    "outW": 1875,
+    "outH": 781
+  },
+  {
+    "ref": "e9213bc9f5f02b26a08cecf154574c949103021d",
+    "url": "https://s3-alpha-sig.figma.com/img/e921/3bc9/f5f02b26a08cecf154574c949103021d?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=mgl4xLp5XXQgucMcnDQ07ksztmwOGtRFtLAyQ0XOZ2C5Ga~vAOAUyRytMXPAdrihP4anefG08so16SbvCyKnRLDZ~pmdKUHvILuVMtOp6rA-dChHaYDmP08b92X7R~muRBzojS9HQn1yNphxH4f0adStI9pvICEW2wR6TWoV3Lfo2botCvb68CaOH4UzMpe-VdGyGqcBjIty3JnVLvpMUm-D~1XY-OpyiJcece-3cxOQ5LtPriIexrkCG6bTaaWDdbu3Wn2T~vGRx1mtM-XfY8cSG1BlESsf7ltIPRoRldbTY27GcY4tXGEzbpV8I3sPTdNYVsBzNjbzuF0bWQKQSw__",
+    "nodes": [
+      "image 11"
+    ],
+    "maxW": 419,
+    "maxH": 297,
+    "scaleMode": "FILL",
+    "file": "e9213bc9f5f0.webp",
+    "bytes": 70522,
+    "ext": "png",
+    "natW": 1132,
+    "natH": 801,
+    "outW": 838,
+    "outH": 593
+  },
+  {
+    "ref": "9d1fa84bab242a6381a7cd64287fe6b9c3a1c338",
+    "url": "https://s3-alpha-sig.figma.com/img/9d1f/a84b/ab242a6381a7cd64287fe6b9c3a1c338?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=TtnbwT~0UwfjrOKDQ4cWhr6OMRx7Y9oh4~C0PInGB6TX-QXKoen0MhX52RReZxBVh5htRLuX27p321aJ0fTtZubSXz~Q0H8sG6fh0xBDyzFW9c6OETSL2HBxr5ewwNP~fgAWBQZyeGhQxSM2gsZIPmN7MDE887R5lfDY3zuDa9C0~BDbIOdov5MNV45NVjrfoymXaeN142KVYtI78H4QhJFnn795qvbZbtSr0TqdF8oQu0nLBOzS7AU3Big31GS-X27yVmx1L0x0P2kRoSwncoTaQrvUuYSm9Ll5eS0bORWioV5rROffiYYCkxuKZL-2xtTMEcjnq66GK2kC~~8s3w__",
+    "nodes": [
+      "ChatGPT Image Jun 7, 2026, 10_28_04 PM 1"
+    ],
+    "maxW": 336,
+    "maxH": 504,
+    "scaleMode": "FILL",
+    "file": "9d1fa84bab24.webp",
+    "bytes": 61334,
+    "ext": "png",
+    "natW": 1023,
+    "natH": 1537,
+    "outW": 671,
+    "outH": 1008
+  },
+  {
+    "ref": "c11d605eb49e27ba526ec67f976be9e1b670b377",
+    "url": "https://s3-alpha-sig.figma.com/img/c11d/605e/b49e27ba526ec67f976be9e1b670b377?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=g-F~YGNwqMQIRYLOUjIJXiAYoJ0Fdewza942BHJEvWGYsl2TJ4ku1tXrllJtcHanziq~f4IRIFxajeVIGeS4pqWwNt1xn9uVg55fNmjeB~vU~6u5oCZJLZuAxSUxnGgfMgzmCRjSkR0ezaNtYF5zB0-u-9Qu-Jlx7d6DxHRufBsg80HMfh27ypnva0YPH8~-hUBAHmf5wGzmM1emojmKLQD~0Sguf90Vq0IJAc~m2O9cE6bixYnK6MUBwscoafxmOFzHrkuXo4ZRwBb1lXhjP1PrYBx32XVju1Jw-YzILqlu8I3Taa6vCoxd5~6CS-uDsDMRP7ci2IP-FO~P3IbyAw__",
+    "nodes": [
+      "mhub 1"
+    ],
+    "maxW": 272,
+    "maxH": 474,
+    "scaleMode": "FILL",
+    "file": "c11d605eb49e.webp",
+    "bytes": 61246,
+    "ext": "jpg",
+    "natW": 1414,
+    "natH": 2459,
+    "outW": 544,
+    "outH": 946
+  },
+  {
+    "ref": "1b3c5e684b9d3ff0b93dac92cca571fd92a05545",
+    "url": "https://s3-alpha-sig.figma.com/img/1b3c/5e68/4b9d3ff0b93dac92cca571fd92a05545?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=VJJKKKfID6GCfqjISewkScfMYD27MbHywxKknIos0fWgnKTGYCB13yAPXt5LDJqW6Q38epQZJNIUVrCWAfkgKo4P-NwPr9Ga0zmOzccej27R7f0u04Ag-8BKgBHT53UYqyabMe1o6RBkT9fuUl5vioKghav-PsCN3E3rP27z5W9OyaSam8zWWPwrvoi~zIoDF7qzX3BohdlX4PC-w1zDYqnroqrI8MbuieyD1jjVQZcJJAS2atKrOpfMlZdkI-AiRNDZUYtQmpo0nkXnFT5aXevB5FuhldHnFgQk9ixtSSRvndaI4zJ2B7bww5K329XLrQKF7xt62~QjfnovF0ZwXw__",
+    "nodes": [
+      "image 8"
+    ],
+    "maxW": 941,
+    "maxH": 388,
+    "scaleMode": "FILL",
+    "file": "1b3c5e684b9d.webp",
+    "bytes": 59020,
+    "ext": "png",
+    "natW": 1881,
+    "natH": 775,
+    "outW": 1881,
+    "outH": 775
+  },
+  {
+    "ref": "68d0047b95ae9b2860a326f3a3ca47ff513e4946",
+    "url": "https://s3-alpha-sig.figma.com/img/68d0/047b/95ae9b2860a326f3a3ca47ff513e4946?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=AAqJdrR~h17EQ03WOGk7BHgjmkQROyLxi75ZeMHZA1j39RMfQQBpi8~bNW9hjsK4A-En860Gu2tbiYPU-Jm07MjRNL~QDBwqQaG8DmR69khBj79L~c3yUXi2qNQdaAK7yuqx-9qnREn11uYuWVYJNqH5DWMO3CCeR~0810eWE-j4iQda4vyBrLTeaWPr5Oatbz3kP63OiEtX9LptSPnihhct3DdN2M1mWkrulIkgQGOvJIf3neAx8JeCMdGLfWgAOwQ2V8Wsu-zK8-S5fXNRlfOMV9DkmFmDuq8ruqs-Y3jwjgPK1qVgSWU~A-05kfn8yYhEbof7XenatXD2kvqj7w__",
+    "nodes": [
+      "mh milkshakes 1"
+    ],
+    "maxW": 272,
+    "maxH": 474,
+    "scaleMode": "FILL",
+    "file": "68d0047b95ae.webp",
+    "bytes": 58106,
+    "ext": "png",
+    "natW": 951,
+    "natH": 1654,
+    "outW": 544,
+    "outH": 946
+  },
+  {
+    "ref": "45de36d2d653dd4a8a470f2265a508a8ddaca6ec",
+    "url": "https://s3-alpha-sig.figma.com/img/45de/36d2/d653dd4a8a470f2265a508a8ddaca6ec?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=mxi7PfzslBrHadkoEIyMOBqBPrzLgwDdD8mm2sr5NS2hxxq5zVxGKPIbPT-OeVPx~Mf066Hok1O43xTnUyP2Uqpyi5QcJIfubiL8kDh3K4cl19YX7x~n4frsscOEZoJiA~a6RE0NGVDe3r5IqSh-2iVsi5hY004irEzWFsnv7vISqYwGlSzHnTnn9ZZpZlRFc4uFa3~JTh9lwSOE-~NBZJIkQu0Ev3OsWQSYe99iSg7dHb~8VuASemy6gm9JRvgqkbrOYn2aBeaQI5WJYY73pFgjHYIZmHcyP7UgmPB5aqgQIYTUYLz9zw0h-pdhEHO81i1NFDbuPK3bNwDqD33O2Q__",
+    "nodes": [
+      "image 6",
+      "image 52"
+    ],
+    "maxW": 556,
+    "maxH": 720,
+    "scaleMode": "STRETCH",
+    "file": "45de36d2d653.webp",
+    "bytes": 57808,
+    "ext": "png",
+    "natW": 1279,
+    "natH": 855,
+    "outW": 1112,
+    "outH": 743
+  },
+  {
+    "ref": "b291a08aa54ae9e66dc168595ce027449fb88160",
+    "url": "https://s3-alpha-sig.figma.com/img/b291/a08a/a54ae9e66dc168595ce027449fb88160?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=V4LeWu2k4g6hi~756g--qcDsdR6OzS7dZkY1Hz4p8ODeYvEtwY7WjKtCeeAhoWrVAZfZnIvCIOlWEC0oUNVNTFLWPh3UPC5qDTaDZU~dxw8is0ZWQqNx11vtOq03Z749O2xlv5Iv9l0mYUXShW6A64FkyIBXrex0AVTxvSL1D1TW5RVTDnJTOKM4Fx0~Mfz2-qaA8lB-m9LSX2q67hXDWTL0PtK9NZerN52HdmXAuV4ktFZZ-A1GUtwdJkJ7XUIL3KApLAOocdeueQA1ahECFjR-BZFTU2OpK3TICG~xrUS5xm6pnz8qzqO478l0xxnIO7JtCHykay-nqv1mIgfOqg__",
+    "nodes": [
+      "image 51"
+    ],
+    "maxW": 963,
+    "maxH": 443,
+    "scaleMode": "FILL",
+    "file": "b291a08aa54a.webp",
+    "bytes": 52860,
+    "ext": "png",
+    "natW": 1884,
+    "natH": 867,
+    "outW": 1884,
+    "outH": 867
+  },
+  {
+    "ref": "1e12c246a5229427a9493dd2334e72735164cc80",
+    "url": "https://s3-alpha-sig.figma.com/img/1e12/c246/a5229427a9493dd2334e72735164cc80?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=suA6uKsbCJ4Qwot3tyA9fAsYs0whOpe8jF2B8W7NA8Bu9mrpt-aQMYK5N4k080iLskTjg970r8SgJG3UIwcWXLvvHvDvkoMoZFaj2zQLvzi1wb1NSD2mrhZbPdJGkYElO9m6w0871mEPg1r2v0OTXqEgywYxIKjdJw-rN1wjpP1p-x0DtXrM8L4K89tXrREEIvH4ZRoMWmWim~lQnBEFat-5eJIYPSBi0cVmBbYOsE4dw0t1pbE8iCV2unxA804vz~2nPoIoINLlXs5bOoeLNrMMwwv~a9LQFvkXvjjCp4UpnJqrzD9Oq7ix~-av-ytUtxxbe8qkYslW1TkdgpLe6g__",
+    "nodes": [
+      "open spread 1"
+    ],
+    "maxW": 432,
+    "maxH": 243,
+    "scaleMode": "FILL",
+    "file": "1e12c246a522.webp",
+    "bytes": 48898,
+    "ext": "png",
+    "natW": 1672,
+    "natH": 941,
+    "outW": 864,
+    "outH": 486
+  },
+  {
+    "ref": "1b7283ad225457e03bed5db39cfbc0e2ea311aeb",
+    "url": "https://s3-alpha-sig.figma.com/img/1b72/83ad/225457e03bed5db39cfbc0e2ea311aeb?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rIlfdyiwKw~MU3aWL~BBW3Y7Q2h40A83augLReMgECxmIQtpVRI9jLJCwCnzo739MYmbphI9kKeXSEq8RR3oX6a6U-PNjwKQZq5aaDYanueOFTYod1qlTrQEtYktY6w8RAj~t3-zIo0SZkt1xPd-gvS5dimZMZh5~A1goxG9GUA7bCEdUca5sC2yMRebSx6r1FHJiHqRIOPGwfYiLWLIT3xmIujMm-Ymx8d74-WFiLZJQPe567pC8YZbY2D5WkGNaX2OQq8P4fY-xCVp0s8kbviFOPkYiG0P3Za1PxSroyLhuWvj65HA7hAwkkrQ36Jseq1mH2WuDCdAqAbB-pAM2Q__",
+    "nodes": [
+      "image 42"
+    ],
+    "maxW": 478,
+    "maxH": 300,
+    "scaleMode": "FILL",
+    "file": "1b7283ad2254.webp",
+    "bytes": 48222,
+    "ext": "png",
+    "natW": 937,
+    "natH": 589,
+    "outW": 937,
+    "outH": 589
+  },
+  {
+    "ref": "ea252cd54a9883d0d7a8beac9e493e2fd8b4686c",
+    "url": "https://s3-alpha-sig.figma.com/img/ea25/2cd5/4a9883d0d7a8beac9e493e2fd8b4686c?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=GWrcYuWYjqoB5xTJ--9FVCmqOPaVIkeYJ~febHFsusVmnjmCJj~7u9wHFpAPWgTKnfT~7GvylgesowC8Yex9kDEw0jqVhpOJHrgGK9tKB~fh9QylTw~jP0x4OPd~ZBtpdfMP1-8oSP3UGWssyQ4e7XCvfugNf3B2zl5-C7iPTFbKyT58b~84lGv0hvmK6AkFwd56m3ubbYsG0x44RZmW2IpqnTp2G1g6p3MlBmAyM~voABpzZg3WC4ZYC~nrGy8RwxSZFf6-wpXSCQ2JJKHJS1eJB6Q8e-wVKaqkipQ20G2QOoW3-esfR1pGfSxHIQ~uk0aC-iJfP9VcL9-CuVTIZQ__",
+    "nodes": [
+      "stack 1"
+    ],
+    "maxW": 489,
+    "maxH": 326,
+    "scaleMode": "FILL",
+    "file": "ea252cd54a98.webp",
+    "bytes": 44152,
+    "ext": "png",
+    "natW": 1536,
+    "natH": 1024,
+    "outW": 978,
+    "outH": 652
+  },
+  {
+    "ref": "87b91605465b8de3faef27181e9cd75a30bd634b",
+    "url": "https://s3-alpha-sig.figma.com/img/87b9/1605/465b8de3faef27181e9cd75a30bd634b?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bm~DEXsdiPp5ZzODEc8iBVqeaRmb5mMJgntPPHg~z5HVq5PZ~4ojjSiat7Qjf6FM~fO8YmcHyxPZQPAKZFEDM~K07ORyuiiDMWLXO~kTKGgdgMvh9Ah0CeXVxRjYx1ZrEfp4n~Ea75-z4RNM6hKMqp286KqTIQD0zV8N4kGjNR4yY-p~e8RYgE1JWwOnK4HfG~av396iiPLiceJZ55fui72rwTUuDhV3jLvtbkbtqBEj8qmlf1to57ur-wZiw0M-7ZE7YjDAe0kOJk3cU7dgp32p~bua4Y2052qbCgux~wPJzcay5lLHRy6Mzzfn4qsfC2vXgoEwFHRNWx3kZgmAvw__",
+    "nodes": [
+      "image 12"
+    ],
+    "maxW": 387,
+    "maxH": 207,
+    "scaleMode": "FILL",
+    "file": "87b91605465b.webp",
+    "bytes": 43514,
+    "ext": "png",
+    "natW": 1435,
+    "natH": 768,
+    "outW": 774,
+    "outH": 414
+  },
+  {
+    "ref": "4f3e873b20a3dc49c6119e96e41f327151d2a5ab",
+    "url": "https://s3-alpha-sig.figma.com/img/4f3e/873b/20a3dc49c6119e96e41f327151d2a5ab?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=aVAXs7-hIu-k8LnioHLGbVwQK~AY5pecHUjPaiq5HRmKU2Y5ObEh2bCSrE1CgZgvKx7DJHOaZt7OJbduJ7BemdSA39R987x7qkw~xQjKObZ5Atk78twcZ3NbWMXS4BgN-FSzuv~MBQPsL~M-RSnvA6kyna4uwVnhW6I2l~9bXrQ9tLqzVaTBpoTMY3QuY9JmXF-exi7-6R83G4TgUUKfGbRJVQ6LQvwIziGIh6F91EBuytJ~8myV0YAQ6rgwX-C1-HJFYmg7HwmpQIerSYimxe4F1ToyXaJIlOTKRs9i-hTItiwOputO-pc8Q3Ri1U-ND19N55kvjumJGtwoEG50iA__",
+    "nodes": [
+      "image 7"
+    ],
+    "maxW": 556,
+    "maxH": 397,
+    "scaleMode": "FILL",
+    "file": "4f3e873b20a3.webp",
+    "bytes": 41184,
+    "ext": "png",
+    "natW": 1026,
+    "natH": 733,
+    "outW": 1026,
+    "outH": 733
+  },
+  {
+    "ref": "53a4008cc62c6769c138e516eb01040c2b6a71ce",
+    "url": "https://s3-alpha-sig.figma.com/img/53a4/008c/c62c6769c138e516eb01040c2b6a71ce?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=PvfJ7jh8K~p03PCQ0XBh8kVMk2Z6Bf-b7PhGgY~JrOTudDygpkw-xhVCi-bHpQBJusyiYG8t~1t0gE39GhoiuWDdnF7-ewHY-9hL5qFaqfdhrO19NLbuBY47whxDW0Ti2ZQxAELGVY~OBcITwoVUFLMK3jEApdvmlcuY8Fmp49KYuyXkiKiTfYUdP6sxAXiALYps893t3RaFbYOW0MOn8crwgOw0VGeQu2sac49pJQBDfscgEmkZ5bygLilGxMWKgXFTbQnOP40nSCHquYKOyOMBLpaHTW2OdLAbCZniIiF9RQ6UYqX9zN8a4Hden8a4Y01Sacavcd~6IS2xZAWrKA__",
+    "nodes": [
+      "image 17"
+    ],
+    "maxW": 966,
+    "maxH": 376,
+    "scaleMode": "STRETCH",
+    "file": "53a4008cc62c.webp",
+    "bytes": 38712,
+    "ext": "png",
+    "natW": 1236,
+    "natH": 562,
+    "outW": 1236,
+    "outH": 562
+  },
+  {
+    "ref": "f5140d577feb53476999f3173a0b340fb16ff94b",
+    "url": "https://s3-alpha-sig.figma.com/img/f514/0d57/7feb53476999f3173a0b340fb16ff94b?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Bv3pTqh5LKlxZxsobBqLiMZuMlARisPGKoVe2Jh62wAsDJyrep3hGSks8cbKS29PQlgn4UxviQ7Xp~KkmlfEs~F13Jo1dFq08XHZbqbc5TGrtdxvfTYZ~bC~jiNsseZ~mX15ue-UeWmZRoyM9ucJ0RXys9IuwWMlTpNHUpZFs3WMIHAJW-frSXGvnArOZCFi052mSJkIVt9MpRlaTgbVQW7DHmoLrD32VFqwLhgfHDUaBCLDygHOTsjH8~IGHeXgM4JhfZ5BKw8KXyYD9kBOf2ZeMre8D3LVEbNq6pyO64wn2J5gFF~~jGgWnMNmuJepBoR5JW~vsaUw8PqxRIwF0g__",
+    "nodes": [
+      "image 39"
+    ],
+    "maxW": 435,
+    "maxH": 215,
+    "scaleMode": "FILL",
+    "file": "f5140d577feb.webp",
+    "bytes": 37686,
+    "ext": "png",
+    "natW": 1753,
+    "natH": 865,
+    "outW": 870,
+    "outH": 429
+  },
+  {
+    "ref": "e5736e32b8f2b5fe6c6065b59532fb1785648f0c",
+    "url": "https://s3-alpha-sig.figma.com/img/e573/6e32/b8f2b5fe6c6065b59532fb1785648f0c?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=YDjmpJeD6PqlzWeIco-aM3ciD8paiWmtC7sbWLoy4aF5ADPB9~FUnMXUhwY-Jpydy43ureCPXGSbJdKfBt2ofS2Uca8~KuTFJYmyFkEHlUp0fOqgrcM2mLxpTRVaS6i3qd0ocu5Z7XbVTwf-Hgw65TX~X0tV~TDQ8049u9EbebOkgik51P~3cEJ9LuYCa7Fzp-FUHLNPCEF5twgEE4szF~D7uvt9JF7WjoNKuBpywFQeDFybzdbK45zVb9GyzRF4PDp2rQ3y1y~5Vso~k9Jr~bF41XasxT7aql2wgGMFh1kuSybtAtAqf9LzanYPFAHPO26B7OyuXeuQFwB0qDRw6w__",
+    "nodes": [
+      "image 23",
+      "image 24"
+    ],
+    "maxW": 330,
+    "maxH": 203,
+    "scaleMode": "STRETCH",
+    "file": "e5736e32b8f2.webp",
+    "bytes": 37358,
+    "ext": "png",
+    "natW": 1280,
+    "natH": 960,
+    "outW": 541,
+    "outH": 406
+  },
+  {
+    "ref": "c5f4b61de00e5436f84cbdbc00046347b654ca9e",
+    "url": "https://s3-alpha-sig.figma.com/img/c5f4/b61d/e00e5436f84cbdbc00046347b654ca9e?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=sIYKtnuwx1SfDFh2vY1trHuz~ABisfGqK70w9si1jB2IModgFPjgzzMHJyEJ5cUm1BT7IIC9qspYkiLK~AWXthU70~g20EWmyRJnFiFOILIo~GI5yUs7y~smwxZXbWwp3o-QIoTawy6ggd0BBuJrHOHYA48f2a2LKY2EVZZNGrlSc4szu8tYhLCagpNHDOneGjuim8zRIIR7GOYHxt0igWqjDmBSRfORd~ifbx9Yq0jMcWlYV7rAx5yreCIkF8Uvr~Qx9lSxzpIqvKzcfKxjfQdgxe20FUD-j-XrJDq4X1HOwdGU8rCCZQ3M~8iehIedIFHZyrHjAB0OmpimdAw-9Q__",
+    "nodes": [
+      "image 49"
+    ],
+    "maxW": 962,
+    "maxH": 404,
+    "scaleMode": "STRETCH",
+    "file": "c5f4b61de00e.webp",
+    "bytes": 36742,
+    "ext": "png",
+    "natW": 1185,
+    "natH": 469,
+    "outW": 1185,
+    "outH": 469
+  },
+  {
+    "ref": "5c6065244d28c2c8fa3ae7ce4cdeef2cbcde5ab6",
+    "url": "https://s3-alpha-sig.figma.com/img/5c60/6524/4d28c2c8fa3ae7ce4cdeef2cbcde5ab6?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Q~aWl4d3670QPzIFamxGumJYxJJuXwLGCMX0g0KdBjruKfYrZcgL5rpdiqmqt-kSj0FkxKfi0wDE4Vs~jlmrtiF6cM06oipCfGQ-aekI7-XgzJc3QvEGSltRa-MZ5jCyHP2fXFsBNeOIIcNjHNkw3fji0l4glky4Xh6QbAOv-MFGjhvn5pvfP-S07oUsOUo8R--l~kF9AY06oTWms4SmF23lypZaNB6AjWQ5P-cwPoJn9XouRWg1qNGtzzn1M8JuBRSSyvECertjz3rtfs4yKT1ctc39JvYE4BCH-Bry1a-DThbNvbgCOQavKmiTecKTWdL6JZCQjXSoKmOq7aQuxQ__",
+    "nodes": [
+      "image 48"
+    ],
+    "maxW": 961,
+    "maxH": 435,
+    "scaleMode": "STRETCH",
+    "file": "5c6065244d28.webp",
+    "bytes": 35140,
+    "ext": "png",
+    "natW": 1180,
+    "natH": 505,
+    "outW": 1180,
+    "outH": 505
+  },
+  {
+    "ref": "ccbb3133884e952c04e1230048763be9f63c35e1",
+    "url": "https://s3-alpha-sig.figma.com/img/ccbb/3133/884e952c04e1230048763be9f63c35e1?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tcPMEcPzxWe0gdNihFy~4ibBsEMAMcWtvSmQDi5yaXmKoPFpLyeTRAqAEPfBMWxmA4XS0fUSNV7P8fDEW2CMINHpYRIOdBnMlr7sBf~6ogbSgWSa412NQRaTm2suMh6IqOQyhsAxamiMc0fmzOkhfeBhZV2LF~lYnuecVYgO8u7QFfN5x6uuY7ESl8YvarxPY4ahMIvnbq5yCynjJlfISks16NHtVI3hYdrO-xrcBhpV-1gO5U5xhMSv3rCfkHbHhsVqICAJIAm5A~cGK8TI7rlsN31t~FaarqlvT4yBUHMyuJ3kDeoMo4ND8u5GXPJDzlECTykl97rmnyw8cXf5bw__",
+    "nodes": [
+      "image 47"
+    ],
+    "maxW": 963,
+    "maxH": 436,
+    "scaleMode": "STRETCH",
+    "file": "ccbb3133884e.webp",
+    "bytes": 34954,
+    "ext": "png",
+    "natW": 1216,
+    "natH": 507,
+    "outW": 1216,
+    "outH": 507
+  },
+  {
+    "ref": "f559bd485ab258a4a6cb27624734d94587e6dbb6",
+    "url": "https://s3-alpha-sig.figma.com/img/f559/bd48/5ab258a4a6cb27624734d94587e6dbb6?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=lpAW-uU9T18M~Hd2m7iuhd3BKKRIp3orj3BPJqNCQZUArNmHKwLzw-qrChsciTMp7Uu7opbnlgWSCXghUegZc~-6eRUSeHqGCJfJONUJOpcdY0sl-Pn1LwU28~cVm2LRBzASMj6xe3FTlFKLX7i~EWjKe~z2xLOczfJmHWGWwH39Ptlj7p3S8794f1EUsK5iwRhoE8-3ooKczHZ5vdoGj~cngX2w4Dy92eVM4NScfZrjcqiYg8IcBrBdeo4~Y6bD9zyh68GCvB3ePUlgRG8WHSEDTdiGt6hIewMSZxoIxJJL22kG73dcbpl3i6pA6qf3Xwd6wIUkw09p7Xxrl-2Kag__",
+    "nodes": [
+      "image 45"
+    ],
+    "maxW": 965,
+    "maxH": 447,
+    "scaleMode": "STRETCH",
+    "file": "f559bd485ab2.webp",
+    "bytes": 33894,
+    "ext": "png",
+    "natW": 1183,
+    "natH": 520,
+    "outW": 1183,
+    "outH": 520
+  },
+  {
+    "ref": "960b1502639b802b1f26193bf4c821445738d734",
+    "url": "https://s3-alpha-sig.figma.com/img/960b/1502/639b802b1f26193bf4c821445738d734?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Vi1Mjeyc3nLmDW910SBsH80PwAZPewdGMOBqxLgr18TXNhTAhbbs9yOhxFX0-QbagAW3vZHGJWOQ9z5QxBkAqRkaNEahm~2VhU6aKyjdfLyNZd98zts0Ybtld53E4iGX9biWyVRtFLj9OdgFuMiJTFvMr5wWX64rc1lxkuUE7oGZws2tYvp0G5cUL6s4xvTjOzRNXoCnO1HY~iiOP8OQJO~i9fb-ysCdpAAeqblg-cW2zKgfXi9~KsQk3qTEL982ZVmRV3GqDGY0rzFO5Kbay6p4j23YXfyucm7h~TWP~SqkEijy5YA0Njgi7nSIdePBXqoIlCKBXLczIe7mRYmdIA__",
+    "nodes": [
+      "image 22"
+    ],
+    "maxW": 274,
+    "maxH": 203,
+    "scaleMode": "STRETCH",
+    "file": "960b1502639b.webp",
+    "bytes": 32240,
+    "ext": "png",
+    "natW": 1280,
+    "natH": 960,
+    "outW": 541,
+    "outH": 406
+  },
+  {
+    "ref": "1dcd112d69534f2f3d86bcc630b7fbfb47c7f59e",
+    "url": "https://s3-alpha-sig.figma.com/img/1dcd/112d/69534f2f3d86bcc630b7fbfb47c7f59e?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=skSZDBAGRx6sUC4bQV3q98EAb83nozswjsqA0W1jT~KhxODezKhHsLeuFMYROuGtlp2Moa669x1FOV93TKuvXa~H3QkVlrZzLure6oJw-1xrd7XoFnN9yw3~1ruWryZQhfiYR3SYRkCobb-~P4Ahnk15j5KA3KK45rGwXCjJwFz3oiSAj1TYEHmy2pWRAMcfl-hRxxULqMVAwuk-y5LUL37-LGRvEwh-9kLF9bfeIWWIpdQYXoB3tgBqZygzbOOQzGTPXWMogZy437Q3cgMcPmVK43XXP38r1eCCEsW64YkI501odOm01-rHT9dhj08d2XGg1drLt97YxvUHQ0gmcQ__",
+    "nodes": [
+      "image 5"
+    ],
+    "maxW": 396,
+    "maxH": 195,
+    "scaleMode": "FILL",
+    "file": "1dcd112d6953.webp",
+    "bytes": 31062,
+    "ext": "png",
+    "natW": 1405,
+    "natH": 694,
+    "outW": 790,
+    "outH": 390
+  },
+  {
+    "ref": "7b40c698ce9075c8457b12b5faf34d418ba4c534",
+    "url": "https://s3-alpha-sig.figma.com/img/7b40/c698/ce9075c8457b12b5faf34d418ba4c534?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=PiBIwNSmzHJQjbtyOgnSNnOAi4hyVorxTF1HRfLtv79~tZf4UkBCLcss2Z-m4lc8CZfm5cB110YN37A2UBm-RozCRI0Y4l9clzoCDrBB~eZGLFgTxfT9NBST9tI0htG3~5ODCeU3MqUcjtUgy1I8RnusArL7XiOiHxnRjl5zdCQTfXOxP-COE3cjaaK5osqn~72vn~DNjUWBKxavnkXFoSrjWYng28YzRi2h40pca1sR1iz4JN8mQJaNwqA5Yf8mgkoE7gLLbDuWHWkdB4Zd8HtK7YSH3YsPg~S7rq9OB61HfHMUiiRlsPNfMo8c7D-h8bUduPpUFdEgNygnHRdBIA__",
+    "nodes": [
+      "image 2"
+    ],
+    "maxW": 387,
+    "maxH": 155,
+    "scaleMode": "FILL",
+    "file": "7b40c698ce90.webp",
+    "bytes": 29052,
+    "ext": "png",
+    "natW": 1888,
+    "natH": 757,
+    "outW": 773,
+    "outH": 310
+  },
+  {
+    "ref": "d92c172b870e384577bfbf00f0713c9dcf3cb013",
+    "url": "https://s3-alpha-sig.figma.com/img/d92c/172b/870e384577bfbf00f0713c9dcf3cb013?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kEswRDasgmzr4OY1HkkoANrhzPlg4yBLnN947mfh5Arv8YdgFrroIUdq0jqjjJoG0I3H6Ze25lqYlbQOkOb1~guJiWetXDCGfs-1VwynljUWMvAGIu0URTcCH8D~HJTISrEucmAzw1EI5gdTk3qXhNhfTeV9AMfxF1-LFwLhw56FVvttYGdu1uFj-I7PU0WDwx22Iq3tqEkMncZ2fJEzqLiN1p5RNcg4hoH1N2epnGeLEOtMmDT4w3b8katSQA3urF~fi9UPuQc5YDGEQIBkFJ-QLTOhWnpIExVvaF0IdZ7aZ6F2f6xrdG-EX2YWHGYvuQkJLsjjWsvOhh7wJAN1Dw__",
+    "nodes": [
+      "image 46"
+    ],
+    "maxW": 964,
+    "maxH": 429,
+    "scaleMode": "STRETCH",
+    "file": "d92c172b870e.webp",
+    "bytes": 27514,
+    "ext": "png",
+    "natW": 1182,
+    "natH": 498,
+    "outW": 1182,
+    "outH": 498
+  },
+  {
+    "ref": "df9720512f3a68c968f0bf1b461fb98cb8e66389",
+    "url": "https://s3-alpha-sig.figma.com/img/df97/2051/2f3a68c968f0bf1b461fb98cb8e66389?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=NO9PjyT0czViZqTU3zlUw8HsRl4Xa1Rh0CoCesryH3UzvuRroMFiZqwZdbzzo9yrdc5-31jvkELrVad7xqB48dXoN56jDIV~Hbs3neI9QIBiVsNWNFrJW4Jp0qHjEIQclGfiEYuUpijrGwQhR3n8fSguLbDDpzBd6-Dbz~O6a0VP7noqF8XsAdY3-yAa-x6nrJpu4QS7~3WWcE9xCGOvtuCXSLLQm6h7crwiukCidyac4AdAO4ocvKWJgca0f6iscAS8juI~muLZfs3Ymb9cQhQmU5dFDbWZr-exr22AA4uvpEA8Z7cf~mjIb4t08xjMfiFktGWDKOfyAukP4MP31Q__",
+    "nodes": [
+      "banner 1"
+    ],
+    "maxW": 956,
+    "maxH": 334,
+    "scaleMode": "STRETCH",
+    "file": "df9720512f3a.webp",
+    "bytes": 24562,
+    "ext": "jpg",
+    "natW": 1536,
+    "natH": 761,
+    "outW": 1348,
+    "outH": 668
+  },
+  {
+    "ref": "cc32e56de327ad713f8476716cbd0dbd83229bc7",
+    "url": "https://s3-alpha-sig.figma.com/img/cc32/e56d/e327ad713f8476716cbd0dbd83229bc7?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=e1g6jJdSAs~b~pXM93LopRvqzBHLkRHBaJmAkE6jSrCQR8dz5HUXXnJ~OkPjDYkggBnJBiL6cu4EbTE2ypQQFF0eWldhCfAi~YS~O8kqE0OsvULNL1Med3dzErSf0uwE8DdTGchuYkALu1La5b1X1xKYItA8-blAY1iOMRZ-rR7TWRXJm5dIWROfuM9UcqLu1ObZnX0nzMWJ4MoYW-TYNVSf-9dB3yzX4Rry-P7ainmeAsvok36Qt2640pbp4hU-SdRCwPCGt~zSR~rLcB6FKH53Kn1wiTlpdFD1HnfNxC3Kr5fuwnXMkZ4eCOdIG69m36s6Iqbm1T4lhXP3pUyIwA__",
+    "nodes": [
+      "image 25"
+    ],
+    "maxW": 963,
+    "maxH": 329,
+    "scaleMode": "FILL",
+    "file": "cc32e56de327.webp",
+    "bytes": 23722,
+    "ext": "png",
+    "natW": 1233,
+    "natH": 421,
+    "outW": 1233,
+    "outH": 421
+  },
+  {
+    "ref": "cb6d0dd5e7425d9b453e1270dc4e5a3624039116",
+    "url": "https://s3-alpha-sig.figma.com/img/cb6d/0dd5/e7425d9b453e1270dc4e5a3624039116?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=g~orDOOFwbDYeLcKHAVprO0LQmP80ZyRdz9kpK59-2qVNyBXsJSeQgmGwwj78hKv0JxFu-qzOzLGTQ59UKTfQotVqtU3tk-YRSPz5709ZdLXDceCQddMmhwy0yg0VsO6PPPOxpMtc1n13xpG27iKJnCGHk-KVp6gcbktDCFEJnh2yetuWPoYy1qhWB0b8OMN0Kaby1UIsNSHuI6L1pIDDWV8kmukVPjjmAkLSfoVMD2kfGqfpg-NjrUNFChjWzWtSvILkAHMuqhXwMKfigx1l5bWIj10C4Yqs46CnbxEzwrmq~cT1UgQ7bno-IocpqdxwcqTcVEQKD3CgbP8Z~E2Xg__",
+    "nodes": [
+      "image 4"
+    ],
+    "maxW": 395,
+    "maxH": 213,
+    "scaleMode": "FILL",
+    "file": "cb6d0dd5e742.webp",
+    "bytes": 23280,
+    "ext": "png",
+    "natW": 1407,
+    "natH": 757,
+    "outW": 790,
+    "outH": 425
+  },
+  {
+    "ref": "f903c0772abd73da79eec474bb20f1e6451ff317",
+    "url": "https://s3-alpha-sig.figma.com/img/f903/c077/2abd73da79eec474bb20f1e6451ff317?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=q6QSgqBbEgQNynskQSmpy978O8~5NubPRstyQiv0uzfRoem4lpD4c-Sa-NI-OWI22HxQo3Y50OJ5AM3I~L0pYPBKKvv98P4NUmOYgw~ivGTNxkPovXL2-xTCmNY7dG3BnKg1jfRi2pHSFfaAo7SPhDnf0j~qPTjd96yyJJljjuzGEd2wdBzO-OvWa-VP303fvYe-QdvdPu8J4ybW9jFmp7Wa0rZ2wcbWhA8brzPTGoUs7GXJCjyUcznpVp3hN2W8-8c0mtqFccnFJ1hAK7hfff37Y8veTKkHpHq6cgsQX6m~Bt8hDnvtfNYtKeuu~vUVKzCazghNTvn3Oa9WQDkdjQ__",
+    "nodes": [
+      "image 35"
+    ],
+    "maxW": 476,
+    "maxH": 335,
+    "scaleMode": "FILL",
+    "file": "f903c0772abd.webp",
+    "bytes": 22448,
+    "ext": "png",
+    "natW": 1162,
+    "natH": 819,
+    "outW": 951,
+    "outH": 670
+  },
+  {
+    "ref": "8d6ed2a312f1aa352da04fdde7eab4fe9174ec93",
+    "url": "https://s3-alpha-sig.figma.com/img/8d6e/d2a3/12f1aa352da04fdde7eab4fe9174ec93?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=g8BU40xg4VqhdMZmpPza9ZfIySxB-c~zewCHjCXcukTotTcZTxUh7uohE2wEsIQ2lsrQ-XS19pRUP8fBg4XjGoCCOp6P8CAaYXmMUOw741mdH0loCc1pwf6tVw2PgY8oD0qR~9BZ7egtC77atC-AlUE9n9yV2oaKyKwPMgYqJ7O7Qg6EzWyhCWhjo~iBhLCFcLRRz4XPMapZCE82cXIUu2aED7SqdzlIP61lgQGMerHuMxfv1eNPWOk2SK0NXpLRKgpF-kN8Iv3vr803NGXa~YDoteos9~D50UjZH-UOOz5bpNf7VmKSmMNWqM4SLzt9puWf7NO8KdRw-eQiE2XFzA__",
+    "nodes": [
+      "biochar copy 1"
+    ],
+    "maxW": 432,
+    "maxH": 243,
+    "scaleMode": "FILL",
+    "file": "8d6ed2a312f1.webp",
+    "bytes": 22234,
+    "ext": "png",
+    "natW": 1672,
+    "natH": 941,
+    "outW": 864,
+    "outH": 486
+  },
+  {
+    "ref": "04af36ca2db877d6e3533059ec36fe405e6940ea",
+    "url": "https://s3-alpha-sig.figma.com/img/04af/36ca/2db877d6e3533059ec36fe405e6940ea?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=fTIo8PqJq2A1ajMEkr0h21hRxDNacimSvIZWTW4MV7THD8iEXmoPklOWLwDGrMwZm~EWOsu2zhh8CcSL1xHVTC2Mq6cWEunla5~SpHfOY9RrHcJglFsOq3QT5PO15kWK-KlcNHF9vYqZcnNleBvNO1siPFOR~PUvcxQ2gmiz7SC3PEWqjSLM4g-I-9KSPeu7pGfBzQT3meiwJd7ye259K7TJ8N0wmQslo71odPP2ZpNM8woBFVd1WDF~K4J6x-Oks7kWHGSC2UwJcC6Vl8I~ysBqLeWYKb0Ot4NTyD9uPV4RI~CUZVqPCgVqwm8VK~5rhZIo75hWr7V82pRVg1Z79A__",
+    "nodes": [
+      "image 36"
+    ],
+    "maxW": 354,
+    "maxH": 253,
+    "scaleMode": "FILL",
+    "file": "04af36ca2db8.webp",
+    "bytes": 22222,
+    "ext": "png",
+    "natW": 1161,
+    "natH": 829,
+    "outW": 708,
+    "outH": 506
+  },
+  {
+    "ref": "c411aa94aaf0d61aa972c042f11001cf4f237d6c",
+    "url": "https://s3-alpha-sig.figma.com/img/c411/aa94/aaf0d61aa972c042f11001cf4f237d6c?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LVecLOG9JkAWNWFo5fU9sqwm395mlqpHTzwKOM66jHbE28GX1b8BTL3-ZMj84bRERaJHaJIFu4rqdvG5cSOVuzhW7sMniwCyiyyHx9-4CfFoD57fgvGQG3~oSyq6PhTf~l-G-MVmNv6IEavqeYPoyzVhBHQvGlGRTPzPb9-GB1YAlRfUKyVyV1whMV~ubyGAka4oJCe~vcsmtbLfemLjzLTtPfhrmt1o-QT~d2id~Zf4XPRQCnE4j3AaIJ2l7JzdinYvZmL5ZQKAkGZoyEuANXpG~uZbm4CnhktutjMCeXGiqkesaO~v63IpT~s2pWh-PxK0aOjN~ZEPk6vj69MQUg__",
+    "nodes": [
+      "image 44"
+    ],
+    "maxW": 966,
+    "maxH": 303,
+    "scaleMode": "FILL",
+    "file": "c411aa94aaf0.webp",
+    "bytes": 22188,
+    "ext": "png",
+    "natW": 1879,
+    "natH": 589,
+    "outW": 1879,
+    "outH": 589
+  },
+  {
+    "ref": "b3b054e1f4c122730fd9df43e9fbacd5dd0dda4f",
+    "url": "https://s3-alpha-sig.figma.com/img/b3b0/54e1/f4c122730fd9df43e9fbacd5dd0dda4f?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=gcle8uAD0GrdfGkE3vCf-ibfPyqZAydi-iuILV-oIKWHoqElBvNKfhzq10Ck1xNjaEyUCA2zlsvBi~6pLN~skmrbYSjEgq-~4rE~RAQ6TVNSECavh1Kl~HWSWiTvofuBbqxelVt7mWqDQMa1j087mlr8dF2fRVmgWOZSfDWVX4y35FseCB2aS1URh4V8zEIu5HojWDp3mBV8XbyecTFqpDlSLxm9DQOdbCEybu8T0~iOyUBTYWz9iU35XK05o1NWnlCzodCjeIAc7qCKTOQgW3mazywg~NG9leMxhstgzgoD6Z5jqPm4E-Ut~qDYk35PfLkduJlkM4JKIqWGN7R8xA__",
+    "nodes": [
+      "image 30"
+    ],
+    "maxW": 207,
+    "maxH": 142,
+    "scaleMode": "FILL",
+    "file": "b3b054e1f4c1.webp",
+    "bytes": 16636,
+    "ext": "png",
+    "natW": 526,
+    "natH": 360,
+    "outW": 414,
+    "outH": 283
+  },
+  {
+    "ref": "86e088023bb9d3769dff332cabbee98f4fee8831",
+    "url": "https://s3-alpha-sig.figma.com/img/86e0/8802/3bb9d3769dff332cabbee98f4fee8831?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Apnnk2PHSYyL9FljVJsEfVs3k~6zYkBFgxmqx0GG~DzQK2N7wdpbALW9Z-hA7eNrs2Asghey9FXgAN6Kgocd-5xCNKdb1RL-aQpYd8srXl1iRip-Plphl8DiKe-Cq6LNfhQklglR5aT9FBqXAkXJJiZb3KC29vSVk3~AwdpFBI6ZEx9q96ZQ1Ykya57DAtMYsjRdxRGJ71OX1RLjP0sJUXTYOYxaGpcLYM2Tf9AiahD2C9I50quVWgexXVHULfvQD5ae27pN5UYni1Jc-92R0bLbhLDzE09f6VlDVtPi0FoCEQ-Q~l0mZOkbyTPaqF4asd5KeJpLXZQcCfX3Dnm8xw__",
+    "nodes": [
+      "image 26"
+    ],
+    "maxW": 297,
+    "maxH": 222,
+    "scaleMode": "FILL",
+    "file": "86e088023bb9.webp",
+    "bytes": 16312,
+    "ext": "png",
+    "natW": 1200,
+    "natH": 1600,
+    "outW": 333,
+    "outH": 444
+  },
+  {
+    "ref": "4d4bcd60adf63a803a99ed6bddf0e84d22ecb5ac",
+    "url": "https://s3-alpha-sig.figma.com/img/4d4b/cd60/adf63a803a99ed6bddf0e84d22ecb5ac?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=jPf2mOxppT3SIWLIWJNEhFpTSrqvFF4BetJ5~RYKPv7w2aMeYNzi1RmGvSDaLylqKO68B0IqMDsJymmPmY9QPMINcI-D1zFxc64hM4EY1iGJmMlI-q18zGkGnquXO-UN-nLo1fNSUtMZ-lo4b0hzyKPofEcggxQpt-jeIustyT1GHIRknAHt4xNqjE3NX7AJjYyvzP58IX-E2FwaZNJUUClYNVGEiHKnbhTy7OaFZQz8OXtoMKrQrPz~beWjzYQ6i~GyKXuA1x828SgkFjdupjcIKemfRH8KMNH05~RhVYiMyc6JPzMaQ6~YEfmgXJN~9AGY~vl-o9SkxtXz1xl42A__",
+    "nodes": [
+      "image 33"
+    ],
+    "maxW": 477,
+    "maxH": 207,
+    "scaleMode": "FILL",
+    "file": "4d4bcd60adf6.webp",
+    "bytes": 15994,
+    "ext": "png",
+    "natW": 1280,
+    "natH": 556,
+    "outW": 953,
+    "outH": 414
+  },
+  {
+    "ref": "2eef4eed0a9d1dd02255f1283e071e42f27f9a91",
+    "url": "https://s3-alpha-sig.figma.com/img/2eef/4eed/0a9d1dd02255f1283e071e42f27f9a91?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Hrwr-VTp87deUGAE799ha3q1JjgvaB7mI302x~EdGrhsTMG9vcn0UHDePu~l852~n14kWayW8vqvGseJikR9WrahM7zqPx771WmBat1PLV0nsJE3bqAXKV0N5xZaFkTq5m9EuSowpJxYdw-vd0yWn20PnjppcZFu1Lw4UR64oDnum87WaBlrl5SMGrtfXF7pbIEKveVx44JhRlOrz0h4sXNT9upTE4NFQUYKsIchnRq6SfRGCtZQnBeOFhMcD8hcLYtgY~nEg1l500frvIrhHF18IC7S0uWmhqhxOUcsAJIgcZbwX0ZrPykKdZc7Wl~1IDurV-UW-fmZFDMV1VGmHg__",
+    "nodes": [
+      "image 28"
+    ],
+    "maxW": 284,
+    "maxH": 222,
+    "scaleMode": "FILL",
+    "file": "2eef4eed0a9d.webp",
+    "bytes": 14802,
+    "ext": "png",
+    "natW": 420,
+    "natH": 329,
+    "outW": 420,
+    "outH": 329
+  },
+  {
+    "ref": "14afc4a81b18ec77c2640c8897a097e6c6aa1456",
+    "url": "https://s3-alpha-sig.figma.com/img/14af/c4a8/1b18ec77c2640c8897a097e6c6aa1456?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bsPPgDaCrAiQtph8Z6ZDFgrTqYv6aR9BkN7CD2Ou9nFQ-r48xAEpEAAsEAI59v6hfWczAOjeexs40pYSTH4ue2BP1cDDrBiyyZdUeRIH8464O28Lfm2Mg~nZVRVPioQwqm18cd8hFIWra1PZrkgHKDH66WAUnlI1x8xp-ezisJXDQZ9WgT8Bb~83jUEc26uxNV4tGhHG8hnOQoXPiLQieF-Qji2rb9Qc6FmWuco-6kleGrFrft74xmNvavb2b1ymkPLG7HUegdzycOnGUK~V1Xqz0wVSN4uheo8V2xFDyPZ2O42T5JrAcIKKMGGxYO-TtRpDw2h6WsEftRVZulJFDA__",
+    "nodes": [
+      "image 38"
+    ],
+    "maxW": 954,
+    "maxH": 452,
+    "scaleMode": "STRETCH",
+    "file": "14afc4a81b18.webp",
+    "bytes": 14634,
+    "ext": "png",
+    "natW": 1033,
+    "natH": 661,
+    "outW": 1033,
+    "outH": 661
+  },
+  {
+    "ref": "963667fec938a66ed4cd51488aebda54a7fc249e",
+    "url": "https://s3-alpha-sig.figma.com/img/9636/67fe/c938a66ed4cd51488aebda54a7fc249e?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=azFi1T3ysjNEYYfHvfu2o13XYCQi2qGXr4IRcIR12gLesH57Ib-ofStVOUwuWirpIs~jBEYMOmKKi9lfplBg05lQxi2DlogCy-u6Ph~HZQmM-sk4DGVzdQ-rhiVafeh0BIUQwRQm1BPP3Bx8BGXob3h6Kz1fh2DZVTtbSoc8Nw493HxYjayuZ087~gzdGwChYSdphojXKVHx1Sm3Q6MkOzVVRQ-GjQuyqceM85FijpWqElf6ksK7M2u51xMJXAhZQdjX9MOCVXeReM6J6RNofOxE8YLRsh6DgOgjow1yl~27X2csRTJl~AH6H2d8EpwzDas4juLyJNtt675BM6vnmw__",
+    "nodes": [
+      "image 13"
+    ],
+    "maxW": 396,
+    "maxH": 231,
+    "scaleMode": "STRETCH",
+    "file": "963667fec938.webp",
+    "bytes": 14134,
+    "ext": "png",
+    "natW": 1882,
+    "natH": 862,
+    "outW": 792,
+    "outH": 363
+  },
+  {
+    "ref": "7e54a37da4ad3542d06b43d1db0b8369e53bc138",
+    "url": "https://s3-alpha-sig.figma.com/img/7e54/a37d/a4ad3542d06b43d1db0b8369e53bc138?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=fZSQ7kyfFQgAcWQhUo8AOtGCqyzTCHNsbOTrGQRd0Y~hb7RusToI950lKS-XJ-D941OqvGrVLxHFxrHf7Ma3myCfiZqXHESdGbwFha8mNVpftFuRUtuNsbSWnDF1udRbI5li2HYB7X~TCMK9FgTh2~TCfQmDB08m1Ts-SAODQEoJqvqrNGxUMTHg~rxF1z1iivHhq1rMOJ-ZmRnbugdRXMdF3N86eTI~7sSRt49CeJ2P31~4~DlW-SAVtXuJVR56UOh650ZV56fxnAux5ovkTRKn7bOJErEeIeMC8owjmjfP1AdNtjtUKJvCjM0XHOL4GN~OGKqG0YL60KD11cZK~g__",
+    "nodes": [
+      "image 34"
+    ],
+    "maxW": 477,
+    "maxH": 337,
+    "scaleMode": "FILL",
+    "file": "7e54a37da4ad.webp",
+    "bytes": 12074,
+    "ext": "png",
+    "natW": 1173,
+    "natH": 829,
+    "outW": 954,
+    "outH": 674
+  },
+  {
+    "ref": "87ec708ec81303fbacfc0e8b6650bcf800a84216",
+    "url": "https://s3-alpha-sig.figma.com/img/87ec/708e/c81303fbacfc0e8b6650bcf800a84216?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=EpVo0uATSCbS85jQdjaj6DZKh~7R9GstMndPH7leXwRbrp~Xj95B3Qoej8Jk9K~Fbh69oXC3uN~y1OqbGiMb3T6U6L5gcoqwAku7WqYQyGYqC9Ov1tiIWAMNfgIXEgn6b08raWpQbBeNmTzQ84-noTH48pceL9oBY4hK38OdKfaDxMiNTfieTHtF5dUm~AlH6j-QiCQbtRb7C9GtdZ5iC3qqOF-m17SD5GaNzbGB~z7w0M7s79D1bVXz7wkuBlmrz-GC9JbxuxKtOh5C0Bbh56Sm9auYKKF2V28xJm1mU2sW7UXOZdzTLo7mHd3~355dexOF4rnbIcPUVLVweM5QrQ__",
+    "nodes": [
+      "image 27"
+    ],
+    "maxW": 242,
+    "maxH": 222,
+    "scaleMode": "FILL",
+    "file": "87ec708ec813.webp",
+    "bytes": 9962,
+    "ext": "png",
+    "natW": 487,
+    "natH": 447,
+    "outW": 484,
+    "outH": 444
+  },
+  {
+    "ref": "a052ed4d6cfedeb2ef11aff993975562e3899be5",
+    "url": "https://s3-alpha-sig.figma.com/img/a052/ed4d/6cfedeb2ef11aff993975562e3899be5?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=uHlfinRET1o6Dc31822SLdfM5wTMQG4pVTpbe5d6EwKQP16YUUQ75Vqg5PqzB3ZqsmyOxTUnY4TBBgRBIHkRSBapqNlfx4rkaovAijTqsdJ~hZcgqppnag5PatfaJoFJtIhEJEgAPCA-8uZ0I1kCilKhj9g96a4QF9Ct2Vt~tfEigq9V765FCGE-jINNiP5W7npp9zBOT5MdjFEVyZyiv85YM2RrvNyuuQAy7CmlWLolqOmlxx0QOakkjLU9sAlCDUf8tMQVUiaRDDwoHGSg3-BA2LHowkBmkEPWIDyY0d7RCDP6vHARiOe8S6~tVK-3mMsxfNZwja~T2INj0XzxsA__",
+    "nodes": [
+      "image 32"
+    ],
+    "maxW": 190,
+    "maxH": 133,
+    "scaleMode": "FILL",
+    "file": "a052ed4d6cfe.webp",
+    "bytes": 5980,
+    "ext": "png",
+    "natW": 700,
+    "natH": 490,
+    "outW": 380,
+    "outH": 266
+  },
+  {
+    "ref": "081ad53f1919336a7c77e4959987420ce4e14548",
+    "url": "https://s3-alpha-sig.figma.com/img/081a/d53f/1919336a7c77e4959987420ce4e14548?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=EIJ5D7jnNDfbtOxmhwn0iBTv1S7PBxRMfBnq4QuLES67ROMQHsEdMMgiVO1pnQlIkDovo0osIr3J6qO05gB3ld0pJl7-M-Dou~zM14mH-tH9KkhfUu-5OPxOLvOw4FEHwReBL-VfBco6jCYv4Iifzrz7dAcPd1kwiwyjCDwzcFild8F3vQV~k9uuCQKupQwqVOpzykIQIVp5JDiuboiXMc7T0JEMcLL2jPds7npDpBO84YPCATt9DJG~~2RbP~so74yiW~rSj1VSLFIRNhqdiZpQAUxplf6qLwNryoytyXwpuCKvbdRuMDve0zlnDRcI8JJzfOpR3ktExJ~~wPOtaQ__",
+    "nodes": [
+      "image 31"
+    ],
+    "maxW": 142,
+    "maxH": 284,
+    "scaleMode": "FILL",
+    "file": "081ad53f1919.webp",
+    "bytes": 4196,
+    "ext": "png",
+    "natW": 800,
+    "natH": 1600,
+    "outW": 284,
+    "outH": 568
+  },
+  {
+    "ref": "6a4dc873cd19f22885cfaa5a3eb2048227d780bd",
+    "url": "https://s3-alpha-sig.figma.com/img/6a4d/c873/cd19f22885cfaa5a3eb2048227d780bd?Expires=1786924800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=B5j6Iiemdll7TSpXeNqXZlDFIXJdMHYSqt9nzSNE98aWHNIosF1fPMfjLl~zkG1GZBLBXmvNGLVIxgaYLRcwPNNROAkyjuh1qy35GbR02TRqx7PW-2eklbVUUn9EbHBZPOvtdhkEeQNKRTdVgFF1tJVhSZJzCwlKxREsGPfwkm~mdErtAs4mA1Qa8qjragpYc5trnMUJta8Cx44bxXhwacGB1FdQ~owrG3m3RYK~Fi8z4Zvx5JRTTsFwFxWWsQyBOlWiZpjtSY8X3pEG0iuQ9yhb2avRdkdiExPMrn63Ds6yy8avM3DslvF-PBFYFCpRraC9RsFBCwgP0iDMFvlozQ__",
+    "nodes": [
+      "image 29"
+    ],
+    "maxW": 284,
+    "maxH": 142,
+    "scaleMode": "STRETCH",
+    "file": "6a4dc873cd19.webp",
+    "bytes": 2830,
+    "ext": "png",
+    "natW": 675,
+    "natH": 1200,
+    "outW": 160,
+    "outH": 284
+  }
+]

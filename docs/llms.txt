@@ -29,7 +29,7 @@ Nairobi, Kenya (1°17′S 36°49′E)
 
 ## Links
 
-- Website: https://luishowin.space
+- Website: https://luishowin.github.io
 - Studio: https://beben.design
 - GitHub: https://github.com/luishowin
 - LinkedIn: https://www.linkedin.com/in/luishowin

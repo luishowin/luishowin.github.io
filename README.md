@@ -11,7 +11,7 @@ A minimal, single-page portfolio for Luis Howin, UX Researcher and UI Designer a
 #### Stack
 - Static HTML/CSS, no build tools
 - Fonts: Old Standard TT, Inter, IBM Plex Mono (Google Fonts)
-- Hosted via GitHub Pages at [luishowin.space](https://luishowin.space/)
+- Hosted via GitHub Pages at [luishowin.github.io](https://luishowin.github.io/)
 - Design language adapted from [beben.design/redoubt](https://beben.design/redoubt/)
 
 #### Links
