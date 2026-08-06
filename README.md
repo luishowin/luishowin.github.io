@@ -1,12 +1,12 @@
-### Luis Howin — Personal Portfolio
+### Luis Howin: Personal Portfolio
 
 A minimal, single-page portfolio for Luis Howin, UX Researcher and UI Designer at [Beben Design](https://beben.design).
 
 #### What's here
-- **Philosophy** — design approach and principles
-- **Capabilities** — UX research, mobile UI, HMI, design systems, prototyping, front-end
-- **Selected work** — Moto Digital Dash, Trek Watch 91, Sprite (AI site guide)
-- **Process** — research, prototype, ship & maintain
+- **Philosophy**: design approach and principles
+- **Capabilities**: UX research, mobile UI, HMI, design systems, prototyping, front-end
+- **Selected work**: Moto Digital Dash, Trek Watch 91, Sprite (AI site guide)
+- **Process**: research, prototype, ship & maintain
 
 #### Stack
 - Static HTML/CSS, no build tools

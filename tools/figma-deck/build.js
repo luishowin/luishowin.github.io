@@ -1,7 +1,7 @@
 // Generate docs/portfolio.html from the fetched Figma frame.
 //
 // This script rewrites the output file WHOLESALE. Any hand-edit to
-// docs/portfolio.html is lost on the next run — put intentional changes in the
+// docs/portfolio.html is lost on the next run. Put intentional changes in the
 // template below, never in the output.
 //
 // Images and fonts are referenced, not inlined: the deck is ~15 screens tall, so
@@ -83,7 +83,7 @@ const posStyle = box => {
 };
 
 // ---------- asset URLs ----------
-// Served from docs/images/portfolio/ — copy assets-opt/*.webp there after prep.js.
+// Served from docs/images/portfolio/: copy assets-opt/*.webp there after prep.js.
 const assetUrl = key => `./images/portfolio/${assets[key].file}`;
 
 const FONT_STACK = {
@@ -137,8 +137,8 @@ function styledRange(node, from, to, baseRatio) {
 }
 
 // Tallest effective line height among the runs on one line. Each line is emitted in its
-// own block so the container's line-height cannot impose a taller strut on a small run —
-// that is what Figma does, and leaving it to the strut drops small runs by ~29px.
+// own block so the container's line-height cannot impose a taller strut on a small run.
+// That is what Figma does; leaving it to the strut drops small runs by ~29px.
 // The line box is also shaped by the strut, which comes from the block's own font-size.
 // Emit the tallest run's font-size alongside its line-height or the strut (still at the
 // node's base size) inflates the line and pushes small runs down.
@@ -170,7 +170,7 @@ function lineMetrics(node, from, to, baseRatio) {
   return best;
 }
 
-// Figma keeps list numbering/bullets in lineTypes, not in `characters` — rebuild them.
+// Figma keeps list numbering/bullets in lineTypes, not in `characters`, so rebuild them.
 function textContent(node) {
   const st = node.style || {};
   const baseRatio = st.lineHeightPx && st.fontSize ? st.lineHeightPx / st.fontSize : 1.21;
@@ -316,7 +316,7 @@ function between(source, startRe, endRe, label) {
     throw new Error(`Could not find the ${label} sentinels in docs/index.html. `
       + `Did someone remove the "══ SHARED …" markers?`);
   }
-  // Start after the marker's line, and stop at the START of the end marker's line —
+  // Start after the marker's line, and stop at the START of the end marker's line,
   // searching for the marker text alone would land inside its comment, taking the
   // opening "/*" without the closing "*/".
   const from = source.indexOf('\n', a) + 1;
@@ -325,7 +325,7 @@ function between(source, startRe, endRe, label) {
 
   // A sentinel spread over several lines would leave the tail of its own comment
   // (and a stray "*/") at the head of the slice. In CSS that swallows the next
-  // rule whole — :root disappears and every var() silently resolves to nothing.
+  // rule whole. :root disappears and every var() silently resolves to nothing.
   // Cheap guard: comment delimiters must balance.
   const open = (slice.match(/\/\*/g) || []).length;
   const close = (slice.match(/\*\//g) || []).length;
@@ -349,7 +349,7 @@ const sharedNav = between(indexHtml, /══ SHARED NAV/, /══ END SHARED NAV
 
 // Inter, Old Standard TT and IBM Plex Mono all arrive via the site's Google Fonts
 // request (700 added for the deck). Only the two display faces Google isn't already
-// serving to this page are self-hosted — one source per family, no double download.
+// serving to this page are self-hosted: one source per family, no double download.
 const selfHosted = fonts.filter(f => f.family !== 'Inter');
 const fontFaces = selfHosted.map(f =>
   `@font-face{font-family:'${f.family}';font-style:normal;font-weight:${f.weight};font-display:swap;`
@@ -378,25 +378,25 @@ const html = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Graphic Design Portfolio — Luis Howin Maina</title>
+<title>Graphic Design Portfolio | Luis Howin Maina</title>
 <!--
-  GENERATED FILE — do not edit by hand.
+  GENERATED FILE. Do not edit by hand.
   Produced by tools/figma-deck/build.js from Figma frame "${root.name}" (${W}x${H}).
   Every edit here is overwritten on the next build; change the template instead.
 
   The deck is a faithful reproduction of the source frame's absolute positioning.
   That frame uses no auto-layout, so the canvas is fixed-width and scales to fit
-  narrow viewports rather than reflowing — reflowing would destroy the alignment.
+  narrow viewports rather than reflowing. Reflowing would destroy the alignment.
 -->
-<meta name="description" content="Graphic design portfolio of Luis Howin Maina — logo design, branding, print and web for Nanyuki Holiday Home, Carbon Slash, Raha Luxury Concierge, Neopolaris AI, Queens of the Dust and Munch Hub.">
+<meta name="description" content="Graphic design portfolio of Luis Howin Maina: logo design, branding, print and web for Nanyuki Holiday Home, Carbon Slash, Raha Luxury Concierge, Neopolaris AI, Queens of the Dust and Munch Hub.">
 <meta name="author" content="Luis Howin Maina">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://luishowin.github.io/portfolio.html">
 <meta name="theme-color" content="#0B0E11">
 <meta name="color-scheme" content="dark">
 
-<meta property="og:title" content="Graphic Design Portfolio — Luis Howin Maina" />
-<meta property="og:description" content="Seven client and personal identities — logo design, branding, packaging, print and web." />
+<meta property="og:title" content="Graphic Design Portfolio | Luis Howin Maina" />
+<meta property="og:description" content="Seven client and personal identities: logo design, branding, packaging, print and web." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://luishowin.github.io/portfolio.html" />
 <meta property="og:image" content="https://luishowin.github.io/images/og-cover.jpg" />
@@ -405,7 +405,7 @@ const html = `<!doctype html>
 <meta property="og:locale" content="en_GB" />
 <meta property="og:site_name" content="Luis Howin Maina" />
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Graphic Design Portfolio — Luis Howin Maina">
+<meta name="twitter:title" content="Graphic Design Portfolio | Luis Howin Maina">
 <meta name="twitter:image" content="https://luishowin.github.io/images/og-cover.jpg">
 
 <link rel="icon" href="./images/icon.webp" type="image/webp">
@@ -551,7 +551,7 @@ ${sharedNav}
     <div class="container">
         <span class="section-label">Graphic design</span>
         <h1>Branding &amp; print, ${PROJECTS.length} projects.</h1>
-        <p class="page-hero__sub">Logo design, branding, packaging, print and web &mdash; client and personal work from 2024 to 2026. Client material is shown with written permission; anything confidential has been removed or concealed.</p>
+        <p class="page-hero__sub">Logo design, branding, packaging, print and web. Client and personal work from 2024 to 2026. Client material is shown with written permission; anything confidential has been removed or concealed.</p>
         <ul class="deck-projects">
 ${projectList}
         </ul>
@@ -574,7 +574,7 @@ ${sharedFooter}
 <script>
 // The source frame is a fixed ${W}px canvas. Scale it down (never up) so it fits
 // narrow screens, shrink the wrapper to match so no dead space is left below,
-// and translate it back to centre — #stage has transform-origin: top left, so
+// and translate it back to centre. #stage has transform-origin: top left, so
 // without the translate it would sit flush against the left edge on wide screens.
 (function () {
   var stage = document.getElementById('stage');
@@ -589,13 +589,13 @@ ${sharedFooter}
   }
   fit();
   // ResizeObserver rather than the window resize event alone: it fires whenever
-  // the wrapper's own box changes — scrollbar appearing, orientation change,
-  // mobile browser chrome collapsing — cases where resize can be missed.
+  // the wrapper's own box changes: scrollbar appearing, orientation change,
+  // mobile browser chrome collapsing, all cases where resize can be missed.
   if (window.ResizeObserver) new ResizeObserver(fit).observe(viewport);
   else addEventListener('resize', fit);
 })();
 
-// Nav shadow on scroll — same behaviour as the home page.
+// Nav shadow on scroll, same behaviour as the home page.
 (function () {
   var nav = document.querySelector('.nav');
   if (!nav) return;

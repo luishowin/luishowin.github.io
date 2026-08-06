@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <meta name="description" content="Luis Howin Maina — UX researcher, UI designer, and web developer based in Nairobi, Kenya. Building human-centered digital products with AI at Beben Design.">
+    <meta name="description" content="Luis Howin Maina: UX researcher, UI designer, and web developer based in Nairobi, Kenya. Building human-centered digital products with AI at Beben Design.">
     <meta name="author" content="Luis Howin Maina">
     <meta name="keywords" content="Luis Howin Maina, Luis Howin, Nairobi web developer, UX designer Nairobi, UI designer Kenya, Beben Design, web developer Kenya, front-end developer Nairobi">
     <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
     <meta name="color-scheme" content="dark">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Luis Howin Maina — UX Designer & Web Developer, Nairobi" />
+    <meta property="og:title" content="Luis Howin Maina: UX Designer & Web Developer, Nairobi" />
     <meta property="og:description" content="UX researcher, UI designer, and web developer based in Nairobi. Building human-centered digital products with AI at Beben Design." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://luishowin.github.io/" />
@@ -29,7 +29,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Luis Howin Maina — UX Designer & Web Developer, Nairobi">
+    <meta name="twitter:title" content="Luis Howin Maina: UX Designer & Web Developer, Nairobi">
     <meta name="twitter:description" content="UX researcher, UI designer, and web developer based in Nairobi. Building human-centered digital products with AI.">
     <meta name="twitter:image" content="https://luishowin.github.io/images/og-cover.jpg">
 
@@ -91,7 +91,7 @@
         /* Shared chrome. tools/figma-deck/build.js copies everything between the
            two sentinels below into the generated portfolio.html, so the pages
            cannot drift. Edit it here, never in portfolio.html. If a THIRD page
-           needs this block, stop copying and extract docs/css/base.css — three
+           needs this block, stop copying and extract docs/css/base.css. Three
            copies is where hand-syncing reliably fails.
 
            The block spans the home page's component rules as well as the chrome
@@ -114,7 +114,7 @@
             --color-text-muted: rgba(191, 198, 208, 0.60);
             --color-border: rgba(200, 210, 225, 0.10);          /* decorative only */
             --color-border-strong: rgba(200, 210, 225, 0.20);
-            --color-border-control: rgba(200, 210, 225, 0.34);  /* controls — 3.1:1 */
+            --color-border-control: rgba(200, 210, 225, 0.34);  /* controls, 3.1:1 */
 
             /* ── Accent. One value can't serve three contrast requirements, so it's
                  split by role. Ratios measured against --color-bg / white label. ── */
@@ -129,7 +129,7 @@
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
             /* Fluid scale. Nothing on the page may go below --step--2 (≈11.5px
-               at 320px) — undersized mobile text is what reads as unfinished. */
+               at 320px). Undersized mobile text is what reads as unfinished. */
             --step--2: clamp(0.72rem, 0.695rem + 0.13vw, 0.78rem);
             --step--1: clamp(0.84rem, 0.805rem + 0.18vw, 0.92rem);
             --step-0:  clamp(1rem,    0.965rem + 0.18vw, 1.10rem);
@@ -198,7 +198,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
-                animation-duration: 1ms !important;   /* not 0s — some transitionend
+                animation-duration: 1ms !important;   /* not 0s, some transitionend
                                                          handlers never fire at zero */
                 animation-iteration-count: 1 !important;
                 transition-duration: 1ms !important;
@@ -341,14 +341,14 @@
            backdrop measuring 12.8–16.9:1 for dark ink. So instead of scrimming
            the photo dark to carry light text (which would spend the photograph
            to produce a grey rectangle), this band re-points the colour tokens
-           locally and runs dark-on-light. Every inherited rule follows —
+           locally and runs dark-on-light. Every inherited rule follows,
            including the focus ring, which is why it stays legible here.
            --color-bg is sampled from the backdrop itself, so the join between
            flat colour and photograph is invisible at any viewport height. */
         .hero {
             /* Sampled from the photograph's own backdrop at the seam row, so the
                join between flat colour and image is invisible. Do not "tidy"
-               this to a rounder value — it is measured, not chosen. */
+               this to a rounder value: it is measured, not chosen. */
             --color-bg: #EBE7E4;
             --color-bg-soft: #E2DEDA;
             --color-headers: #101418;                    /* 15.05:1 */
@@ -402,7 +402,7 @@
             width: 100%;
             height: auto;
             /* When the container is wider than the photo's 16:9, the crop eats
-               the top — the band that is redundant with the flat colour above
+               the top, the band that is redundant with the flat colour above
                it. Nothing that matters can be cropped away. */
             max-height: min(58vh, 620px);
             object-fit: cover;
@@ -658,7 +658,7 @@
            left outside, portfolio.html gets a nav that overflows the page. */
 
         /* Seven links won't fit below ~700px. Scroll them rather than shrinking
-           them to 8px: no JS, no focus trap, no aria-expanded — and the edge
+           them to 8px: no JS, no focus trap, no aria-expanded, and the edge
            fade matches the uppercase-mono label language. */
         @media (max-width: 700px) {
             .nav__links {
@@ -701,7 +701,7 @@
 <a href="#main" class="skip-link">Skip to content</a>
 
 <!-- NAV -->
-<!-- ══ SHARED NAV — tools/figma-deck/build.js copies this into portfolio.html ══ -->
+<!-- ══ SHARED NAV: tools/figma-deck/build.js copies this into portfolio.html ══ -->
 <nav class="nav" aria-label="Primary">
     <div class="nav__inner">
         <a href="/" class="nav__brand">Luis Howin</a>
@@ -722,9 +722,9 @@
 <main id="main">
 <section class="hero">
     <div class="container">
-        <p class="hero__eyebrow">Nairobi &mdash; UX research, UI design, front-end</p>
-        <h1>I'm Luis &mdash; I design things that <span class="highlight-box">make sense</span>.</h1>
-        <p class="hero__sub">UX researcher, UI designer, and lately, an AI wrangler. I do the thinking, the exploring, and the design &mdash; then I let AI handle the heavy lifting on the technical side. It's an AI-eat-AI world out there, so you might as well have one on your team. I just make sure it builds something humans actually want to use.</p>
+        <p class="hero__eyebrow">Nairobi // UX research, UI design, front-end</p>
+        <h1>I'm Luis. I design things that <span class="highlight-box">make sense</span>.</h1>
+        <p class="hero__sub">UX researcher, UI designer, and lately, an AI wrangler. I do the thinking, the exploring, and the design, then I let AI handle the heavy lifting on the technical side. It's an AI-eat-AI world out there, so you might as well have one on your team. I just make sure it builds something humans actually want to use.</p>
         <div class="hero__actions">
             <a href="https://beben.design/contact/" class="btn btn--primary" target="_blank" rel="noopener">Say hello</a>
             <a href="#work" class="btn btn--outline">See what I've been up to &#8595;</a>
@@ -747,10 +747,10 @@
     <div class="container">
         <span class="section-label">About</span>
         <h2 class="section-heading">How I think about design</h2>
-        <p class="philosophy-text">I care about the space between how people actually behave and how systems expect them to. Most of my work is just trying to close that gap &mdash; making digital things feel a little more human without overcomplicating them.</p>
-        <p class="philosophy-text" style="margin-top: 24px;">These days I'm exploring, learning, and building with AI as a creative partner. The human effort goes into the design decisions &mdash; the taste, the empathy, the "why does this feel wrong" instinct. The technical execution? That's where AI earns its keep. Turns out the robots are pretty good at code if you give them good directions. Who knew.</p>
+        <p class="philosophy-text">I care about the space between how people actually behave and how systems expect them to. Most of my work is just trying to close that gap: making digital things feel a little more human without overcomplicating them.</p>
+        <p class="philosophy-text" style="margin-top: 24px;">These days I'm exploring, learning, and building with AI as a creative partner. The human effort goes into the design decisions: the taste, the empathy, the "why does this feel wrong" instinct. The technical execution? That's where AI earns its keep. Turns out the robots are pretty good at code if you give them good directions. Who knew.</p>
         <div class="quote">
-            "People ignore design that ignores people." &mdash; Frank Chimero
+            Frank Chimero: "People ignore design that ignores people."
         </div>
     </div>
 </section>
@@ -801,7 +801,7 @@
     <div class="container">
         <span class="section-label">Work</span>
         <h2 class="section-heading">Some things I've been building</h2>
-        <p class="section-sub">Not a polished portfolio &mdash; more like a log of problems I found interesting.</p>
+        <p class="section-sub">Not a polished portfolio, more like a log of problems I found interesting.</p>
 
         <div class="project-list">
             <article class="project-card">
@@ -839,7 +839,7 @@
             <article class="project-card">
                 <div class="project-meta">Graphic Design // 2024 &ndash; 2026</div>
                 <h3><a href="./portfolio.html">Branding &amp; Print</a></h3>
-                <p>Seven client and personal identities &mdash; logo design, branding, packaging, print and web. Nanyuki Holiday Home, Jimmy Rosemond Book Launch, Carbon Slash, Raha Luxury Concierge, Neopolaris AI, Queens of the Dust and Munch Hub, collected in one deck.</p>
+                <p>Seven client and personal identities: logo design, branding, packaging, print and web. Nanyuki Holiday Home, Jimmy Rosemond Book Launch, Carbon Slash, Raha Luxury Concierge, Neopolaris AI, Queens of the Dust and Munch Hub, collected in one deck.</p>
                 <div class="tags">
                     <span class="tag">Branding</span>
                     <span class="tag">Identity</span>
@@ -899,11 +899,11 @@
 
 </main>
 
-<!-- ══ SHARED FOOTER — tools/figma-deck/build.js copies this into portfolio.html ══ -->
+<!-- ══ SHARED FOOTER: tools/figma-deck/build.js copies this into portfolio.html ══ -->
 <footer>
     <div class="container">
         <div class="footer__inner">
-            <span class="footer-copy">1&deg;17&prime;S 36&deg;49&prime;E &mdash; built in Nairobi &copy; 2026 Luis Howin Maina</span>
+            <span class="footer-copy">1&deg;17&prime;S 36&deg;49&prime;E, built in Nairobi &copy; 2026 Luis Howin Maina</span>
             <span class="footer-studio">Part of <a href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></span>
         </div>
     </div>

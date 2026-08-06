@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Graphic Design Portfolio — Luis Howin Maina</title>
+<title>Graphic Design Portfolio | Luis Howin Maina</title>
 <!--
-  GENERATED FILE — do not edit by hand.
+  GENERATED FILE. Do not edit by hand.
   Produced by tools/figma-deck/build.js from Figma frame "Frame 21" (1168x17987).
   Every edit here is overwritten on the next build; change the template instead.
 
   The deck is a faithful reproduction of the source frame's absolute positioning.
   That frame uses no auto-layout, so the canvas is fixed-width and scales to fit
-  narrow viewports rather than reflowing — reflowing would destroy the alignment.
+  narrow viewports rather than reflowing. Reflowing would destroy the alignment.
 -->
-<meta name="description" content="Graphic design portfolio of Luis Howin Maina — logo design, branding, print and web for Nanyuki Holiday Home, Carbon Slash, Raha Luxury Concierge, Neopolaris AI, Queens of the Dust and Munch Hub.">
+<meta name="description" content="Graphic design portfolio of Luis Howin Maina: logo design, branding, print and web for Nanyuki Holiday Home, Carbon Slash, Raha Luxury Concierge, Neopolaris AI, Queens of the Dust and Munch Hub.">
 <meta name="author" content="Luis Howin Maina">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://luishowin.github.io/portfolio.html">
 <meta name="theme-color" content="#0B0E11">
 <meta name="color-scheme" content="dark">
 
-<meta property="og:title" content="Graphic Design Portfolio — Luis Howin Maina" />
-<meta property="og:description" content="Seven client and personal identities — logo design, branding, packaging, print and web." />
+<meta property="og:title" content="Graphic Design Portfolio | Luis Howin Maina" />
+<meta property="og:description" content="Seven client and personal identities: logo design, branding, packaging, print and web." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://luishowin.github.io/portfolio.html" />
 <meta property="og:image" content="https://luishowin.github.io/images/og-cover.jpg" />
@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_GB" />
 <meta property="og:site_name" content="Luis Howin Maina" />
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Graphic Design Portfolio — Luis Howin Maina">
+<meta name="twitter:title" content="Graphic Design Portfolio | Luis Howin Maina">
 <meta name="twitter:image" content="https://luishowin.github.io/images/og-cover.jpg">
 
 <link rel="icon" href="./images/icon.webp" type="image/webp">
@@ -64,7 +64,7 @@
             --color-text-muted: rgba(191, 198, 208, 0.60);
             --color-border: rgba(200, 210, 225, 0.10);          /* decorative only */
             --color-border-strong: rgba(200, 210, 225, 0.20);
-            --color-border-control: rgba(200, 210, 225, 0.34);  /* controls — 3.1:1 */
+            --color-border-control: rgba(200, 210, 225, 0.34);  /* controls, 3.1:1 */
 
             /* ── Accent. One value can't serve three contrast requirements, so it's
                  split by role. Ratios measured against --color-bg / white label. ── */
@@ -79,7 +79,7 @@
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
             /* Fluid scale. Nothing on the page may go below --step--2 (≈11.5px
-               at 320px) — undersized mobile text is what reads as unfinished. */
+               at 320px). Undersized mobile text is what reads as unfinished. */
             --step--2: clamp(0.72rem, 0.695rem + 0.13vw, 0.78rem);
             --step--1: clamp(0.84rem, 0.805rem + 0.18vw, 0.92rem);
             --step-0:  clamp(1rem,    0.965rem + 0.18vw, 1.10rem);
@@ -148,7 +148,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
-                animation-duration: 1ms !important;   /* not 0s — some transitionend
+                animation-duration: 1ms !important;   /* not 0s, some transitionend
                                                          handlers never fire at zero */
                 animation-iteration-count: 1 !important;
                 transition-duration: 1ms !important;
@@ -291,14 +291,14 @@
            backdrop measuring 12.8–16.9:1 for dark ink. So instead of scrimming
            the photo dark to carry light text (which would spend the photograph
            to produce a grey rectangle), this band re-points the colour tokens
-           locally and runs dark-on-light. Every inherited rule follows —
+           locally and runs dark-on-light. Every inherited rule follows,
            including the focus ring, which is why it stays legible here.
            --color-bg is sampled from the backdrop itself, so the join between
            flat colour and photograph is invisible at any viewport height. */
         .hero {
             /* Sampled from the photograph's own backdrop at the seam row, so the
                join between flat colour and image is invisible. Do not "tidy"
-               this to a rounder value — it is measured, not chosen. */
+               this to a rounder value: it is measured, not chosen. */
             --color-bg: #EBE7E4;
             --color-bg-soft: #E2DEDA;
             --color-headers: #101418;                    /* 15.05:1 */
@@ -352,7 +352,7 @@
             width: 100%;
             height: auto;
             /* When the container is wider than the photo's 16:9, the crop eats
-               the top — the band that is redundant with the flat colour above
+               the top, the band that is redundant with the flat colour above
                it. Nothing that matters can be cropped away. */
             max-height: min(58vh, 620px);
             object-fit: cover;
@@ -608,7 +608,7 @@
            left outside, portfolio.html gets a nav that overflows the page. */
 
         /* Seven links won't fit below ~700px. Scroll them rather than shrinking
-           them to 8px: no JS, no focus trap, no aria-expanded — and the edge
+           them to 8px: no JS, no focus trap, no aria-expanded, and the edge
            fade matches the uppercase-mono label language. */
         @media (max-width: 700px) {
             .nav__links {
@@ -765,7 +765,7 @@
     <div class="container">
         <span class="section-label">Graphic design</span>
         <h1>Branding &amp; print, 7 projects.</h1>
-        <p class="page-hero__sub">Logo design, branding, packaging, print and web &mdash; client and personal work from 2024 to 2026. Client material is shown with written permission; anything confidential has been removed or concealed.</p>
+        <p class="page-hero__sub">Logo design, branding, packaging, print and web. Client and personal work from 2024 to 2026. Client material is shown with written permission; anything confidential has been removed or concealed.</p>
         <ul class="deck-projects">
                 <li><span class="deck-project__name">Nanyuki Holiday Home</span><span class="deck-project__role">Branding, web design and photography</span></li>
                 <li><span class="deck-project__name">Jimmy Rosemond Book Launch</span><span class="deck-project__role">Web design</span></li>
@@ -792,7 +792,7 @@
 <footer>
     <div class="container">
         <div class="footer__inner">
-            <span class="footer-copy">1&deg;17&prime;S 36&deg;49&prime;E &mdash; built in Nairobi &copy; 2026 Luis Howin Maina</span>
+            <span class="footer-copy">1&deg;17&prime;S 36&deg;49&prime;E, built in Nairobi &copy; 2026 Luis Howin Maina</span>
             <span class="footer-studio">Part of <a href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></span>
         </div>
     </div>
@@ -801,7 +801,7 @@
 <script>
 // The source frame is a fixed 1168px canvas. Scale it down (never up) so it fits
 // narrow screens, shrink the wrapper to match so no dead space is left below,
-// and translate it back to centre — #stage has transform-origin: top left, so
+// and translate it back to centre. #stage has transform-origin: top left, so
 // without the translate it would sit flush against the left edge on wide screens.
 (function () {
   var stage = document.getElementById('stage');
@@ -816,13 +816,13 @@
   }
   fit();
   // ResizeObserver rather than the window resize event alone: it fires whenever
-  // the wrapper's own box changes — scrollbar appearing, orientation change,
-  // mobile browser chrome collapsing — cases where resize can be missed.
+  // the wrapper's own box changes: scrollbar appearing, orientation change,
+  // mobile browser chrome collapsing, all cases where resize can be missed.
   if (window.ResizeObserver) new ResizeObserver(fit).observe(viewport);
   else addEventListener('resize', fit);
 })();
 
-// Nav shadow on scroll — same behaviour as the home page.
+// Nav shadow on scroll, same behaviour as the home page.
 (function () {
   var nav = document.querySelector('.nav');
   if (!nav) return;
