@@ -1,6 +1,6 @@
-### Luis Howin — Personal Website
+### Luis Howin: Personal Website
 
-A personal laboratory: archive, workshop and field-notes site for Luis Howin Maina — designer, researcher and builder in Nairobi, founder of [Beben Design](https://beben.design).
+A personal laboratory: archive, workshop and field-notes site for Luis Howin Maina, designer, researcher and builder in Nairobi, founder of [Beben Design](https://beben.design).
 
 **Live:** https://luishowin.github.io/
 
@@ -13,10 +13,11 @@ The site is designed to read less like a portfolio and more like a record of wha
 | Page | Purpose |
 |---|---|
 | `docs/index.html` | Home: hero → 01 Manifesto → 02 Work → 03 Experiments → 04 Notes → About → Contact |
-| `docs/moto_digital_dash.html` | Case study W·01 — embedded motorcycle dashboard HMI |
-| `docs/tw91.html` | Case study W·02 — Trek Watch 91 wearable UI (links to live demo) |
+| `docs/moto_digital_dash.html` | Case study W·01: embedded motorcycle dashboard HMI |
+| `docs/tw91.html` | Case study W·02: Trek Watch 91 wearable UI (links to live demo) |
 | `docs/watchdemo.html` | Working 128×64 OLED watch-face emulator (standalone, kept as-is) |
-| `docs/portfolio.html` | Graphic-design deck — **generated**, never hand-edit |
+| `docs/portfolio.html` | Graphic-design deck: **generated**, never hand-edit |
+| `docs/404.html` | Not-found page (GitHub Pages picks it up automatically) |
 | `docs/robots.txt`, `docs/sitemap.xml`, `docs/llms.txt` | SEO / machine-readable context |
 
 Section rhythm is intentional and alternates a dotted "measurement grid" over flat paper:
@@ -28,9 +29,9 @@ Section rhythm is intentional and alternates a dotted "measurement grid" over fl
 
 - **HTML/CSS/vanilla JS.** No framework, no bundler, no `node_modules`. GitHub Pages serves `/docs` on the default branch.
 - **Shared design system:** [`docs/css/base.css`](docs/css/base.css)
-- **Shared behaviour:** [`docs/js/main.js`](docs/js/main.js) — IntersectionObserver reveals, mobile nav disclosure, scroll-spy
-- **Fonts** (Google Fonts): Cormorant (display/editorial), Geist (UI/body), IBM Plex Mono (metadata/technical). The brief's "IBM Chivo Mono" doesn't exist; IBM Plex Mono is the repo's long-standing mono.
-- **Palette tokens:** warm paper `#F4F1EB`, near-black ink `#191712`, one burnt-orange signal accent used sparingly. No gradients, no shadows, no blur anywhere. Sharp corners everywhere — the only pills are buttons.
+- **Shared behaviour:** [`docs/js/main.js`](docs/js/main.js): IntersectionObserver reveals, full-screen mobile nav disclosure (focus trap, scroll lock, Escape), scroll-spy
+- **Fonts** (Google Fonts): Cormorant (display/editorial, including the navbar name), Geist (UI/body), IBM Plex Mono (metadata/technical). The brief's "IBM Chivo Mono" doesn't exist; IBM Plex Mono is the repo's long-standing mono.
+- **Palette tokens:** warm paper `#F4F1EB`, near-black ink `#191712`, one burnt-orange signal accent used sparingly. No gradients, no shadows, no glow. Sharp corners everywhere; the only pills are buttons. The single blur on the site is the navigation bar's translucent backdrop (with a solid-paper fallback).
 - **Motion:** opt-in via `[data-reveal]`; transform/opacity only; fully disabled under `prefers-reduced-motion`. Without JavaScript nothing is ever hidden (an inline script adds `.js` to `<html>` to arm the reveal CSS).
 
 ## File map
@@ -58,24 +59,26 @@ All tokens live at the top of `docs/css/base.css`:
 
 - **Type scale:** fluid `--step--2 … --step-5` via `clamp()`; measures set in `ch`
 - **Spacing:** `--space-3xs … --space-2xl`; section rhythm `--space-2xl`
-- **Dotted grid:** `.grid-bg` paints hairlines both directions, then masks them into dashes; cell size `--grid-cell` (responsive)
+- **Dotted grid:** `.grid-bg` paints hairlines both directions, then masks them into dashes; cell size `--grid-cell` (responsive). Cells are always square because one token drives both axes. Kept faint so it reads as a technical reference system.
+- **Navbar:** translucent paper over a `backdrop-filter: blur()`, upgraded inside an `@supports` block with solid paper as the fallback; also collapses to solid under `prefers-reduced-transparency`. Brand name is set in Cormorant; links in Geist.
+- **Mobile menu:** full-screen panel (`100dvh`) anchored inside the sticky nav, numbered links, focus trap, Escape-to-close, body scroll lock.
 - **Buttons:** `.btn .btn--primary` (ink fill, hover flips to signal) and `.btn .btn--ghost` (hairline outline); always pill-shaped
-- **Archive rows:** `.archive-row` — the shared skeleton for work items and experiments (number / body / meta / CTA)
+- **Archive rows:** `.archive-row`, the shared skeleton for work items and experiments (number / body / meta / CTA)
 - **Case-study patterns:** `.case-hero`, `.case-section`, `.spec` (mono datasheet blocks)
 
 Legacy aliases at the end of `:root` keep the generated deck speaking old token names after rebuilds.
 
 ## Editing content
 
-Everything is semantic HTML on purpose — content stays crawlable without JS and needs no toolchain.
+Everything is semantic HTML on purpose: content stays crawlable without JS and needs no toolchain.
 
 **Add a project or experiment:** copy an existing `<article class="archive-row">` (or `.feature`) block inside its section, bump the number (`W·06`, `EXP·06`), update title/meta/description. Link it if there's something real to link to; otherwise say so honestly.
 
 **Add a note:** copy an `<article class="note">` block in the Notes section, bump `N·xx`.
 
-**Swap the hero image:** replace `docs/images/hero-construction-1600.jpg` (1600×900) or point `.hero__img` elsewhere. Text contrast depends on composition: pale sky band top (dark ink), dark silhouette bottom (light ink).
+**Swap the hero image:** replace `docs/images/hero-construction-1600.jpg` (1600×900) and its 800w sibling `hero-construction-800.jpg`, or point `.hero__img` elsewhere. All hero type runs in paper-white over a flat black overlay (currently `rgba(0,0,0,0.52)`, see `.hero::before`). The opacity was tuned against measured image luminance: if you swap in a much darker photo, revisit it so the image doesn't go murky.
 
-**Add a page:** link `css/base.css`, include the inline `.js` snippet from any existing page's `<head>`, reuse the sentinel-free nav/footer markup from `moto_digital_dash.html`, and load `js/main.js` deferred. Add it to `sitemap.xml`.
+**Add a page:** link `css/base.css`, include the inline `.js` snippet from any existing page's `<head>`, reuse the sentinel-free nav/footer markup from `moto_digital_dash.html`, and load `js/main.js` deferred. Add it to `sitemap.xml`. For pages that must render at arbitrary URL depths (like `404.html`), use root-relative paths (`/css/...`).
 
 ## Tools (Node ≥ 18, run from repo root)
 
@@ -85,7 +88,7 @@ node tools/check-html.js            # structure lint (ids, imgs, headings)
 node tools/figma-deck/build.js      # regenerate docs/portfolio.html from the Figma frame
 ```
 
-The deck build slices chrome CSS out of `css/base.css` and nav/footer markup out of `index.html` between the `══ SHARED … ══` sentinels — keep those marker lines intact when editing.
+The deck build slices chrome CSS out of `css/base.css` and nav/footer markup out of `index.html` between the `══ SHARED … ══` sentinels; keep those marker lines intact when editing.
 
 ## Deployment
 

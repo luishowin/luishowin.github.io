@@ -1,6 +1,7 @@
-/* Luis Howin — shared page behaviour.
+/* Luis Howin: shared page behaviour.
    Zero dependencies. Everything degrades gracefully:
-   no JS => content simply renders without reveal animation. */
+   no JS => content simply renders without reveal animation,
+   and the mobile nav falls back to a plain disclosure panel. */
 (function () {
     'use strict';
 
@@ -10,25 +11,73 @@
     var nav = document.querySelector('.nav');
     if (nav) {
         var toggle = nav.querySelector('.nav__toggle');
-        if (toggle) {
+        var panel = nav.querySelector('.nav__panel');
+
+        var setOpen = function (open) {
+            nav.classList.toggle('is-open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            document.body.classList.toggle('nav-open', open);
+        };
+
+        if (toggle && panel) {
             toggle.addEventListener('click', function () {
-                var open = nav.classList.toggle('is-open');
-                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                var open = !nav.classList.contains('is-open');
+                setOpen(open);
+                /* Move focus into the menu on open so keyboard and
+                   screen-reader users start at the first link; the
+                   close path always returns focus to the trigger. */
+                if (open) {
+                    var first = panel.querySelector('a');
+                    if (first) { first.focus({ preventScroll: true }); }
+                }
             });
+
             /* Close when a panel link is followed */
             nav.addEventListener('click', function (e) {
                 if (e.target.closest('.nav__panel a')) {
-                    nav.classList.remove('is-open');
-                    toggle.setAttribute('aria-expanded', 'false');
+                    setOpen(false);
+                    toggle.focus({ preventScroll: true });
                 }
             });
+
             document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && nav.classList.contains('is-open')) {
-                    nav.classList.remove('is-open');
-                    toggle.setAttribute('aria-expanded', 'false');
+                if (!nav.classList.contains('is-open')) return;
+
+                if (e.key === 'Escape') {
+                    setOpen(false);
                     toggle.focus();
+                    return;
+                }
+
+                /* Focus trap: cycle between the trigger and the
+                   panel links while the menu is open. */
+                if (e.key === 'Tab') {
+                    var focusables = [toggle].concat(
+                        Array.prototype.slice.call(panel.querySelectorAll('a'))
+                    );
+                    var first = focusables[0];
+                    var last = focusables[focusables.length - 1];
+                    var active = document.activeElement;
+
+                    if (e.shiftKey && (active === first || !nav.contains(active))) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && active === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
                 }
             });
+
+            /* If the viewport grows past the mobile breakpoint while
+               the menu is open, close it so it can never linger as an
+               invisible overlay over the desktop nav. */
+            var desktop = window.matchMedia('(min-width: 821px)');
+            var onDesktop = function (mq) {
+                if (mq.matches) { setOpen(false); }
+            };
+            if (desktop.addEventListener) { desktop.addEventListener('change', onDesktop); }
+            else if (desktop.addListener) { desktop.addListener(onDesktop); }
         }
 
         /* Keep the sticky bar honest about its own state (no shadow,

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luis Howin — Designer, Researcher &amp; Builder, Nairobi</title>
+    <title>Luis Howin | Designer, Researcher &amp; Builder in Nairobi</title>
 
     <!-- Reveal motion is opt-in: without JS nothing on this page is hidden -->
     <script>document.documentElement.classList.add('js');</script>
 
-    <meta name="description" content="Luis Howin is a designer, researcher and builder in Nairobi. He takes interfaces, hardware and systems apart to see how they work — then builds them slightly differently.">
+    <meta name="description" content="Personal site of Luis Howin, a designer, researcher and builder in Nairobi. Selected work, live experiments and field notes from a practice that takes interfaces, hardware and systems apart to see how they work.">
     <meta name="author" content="Luis Howin Maina">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://luishowin.github.io/">
@@ -16,7 +16,7 @@
     <meta name="color-scheme" content="light">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Luis Howin — Make Things. Question Things. Build Better Ones." />
+    <meta property="og:title" content="Luis Howin | Designer, Researcher &amp; Builder in Nairobi" />
     <meta property="og:description" content="A designer's laboratory: selected work, live experiments and field notes from Nairobi." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://luishowin.github.io/" />
@@ -29,14 +29,16 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Luis Howin — Designer, Researcher &amp; Builder">
+    <meta name="twitter:title" content="Luis Howin | Designer, Researcher &amp; Builder">
     <meta name="twitter:description" content="A designer's laboratory: selected work, live experiments and field notes from Nairobi.">
     <meta name="twitter:image" content="https://luishowin.github.io/images/og-cover.jpg">
 
     <!-- Google Verification -->
     <meta name="google-site-verification" content="zlq15C0Z_9chty5WE0kbzpEM21qfeAABklnAyqR00Bk" />
 
-    <link rel="icon" href="./images/icon.webp" type="image/webp">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./images/icon.webp" type="image/webp" sizes="any">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
 
     <!-- Fonts: Cormorant (display) · Geist (UI/body) · IBM Plex Mono (metadata) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,8 +61,7 @@
         "https://beben.design"
       ],
       "jobTitle": "Designer, Researcher & Builder",
-      "description": "Nairobi-based designer, researcher and builder. Founder of Beben Design. Works across UX research, UI, HMI, brand and front-end, with AI as a bench partner.",
-      "image": "https://luishowin.github.io/images/og-cover.jpg",
+      "description": "Nairobi-based designer, researcher and builder. Founder of Beben Design. Works across UX research, UI, HMI, brand and front-end, with AI as a bench partner.",      "image": "https://luishowin.github.io/images/og-cover.jpg",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Nairobi",
@@ -81,7 +82,12 @@
       "@type": "WebSite",
       "name": "Luis Howin",
       "url": "https://luishowin.github.io/",
-      "description": "Personal site of Luis Howin Maina — designer, researcher and builder based in Nairobi, Kenya."
+      "description": "Personal site of Luis Howin Maina, designer, researcher and builder based in Nairobi, Kenya.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Luis Howin Maina",
+        "url": "https://luishowin.github.io/"
+      }
     }
     </script>
 
@@ -91,9 +97,15 @@
            specific to this page's sections. */
 
         /* ══ HERO ══
-           Full viewport. The photograph dominates; a faint dotted
-           measurement grid floats over it; all type sits in the pale
-           sky band where ink measures ≥8:1 against the image. */
+           Full viewport. Layer order bottom-to-top: photograph,
+           flat black overlay, dotted measurement grid, content.
+           The overlay is a single uniform fill (no gradient) and
+           its opacity was chosen from measured image data: the
+           photo's brightest patches reach relative luminance ~0.85,
+           which would leave paper-white type at under 2:1 without
+           it. At 0.54 the worst pixel behind any text measures
+           ≥4.6:1 for small mono details and ≈5:1 for the display
+           headline, on every crop tested (desktop, tablet, mobile). */
         .hero {
             position: relative;
             display: flex;
@@ -101,7 +113,7 @@
             min-height: 100vh;
             min-height: 100dvh;
             overflow: hidden;
-            color: var(--ink);
+            color: var(--paper);
         }
         .hero__img {
             position: absolute;
@@ -112,37 +124,49 @@
             object-fit: cover;
             object-position: 50% 34%;
         }
-        /* Dotted grid overlay — same technique as base.css .grid-bg,
-           tuned to read against photography. */
-        .hero::after {
+        /* Flat translucent black layer above the photo, below grid
+           and copy. Pure #000 keeps the treatment honest; the photo
+           stays visible as a dusk-toned scene rather than going
+           fully dark. */
+        .hero::before {
             content: "";
             position: absolute;
             inset: 0;
             z-index: 1;
             pointer-events: none;
+            background: rgba(0, 0, 0, 0.54);
+        }
+        /* Dotted grid overlay: same dash-mask technique as base.css
+           .grid-bg, but drawn in paper ink so it reads against the
+           darkened photograph instead of disappearing into it.
+           Square cells guaranteed by using one shared cell size on
+           both axes. */
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
             background-image:
-                linear-gradient(to right,  var(--line-grid) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--line-grid) 1px, transparent 1px);
+                linear-gradient(to right,  rgba(244, 241, 235, 0.14) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(244, 241, 235, 0.14) 1px, transparent 1px);
             background-size: var(--grid-cell) var(--grid-cell);
             -webkit-mask-image: repeating-linear-gradient(to bottom, #000 0 4px, transparent 4px 9px);
                     mask-image: repeating-linear-gradient(to bottom, #000 0 4px, transparent 4px 9px);
         }
         .hero__content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             width: 100%;
             max-width: var(--container);
             margin-inline: auto;
             padding-top: clamp(48px, 11vh, 110px);
         }
-        /* Hero text sits on photography, so opacity tricks are off the
-           table: at 0.66 alpha ink measures ~2.4:1 against the dusk sky.
-           Everything reads at ≥0.92 ink (≈7:1); hierarchy comes from
-           scale and tracking instead of transparency. */
-        .hero__eyebrow { color: rgba(25, 23, 18, 0.92); }
-        .hero__eyebrow b { color: var(--ink); font-weight: 600; }
-        /* Capped by vh so the block always stays inside the photo's pale
-           sky band on short laptop viewports. */
+        /* All hero type runs in paper ink over the overlaid photo:
+           hierarchy comes from scale and tracking, not transparency,
+           and contrast is deterministic on every crop. */
+        .hero__eyebrow { color: rgba(244, 241, 235, 0.92); }
+        .hero__eyebrow b { color: #fff; font-weight: 600; }
         .hero__title {
             margin-top: var(--space-m);
             font-size: min(var(--step-4), 10vh);
@@ -150,18 +174,17 @@
             font-weight: 500;
             line-height: 1.02;
             letter-spacing: -0.01em;
+            color: var(--paper);
         }
         .hero__title span { display: block; }
         .hero__title .l2 { margin-left: clamp(18px, 6vw, 104px); }
         .hero__title .l3 { margin-left: clamp(36px, 12vw, 208px); font-style: italic; }
 
-        /* Bottom band. The lower third of the photograph is dark
-           scaffolding silhouette, so supporting copy runs in paper ink —
-           deterministic contrast at every viewport height, no scrim. */
+        /* Bottom band: quote, attribution and the meta strip. */
         .hero__bottom {
             position: absolute;
             left: 0; right: 0; bottom: 0;
-            z-index: 2;
+            z-index: 3;
         }
         .hero__bottom-inner {
             max-width: var(--container);
@@ -175,7 +198,7 @@
             font-style: italic;
             font-size: var(--step-1);
             line-height: 1.45;
-            color: rgba(244, 241, 235, 0.96);
+            color: rgba(255, 255, 255, 0.96);
         }
         .hero__attr {
             display: block;
@@ -186,20 +209,20 @@
             font-weight: 500;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: rgba(244, 241, 235, 0.85);
+            color: rgba(255, 255, 255, 0.92);
         }
         .hero__meta-row {
             display: flex;
             justify-content: space-between;
             gap: var(--space-s);
-            border-top: 1px solid rgba(244, 241, 235, 0.38);
+            border-top: 1px solid rgba(255, 255, 255, 0.42);
             padding-block: var(--space-s);
             font-family: var(--font-mono);
             font-size: var(--step--2);
             font-weight: 500;
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: rgba(244, 241, 235, 0.92);
+            color: rgba(255, 255, 255, 0.94);
         }
         @media (prefers-reduced-motion: no-preference) {
             .hero__meta-row .arr { animation: hero-nudge 2.4s var(--ease-out) infinite; display: inline-block; }
@@ -254,7 +277,7 @@
             padding-bottom: var(--space-2xs);
         }
 
-        /* ══ WORK — featured objects ══ */
+        /* ══ WORK: featured objects ══ */
         .feature {
             position: relative;
             display: grid;
@@ -398,11 +421,11 @@
     </div>
     <div class="nav__panel" id="nav-panel">
         <ul>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#experiments">Experiments</a></li>
-            <li><a href="#notes">Notes</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#work"><span class="nav__num" aria-hidden="true">01</span>Work</a></li>
+            <li><a href="#experiments"><span class="nav__num" aria-hidden="true">02</span>Experiments</a></li>
+            <li><a href="#notes"><span class="nav__num" aria-hidden="true">03</span>Notes</a></li>
+            <li><a href="#about"><span class="nav__num" aria-hidden="true">04</span>About</a></li>
+            <li><a href="#contact"><span class="nav__num" aria-hidden="true">05</span>Contact</a></li>
         </ul>
     </div>
 </nav>
@@ -414,11 +437,13 @@
     <header class="hero">
         <img class="hero__img"
              src="./images/hero-construction-1600.jpg"
+             srcset="./images/hero-construction-800.jpg 800w, ./images/hero-construction-1600.jpg 1600w"
+             sizes="100vw"
              width="1600" height="900"
-             alt="Scaffolding rising against a dusk sky — a structure halfway between plan and building."
+             alt="Scaffolding rising against a dusk sky, a structure halfway between plan and building."
              fetchpriority="high" decoding="async">
         <div class="hero__content">
-            <p class="mono hero__eyebrow" data-reveal><b>Luis Howin</b> — Nairobi · 01°17′S 036°49′E</p>
+            <p class="mono hero__eyebrow" data-reveal><b>Luis Howin</b> · Nairobi · 01°17′S 036°49′E</p>
             <h1 class="hero__title" data-reveal style="--reveal-delay:90ms">
                 <span class="l1">Make things.</span>
                 <span class="l2">Question things.</span>
@@ -429,11 +454,11 @@
             <div class="hero__bottom-inner">
                 <p class="hero__quote" data-reveal style="--reveal-delay:180ms">
                     “Here’s to the crazy ones.”
-                    <span class="hero__attr">— Apple, “Think Different”, 1997</span>
+                    <span class="hero__attr">Apple, “Think Different”, 1997</span>
                 </p>
                 <div class="hero__meta-row">
                     <span>Scroll <span class="arr">&#8595;</span></span>
-                    <span>A designer’s laboratory — work, experiments, field notes</span>
+                    <span>A designer’s laboratory: work, experiments, field notes</span>
                 </div>
             </div>
         </div>
@@ -445,12 +470,12 @@
             <p class="section-label" data-reveal>Manifesto</p>
             <div class="manifesto__grid" style="margin-top: var(--space-l);" data-reveal-group>
                 <h2 class="manifesto__lede" id="manifesto-h" data-reveal>
-                    Most of the world runs on momentum — things are the way they are because nobody stopped to ask.
+                    Most of the world runs on momentum: things are the way they are because nobody stopped to ask.
                 </h2>
                 <div class="manifesto__body body-copy" data-reveal style="--reveal-delay:120ms">
-                    <p>I stop to ask. I’m a designer and researcher who works across interfaces, hardware and software — close enough to the metal to know what’s possible, close enough to people to know what’s actually needed.</p>
+                    <p>I stop to ask. I’m a designer and researcher who works across interfaces, hardware and software: close enough to the metal to know what’s possible, close enough to people to know what’s actually needed.</p>
                     <p>Taking systems apart to see how they hold together, then putting them back slightly differently and watching what happens: that habit became Beben Design, the studio I run in Nairobi. It also explains the experiments, the notes and the half-finished prototypes on this page. This site is less a portfolio than a record of what curiosity does when it gets workshop time.</p>
-                    <p class="manifesto__sign">— Luis Howin, Nairobi</p>
+                    <p class="manifesto__sign">Luis Howin · Nairobi</p>
                 </div>
             </div>
         </div>
@@ -462,16 +487,16 @@
             <p class="section-label" data-reveal>Selected Work</p>
             <div class="intro" data-reveal-group>
                 <h2 class="display" id="work-h" data-reveal>The archive.</h2>
-                <p class="sub" data-reveal style="--reveal-delay:100ms">Objects from the archive rather than a highlight reel — client work and studio projects, most with their process documented.</p>
+                <p class="sub" data-reveal style="--reveal-delay:100ms">Objects from the archive rather than a highlight reel: client work and studio projects, most with their process documented.</p>
             </div>
 
-            <!-- W·01 — Moto Digital Dash -->
+            <!-- W·01: Moto Digital Dash -->
             <article class="feature" data-reveal-group>
                 <div class="feature__text" data-reveal>
                     <p class="feature__num">W·01</p>
                     <p class="feature__meta"><span>Embedded HMI</span><span>2025 → ongoing</span></p>
                     <h3 class="feature__title"><a class="feature__stretch" href="./moto_digital_dash.html">Moto Digital Dash</a></h3>
-                    <p class="feature__desc">A glanceable, safety-critical dashboard for a four-inch circular OLED on an ESP32 — built for sunlight, vibration, gloves and rain. Every pixel has to earn its place at 80&nbsp;km/h.</p>
+                    <p class="feature__desc">A glanceable, safety-critical dashboard for a four-inch circular OLED on an ESP32, built for sunlight, vibration, gloves and rain. Every pixel has to earn its place at 80&nbsp;km/h.</p>
                     <p class="feature__tech">Role: research · UI · interaction &nbsp;/&nbsp; Platform: ESP32 + circular OLED</p>
                     <p class="feature__tech" style="margin-top: var(--space-2xs);"><a class="arrow-link" href="./moto_digital_dash.html">Open case study <span class="arr">&#8594;</span></a></p>
                 </div>
@@ -480,17 +505,17 @@
                          width="720" height="491"
                          alt="Hand-drawn pencil sketch of a circular motorcycle dashboard on graph paper, speedometer marked 56 km/h."
                          loading="lazy" decoding="async">
-                    <figcaption>Fig. W·01a — first principles, graph paper</figcaption>
+                    <figcaption>Fig. W·01a: first principles, graph paper</figcaption>
                 </figure>
             </article>
 
-            <!-- W·02 — Trek Watch 91 -->
+            <!-- W·02: Trek Watch 91 -->
             <article class="feature feature--flip" data-reveal-group>
                 <div class="feature__text" data-reveal>
                     <p class="feature__num">W·02</p>
                     <p class="feature__meta"><span>Wearable UI</span><span>2025</span></p>
                     <h3 class="feature__title"><a class="feature__stretch" href="./tw91.html">Trek Watch 91</a></h3>
-                    <p class="feature__desc">A text-first interface for a hiking watch that runs weeks on a small cell. No touch, no gestures — a crown, two buttons, and nine actions you can find without looking. The hardware prototype exists too.</p>
+                    <p class="feature__desc">A text-first interface for a hiking watch that runs weeks on a small cell. No touch, no gestures: a crown, two buttons, and nine actions you can find without looking. The hardware prototype exists too.</p>
                     <p class="feature__tech">Role: UI · interaction · hardware &nbsp;/&nbsp; Output: monochrome LCD · piezo · LED</p>
                     <p class="feature__tech" style="margin-top: var(--space-2xs);"><a class="arrow-link" href="./tw91.html">Open case study <span class="arr">&#8594;</span></a></p>
                 </div>
@@ -499,7 +524,7 @@
                          width="1280" height="681"
                          alt="Watch interface concept: hexagonal tiles for stopwatch, timer, pace, alarms, vitals and compass over a cold mountain landscape."
                          loading="lazy" decoding="async">
-                    <figcaption>Fig. W·02a — interface concept, hex lattice</figcaption>
+                    <figcaption>Fig. W·02a: interface concept, hex lattice</figcaption>
                 </figure>
             </article>
 
@@ -522,7 +547,7 @@
                         <p class="archive-row__num">W·04</p>
                         <div class="archive-row__body">
                             <h3 class="archive-row__title"><a class="archive-row__link" href="./portfolio.html">Branding &amp; Print</a></h3>
-                            <p class="archive-row__desc">Seven identities across logo, packaging, print and web — Nanyuki Holiday Home to Queens of the Dust.</p>
+                            <p class="archive-row__desc">Seven identities across logo, packaging, print and web: Nanyuki Holiday Home to Queens of the Dust.</p>
                         </div>
                         <p class="archive-row__meta"><span>Identity</span><span>2024–2026</span></p>
                         <p class="archive-row__cta"><a class="arrow-link" href="./portfolio.html">Open deck <span class="arr">&#8594;</span></a></p>
@@ -534,7 +559,7 @@
                         <p class="archive-row__num">W·05</p>
                         <div class="archive-row__body">
                             <h3 class="archive-row__title"><a class="archive-row__link" href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></h3>
-                            <p class="archive-row__desc">The studio I founded in Nairobi — careful thinking and disciplined craft, applied to other people’s hard problems.</p>
+                            <p class="archive-row__desc">The studio I founded in Nairobi: careful thinking and disciplined craft, applied to other people’s hard problems.</p>
                         </div>
                         <p class="archive-row__meta"><span>Studio</span><span>Founder</span></p>
                         <p class="archive-row__cta"><a class="arrow-link" href="https://beben.design" target="_blank" rel="noopener">Visit <span class="arr">&#8594;</span></a></p>
@@ -550,7 +575,7 @@
             <p class="section-label" data-reveal>Experiments</p>
             <div class="intro" data-reveal-group>
                 <h2 class="display" id="exp-h" data-reveal>Where curiosity goes when the client work is done.</h2>
-                <p class="sub" data-reveal style="--reveal-delay:100ms">Unfinished by design — the status is part of the record.</p>
+                <p class="sub" data-reveal style="--reveal-delay:100ms">Unfinished by design; the status is part of the record.</p>
             </div>
 
             <div class="archive" data-reveal-group>
@@ -559,7 +584,7 @@
                         <p class="archive-row__num">EXP·01</p>
                         <div class="archive-row__body">
                             <h3 class="archive-row__title"><a class="archive-row__link" href="./watchdemo.html">TRWATCH Emulator</a></h3>
-                            <p class="archive-row__desc">A 128×64 blue-OLED watch face running in the browser — buttons, alarms and all.</p>
+                            <p class="archive-row__desc">A 128×64 blue-OLED watch face running in the browser, emulating the <a href="./tw91.html">Trek Watch 91</a> interface. Buttons, alarms and all.</p>
                         </div>
                         <p class="archive-row__meta"><span>Hardware / Simulation</span><span class="status">● Live</span></p>
                         <p class="archive-row__cta"><a class="arrow-link" href="./watchdemo.html">Run it <span class="arr">&#8594;</span></a></p>
@@ -571,7 +596,7 @@
                         <p class="archive-row__num">EXP·02</p>
                         <div class="archive-row__body">
                             <h3 class="archive-row__title"><a class="archive-row__link" href="./portfolio.html">Figma &#8594; Static Pipeline</a></h3>
-                            <p class="archive-row__desc">Node scripts that rebuild an entire design deck straight out of a Figma frame — layout, type and assets included.</p>
+                            <p class="archive-row__desc">Node scripts that rebuild an entire design deck straight out of a Figma frame: layout, type and assets included.</p>
                         </div>
                         <p class="archive-row__meta"><span>Tooling</span><span class="status">● In use</span></p>
                         <p class="archive-row__cta"><a class="arrow-link" href="./portfolio.html">See output <span class="arr">&#8594;</span></a></p>
@@ -583,7 +608,7 @@
                         <p class="archive-row__num">EXP·03</p>
                         <div class="archive-row__body">
                             <h3 class="archive-row__title">Local AI Workflows</h3>
-                            <p class="archive-row__desc">Designing with models as a bench partner — taste stays human, execution gets delegated. Most of this site was built that way.</p>
+                            <p class="archive-row__desc">Designing with models as a bench partner: taste stays human, execution gets delegated. Most of this site was built that way.</p>
                         </div>
                         <p class="archive-row__meta"><span>AI / Software</span><span class="status">● Ongoing</span></p>
                         <p class="archive-row__cta"><span class="mono">No link yet</span></p>
@@ -623,7 +648,7 @@
             <p class="section-label" data-reveal>Notes</p>
             <div class="intro" data-reveal-group>
                 <h2 class="display" id="notes-h" data-reveal>Field notes.</h2>
-                <p class="sub" data-reveal style="--reveal-delay:100ms">Short entries written while building — filed as they happen, no editorial calendar.</p>
+                <p class="sub" data-reveal style="--reveal-delay:100ms">Short entries written while building, filed as they happen, no editorial calendar.</p>
             </div>
 
             <div style="margin-top: var(--space-xl);" data-reveal-group>
@@ -637,7 +662,7 @@
                     </div>
                     <div class="note__excerpt">
                         <h3 class="note__title">The gap is the job</h3>
-                        <p>People ignore design that ignores people. Most research is just paying attention to the space between how humans actually behave and how systems expect them to — then closing that gap on purpose instead of by accident.</p>
+                        <p>People ignore design that ignores people. Most research is just paying attention to the space between how humans actually behave and how systems expect them to, then closing that gap on purpose instead of by accident.</p>
                     </div>
                 </article>
 
@@ -648,7 +673,7 @@
                     </div>
                     <div class="note__excerpt">
                         <h3 class="note__title">Taste doesn’t compile</h3>
-                        <p>Delegating execution to a model only works if the decisions are already made. The taste, the empathy, the “why does this feel wrong” instinct — that part doesn’t delegate. It just moves earlier in the process.</p>
+                        <p>Delegating execution to a model only works if the decisions are already made. The taste, the empathy, the “why does this feel wrong” instinct: that part doesn’t delegate. It just moves earlier in the process.</p>
                     </div>
                 </article>
 
@@ -681,13 +706,13 @@
                 <div class="about__text">
                     <h2 class="display" id="about-h" data-reveal>I’m Luis.</h2>
                     <div class="body-copy" data-reveal style="--reveal-delay:100ms">
-                        <p>Designer, researcher, builder — founder of Beben Design in Nairobi. I like taking things apart to understand how they work, then building something slightly different and seeing whether it holds up.</p>
-                        <p>The range runs from motorcycle dashboards and watch interfaces to brand systems, websites and the occasional operating-system concept. The common thread is always the same: research first, prototype early, ship it, then keep adjusting while real people use it.</p>
+                        <p>Designer, researcher, builder: founder of Beben Design in Nairobi. I like taking things apart to understand how they work, then building something slightly different and seeing whether it holds up.</p>
+                        <p>The range runs from <a href="./moto_digital_dash.html">motorcycle dashboards</a> and <a href="./tw91.html">watch interfaces</a> to brand systems, websites and the occasional operating-system concept. The common thread is always the same: research first, prototype early, ship it, then keep adjusting while real people use it.</p>
                     </div>
                     <dl class="meta-list about__facts" data-reveal style="--reveal-delay:160ms">
                         <div>
                             <dt>Based</dt>
-                            <dd>Nairobi, Kenya — UTC+3</dd>
+                            <dd>Nairobi, Kenya · UTC+3</dd>
                         </div>
                         <div>
                             <dt>Working across</dt>
@@ -715,14 +740,14 @@
                 Got something that doesn’t fit neatly into a brief? <em>Good.</em>
             </h2>
             <p class="contact__body lede" data-reveal style="--reveal-delay:100ms">
-                Unusual products, stubborn problems, experiments that need a designer who reads datasheets — that’s the good stuff. Tell me what you’re actually trying to build.
+                Unusual products, stubborn problems, experiments that need a designer who reads datasheets: that’s the good stuff. Tell me what you’re actually trying to build.
             </p>
             <div class="contact__actions" data-reveal style="--reveal-delay:160ms">
                 <a class="btn btn--primary" href="mailto:howin329@gmail.com">Let’s talk <span aria-hidden="true">&#8594;</span></a>
                 <a class="btn btn--ghost" href="https://beben.design/contact/" target="_blank" rel="noopener">Via Beben Design</a>
             </div>
             <p class="contact__email" data-reveal style="--reveal-delay:220ms">
-                howin329@gmail.com — replies from Nairobi, usually within a day.
+                howin329@gmail.com. Replies from Nairobi, usually within a day.
             </p>
         </div>
     </section>
@@ -733,7 +758,7 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__inner">
-            <span>&copy; 2026 Luis Howin Maina — Nairobi, 01°17′S 036°49′E</span>
+            <span>&copy; 2026 Luis Howin Maina · Nairobi, 01°17′S 036°49′E</span>
             <span><a href="https://github.com/luishowin" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/luishowin" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></span>
         </div>
     </div>

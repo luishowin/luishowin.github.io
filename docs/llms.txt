@@ -1,6 +1,6 @@
 # Luis Howin Maina
 
-> Designer, researcher and builder in Nairobi, Kenya. Takes interfaces, hardware and systems apart to see how they work — then builds them slightly differently.
+> Designer, researcher and builder in Nairobi, Kenya. Takes interfaces, hardware and systems apart to see how they work, then builds them slightly differently.
 
 ## About
 
@@ -19,12 +19,12 @@ Nairobi, Kenya (01°17′S 036°49′E, UTC+3)
 - HMI Design: physical-digital interfaces for hardware products
 - Brand: identity systems, print and packaging
 - Prototyping: interactive prototypes for validation before code
-- Front-End Development: HTML, CSS, JavaScript — this site has no framework and no build step
+- Front-End Development: HTML, CSS, JavaScript. This site has no framework and no build step.
 
 ## Selected Work
 
 - **Moto Digital Dash** (`/moto_digital_dash.html`): glanceable, safety-critical motorcycle dashboard UI for a 4-inch circular OLED on ESP32. Sunlight, vibration, gloves, rain.
-- **Trek Watch 91** (`/tw91.html`): text-first wearable interface — crown + two buttons, nine actions, no touch. Hardware prototype exists; browser demo at `/watchdemo.html`.
+- **Trek Watch 91** (`/tw91.html`): text-first wearable interface with a crown plus two buttons, nine actions, no touch. Hardware prototype exists; browser demo at `/watchdemo.html`.
 - **Sprite**: conversational AI site guide living on beben.design.
 - **Branding & Print** (`/portfolio.html`): seven identities across logo, packaging, print and web.
 - **Beben Design**: studio founded and run by Luis in Nairobi.
@@ -33,7 +33,7 @@ Nairobi, Kenya (01°17′S 036°49′E, UTC+3)
 
 - TRWATCH emulator: 128x64 blue-OLED watch face running in the browser
 - Figma-to-static pipeline: Node scripts that rebuild a design deck from a Figma frame
-- Local AI workflows, habit tracking, an OS concept — statuses recorded honestly (ongoing / paused / shelved)
+- Local AI workflows, habit tracking, an OS concept. Statuses recorded honestly (ongoing / paused / shelved)
 
 ## Links
 

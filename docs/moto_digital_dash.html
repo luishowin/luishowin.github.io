@@ -4,19 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>document.documentElement.classList.add('js');</script>
-    <title>Moto Digital Dash â€” Case Study | Luis Howin</title>
-    <meta name="description" content="Designing a glanceable, safety-critical motorcycle dashboard for a 4-inch circular OLED on an ESP32 â€” sunlight, vibration, gloves and rain included. A case study by Luis Howin.">
+    <title>Moto Digital Dash: Case Study | Luis Howin</title>
+    <meta name="description" content="Designing a glanceable, safety-critical motorcycle dashboard for a 4-inch circular OLED on an ESP32: sunlight, vibration, gloves and rain included. A case study by Luis Howin, designer, researcher and builder in Nairobi.">
     <meta name="author" content="Luis Howin Maina">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://luishowin.github.io/moto_digital_dash.html">
     <meta name="theme-color" content="#F4F1EB">
-    <meta property="og:title" content="Moto Digital Dash â€” Case Study" />
-    <meta property="og:description" content="A glanceable, safety-critical dashboard for a 4-inch circular OLED on an ESP32." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Moto Digital Dash: Case Study" />
+    <meta property="og:description" content="A glanceable, safety-critical dashboard for a 4-inch circular OLED on an ESP32, built for sunlight, vibration, gloves and rain." />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://luishowin.github.io/moto_digital_dash.html" />
-    <meta property="og:image" content="https://luishowin.github.io/images/og-cover.jpg" />
+    <meta property="og:image" content="https://luishowin.github.io/images/dash.jpg" />
+    <meta property="og:image:width" content="720" />
+    <meta property="og:image:height" content="491" />
+    <meta property="og:image:alt" content="Hand-drawn pencil sketch of a circular motorcycle dashboard on graph paper." />
+    <meta property="og:site_name" content="Luis Howin" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="./images/icon.webp" type="image/webp">
+    <meta name="twitter:title" content="Moto Digital Dash: Case Study">
+    <meta name="twitter:description" content="A glanceable, safety-critical dashboard for a 4-inch circular OLED on an ESP32.">
+    <meta name="twitter:image" content="https://luishowin.github.io/images/dash.jpg">
+
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./images/icon.webp" type="image/webp" sizes="any">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+
+    <!-- Structured data: CreativeWork -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Moto Digital Dash",
+      "url": "https://luishowin.github.io/moto_digital_dash.html",
+      "headline": "Moto Digital Dash: a glanceable, safety-critical motorcycle dashboard for a circular OLED",
+      "description": "Case study of a glanceable, safety-critical motorcycle dashboard interface designed for a four-inch circular OLED on an ESP32, covering research, information architecture, interaction model and UI system.",
+      "image": "https://luishowin.github.io/images/dash.jpg",
+      "creator": {
+        "@type": "Person",
+        "name": "Luis Howin Maina",
+        "alternateName": "Luis Howin",
+        "url": "https://luishowin.github.io/"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Luis Howin",
+        "url": "https://luishowin.github.io/"
+      }
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,11 +79,11 @@
     </div>
     <div class="nav__panel" id="nav-panel">
         <ul>
-            <li><a href="./index.html#work">Work</a></li>
-            <li><a href="./index.html#experiments">Experiments</a></li>
-            <li><a href="./index.html#notes">Notes</a></li>
-            <li><a href="./index.html#about">About</a></li>
-            <li><a href="./index.html#contact">Contact</a></li>
+            <li><a href="./index.html#work"><span class="nav__num" aria-hidden="true">01</span>Work</a></li>
+            <li><a href="./index.html#experiments"><span class="nav__num" aria-hidden="true">02</span>Experiments</a></li>
+            <li><a href="./index.html#notes"><span class="nav__num" aria-hidden="true">03</span>Notes</a></li>
+            <li><a href="./index.html#about"><span class="nav__num" aria-hidden="true">04</span>About</a></li>
+            <li><a href="./index.html#contact"><span class="nav__num" aria-hidden="true">05</span>Contact</a></li>
         </ul>
     </div>
 </nav>
@@ -56,25 +94,25 @@
     <header class="case-hero grid-bg">
         <div class="container">
             <a class="case-hero__back" href="./index.html#work">&#8592; Index / Work</a>
-            <p class="mono" style="margin-top: var(--space-l);"><b style="color: var(--signal);">WÂ·01</b> â€” Case study Â· Embedded HMI Â· 2025 â†’ ongoing Â· status: in development</p>
+            <p class="mono" style="margin-top: var(--space-l);"><b style="color: var(--signal);">W·01</b> · Case study · Embedded HMI · 2025 → ongoing · status: in development</p>
             <h1 class="display" data-reveal>Moto Digital<br>Dash</h1>
             <p class="lede" data-reveal style="--reveal-delay:100ms">
                 A glanceable, safety-critical interface for a motorcycle dashboard on a four-inch
-                circular OLED â€” designed to survive the real world: vibration, sunlight, gloves,
+                circular OLED, designed to survive the real world: vibration, sunlight, gloves,
                 rain and chaos.
             </p>
             <dl class="meta-list case-hero__facts" data-reveal style="--reveal-delay:160ms">
                 <div>
                     <dt>Role</dt>
-                    <dd>UX research Â· UI design Â· Interaction design</dd>
+                    <dd>UX research · UI design · Interaction design</dd>
                 </div>
                 <div>
                     <dt>Platform</dt>
-                    <dd>Embedded â€” ESP32 + circular OLED</dd>
+                    <dd>Embedded: ESP32 + circular OLED</dd>
                 </div>
                 <div>
                     <dt>Hardware goals</dt>
-                    <dd>Titanium Â· Tempered glass Â· IP68</dd>
+                    <dd>Titanium · Tempered glass · IP68</dd>
                 </div>
                 <div>
                     <dt>Key promise</dt>
@@ -87,21 +125,21 @@
     <figure class="figure case-figure container" data-reveal="clip">
         <img src="./images/dash.jpg"
              width="720" height="491"
-             alt="Hand-drawn pencil sketch of a circular motorcycle dashboard on graph paper â€” speed 56 km/h, RPM ring, fuel, temperature, clock."
+             alt="Hand-drawn pencil sketch of a circular motorcycle dashboard on graph paper: speedometer at 56 km/h, RPM ring, fuel, temperature and clock."
              loading="lazy" decoding="async">
-        <figcaption>Fig. 01 â€” first principles, graph paper. The brief fits on one page because it has to be read at speed.</figcaption>
+        <figcaption>Fig. 01: first principles, graph paper. The brief fits on one page because it has to be read at speed.</figcaption>
     </figure>
 
     <!-- 01 -->
     <section class="case-section container" aria-labelledby="s1">
-        <h2 class="case-section__label" id="s1"><b>01</b> Problem &amp; constraints</p>
+        <h2 class="case-section__label" id="s1"><b>01</b> Problem &amp; constraints</h2>
         <div class="case-section__body body-copy">
             <p data-reveal>Most motorcycle dashboards fail riders in one of three ways: information overload, poor glanceability, or zero flexibility. Riders need critical information instantly, without visual hunting, while moving at speed.</p>
             <p data-reveal>The design goal: a dashboard that communicates priority information in under half a second per glance, and stays usable across daylight, night riding, rain, vibration and gloves.</p>
             <div class="spec" data-reveal>Constraints (non-negotiable)
 - Circular 4" OLED
-- Outdoor visibility â€” sun + night
-- Gloves on â†’ no touch-first UX
+- Outdoor visibility: sun + night
+- Gloves on → no touch-first UX
 - Fragmented rider attention
 - ESP32-class compute
 - IP68 sealed enclosure
@@ -111,19 +149,19 @@
 
     <!-- 02 -->
     <section class="case-section container" aria-labelledby="s2">
-        <h2 class="case-section__label" id="s2"><b>02</b> Users &amp; insights</p>
+        <h2 class="case-section__label" id="s2"><b>02</b> Users &amp; insights</h2>
         <div class="case-section__body body-copy">
             <h3 data-reveal>Who it's for</h3>
             <ul data-reveal>
                 <li>Daily commuters</li>
                 <li>Touring riders</li>
-                <li>Custom / cafÃ© / ADV riders</li>
+                <li>Custom / café / ADV riders</li>
                 <li>Riders upgrading from analog clusters</li>
             </ul>
             <h3 data-reveal>What they taught me</h3>
             <ul data-reveal>
                 <li>Speed and warnings must be readable <strong>without focus</strong>.</li>
-                <li>RPM is pattern-based â€” a ring with thresholds beats small digits.</li>
+                <li>RPM is pattern-based: a ring with thresholds beats small digits.</li>
                 <li>Riders want control over what is shown; cognitive fit matters.</li>
                 <li>Navigation must be directional, not map-based.</li>
                 <li>Night riding punishes bright, busy interfaces.</li>
@@ -133,11 +171,11 @@
 
     <!-- 03 -->
     <section class="case-section container" aria-labelledby="s3">
-        <h2 class="case-section__label" id="s3"><b>03</b> UX principles</p>
+        <h2 class="case-section__label" id="s3"><b>03</b> UX principles</h2>
         <div class="case-section__body body-copy">
             <ol data-reveal>
                 <li><strong>Glanceable first.</strong> Primary values readable in under ~0.5 seconds.</li>
-                <li><strong>Hierarchy over density.</strong> Fewer elements, stronger prioritisation â€” no data soup.</li>
+                <li><strong>Hierarchy over density.</strong> Fewer elements, stronger prioritisation, no data soup.</li>
                 <li><strong>Peripheral awareness.</strong> Warnings live at the edge, not the centre.</li>
                 <li><strong>Contextual flexibility.</strong> Layout adapts to mode and preference without breaking hierarchy.</li>
                 <li><strong>Fail gracefully.</strong> Missing data never breaks comprehension.</li>
@@ -147,43 +185,43 @@
 
     <!-- 04 -->
     <section class="case-section container" aria-labelledby="s4">
-        <h2 class="case-section__label" id="s4"><b>04</b> Information architecture</p>
+        <h2 class="case-section__label" id="s4"><b>04</b> Information architecture</h2>
         <div class="case-section__body body-copy">
             <p data-reveal>Prioritisation is everything. The interface is organised into tiers based on how often riders need the information and how risky it is to hunt for it while moving.</p>
-            <div class="spec" data-reveal>Tier 1 â€” always visible
-  Speed Â· critical warnings Â· gear (optional)
+            <div class="spec" data-reveal>Tier 1: always visible
+  Speed · critical warnings · gear (optional)
 
-Tier 2 â€” situational
-  RPM ring Â· fuel Â· temp Â· battery voltage
+Tier 2: situational
+  RPM ring · fuel · temp · battery voltage
 
-Tier 3 â€” on demand
-  ODO Â· trip A/B Â· date/time Â· nav prompts</div>
+Tier 3: on demand
+  ODO · trip A/B · date/time · nav prompts</div>
         </div>
     </section>
 
     <!-- 05 -->
     <section class="case-section container" aria-labelledby="s5">
-        <h2 class="case-section__label" id="s5"><b>05</b> Interaction model</p>
+        <h2 class="case-section__label" id="s5"><b>05</b> Interaction model</h2>
         <div class="case-section__body body-copy">
             <p data-reveal>No touch-first gimmicks. The system is designed for gloves and motion using a simple physical control scheme.</p>
             <div class="spec" data-reveal>Example mapping (draft)
 Rotate      cycle info cards
 Press       confirm / toggle view
 Long press  settings
-Hold (ride) reset trip â€” with confirm</div>
+Hold (ride) reset trip, with confirm</div>
             <p data-reveal>Interactions auto-revert to ride mode after inactivity, and nothing requires more than one step while the bike is moving.</p>
         </div>
     </section>
 
     <!-- 06 -->
     <section class="case-section container" aria-labelledby="s6">
-        <h2 class="case-section__label" id="s6"><b>06</b> UI system</p>
+        <h2 class="case-section__label" id="s6"><b>06</b> UI system</h2>
         <div class="case-section__body body-copy">
             <h3 data-reveal>Layout logic</h3>
             <ul data-reveal>
-                <li>Centre: speed â€” largest text, highest contrast.</li>
+                <li>Centre: speed, largest text, highest contrast.</li>
                 <li>Radial ring: RPM with thresholds, read as pattern not digits.</li>
-                <li>Edge ring: indicators â€” turn, high beam, neutral, warnings.</li>
+                <li>Edge ring: indicators such as turn, high beam, neutral and warnings.</li>
                 <li>Modular widgets: fuel / temp / battery / odo / trip.</li>
             </ul>
             <h3 data-reveal>Legibility &amp; colour</h3>
@@ -198,42 +236,42 @@ Hold (ride) reset trip â€” with confirm</div>
 
     <!-- 07 -->
     <section class="case-section container" aria-labelledby="s7">
-        <h2 class="case-section__label" id="s7"><b>07</b> Customisation as UX</p>
+        <h2 class="case-section__label" id="s7"><b>07</b> Customisation as UX</h2>
         <div class="case-section__body body-copy">
             <p data-reveal>Customisation is framed as cognitive fit: riders can tailor the interface to their riding style without ever breaking the information hierarchy.</p>
             <ul data-reveal>
-                <li>Layout presets â€” Minimal / Touring / Sport.</li>
+                <li>Layout presets: Minimal / Touring / Sport.</li>
                 <li>RPM redline and shift-light behaviour.</li>
                 <li>Widget assignments and units (km/h, mph).</li>
                 <li>Contrast modes and OLED-friendly palettes.</li>
             </ul>
-            <p data-reveal><strong>Rule:</strong> customisation never changes core hierarchy â€” speed and warnings stay dominant.</p>
+            <p data-reveal><strong>Rule:</strong> customisation never changes core hierarchy. Speed and warnings stay dominant.</p>
         </div>
     </section>
 
     <!-- 08 -->
     <section class="case-section container" aria-labelledby="s8">
-        <h2 class="case-section__label" id="s8"><b>08</b> Navigation UX</p>
+        <h2 class="case-section__label" id="s8"><b>08</b> Navigation UX</h2>
         <div class="case-section__body body-copy">
-            <p data-reveal>Smart restraint: the dash shows glanceable navigation prompts while the phone does the heavy lifting. No maps, no scrolling, no clutter â€” riders don't read maps at speed, they glance for the next move.</p>
+            <p data-reveal>Smart restraint: the dash shows glanceable navigation prompts while the phone does the heavy lifting. No maps, no scrolling, no clutter. Riders don't read maps at speed, they glance for the next move.</p>
             <div class="spec" data-reveal>Navigation elements
-â†’ direction arrow
-â†’ distance to next turn
-â†’ optional street name (truncated)
-â†’ optional ETA</div>
+→ direction arrow
+→ distance to next turn
+→ optional street name (truncated)
+→ optional ETA</div>
         </div>
     </section>
 
     <!-- 09 -->
     <section class="case-section container" aria-labelledby="s9">
-        <h2 class="case-section__label" id="s9"><b>09</b> Edge cases &amp; failure modes</p>
+        <h2 class="case-section__label" id="s9"><b>09</b> Edge cases &amp; failure modes</h2>
         <div class="case-section__body body-copy">
             <p data-reveal>UX doesn't stop when things go wrong. The interface prioritises comprehension and clear recovery:</p>
             <ul data-reveal>
-                <li>Lost CAN/sensor â†’ placeholder + warning.</li>
-                <li>Low voltage â†’ dim UI, warning first.</li>
-                <li>Overheat â†’ simplified view + thermal alert.</li>
-                <li>Night/day â†’ auto-adjust with manual override.</li>
+                <li>Lost CAN/sensor → placeholder + warning.</li>
+                <li>Low voltage → dim UI, warning first.</li>
+                <li>Overheat → simplified view + thermal alert.</li>
+                <li>Night/day → auto-adjust with manual override.</li>
             </ul>
             <p data-reveal>Avoid flashing unless critical; keep speed and warnings available; always say clearly when a data source is lost.</p>
         </div>
@@ -241,11 +279,11 @@ Hold (ride) reset trip â€” with confirm</div>
 
     <!-- 10 -->
     <section class="case-section container" aria-labelledby="s10">
-        <h2 class="case-section__label" id="s10"><b>10</b> Outcome &amp; what's next</p>
+        <h2 class="case-section__label" id="s10"><b>10</b> Outcome &amp; what's next</h2>
         <div class="case-section__body body-copy">
-            <p data-reveal>This project demonstrates designing under real hardware constraints: safety-critical hierarchy, non-touch interaction, and customisation that doesn't dissolve into chaos. It's honest about its stage â€” renders, flows and final screens land here as they're produced.</p>
+            <p data-reveal>This project demonstrates designing under real hardware constraints: safety-critical hierarchy, non-touch interaction, and customisation that doesn't dissolve into chaos. It's honest about its stage: renders, flows and final screens land here as they're produced.</p>
             <div class="spec" data-reveal>Next steps (draft)
-- Rider usability sessions â€” 5â€“8 riders
+- Rider usability sessions with 5–8 riders
 - Sunlight contrast + night dimming tests
 - Refine motion for peripheral vision
 - Validate layouts across ride modes</div>
@@ -260,9 +298,9 @@ Hold (ride) reset trip â€” with confirm</div>
                     <p class="archive-row__num">NEXT</p>
                     <div class="archive-row__body">
                         <h3 class="archive-row__title"><a class="archive-row__link" href="./tw91.html">Trek Watch 91</a></h3>
-                        <p class="archive-row__desc">A text-first wearable interface â€” same philosophy, smaller screen.</p>
+                        <p class="archive-row__desc">A text-first wearable interface: same philosophy, smaller screen.</p>
                     </div>
-                    <p class="archive-row__meta"><span>Wearable UI</span><span>WÂ·02</span></p>
+                    <p class="archive-row__meta"><span>Wearable UI</span><span>W·02</span></p>
                     <p class="archive-row__cta"><a class="arrow-link" href="./tw91.html">Open <span class="arr">&#8594;</span></a></p>
                 </div>
             </article>
@@ -274,8 +312,8 @@ Hold (ride) reset trip â€” with confirm</div>
 <footer class="footer">
     <div class="container">
         <div class="footer__inner">
-            <span>&copy; 2026 Luis Howin Maina â€” Nairobi, 01Â°17â€²S 036Â°49â€²E</span>
-            <span><a href="./index.html">Index</a> Â· <a href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></span>
+            <span>&copy; 2026 Luis Howin Maina · Nairobi, 01°17′S 036°49′E</span>
+            <span><a href="./index.html">Index</a> · <a href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></span>
         </div>
     </div>
 </footer>
