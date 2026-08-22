@@ -1,304 +1,190 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Trek Watch 91 / Interface</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add('js');</script>
+    <title>Trek Watch 91 â€” Case Study | Luis Howin</title>
+    <meta name="description" content="A text-first interface for a hiking watch: a crown, two buttons, nine actions, weeks of battery. No touch, no gestures. A case study by Luis Howin.">
+    <meta name="author" content="Luis Howin Maina">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luishowin.github.io/tw91.html">
+    <meta name="theme-color" content="#F4F1EB">
+    <meta property="og:title" content="Trek Watch 91 â€” Case Study" />
+    <meta property="og:description" content="A text-first wearable UI designed to operate without visual or cognitive overload." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://luishowin.github.io/tw91.html" />
+    <meta property="og:image" content="https://luishowin.github.io/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="./images/icon.webp" type="image/webp">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
-   <link rel="icon" href="./images/twicon.png" type="image">
-
-
-  <style>
-    :root {
-      --bg: #0b0d14;          /* dark blue */
-      --text: #f4f1ec;        /* ivory */
-      --accent: #b937ff;      /* purple */
-      --muted: #a5a3b3;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Roboto Mono', monospace;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 6rem 1.5rem;
-    }
-
-    h1, h2, h3 {
-      font-weight: 500;
-      letter-spacing: 0.02em;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      color: var(--muted);
-      max-width: 720px;
-    }
-
-    .accent {
-      color: var(--accent);
-    }
-
-    /* Hero */
-    .hero {
-      height:70vh;
-      max-width: 1920px;
-      display: flex;
-      margin: 0 auto;
-      background-image: url('./images/header.jpg');
-      background-size: cover;
-      background-blend-mode: darken;
-       background-color: rgba(0, 0, 0, 0.45);
-      background-position: center;
-      background-attachment: fixed;
-    }
-
-    /* Lists */
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li::before {
-      content: "· ";
-      color: var(--accent);
-    }
-
-    /* Flow Diagram */
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-
-    .flow-box {
-      border: 1px solid rgba(255,255,255,0.15);
-      padding: 1.5rem;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .flow-box span {
-      display: block;
-      margin-top: 0.5rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* Reveal on scroll */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 4rem 1rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    
-    /* Try Demo */
-    .demo {
-      text-align: center;
-      padding: 3rem 1.5rem;
-      background: linear-gradient(0deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
-      border-top: 1px solid rgba(255,255,255,0.03);
-      margin-top: 2rem;
-    }
-
-    .demo .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 2.5rem;
-      background: #a5a3b300;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-    }
-    .demo .btn:hover {
-      background: #9d22e551;
-      color: #b937ff;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-  </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Geist:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h1 class="reveal" style="font-family: DotGothic16, 'Courier New', Courier, monospace; font-weight: 800;">Trek Watch<br><span class="accent">Interface</span></h1>
-      <p class="reveal">
-        A simple, familiar <span class="accent">Text User Interface</span> designed to operate
-        without visual or cognitive overload.
-      </p>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+    <div class="nav__inner">
+        <a href="/" class="nav__brand">Luis Howin</a>
+        <ul class="nav__links">
+            <li><a href="./index.html#work">Work</a></li>
+            <li><a href="./index.html#experiments">Experiments</a></li>
+            <li><a href="./index.html#notes">Notes</a></li>
+            <li><a href="./index.html#about">About</a></li>
+            <li><a href="./index.html#contact" class="btn btn--ghost">Contact</a></li>
+        </ul>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-panel">Menu</button>
     </div>
-  </section>
-
-  <!-- INTERFACE OVERVIEW -->
-  <section>
-    <h2 class="reveal">Interface Overview</h2>
-    <p class="reveal">
-      Trek uses a minimal TUI navigated using two push buttons and a crown that also functions
-      as a button. The system runs on minimal compute, consumes ultra-low power,
-      and remains fully user-customisable.
-    </p>
-
-    <ul class="reveal">
-      <li>without touch</li>
-      <li>without gestures</li>
-      <li>without looking at a screen full of icons</li>
-    </ul>
-  </section>
-
-  <!-- INPUT -->
-  <section>
-    <h2 class="reveal">Input</h2>
-
-    <h3 class="reveal">The Crown</h3>
-    <p class="reveal">
-      Positioned on the eastern edge at the equator of the case. Its diameter and groove profile
-      are optimised for bare fingers or thick gloves. Clockwise and anti-clockwise rotations map
-      to context-aware actions such as menu navigation or value adjustment.
-    </p>
-
-    <p class="reveal">
-      The crown protrudes just enough to be intentionally pressable, without becoming a structural
-      failure point under impact or shear forces.
-    </p>
-
-    <h3 class="reveal">Buttons</h3>
-    <p class="reveal">
-      Trek uses three physical inputs (including the crown). Each supports three press types,
-      enabling <span class="accent">nine instantly accessible actions</span>.
-    </p>
-
-    <ul class="reveal">
-      <li><strong>Single press</strong>: primary action</li>
-      <li><strong>Double press</strong>: secondary function (e.g. stopwatch)</li>
-      <li><strong>Press and hold</strong>: tertiary function (e.g. flashlight or geo-pin)</li>
-    </ul>
-  </section>
-
-  <!-- FLOW DIAGRAM -->
-  <section>
-    <h2 class="reveal">Input → Action → Output</h2>
-
-    <div class="flow reveal">
-      <div class="flow-box">
-        <strong>Input</strong>
-        <span>Crown / Button</span>
-      </div>
-      <div class="flow-box">
-        <strong>Action</strong>
-        <span>Rotate / Press</span>
-      </div>
-      <div class="flow-box">
-        <strong>System</strong>
-        <span>TUI Logic</span>
-      </div>
-      <div class="flow-box">
-        <strong>Output</strong>
-        <span>LCD / Buzzer / LED</span>
-      </div>
+    <div class="nav__panel" id="nav-panel">
+        <ul>
+            <li><a href="./index.html#work">Work</a></li>
+            <li><a href="./index.html#experiments">Experiments</a></li>
+            <li><a href="./index.html#notes">Notes</a></li>
+            <li><a href="./index.html#about">About</a></li>
+            <li><a href="./index.html#contact">Contact</a></li>
+        </ul>
     </div>
-  </section>
+</nav>
 
-  <!-- OUTPUT -->
-  <section>
-    <h2 class="reveal">Output</h2>
+<main id="main">
 
-    <ul class="reveal">
-      <li><strong>Monochrome LCD</strong>: high contrast, static-friendly</li>
-      <li><strong>Piezo buzzer</strong>: efficient audio feedback</li>
-      <li><strong>Single RGB LED</strong>: minimal, intentional signaling</li>
-    </ul>
-  </section>
+    <!-- CASE HERO -->
+    <header class="case-hero grid-bg">
+        <div class="container">
+            <a class="case-hero__back" href="./index.html#work">&#8592; Index / Work</a>
+            <p class="mono" style="margin-top: var(--space-l);"><b style="color: var(--signal);">WÂ·02</b> â€” Case study Â· Wearable UI Â· 2025 Â· status: prototype exists</p>
+            <h1 class="display" data-reveal>Trek Watch<br>91</h1>
+            <p class="lede" data-reveal style="--reveal-delay:100ms">
+                A simple, familiar text user interface designed to operate without visual or
+                cognitive overload â€” for hikers who don't want to fiddle with their wrist mid-trail.
+            </p>
+            <dl class="meta-list case-hero__facts" data-reveal style="--reveal-delay:160ms">
+                <div>
+                    <dt>Role</dt>
+                    <dd>UI design Â· Interaction Â· Hardware prototyping</dd>
+                </div>
+                <div>
+                    <dt>Inputs</dt>
+                    <dd>Crown (push) + two buttons â€” no touch</dd>
+                </div>
+                <div>
+                    <dt>Outputs</dt>
+                    <dd>Monochrome LCD Â· piezo buzzer Â· single RGB LED</dd>
+                </div>
+                <div>
+                    <dt>Principle</dt>
+                    <dd>Repairable by design</dd>
+                </div>
+            </dl>
+        </div>
+    </header>
 
-  <!-- UX PHILOSOPHY -->
-  <section>
-    <h2 class="reveal">UX Philosophy</h2>
+    <figure class="figure case-figure container" data-reveal="clip">
+        <img src="./images/watch.jpg"
+             width="1024" height="915"
+             alt="Translucent Trek Watch hardware prototype on a workbench, exposed PCB and components visible, soldering iron and resistors nearby."
+             loading="lazy" decoding="async">
+        <figcaption>Fig. 01 â€” the hardware prototype, mid-build. Repairable by design.</figcaption>
+    </figure>
 
-    <ul class="reveal">
-      <li>discoverable</li>
-      <li>reversible</li>
-      <li>usable under stress, motion, or poor conditions</li>
-    </ul>
+    <!-- 01 -->
+    <section class="case-section container" aria-labelledby="s1">
+        <h2 class="case-section__label" id="s1"><b>01</b> Interface overview</p>
+        <div class="case-section__body body-copy">
+            <p data-reveal>Trek uses a minimal TUI navigated with two push buttons and a crown that also functions as a button. The system runs on minimal compute, consumes ultra-low power, and remains fully user-customisable â€” without touch, without gestures, without staring at a screen full of icons.</p>
+            <p data-reveal>Show the essentials; hide everything else until it's asked for.</p>
+        </div>
+    </section>
 
-    <br>
-    <p class="reveal">
-      No gestures. No hidden states. No accidental inputs.
-      The interface disappears when not needed, and responds instantly when it is.
-    </p>
+    <!-- 02 -->
+    <section class="case-section container" aria-labelledby="s2">
+        <h2 class="case-section__label" id="s2"><b>02</b> Input</p>
+        <div class="case-section__body body-copy">
+            <h3 data-reveal>The crown</h3>
+            <p data-reveal>Positioned on the eastern edge at the equator of the case. Its diameter and groove profile are optimised for bare fingers or thick gloves. Clockwise and anti-clockwise rotations map to context-aware actions â€” menu navigation or value adjustment.</p>
+            <p data-reveal>The crown protrudes just enough to be intentionally pressable, without becoming a structural failure point under impact or shear forces.</p>
+            <h3 data-reveal>The buttons</h3>
+            <p data-reveal>Trek uses three physical inputs in total, each supporting three press types â€” which means nine instantly accessible actions:</p>
+            <div class="spec" data-reveal>Single press     primary action
+Double press     secondary function â€” e.g. stopwatch
+Press + hold     tertiary function  â€” e.g. flashlight, geo-pin</div>
+        </div>
+    </section>
 
-    <p class="reveal">
-      More updates to come...
-    </p>
-  </section>
+    <!-- 03 -->
+    <section class="case-section container" aria-labelledby="s3">
+        <h2 class="case-section__label" id="s3"><b>03</b> Input â†’ action â†’ output</p>
+        <div class="case-section__body body-copy">
+            <div class="spec" data-reveal>Input   crown / button
+Action  rotate / press
+System  TUI logic
+Output  LCD / buzzer / LED</div>
+            <p data-reveal>Every interaction resolves through the same short chain. Nothing hides more than one layer deep, because depth is expensive when your hands are cold and the light is failing.</p>
+        </div>
+    </section>
 
-  <!-- TRY DEMO -->
-  <section class="demo">
-    <h2 class="reveal">Try the Demo</h2>
-    <p class="reveal">Experience the TUI in your browser.</p>
-    <a class="btn" href="watchdemo.html">Open Demo >></a>
-  </section>
+    <!-- 04 -->
+    <section class="case-section container" aria-labelledby="s4">
+        <h2 class="case-section__label" id="s4"><b>04</b> Output</p>
+        <div class="case-section__body body-copy">
+            <ul data-reveal>
+                <li><strong>Monochrome LCD</strong> â€” high contrast, static-friendly, visible in direct sun.</li>
+                <li><strong>Piezo buzzer</strong> â€” efficient audio feedback that survives wind noise.</li>
+                <li><strong>Single RGB LED</strong> â€” minimal, intentional signalling rather than decoration.</li>
+            </ul>
+        </div>
+    </section>
 
-  <footer>
-    © 2026 Trek Watch. Repairable by design
-  </footer>
+    <!-- 05 -->
+    <section class="case-section container" aria-labelledby="s5">
+        <h2 class="case-section__label" id="s5"><b>05</b> UX philosophy</p>
+        <div class="case-section__body body-copy">
+            <p data-reveal>Every interaction must be discoverable, reversible, and usable under stress, motion or poor conditions. No gestures. No hidden states. No accidental inputs.</p>
+            <p data-reveal>The interface disappears when it isn't needed and responds instantly when it is. More updates land here as the prototype matures.</p>
+        </div>
+    </section>
 
+    <!-- DEMO -->
+    <section class="case-section container" aria-labelledby="demo" style="border-bottom: 1px solid var(--line);">
+        <h2 class="case-section__label" id="demo"><b>&#9654;</b> Try the demo</p>
+        <div class="case-section__body body-copy">
+            <p data-reveal>The TUI runs in your browser as an emulator of the 128Ã—64 blue-OLED module â€” buttons included.</p>
+            <p data-reveal><a class="btn btn--primary" href="./watchdemo.html">Open demo <span aria-hidden="true">&#8594;</span></a></p>
+        </div>
+    </section>
 
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
+    <!-- CROSS-LINKS -->
+    <section class="container section" aria-label="Continue reading">
+        <div class="archive" data-reveal-group>
+            <article class="archive-row" data-reveal>
+                <div class="archive-row__inner">
+                    <p class="archive-row__num">NEXT</p>
+                    <div class="archive-row__body">
+                        <h3 class="archive-row__title"><a class="archive-row__link" href="./moto_digital_dash.html">Moto Digital Dash</a></h3>
+                        <p class="archive-row__desc">The same glanceability discipline, scaled up to a motorcycle dashboard.</p>
+                    </div>
+                    <p class="archive-row__meta"><span>Embedded HMI</span><span>WÂ·01</span></p>
+                    <p class="archive-row__cta"><a class="arrow-link" href="./moto_digital_dash.html">Open <span class="arr">&#8594;</span></a></p>
+                </div>
+            </article>
+        </div>
+    </section>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
+</main>
 
-    reveals.forEach(r => observer.observe(r));
-  </script>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <span>&copy; 2026 Luis Howin Maina â€” Nairobi, 01Â°17â€²S 036Â°49â€²E</span>
+            <span><a href="./index.html">Index</a> Â· <a href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></span>
+        </div>
+    </div>
+</footer>
 
+<script src="./js/main.js" defer></script>
 </body>
 </html>
-

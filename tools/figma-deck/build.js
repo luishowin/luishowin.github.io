@@ -304,16 +304,19 @@ function render(node, parentBox) {
 // Children are z-ordered back-to-front, matching DOM order for positioned elements.
 const body = (root.children || []).map(c => render(c, root.absoluteBoundingBox)).join('\n');
 
-// ---------- shared chrome, lifted straight out of index.html ----------
-// Extracting rather than duplicating means the generated page can never drift
-// from the home page. Edit the chrome in index.html; it lands here on rebuild.
+// ---------- shared chrome, lifted out of css/base.css + index.html ----------
+// The chrome CSS lives in docs/css/base.css (shared by every page); the nav and
+// footer markup live in docs/index.html between their ══ sentinels. Extracting
+// rather than duplicating means the generated page can never drift from the site.
+const baseCssPath = path.join(REPO, 'docs', 'css', 'base.css');
 const indexHtml = fs.readFileSync(path.join(REPO, 'docs', 'index.html'), 'utf8');
+const baseCss = fs.readFileSync(baseCssPath, 'utf8');
 
 function between(source, startRe, endRe, label) {
   const a = source.search(startRe);
   const b = source.search(endRe);
   if (a === -1 || b === -1 || b < a) {
-    throw new Error(`Could not find the ${label} sentinels in docs/index.html. `
+    throw new Error(`Could not find the ${label} sentinels. `
       + `Did someone remove the "══ SHARED …" markers?`);
   }
   // Start after the marker's line, and stop at the START of the end marker's line,
@@ -336,20 +339,27 @@ function between(source, startRe, endRe, label) {
   return slice;
 }
 
-const sharedCss = between(indexHtml, /══ SHARED CHROME v1 ══/, /══ END SHARED CHROME ══/, 'chrome CSS');
+// Chrome CSS: the deck is a fixed-width Figma reproduction; it needs tokens,
+// reset, type and buttons but not page patterns or motion. Slice sections 1–7
+// of base.css (everything up to the REVEAL MOTION banner).
+const chromeEnd = baseCss.indexOf('/* ── 8. REVEAL MOTION');
+if (chromeEnd === -1) {
+  throw new Error('Could not find section 8 (REVEAL MOTION) in docs/css/base.css; '
+    + 'the chrome slice boundary moved.');
+}
+const sharedCss = baseCss.slice(0, chromeEnd).replace(/\s+$/, '');
+
 const sharedFooter = between(indexHtml, /══ SHARED FOOTER/, /══ END SHARED FOOTER ══/, 'footer');
 
-// Same nav, but this is a separate page: in-page anchors must point back at the
-// home page, and GRAPHICS becomes the current item rather than a link to self.
+// Same nav, but this is a separate page: in-page anchors must point back at
+// the home page. The hero's "Back to work" link covers the current-page case.
 const sharedNav = between(indexHtml, /══ SHARED NAV/, /══ END SHARED NAV ══/, 'nav')
   .replace(/href="#(?!")/g, 'href="./index.html#')
-  .replace(/href="\/"/, 'href="./index.html"')
-  .replace(/<a href="\.\/portfolio\.html">GRAPHICS<\/a>/,
-           '<a href="./portfolio.html" class="is-active" aria-current="page">GRAPHICS</a>');
+  .replace(/href="\/"/, 'href="./index.html"');
 
-// Inter, Old Standard TT and IBM Plex Mono all arrive via the site's Google Fonts
-// request (700 added for the deck). Only the two display faces Google isn't already
-// serving to this page are self-hosted: one source per family, no double download.
+// Fonts: Cormorant, Geist and IBM Plex Mono arrive via the site's Google Fonts
+// request. Only display faces Google isn't already serving to this page are
+// self-hosted: one source per family, no double download.
 const selfHosted = fonts.filter(f => f.family !== 'Inter');
 const fontFaces = selfHosted.map(f =>
   `@font-face{font-family:'${f.family}';font-style:normal;font-weight:${f.weight};font-display:swap;`
@@ -392,8 +402,8 @@ const html = `<!doctype html>
 <meta name="author" content="Luis Howin Maina">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://luishowin.github.io/portfolio.html">
-<meta name="theme-color" content="#0B0E11">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#F4F1EB">
+<meta name="color-scheme" content="light">
 
 <meta property="og:title" content="Graphic Design Portfolio | Luis Howin Maina" />
 <meta property="og:description" content="Seven client and personal identities: logo design, branding, packaging, print and web." />
@@ -411,8 +421,9 @@ const html = `<!doctype html>
 <link rel="icon" href="./images/icon.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Geist:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="font" type="font/woff2" href="./fonts/inria-serif-400.woff2" crossorigin>
+<script>document.documentElement.classList.add('js');</script>
 
 <script type="application/ld+json">
 {
@@ -571,6 +582,8 @@ ${body}
 
 ${sharedFooter}
 
+<script src="./js/main.js" defer></script>
+
 <script>
 // The source frame is a fixed ${W}px canvas. Scale it down (never up) so it fits
 // narrow screens, shrink the wrapper to match so no dead space is left below,
@@ -593,15 +606,6 @@ ${sharedFooter}
   // mobile browser chrome collapsing, all cases where resize can be missed.
   if (window.ResizeObserver) new ResizeObserver(fit).observe(viewport);
   else addEventListener('resize', fit);
-})();
-
-// Nav shadow on scroll, same behaviour as the home page.
-(function () {
-  var nav = document.querySelector('.nav');
-  if (!nav) return;
-  addEventListener('scroll', function () {
-    nav.classList.toggle('nav--scrolled', window.scrollY > 20);
-  }, { passive: true });
 })();
 </script>
 </body>

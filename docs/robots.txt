@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luishowin.github.io/sitemap.xml
